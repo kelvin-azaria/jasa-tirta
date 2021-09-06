@@ -3,7 +3,7 @@ Pastikan laravel sudah terinstall di komputer anda, untuk tahap-tahap instalasi 
 
 **1. Clone Project** <br>
 
-    git clone https://github.com/kelvin-azaria/ief-registration.git
+    git clone https://github.com/kelvin-azaria/jasa-tirta.git
 **2. Install Composer** <br>
 
     composer install
