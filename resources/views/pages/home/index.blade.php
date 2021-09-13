@@ -1,93 +1,127 @@
 @extends('layouts.home')
 
-@section('content')
-<div class="landing-page">
-  <section id="landing">
-    <div class="container p-1rem">
-      <div class="row mt-1rem justify-content-center">
-        <div class="col-md-8 my-4">
-          <h1 class="font-weight-bold dark-text-green my-4 title-text">Example Landing Page</h1>
-          <p class="my-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Praesent sapien nibh, porta suscipit est egestas, euismod varius tortor. 
-            Quisque volutpat lorem risus, eu facilisis lectus ornare quis.
-          </p>
-          <a class="btn cta-button my-3 font-weight-bold text-capitalize p-4" href="{{ url('/') }}"  role="button">
-            Button 1 <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-          </a>
-          <a class="my-3 font-weight-bold text-capitalize p-4" href="{{ url('/') }}#about" role="button">
-            Button 2 <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-          </a>
-        </div>
+@section('banner')
+  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{{ asset('img/banner-placeholder.jpg') }}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{{ asset('img/banner-placeholder.jpg') }}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{{ asset('img/banner-placeholder.jpg') }}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{{ asset('img/banner-placeholder.jpg') }}" class="d-block w-100" alt="...">
       </div>
     </div>
-  </section>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+@endsection
 
-  <section id="carousel">
-    <div id="carouselExample" class="carousel slide bg-dark" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExample" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExample" data-slide-to="1"></li>
-        <li data-target="#carouselExample" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner justify-content-center">
-        <div class="carousel-item active">
-          <img class="d-block w-50 mx-auto p-5" src="{{ asset('img/carousel_placeholder.svg') }}" alt="First slide">
+@section('content')
+  <section id="announcement">
+    <div class="container">
+      <h1 class="text-capitalize fw-bold">pengumuman pemenang</h1>
+    </div>
+    <div class="container-fluid">
+      <div class="row mb-4">
+        <div class="col-sm-3 bg-secondary">
         </div>
-        <div class="carousel-item">
-          <img class="d-block w-50 mx-auto p-5" src="{{ asset('img/carousel_placeholder.svg') }}" alt="Second slide">
+        <div class="col-sm-6 align-content-center px-4">
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{{ asset('img/square-img-placeholder.jpg') }}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{{ asset('img/square-img-placeholder.jpg') }}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{{ asset('img/square-img-placeholder.jpg') }}" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
         </div>
-        <div class="carousel-item">
-          <img class="d-block w-50 mx-auto p-5" src="{{ asset('img/carousel_placeholder.svg') }}" alt="Third slide">
+        <div class="col-sm-3 bg-secondary">
         </div>
       </div>
-      <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
     </div>
   </section>
   
-  <section id="list" class=" py-3 bg-green text-white">
-    <div class="container p-1rem">
-      <div class="row justify-content-between">
-        <div class="col-md-5 font-weight-bold mx-auto my-auto">
-          <h1 class="title-text text-white font-weight-bold text-capital">
-            Example List
-          </h1>
+  <section id="registration" class=" py-3 bg-primary text-white">
+    <div class="container">
+      <h1 class="text-capitalize fw-bold text-center">segera daftarkan dirimu!</h1>
+      <div class="row">
+        <div class="col-lg">
+          <div class="row pb-4">
+            <div class="col">
+              <div class="card bg-transparent text-dark ">
+                <img src="{{ asset('img/card-img-placeholder.jpg') }}" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                  <div class="text-center border h-100 align-content-center d-grid">
+                    <h3 class="card-title fw-bold text-white text-capitalize">chess</h3>
+                    <a href="#" class="btn btn-outline-light mx-auto fw-bold">Daftar Disini</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card bg-transparent text-dark ">
+                <img src="{{ asset('img/card-img-placeholder.jpg') }}" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                  <div class="text-center border h-100 align-content-center d-grid">
+                    <h3 class="card-title fw-bold text-white text-uppercase">pubg</h3>
+                    <a href="#" class="btn btn-outline-light mx-auto fw-bold">Daftar Disini</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-md-6 align-self-center font-weight-bold high-line-height">
-          <ol>
-            <li>The first item</li>
-            <li>The second item</li>
-            <li>The third item</li>
-            <li>The fourth item</li>
-            <li>The fifth item</li>
-            <li>The sixth item</li>
-            <li>The seventh item</li>
-            <li>The eighth item</li>
-            <li>The ninth item</li>
-            <li>The tenth item</li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="image_gallery_1" class="py-3">
-    <div class="container p-1rem">
-      <div class="row justify-content-center">
-        <div class="col-md-12 font-weight-bold text-center">
-          <h3 class="font-weight-bold text-capital">Example Image Gallery 1</h3>
-          <div class="row">
-            <div class="col align-self-center">
-              <div class="row justify-content-center">
-                <img src="{{ asset('img/image_placeholder.png') }}" width="500" alt="">
-                <img src="{{ asset('img/image_placeholder.png') }}" width="500" alt="">
+        <div class="col-lg">
+          <div class="row pb-4">
+            <div class="col">
+              <div class="card bg-transparent text-dark ">
+                <img src="{{ asset('img/card-img-placeholder.jpg') }}" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                  <div class="text-center border h-100 align-content-center d-grid">
+                    <h3 class="card-title fw-bold text-white text-capitalize">running</h3>
+                    <a href="#" class="btn btn-outline-light mx-auto fw-bold">Daftar Disini</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card bg-transparent text-dark ">
+                <img src="{{ asset('img/card-img-placeholder.jpg') }}" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                  <div class="text-center border h-100 align-content-center d-grid">
+                    <h3 class="card-title fw-bold text-white text-capitalize">cycling</h3>
+                    <a href="#" class="btn btn-outline-light mx-auto fw-bold">Daftar Disini</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -96,89 +130,138 @@
     </div>
   </section>
 
-  <section id="image_gallery_2" class="py-3">
-    <div class="container p-1rem">
-      <h3 class="font-weight-bold text-capital text-center">Example Image Gallery 2</h3>
-      <div class="row justify-content-between">
+  <section id="information">
+    <div class="container pb-3">
+      <h1 class="fw-bold text-capitalize">informasi perlombaan</h1>
+      <div class="row">
+        <div class="col-lg">
+          <div id="carouselExampleIndicators2" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{{ asset('img/square-img-placeholder.jpg') }}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{{ asset('img/square-img-placeholder.jpg') }}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{{ asset('img/square-img-placeholder.jpg') }}" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="col-lg">
+          <h2  class="fw-bold text-capitalize">aturan umum</h2>
+          <p>72 holes of individual stroke play for both men and women (four rounds scheduled over four consecutive days). Scores are cumulative from round to round. The athlete with the lowest aggregate score wins. In the event of a tie for first, second or third place, a play-off or multiple play-offs shall be conducted for the purpose of determining the gold, silver and bronze medal winners.</p>
+          <h2 class="fw-bold text-capitalize">informasi tambahan</h2>
+          <p>More information about the competition can be found in the following documents:</p>
+          <ul>
+            <li class="py-2"><a href="">Aturan 1.pdf</a></li>
+            <li class="py-2"><a href="">Aturan 2.pdf</a></li>
+            <li class="py-2"><a href="">Aturan 3.pdf</a></li>
+            <li class="py-2"><a href="">Aturan 4.pdf</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="col-md-6 font-weight-bold text-center">
-          <div class="row">
-            <div class="col align-self-center">
-              <div class="row justify-content-center">
-                <img src="{{ asset('img/image_placeholder.png') }}" width="500" alt="">
+  <section id="mechanism" class="bg-warning">
+    <div class="container">
+      <div class="row py-4">
+        <div class="col align-self-center">
+          <h1 class="text-white text-capitalize fw-bold">pahami mekanisme perlombaan</h1>
+        </div>
+        <div class="col">
+          <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg">
+          <div class="row pb-4">
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h3 class="card-title fw-bold">Langkah -1</h3>
+                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h3 class="card-title fw-bold">Langkah -2</h3>
+                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col text-center">Image label</p></div>
-          </div>
         </div>
-
-        <div class="col-md-6 font-weight-bold text-center">
-          <div class="row">
-            <div class="col align-self-center">
-              <div class="row justify-content-center">
-                <img src="{{ asset('img/image_placeholder.png') }}" width="500" alt="">
+        <div class="col-lg">
+          <div class="row pb-4">
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h3 class="card-title fw-bold">Langkah -3</h3>
+                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h3 class="card-title fw-bold">Langkah -4</h3>
+                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col text-center">Image label</p></div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-
-  <section id="cards" class="py-3">
-    <div class="container p-1rem">
-      <h3 class="font-weight-bold text-capital text-center">Example Cards</h3>
-      <div class="row justify-content-center py-4">
-        <div class="card m-2" style="width: 14rem;">
-          <div class="card-body">
-            <h5 class="card-title">Card 1</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text">Card Description</p>
-            <a href="#" class="card-link">link to somewhere</a>
-          </div>
-        </div>
-        <div class="card m-2" style="width: 14rem;">
-          <div class="card-body">
-            <h5 class="card-title">Card 2</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text">Card Description</p>
-            <a href="#" class="card-link">link to somewhere</a>
-          </div>
-        </div>
-        <div class="card m-2" style="width: 14rem;">
-          <div class="card-body">
-            <h5 class="card-title">Card 3</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text">Card Description</p>
-            <a href="#" class="card-link">link to somewhere</a>
-          </div>
-        </div>
-        <div class="card m-2" style="width: 14rem;">
-          <div class="card-body">
-            <h5 class="card-title">Card 4</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text">Card Description</p>
-            <a href="#" class="card-link">link to somewhere</a>
-          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="youtube_embed" class="py-3">
-    <div class="container p-1rem">
-      <h3 class="font-weight-bold text-capital text-center">Example Youtube Embed</h3>
-      <div class="row justify-content-center py-4">
-        <iframe width="1280" height="720" src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+  <section id="rewards">
+    <div class="container pb-4">
+      <h1 class="text-capitalize fw-bold">dapatkan hadiah menarik</h1>
+      <div class="row">
+        <div class="col-lg">
+          <div class="row pb-4">
+            <div class="col">
+              <img src="{{ asset('img/square-img-placeholder.jpg') }}" class="rounded w-100" alt="...">
+            </div>
+            <div class="col">
+              <img src="{{ asset('img/square-img-placeholder.jpg') }}" class="rounded w-100" alt="...">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg">
+          <div class="row pb-4">
+            <div class="col">
+              <img src="{{ asset('img/square-img-placeholder.jpg') }}" class="rounded w-100" alt="...">
+            </div>
+            <div class="col">
+              <img src="{{ asset('img/square-img-placeholder.jpg') }}" class="rounded w-100" alt="...">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-
-</div>
 @endsection

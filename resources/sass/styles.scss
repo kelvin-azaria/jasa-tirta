@@ -2,7 +2,6 @@ html {
   scroll-behavior: smooth;
 }
 body{
-  font-family: 'Montserrat', sans-serif;
   line-height: 1.25;
   background-color: white;
   min-height: 100vh;
@@ -10,24 +9,42 @@ body{
   flex-direction: column;
 }
 footer{
-  margin-top: auto;
+  box-shadow: 0px -0.25rem 1.5rem rgba(0, 0, 0, 0.08);
 }
 nav{
   background-color: white;
 }
+h1{
+  font-family: 'Montserrat', sans-serif;
+  padding: 2.5rem 0 1.5rem 0;
+  margin: 0;
+  font-size: 2.074em;
+  line-height: 160%;
+}
+h2{
+  font-family: 'Montserrat', sans-serif;
+  padding: 2rem 0 1rem 0;
+  margin: 0;
+  font-size: 1.728em;
+  line-height: 3.5rem;
+}
+h3{
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  font-size: 1.44em;
+  line-height: 3.5rem;
+}
+.navbar-brand{
+  font-family: 'Montserrat', sans-serif;
+}
+.top-navbar{
+  padding: 0.5rem 1rem;
+  box-shadow: 0px 0.25rem 1.5rem rgba(0, 0, 0, 0.08);
+}
 .landing-page{
   background-color: white;
 }
-.title-text{
-  font-size: 2.441rem;
-  line-height: 1.333;
-}
-.text-green{
-  color: $light-green !important;
-}
-.dark-text-green{
-  color: $dark-green !important;
-}
+
 .no-border{
   border: none !important;
 
@@ -55,16 +72,7 @@ nav{
     background-color: $dark-green;
   }
 }
-.top-navbar{
-  box-shadow: 0px 24px 64px rgba(44, 142, 36, 0.08) !important;
-  border-radius: 0 0 1rem 1rem !important;
-  .nav-item{
-    a{
-      padding: 8px 12px !important;
-      font-size: 0.875rem;
-    }
-  }
-}
+
 .background-cream{
   background-color: $white;
 }
@@ -234,9 +242,21 @@ label{
 .navbar-toggler{
   border: none;
 }
+
+.video-embed{
+  width: 100%;
+  min-width: 720px;
+  height: 100%;
+  min-height: 406px;
+}
+.card-img-overlay{
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.589);
+}
+
+
 @media (max-width: 575.98px) {
   body{
-    font-size:  0.875rem !important;
+    font-size:  0.833em !important;
     line-height: 1.6;
   }
   h3.text-muted{
@@ -253,11 +273,6 @@ label{
   .data-show-text{
     font-size:  0.875rem !important;
   }
-  .navbar-brand{
-    img{
-      width: 100px;
-    }
-  }
   .section-title{
     font-size: 1.563rem;
   }
@@ -269,6 +284,17 @@ label{
   }
   .data-card-title{
     font-size: 1.5rem;
+  }
+  .btn{
+    font-size: 0.833em;
+  }
+}
+@media (max-width: 768px){
+  .video-embed{
+    width: 100%;
+    min-width: 288px;
+    height: 100%;
+    min-height: 168px;
   }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
