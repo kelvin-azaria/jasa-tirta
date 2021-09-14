@@ -1,8 +1,7 @@
 <?php
 
-use App\Http\Controllers\ContestantController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserDashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/tests', [HomeController::class, 'test'])->name('test');
+Route::resource('dashboard', UserDashboardController::class)->only(['index','show']);
+
+Auth::routes([
+  'verify' => false,
+]);
