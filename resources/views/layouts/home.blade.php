@@ -31,10 +31,10 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active text-capitalize" aria-current="page" href="{{ url('/') }}">home</a>
+              <a class="nav-link text-capitalize" href="{{ url('/') }}">home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-capitalize" href="#">pengumuman pemenang</a>
+              <a class="nav-link text-capitalize" href="{{ url('/#announcement') }}">pengumuman pemenang</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link text-capitalize dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
