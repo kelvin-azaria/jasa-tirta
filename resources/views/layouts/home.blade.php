@@ -51,7 +51,7 @@
               <a class="nav-link text-uppercase" href="#">faq</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-capitalize" href="#">login</a>
+              <a class="nav-link text-capitalize" href="{{ route('login') }}">login</a>
             </li>
           </ul>
         </div>
