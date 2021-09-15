@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/test', [HomeController::class, 'test'])->name('test');
 Route::resource('dashboard', UserDashboardController::class)->only(['index','show']);
 
 Auth::routes([
