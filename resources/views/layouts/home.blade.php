@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" /> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Styles -->
-    <link rel="icon" href="{{ asset('img/yc-icon.png') }}">
+    <link rel="icon" href="{{ asset('img/square-img-placeholder.jpg') }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
   </head>
@@ -41,14 +41,14 @@
                 leaderboard
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item text-capitalize" href="#">catur</a></li>
+                <li><a class="dropdown-item text-capitalize" href="{{ route('leaderboard.index') }}">catur</a></li>
                 <li><a class="dropdown-item text-uppercase" href="#">pubg</a></li>
                 <li><a class="dropdown-item text-capitalize" href="#">running</a></li>
                 <li><a class="dropdown-item text-capitalize" href="#">cycling</a></li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-uppercase" href="#">faq</a>
+              <a class="nav-link text-uppercase" href="{{ route('faq.index') }}">faq</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-capitalize" href="{{ route('login') }}">login</a>
