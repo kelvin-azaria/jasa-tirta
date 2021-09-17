@@ -44,6 +44,7 @@
             </ul>
             <hr>
             <div class="dropdown pb-4">
+              @if (Auth::check())
               <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
               <span class="d-none d-sm-inline mx-1">
                 {{ Auth::user()->name }}
@@ -70,6 +71,7 @@
                   </form>
                 </li>
               </ul>
+              @endif
             </div>
           </div>
         </div>

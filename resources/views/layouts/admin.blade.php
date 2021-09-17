@@ -49,32 +49,34 @@
             <ul class="navbar-nav ml-auto">
               <!-- Authentication Links -->
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  {{ Auth::guard('admin')->user()->name }} (Admin)
-                </a>
-
-                <ul
-                  class="dropdown-menu dropdown-menu-right"
-                  aria-labelledby="navbarDropdown"
-                >
-                  <a
-                    class="dropdown-item"
-                    href="{{ route('logout') }}"
-                    onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();"
-                  >
-                    {{ __('Logout') }}
+                @if (Auth::guard('admin')->check())
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ Auth::guard('admin')->user()->name }} (Admin)
                   </a>
-
-                  <form
-                    id="logout-form"
-                    action="{{ route('logout') }}"
-                    method="POST"
-                    class="d-none"
+                
+                  <ul
+                    class="dropdown-menu dropdown-menu-right"
+                    aria-labelledby="navbarDropdown"
                   >
-                    @csrf
-                  </form>
-                </ul>
+                    <a
+                      class="dropdown-item"
+                      href="{{ route('logout') }}"
+                      onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();"
+                    >
+                      {{ __('Logout') }}
+                    </a>
+
+                    <form
+                      id="logout-form"
+                      action="{{ route('logout') }}"
+                      method="POST"
+                      class="d-none"
+                    >
+                      @csrf
+                    </form>
+                  </ul>
+                @endif
               </li>
             </ul>
           </div>
