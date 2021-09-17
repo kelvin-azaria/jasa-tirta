@@ -42,17 +42,29 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item text-capitalize" href="{{ route('leaderboard.index') }}">catur</a></li>
+                <li><a class="dropdown-item text-capitalize" href="#">bridge</a></li>
                 <li><a class="dropdown-item text-uppercase" href="#">pubg</a></li>
-                <li><a class="dropdown-item text-capitalize" href="#">running</a></li>
-                <li><a class="dropdown-item text-capitalize" href="#">cycling</a></li>
+                <li><a class="dropdown-item text-capitalize" href="#">bike & run</a></li>
               </ul>
             </li>
             <li class="nav-item">
               <a class="nav-link text-uppercase" href="{{ route('faq.index') }}">faq</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-capitalize" href="{{ route('login') }}">login</a>
-            </li>
+            @auth
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ auth()->user()->name}}
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="nav-link text-capitalize" href="{{ route('login') }}">dashboard</a>
+                  </ul>
+              </li>
+            @endauth
+            @guest
+              <li class="nav-item">
+                <a class="nav-link text-capitalize" href="{{ route('login') }}">login</a>
+              </li> 
+            @endguest
           </ul>
         </div>
       </div>

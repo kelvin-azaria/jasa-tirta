@@ -23,7 +23,98 @@
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
   </head>
   <body>
-    <div class="container-fluid">
+    <div class="container-fluid overflow-hidden">
+      <div class="row vh-100 overflow-auto">
+          <div class="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 bg-lightdarkblue d-flex sticky-top">
+              <div class="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start p-3">
+                  <a class="d-flex align-items-center pb-sm-3 mb-md-0 me-md-auto text-decoration-none text-capitalize fw-bold" href="{{ url('/') }}">
+                    <img src="{{ asset('img/square-img-placeholder.jpg') }}" alt="" width="40" height="40" class="d-inline-block align-middle">
+                    <span class="d-none fs-5 f-montserrat d-sm-inline ms-3">jasa raharja</span>
+                  </a>
+                  @auth
+                  <ul class="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" id="menu">
+                      <li class="nav-item">
+                          <a href="#" class="nav-link px-sm-0 px-2 text-white">
+                              <i class="fs-5 bi-house"></i><span class="ms-2 d-none d-sm-inline">Home</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-sm-0 px-2 text-white">
+                              <i class="fs-5 bi-speedometer2"></i><span class="ms-2 d-none d-sm-inline">Dashboard</span> </a>
+                      </li>
+                  </ul>
+                  @endauth
+                  @if (Auth::check())
+                  <div class="dropdown py-sm-4 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1">
+                      <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-fill me-1"></i>
+                        <span class="d-none d-sm-inline mx-1">
+                          {{ Auth::user()->name }}
+                        </span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                          <li>
+                            <a
+                              class="dropdown-item"
+                              href="{{ route('logout') }}"
+                              onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();"
+                            >
+                              {{ __('Logout') }}
+                            </a>
+          
+                            <form
+                              id="logout-form"
+                              action="{{ route('logout') }}"
+                              method="POST"
+                              class="d-none"
+                            >
+                              @csrf
+                            </form>
+                          </li>
+                        </ul>
+                  </div>
+                  @endif
+              </div>
+          </div>
+          <div class="col d-flex flex-column h-sm-100 bg-darkblue ">
+              <main class="row overflow-auto">
+                  <div class="col px-4">
+                    @yield('content')
+                  </div>
+              </main>
+              <footer class="row bg-darkblue text-white mt-auto">
+                  <div class="col p-3">
+                    <div class="row justify-content-between">
+                      <div class="col-auto fw-bold text-muted">
+                        Kontak Kami
+                      </div>
+                      <div class="col-auto">
+                        <a class="px-3 py-2" href=""><i class="fab fa-facebook"></i></a>
+                        <a class="px-3 py-2" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="px-3 py-2" href=""><i class="fab fa-instagram"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-100 bg-primary text-white pt-1 pb-2">
+                    <small>&copy; Copyright <script>document.write(new Date().getFullYear())</script> Example Copyright</small>
+                  </div>
+              </footer>
+          </div>
+      </div>
+  </div>
+
+  
+
+
+
+
+
+  
+  {{-- <div class="container-fluid bg-primary text-white py-2">
+    <small>&copy; Copyright <script>document.write(new Date().getFullYear())</script> Example Copyright</small>
+  </div> --}}
+    {{-- <div class="container-fluid">
       <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
           <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
@@ -74,14 +165,14 @@
               @endif
             </div>
           </div>
-        </div>
+        </div> --}}
 
         {{-- CONTENT AREA --}}
-        <div class="col py-3">
+        {{-- <div class="col py-3">
           <main class="py-4">@yield('content')</main>
         </div>
       </div>
-    </div>
+    </div> --}}
     @yield('script')
   </body>
 </html>

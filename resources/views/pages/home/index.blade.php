@@ -4,7 +4,7 @@
   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="{{ asset('img/banner-placeholder.jpg') }}" class="d-block w-100" alt="...">
+        <img src="{{ asset('img/banner-kegiatan@1200x-8.jpg') }}" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
         <img src="{{ asset('img/banner-placeholder.jpg') }}" class="d-block w-100" alt="...">
@@ -45,13 +45,13 @@
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="{{ asset('img/square-img-placeholder.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('img/opening@1200x-8.jpg') }}" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="{{ asset('img/square-img-placeholder.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('img/poster@1200x-8.jpg') }}" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="{{ asset('img/square-img-placeholder.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('img/closing@1200x-8.jpg') }}" class="d-block w-100" alt="...">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -92,7 +92,7 @@
                 <img src="{{ asset('img/card-img-placeholder.jpg') }}" class="card-img" alt="...">
                 <div class="card-img-overlay">
                   <div class="text-center border h-100 align-content-center d-grid">
-                    <h3 class="card-title fw-bold text-white text-uppercase">pubg</h3>
+                    <h3 class="card-title fw-bold text-white text-capitalize">bridge</h3>
                     <a href="#" class="btn btn-outline-light mx-auto fw-bold">Daftar Disini</a>
                   </div>
                 </div>
@@ -107,7 +107,7 @@
                 <img src="{{ asset('img/card-img-placeholder.jpg') }}" class="card-img" alt="...">
                 <div class="card-img-overlay">
                   <div class="text-center border h-100 align-content-center d-grid">
-                    <h3 class="card-title fw-bold text-white text-capitalize">running</h3>
+                    <h3 class="card-title fw-bold text-white text-uppercase">pubg</h3>
                     <a href="#" class="btn btn-outline-light mx-auto fw-bold">Daftar Disini</a>
                   </div>
                 </div>
@@ -118,7 +118,7 @@
                 <img src="{{ asset('img/card-img-placeholder.jpg') }}" class="card-img" alt="...">
                 <div class="card-img-overlay">
                   <div class="text-center border h-100 align-content-center d-grid">
-                    <h3 class="card-title fw-bold text-white text-capitalize">cycling</h3>
+                    <h3  class="card-title fw-bold text-white text-capitalize">bike&run</h3>
                     <a href="#" class="btn btn-outline-light mx-auto fw-bold">Daftar Disini</a>
                   </div>
                 </div>
@@ -143,7 +143,7 @@
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="{{ asset('img/square-img-placeholder.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('img/bridge@1200x-8.jpg') }}" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
                 <img src="{{ asset('img/square-img-placeholder.jpg') }}" class="d-block w-100" alt="...">

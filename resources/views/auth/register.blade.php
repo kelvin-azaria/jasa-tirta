@@ -1,12 +1,38 @@
 @extends('layouts.user')
 @section('content')
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <div class="card">
-        <div class="card-header">{{ __('Register') }}</div>
-        <div class="card-body">
-					@error('image')
+  <div class="row mt-3 justify-content-center">
+    <div class="col-lg-6 align-self-center">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{{ asset('img/opening@1200x-8.jpg') }}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{{ asset('img/poster@1200x-8.jpg') }}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{{ asset('img/closing@1200x-8.jpg') }}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <div class="col-lg-6 align-self-center text-white p-3">
+      <h1 class="text-capitalize text-white fw-bold">{{ __('Register') }}</h1>
+      @error('image')
 						<span class="invalid-feedback" role="alert">
 							<strong>{{ $message }}</strong>
 						</span>
@@ -21,7 +47,7 @@
           <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
             @csrf
 						{{-- NAME FIELD --}}
-            <div class="form-group row">
+            <div class="form-group row my-3">
               <label for="name" class="col-md-4 col-form-label text-md-right">
 								Nama Lengkap
 							</label>
@@ -44,7 +70,7 @@
               </div>
             </div>
 						{{-- EMAIL FIELD --}}
-            <div class="form-group row">
+            <div class="form-group row my-3">
               <label for="email" class="col-md-4 col-form-label text-md-right">
 								Alamat E-Mail
 							</label>
@@ -66,7 +92,7 @@
               </div>
             </div>
 						{{-- PHONE FIELD --}}
-            <div class="form-group row">
+            <div class="form-group row my-3">
               <label for="phone" class="col-md-4 col-form-label text-md-right">
 								Nomor Telepon
 							</label>
@@ -88,7 +114,7 @@
               </div>
             </div>
 						{{-- BIRTH DATE FIELD --}}
-            <div class="form-group row">
+            <div class="form-group row my-3">
               <label for="birth_date" class="col-md-4 col-form-label text-md-right">
 								Tanggal Lahir
 							</label>
@@ -110,7 +136,7 @@
               </div>
             </div>
 						{{-- WORK UNIT FIELD --}}
-            <div class="form-group row">
+            <div class="form-group row my-3">
               <label for="work_unit" class="col-md-4 col-form-label text-md-right">
 								Unit Kerja / Cabang
 							</label>
@@ -132,7 +158,7 @@
               </div>
             </div>
 						{{-- NPP FIELD --}}
-            <div class="form-group row">
+            <div class="form-group row my-3">
               <label for="npp" class="col-md-4 col-form-label text-md-right">
 								NPP
 							</label>
@@ -154,7 +180,7 @@
               </div>
             </div>
 						{{-- JRKU IMAGE FIELD --}}
-            <div class="form-group row">
+            <div class="form-group row my-3">
               <label for="jrku_image_path" class="col-md-4 col-form-label text-md-right">
 								Screenshot Bukti Akun JRku
 							</label>
@@ -176,7 +202,7 @@
               </div>
             </div>
 						{{-- PASSWORD FIELD --}}
-            <div class="form-group row">
+            <div class="form-group row my-3">
               <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
               <div class="col-md-6">
                 <input 
@@ -194,7 +220,7 @@
                 @enderror
               </div>
             </div>
-            <div class="form-group row">
+            <div class="form-group row my-3">
               <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
               <div class="col-md-6">
                 <input 
@@ -207,16 +233,14 @@
 								>
               </div>
             </div>
-            <div class="form-group row mb-0">
-              <div class="col-md-6 offset-md-4">
-                <button type="submit" class="btn btn-primary">
+            <div class="form-group row my-4">
+              <div class="col-md-8 offset-md-1">
+                <button type="submit" class="btn btn-primary w-100">
 									{{ __('Register') }}
                 </button>
               </div>
             </div>
           </form>
-        </div>
-      </div>
     </div>
   </div>
 </div>
