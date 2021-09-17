@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Strava;
 use Illuminate\Support\Facades\Auth;
 
 class UserDashboardController extends Controller
@@ -22,8 +23,7 @@ class UserDashboardController extends Controller
         return view('pages.users_dashboard.index',['user' => $user]);
     }
 
-    public function export()
-    {
-
+    public function stravaAuth(){
+        return Strava::authenticate($scope='activity:read_all');
     }
 }

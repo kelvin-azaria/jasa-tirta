@@ -11,6 +11,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource('faq', FaqController::class)->only(['index']);
 Route::resource('leaderboard', LeaderboardController::class)->only(['index']);
 Route::resource('dashboard', UserDashboardController::class)->only(['index','show']);
+Route::get('/strava_authorize', [UserDashboardController::class, 'stravaAuth'])->name('user.strava_auth');
 
 Auth::routes([
   'verify' => false,

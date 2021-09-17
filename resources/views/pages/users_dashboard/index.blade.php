@@ -13,6 +13,9 @@
           <div class="card bg-lightdarkblue my-3">
             <div class="card-body text-white">
               <h5 class="card-title">Data Saya</h5>
+              <a href="{{ route('user.strava_auth') }}">
+                Ambil Data
+              </a>
               <table  class="table text-white-50 table-borderless">
                 <tr>
                   <th>No HP</th>
