@@ -33,14 +33,27 @@
                   </a>
                   @auth
                   <ul class="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" id="menu">
-                      <li class="nav-item">
-                          <a href="#" class="nav-link px-sm-0 px-2 text-white">
-                              <i class="fs-5 bi-house"></i><span class="ms-2 d-none d-sm-inline">Home</span>
+                      <li>
+                          <a href="{{ route('dashboard.index') }}" data-bs-toggle="collapse" class="nav-link px-sm-0 px-2 text-white">
+                              <i class="fs-5 bi-speedometer2"></i><span class="ms-2 d-none d-sm-inline">Dashboard</span> 
                           </a>
                       </li>
                       <li>
                           <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-sm-0 px-2 text-white">
-                              <i class="fs-5 bi-speedometer2"></i><span class="ms-2 d-none d-sm-inline">Dashboard</span> </a>
+                              <i class="fs-5 bi-bicycle"></i><span class="ms-2 d-none d-sm-inline">Bike & Run</span> 
+                          </a>
+                          <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                            <li>
+                              <a class="dropdown-item text-white" href="{{ route('run.index') }}">
+                                Index
+                              </a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item text-white" href="{{ route('run.create') }}">
+                                Add Data
+                              </a>
+                            </li>
+                          </ul>
                       </li>
                   </ul>
                   @endauth
