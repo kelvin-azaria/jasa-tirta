@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" /> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Styles -->
-    <link rel="icon" href="{{ asset('img/square-img-placeholder.jpg') }}">
+    <link rel="icon" href="{{ asset('img/logo-jasa-raharja.png') }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
   </head>
@@ -22,8 +22,8 @@
     <nav class="navbar navbar-expand-lg navbar-light top-navbar sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand text-capitalize fw-bold" href="#">
-          <img src="{{ asset('img/square-img-placeholder.jpg') }}" alt="" width="40" height="40" class="d-inline-block align-middle">
-          jasa raharja
+          <img src="{{ asset('img/logo-jasa-raharja.png') }}" alt="" width="40" height="40" class="d-inline-block align-middle">
+          <span class="ms-2">jasa raharja virtual olympic</span> 
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -34,17 +34,20 @@
               <a class="nav-link text-capitalize" href="{{ url('/') }}">home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-capitalize" href="{{ url('/#announcement') }}">pengumuman pemenang</a>
+              <a class="nav-link text-capitalize" href="{{ url('/#announcement') }}">pengumuman</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-capitalize" href="{{ route('rule.index') }}">peraturan</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link text-capitalize dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 leaderboard
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item text-capitalize" href="{{ route('leaderboard.index') }}">catur</a></li>
-                <li><a class="dropdown-item text-capitalize" href="#">bridge</a></li>
-                <li><a class="dropdown-item text-uppercase" href="#">pubg</a></li>
-                <li><a class="dropdown-item text-capitalize" href="#">bike & run</a></li>
+                <li><a class="dropdown-item text-uppercase" href="{{ route('leaderboard.index') }}">pubg</a></li>
+                <li><a class="dropdown-item text-capitalize" href="{{ route('leaderboard.index') }}">chess</a></li>
+                <li><a class="dropdown-item text-capitalize" href="{{ route('leaderboard.index') }}">bridge</a></li>
+                <li><a class="dropdown-item text-capitalize" href="{{ route('leaderboard.index') }}">bike & run</a></li>
               </ul>
             </li>
             <li class="nav-item">
@@ -82,10 +85,10 @@
       <div class="container py-4">
         <div class="row">
           <div class="col-auto align-self-center">
-            <img src="{{ asset('img/square-img-placeholder.jpg') }}" width="80" height="80" class="d-inline-block align-middle" alt="...">
+            <img src="{{ asset('img/logo-jasa-raharja.png') }}" width="80" height="80" class="d-inline-block align-middle" alt="...">
           </div>
           <div class="col align-self-center">
-            <h2 class="fw-bold text-capitalize">jasa raharja</h2>
+            <h2 class="fw-bold text-capitalize">jasa raharja virtual olympic</h2>
           </div>
         </div>
         <hr>
@@ -102,13 +105,13 @@
         <hr>
         <p>Untuk pertanyaan lebih lanjut dapat menghubungi :</p>
         <ul>
-          <li>Nama 1 : +62 - XXXXXXXXXXX</li>
-          <li>Nama 2 : +62 - XXXXXXXXXXX</li>
-          <li>Nama 3 : +62 - XXXXXXXXXXX</li>
+          <li>Donny : +62 - 812-3155-327</li>
+          <li>Dodo : +62 - 857-30004-3192</li>
+          <li>Yulia : +62 - 852-5577-8899</li>
         </ul>
       </div>
       <div class="container-fluid bg-primary text-white py-2">
-        <small>&copy; Copyright <script>document.write(new Date().getFullYear())</script> Example Copyright</small>
+        <small>&copy; Copyright <script>document.write(new Date().getFullYear())</script> Jasa Raharja Virtual Olympic</small>
       </div>
     </footer>
 

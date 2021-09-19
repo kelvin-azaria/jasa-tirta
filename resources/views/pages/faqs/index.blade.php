@@ -35,36 +35,41 @@
         <div class="accordion-item">
           <h3 class="accordion-header" id="panelsStayOpen-headingOne">
             <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-              Question #1 ?
+              Apa itu Konsep Lomba Virtual? 
             </button>
           </h3>
           <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
             <div class="accordion-body">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Peserta dapat melakukan kegiatan perlombaan lari dan sepeda dimana saja selama periode lomba berlangsung, tanpa harus berkumpul pada lokasi dan waktu yang sama, didukung dengan menggunakan aplikasi Activity Tracker <b>(STRAVA)</b>.
             </div>
           </div>
         </div>
         <div class="accordion-item">
           <h3 class="accordion-header" id="panelsStayOpen-headingTwo">
             <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-              Question #2 ?
+              Apa saja kategori virtual race yang diselenggarakan?
             </button>
           </h3>
           <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
             <div class="accordion-body">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <ul>
+                <li>PUBG</li>
+                <li>Chess</li>
+                <li>Bridge</li>
+                <li>Bike & Run</li>
+              </ul>
             </div>
           </div>
         </div>
         <div class="accordion-item">
           <h3 class="accordion-header" id="panelsStayOpen-headingThree">
             <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-              Question #3 ?
+              Apakah terdapat aplikasi Activity Tracker tertentu yang digunakan?
             </button>
           </h3>
           <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
             <div class="accordion-body">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Ya, peserta wajib menggunakan aplikasi Activity Tracker bernama “STRAVA” yang dapat diunduh melalui App Store dan Play Store untuk merekam jarak, jumlah aktifitas dan informasi lainnya.
             </div>
           </div>
         </div>

@@ -30,7 +30,7 @@
 @section('content')
   <section id="announcement">
     <div class="container">
-      <h1 class="text-capitalize fw-bold">pengumuman pemenang</h1>
+      <h1 class="text-capitalize fw-bold">pengumuman</h1>
     </div>
     <div class="container-fluid">
       <div class="row mb-4">
@@ -81,7 +81,7 @@
                 <img src="{{ asset('img/card-img-placeholder.jpg') }}" class="card-img" alt="...">
                 <div class="card-img-overlay">
                   <div class="text-center border h-100 align-content-center d-grid">
-                    <h3 class="card-title fw-bold text-white text-capitalize">chess</h3>
+                    <h3 class="card-title fw-bold text-white text-uppercase">pubg</h3>
                     <a href="#" class="btn btn-outline-light mx-auto fw-bold">Daftar Disini</a>
                   </div>
                 </div>
@@ -92,7 +92,7 @@
                 <img src="{{ asset('img/card-img-placeholder.jpg') }}" class="card-img" alt="...">
                 <div class="card-img-overlay">
                   <div class="text-center border h-100 align-content-center d-grid">
-                    <h3 class="card-title fw-bold text-white text-capitalize">bridge</h3>
+                    <h3 class="card-title fw-bold text-white text-capitalize">chess</h3>
                     <a href="#" class="btn btn-outline-light mx-auto fw-bold">Daftar Disini</a>
                   </div>
                 </div>
@@ -107,7 +107,7 @@
                 <img src="{{ asset('img/card-img-placeholder.jpg') }}" class="card-img" alt="...">
                 <div class="card-img-overlay">
                   <div class="text-center border h-100 align-content-center d-grid">
-                    <h3 class="card-title fw-bold text-white text-uppercase">pubg</h3>
+                    <h3 class="card-title fw-bold text-white text-capitalize">bridge</h3>
                     <a href="#" class="btn btn-outline-light mx-auto fw-bold">Daftar Disini</a>
                   </div>
                 </div>
@@ -166,7 +166,7 @@
           <h2  class="fw-bold text-capitalize">aturan umum</h2>
           <p>72 holes of individual stroke play for both men and women (four rounds scheduled over four consecutive days). Scores are cumulative from round to round. The athlete with the lowest aggregate score wins. In the event of a tie for first, second or third place, a play-off or multiple play-offs shall be conducted for the purpose of determining the gold, silver and bronze medal winners.</p>
           <h2 class="fw-bold text-capitalize">informasi tambahan</h2>
-          <p>More information about the competition can be found in the following documents:</p>
+          <p>Untuk informasi lebih lanjut, peserta dapat mengklik link yang tertera dibawah ini:</p>
           <ul>
             <li class="py-2"><a href="">Aturan 1.pdf</a></li>
             <li class="py-2"><a href="">Aturan 2.pdf</a></li>
