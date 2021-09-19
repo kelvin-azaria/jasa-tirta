@@ -21,9 +21,16 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light top-navbar sticky-top">
       <div class="container-fluid">
-        <a class="navbar-brand text-capitalize fw-bold" href="#">
-          <img src="{{ asset('img/logo-jasa-raharja.png') }}" alt="" width="40" height="40" class="d-inline-block align-middle">
-          <span class="ms-2">jasa raharja virtual olympic</span> 
+        <a class="navbar-brand text-capitalize fw-bold" href="{{ url('/') }}">
+          <div class="row">
+            <div class="col">
+              <img src="{{ asset('img/logo-jasa-raharja.png') }}" alt="" width="64" height="64" class="d-inline-block align-middle">
+            </div>
+            <div class="col align-self-center">
+              jasa raharja<br>
+              <span class=" text-muted fs-6">virtual olympic</span>
+            </div>
+          </div>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -87,8 +94,9 @@
           <div class="col-auto align-self-center">
             <img src="{{ asset('img/logo-jasa-raharja.png') }}" width="80" height="80" class="d-inline-block align-middle" alt="...">
           </div>
-          <div class="col align-self-center">
-            <h2 class="fw-bold text-capitalize">jasa raharja virtual olympic</h2>
+          <div class="col align-self-center fw-bold text-capitalize">
+            <span class=" f-montserrat fs-3 ">jasa raharja</span><br>
+            <span class=" text-muted fs-6">virtual olympic</span>
           </div>
         </div>
         <hr>
