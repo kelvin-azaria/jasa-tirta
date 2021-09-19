@@ -380,7 +380,7 @@
       </section>
       <hr>
       <section id="bikeRunRule">
-        <h1 class="fw-bold text-capitalize text-center">turnamen Bike & Run</h1>
+        <h1 class="fw-bold text-capitalize text-center">turnamen lari</h1>
         <h2 class="fw-bold text-capitalize">Syarat Umum Lomba Lari</h2>
         <ul>
           <li class="my-2">

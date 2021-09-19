@@ -23,69 +23,125 @@
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
   </head>
   <body >
-    <div id="app">
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
-        <div class="container">
-          <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Laravel') }}
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="{{ __('Toggle navigation') }}"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto"></ul>
-
-            <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto">
-              <!-- Authentication Links -->
-              <li class="nav-item dropdown">
-                @if (Auth::guard('admin')->check())
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    {{ Auth::guard('admin')->user()->name }} (Admin)
+    <div class="container-fluid overflow-hidden">
+      <div class="row vh-100 overflow-auto">
+          <div class="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 bg-dark d-flex sticky-top">
+              <div class="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start p-3">
+                  <a class="d-flex align-items-center pb-sm-3 mb-md-0 me-md-auto text-decoration-none text-capitalize fw-bold" href="{{ url('/') }}">
+                    <img src="{{ asset('img/logo-jasa-raharja-white.jpg') }}" alt="" width="48" height="48" class="d-inline-block align-middle rounded">
+                    <span class="d-none fs-5 f-montserrat d-sm-inline ms-3">jasa raharja <br> <span class="text-muted fs-6"> virtual olympic</span></span>
                   </a>
-                
-                  <ul
-                    class="dropdown-menu dropdown-menu-right"
-                    aria-labelledby="navbarDropdown"
-                  >
-                    <a
-                      class="dropdown-item"
-                      href="{{ route('logout') }}"
-                      onclick="event.preventDefault();
-                      document.getElementById('logout-form').submit();"
-                    >
-                      {{ __('Logout') }}
-                    </a>
-
-                    <form
-                      id="logout-form"
-                      action="{{ route('logout') }}"
-                      method="POST"
-                      class="d-none"
-                    >
-                      @csrf
-                    </form>
+                  @if (Auth::guard('admin')->check())
+                  <ul class="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" id="menu">
+                    <li>
+                      <a href="{{ route('admin.dashboard.index') }}" class="nav-link px-sm-0 px-2 text-white">
+                        <i class="fs-5 bi-house-door-fill"></i><span class="ms-2 d-none d-sm-inline text-capitalize">home</span> 
+                      </a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="nav-link dropdown-toggle px-sm-0 px-2 text-white" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle"></i><span class="ms-2 d-none d-sm-inline text-capitalize">peserta</span>
+                        </a>
+                        <ul class="dropdown-menu text-small shadow dropdown-menu-dark" aria-labelledby="dropdown">
+                            <li><a class="dropdown-item text-capitalize" href="#">List Peserta</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="nav-link dropdown-toggle px-sm-0 px-2 text-white" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-crosshairs"></i><span class="ms-2 d-none d-sm-inline text-capitalize">pubg</span>
+                        </a>
+                        <ul class="dropdown-menu text-small shadow dropdown-menu-dark" aria-labelledby="dropdown">
+                            <li><a class="dropdown-item text-capitalize" href="#">List Data</a></li>
+                            <li><a class="dropdown-item text-capitalize" href="#">Input Data</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="nav-link dropdown-toggle px-sm-0 px-2 text-white" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-chess"></i><span class="ms-2 d-none d-sm-inline text-capitalize">chess</span>
+                        </a>
+                        <ul class="dropdown-menu text-small shadow dropdown-menu-dark" aria-labelledby="dropdown">
+                          <li><a class="dropdown-item text-capitalize" href="#">List Data</a></li>
+                          <li><a class="dropdown-item text-capitalize" href="#">Input Data</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="nav-link dropdown-toggle px-sm-0 px-2 text-white" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-suit-club-fill"></i><span class="ms-2 d-none d-sm-inline text-capitalize">bridge</span>
+                        </a>
+                        <ul class="dropdown-menu text-small shadow dropdown-menu-dark" aria-labelledby="dropdown">
+                          <li><a class="dropdown-item text-capitalize" href="#">List Data</a></li>
+                          <li><a class="dropdown-item text-capitalize" href="#">Input Data</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="nav-link dropdown-toggle px-sm-0 px-2 text-white" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-running"></i><span class="ms-2 d-none d-sm-inline text-capitalize">run</span>
+                        </a>
+                        <ul class="dropdown-menu text-small shadow dropdown-menu-dark" aria-labelledby="dropdown">
+                          <li><a class="dropdown-item text-capitalize" href="#">List Data</a></li>
+                          <li><a class="dropdown-item text-capitalize" href="#">Input Data</a></li>
+                        </ul>
+                    </li>
                   </ul>
-                @endif
-              </li>
-            </ul>
+                  <div class="dropdown py-sm-4 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1">
+                      <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-fill me-1"></i>
+                        <span class="d-none d-sm-inline mx-1">
+                          {{ Auth::guard('admin')->user()->name }} (Admin)
+                        </span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                          <li>
+                            <a
+                              class="dropdown-item"
+                              href="{{ route('logout') }}"
+                              onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();"
+                            >
+                              {{ __('Logout') }}
+                            </a>
+          
+                            <form
+                              id="logout-form"
+                              action="{{ route('logout') }}"
+                              method="POST"
+                              class="d-none"
+                            >
+                              @csrf
+                            </form>
+                          </li>
+                        </ul>
+                  </div>
+                  @endif
+              </div>
           </div>
-        </div>
-      </nav>
-
-      <main class="py-4">@yield('content')</main>
-    </div>
-
+          <div class="col d-flex flex-column h-sm-100 bg-white ">
+              <main class="row overflow-auto">
+                  <div class="col px-4">
+                    @yield('content')
+                  </div>
+              </main>
+              <footer class="row bg-white text-white mt-auto">
+                  <div class="col p-3">
+                    <div class="row justify-content-between">
+                      <div class="col-auto fw-bold text-muted">
+                        Kontak Kami
+                      </div>
+                      <div class="col-auto">
+                        <a class="px-3 py-2" href=""><i class="fab fa-facebook"></i></a>
+                        <a class="px-3 py-2" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="px-3 py-2" href=""><i class="fab fa-instagram"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-100 bg-primary text-white pt-1 pb-2">
+                    <small>&copy; Copyright <script>document.write(new Date().getFullYear())</script> Jasa Raharja Virtual Olympic</small>
+                  </div>
+              </footer>
+          </div>
+      </div>
+  </div>
     @yield('script')
   </body>
 </html>

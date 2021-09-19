@@ -81,7 +81,7 @@
                 <img src="{{ asset('img/pendukung-lomba-PUBG.jpg') }}" class="card-img" alt="...">
                 <div class="card-img-overlay">
                   <div class="text-center h-100 align-content-end d-grid">
-                    <a href="#" class="btn btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
+                    <a href="{{ route('dashboard.index') }}" class="btn btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
                   </div>
                 </div>
               </div>
@@ -91,7 +91,7 @@
                 <img src="{{ asset('img/pendukung-lomba-chess.jpg') }}" class="card-img" alt="...">
                 <div class="card-img-overlay">
                   <div class="text-center h-100 align-content-end d-grid">
-                    <a href="#" class="btn btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
+                    <a href="{{ route('dashboard.index') }}" class="btn btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
                   </div>
                 </div>
               </div>
@@ -105,7 +105,7 @@
                 <img src="{{ asset('img/pendukung-lomba-bridge.jpg') }}" class="card-img" alt="...">
                 <div class="card-img-overlay">
                   <div class="text-center h-100 align-content-end d-grid">
-                    <a href="#" class="btn btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
+                    <a href="{{ route('dashboard.index') }}" class="btn btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
                   </div>
                 </div>
               </div>
@@ -115,7 +115,7 @@
                 <img src="{{ asset('img/pendukung-lomba-run.jpg') }}" class="card-img" alt="...">
                 <div class="card-img-overlay">
                   <div class="text-center h-100 align-content-end d-grid">
-                    <a href="#" class="btn btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
+                    <a href="{{ route('dashboard.index') }}" class="btn btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
                   </div>
                 </div>
               </div>
@@ -167,7 +167,7 @@
             <li class="py-2"><a href="{{ url('/rule/#pubgRule') }}">Aturan Lengkap Turnamen PUBG</a></li>
             <li class="py-2"><a href="{{ url('/rule/#chessRule') }}">Aturan Lengkap Turnamen Catur</a></li>
             <li class="py-2"><a href="{{ url('/rule/#bridgeRule') }}">Aturan Lengkap Turnamen Bridge</a></li>
-            <li class="py-2"><a href="{{ url('/rule/#bikeRunRule') }}">Aturan Lengkap Turnamen Bike & Run</a></li>
+            <li class="py-2"><a href="{{ url('/rule/#bikeRunRule') }}">Aturan Lengkap Turnamen Run</a></li>
           </ul>
         </div>
       </div>

@@ -40,4 +40,8 @@ Route::prefix('/admin')->name('admin.')->group(function(){
   });
 
   Route::resource('dashboard', AdminDashboardController::class)->only(['index']);
+  Route::get('/bridge', [AdminDashboardController::class, 'indexBridge'])->name('index.bridge');
+  Route::get('/bridge/edit', [AdminDashboardController::class, 'editBridge'])->name('edit.bridge');
+  Route::get('/bridge/create', [AdminDashboardController::class, 'createBridge'])->name('create.bridge');
+  Route::get('/bridge/show', [AdminDashboardController::class, 'showBridge'])->name('show.bridge');
 });

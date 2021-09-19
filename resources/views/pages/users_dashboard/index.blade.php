@@ -51,7 +51,55 @@
           </div>
         </div>
       </div>
-      
+      <div class="row">
+        <div class="col">
+          <h3 class="fw-bold text-white">Pilih Turnamen</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md pb-3">
+          <div class="card bg-transparent my-2 mx-2">
+            <img src="{{ asset('img/pendukung-lomba-PUBG.jpg') }}" class="card-img" alt="...">
+            <div class="card-img-overlay">
+              <div class="text-center h-100 align-content-end d-grid">
+                <a href="#" class="btn btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md pb-3">
+          <div class="card bg-transparent my-2 mx-2">
+            <img src="{{ asset('img/pendukung-lomba-chess.jpg') }}" class="card-img" alt="...">
+            <div class="card-img-overlay">
+              <div class="text-center h-100 align-content-end d-grid">
+                <a href="#" class="btn btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md pb-3">
+          <div class="card bg-transparent my-2 mx-2">
+            <img src="{{ asset('img/pendukung-lomba-bridge.jpg') }}" class="card-img" alt="...">
+            <div class="card-img-overlay">
+              <div class="text-center h-100 align-content-end d-grid">
+                <a href="#" class="btn btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md pb-3">
+          <div class="card bg-transparent my-2 mx-2">
+            <img src="{{ asset('img/pendukung-lomba-run.jpg') }}" class="card-img" alt="...">
+            <div class="card-img-overlay">
+              <div class="text-center h-100 align-content-end d-grid">
+                <a href="#" class="btn btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-md">
       <div class="card bg-lightdarkblue my-3">
