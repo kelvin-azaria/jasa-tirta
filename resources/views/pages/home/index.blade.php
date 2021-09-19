@@ -4,10 +4,10 @@
   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="{{ asset('img/banner-kegiatan@1200x-8.jpg') }}" class="d-block w-100" alt="...">
+        <img src="{{ asset('img/banner-kegiatan-1.jpg') }}" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="{{ asset('img/banner-placeholder.jpg') }}" class="d-block w-100" alt="...">
+        <img src="{{ asset('img/banner-kegiatan-2.jpg') }}" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
         <img src="{{ asset('img/banner-placeholder.jpg') }}" class="d-block w-100" alt="...">
@@ -70,30 +70,28 @@
     </div>
   </section>
   
-  <section id="registration" class=" py-3 bg-primary text-white">
+  <section id="registration" class=" py-3 bg-primary">
     <div class="container">
-      <h1 class="text-capitalize fw-bold text-center">segera daftarkan dirimu!</h1>
+      <h1 class="text-capitalize fw-bold text-center text-white">segera daftarkan dirimu!</h1>
       <div class="row">
         <div class="col-lg">
-          <div class="row pb-4">
-            <div class="col">
-              <div class="card bg-transparent text-dark ">
-                <img src="{{ asset('img/card-img-placeholder.jpg') }}" class="card-img" alt="...">
+          <div class="row">
+            <div class="col-sm">
+              <div class="card bg-transparent my-2 mx-2">
+                <img src="{{ asset('img/pendukung-lomba-PUBG.jpg') }}" class="card-img" alt="...">
                 <div class="card-img-overlay">
-                  <div class="text-center border h-100 align-content-center d-grid">
-                    <h3 class="card-title fw-bold text-white text-uppercase">pubg</h3>
-                    <a href="#" class="btn btn-outline-light mx-auto fw-bold">Daftar Disini</a>
+                  <div class="text-center h-100 align-content-end d-grid">
+                    <a href="#" class="btn btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col">
-              <div class="card bg-transparent text-dark ">
-                <img src="{{ asset('img/card-img-placeholder.jpg') }}" class="card-img" alt="...">
+            <div class="col-sm">
+              <div class="card bg-transparent my-2 mx-2">
+                <img src="{{ asset('img/pendukung-lomba-chess.jpg') }}" class="card-img" alt="...">
                 <div class="card-img-overlay">
-                  <div class="text-center border h-100 align-content-center d-grid">
-                    <h3 class="card-title fw-bold text-white text-capitalize">chess</h3>
-                    <a href="#" class="btn btn-outline-light mx-auto fw-bold">Daftar Disini</a>
+                  <div class="text-center h-100 align-content-end d-grid">
+                    <a href="#" class="btn btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
                   </div>
                 </div>
               </div>
@@ -101,25 +99,23 @@
           </div>
         </div>
         <div class="col-lg">
-          <div class="row pb-4">
-            <div class="col">
-              <div class="card bg-transparent text-dark ">
-                <img src="{{ asset('img/card-img-placeholder.jpg') }}" class="card-img" alt="...">
+          <div class="row">
+            <div class="col-sm">
+              <div class="card bg-transparent my-2 mx-2">
+                <img src="{{ asset('img/pendukung-lomba-bridge.jpg') }}" class="card-img" alt="...">
                 <div class="card-img-overlay">
-                  <div class="text-center border h-100 align-content-center d-grid">
-                    <h3 class="card-title fw-bold text-white text-capitalize">bridge</h3>
-                    <a href="#" class="btn btn-outline-light mx-auto fw-bold">Daftar Disini</a>
+                  <div class="text-center h-100 align-content-end d-grid">
+                    <a href="#" class="btn btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col">
-              <div class="card bg-transparent text-dark ">
-                <img src="{{ asset('img/card-img-placeholder.jpg') }}" class="card-img" alt="...">
+            <div class="col-sm">
+              <div class="card bg-transparent my-2 mx-2">
+                <img src="{{ asset('img/pendukung-lomba-run.jpg') }}" class="card-img" alt="...">
                 <div class="card-img-overlay">
-                  <div class="text-center border h-100 align-content-center d-grid">
-                    <h3  class="card-title fw-bold text-white text-capitalize">bike&run</h3>
-                    <a href="#" class="btn btn-outline-light mx-auto fw-bold">Daftar Disini</a>
+                  <div class="text-center h-100 align-content-end d-grid">
+                    <a href="#" class="btn btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
                   </div>
                 </div>
               </div>
@@ -191,21 +187,21 @@
       <div class="row">
         <div class="col-lg">
           <div class="row pb-4">
-            <div class="col">
+            <div class="col-sm">
               <div class="card">
                 <div class="card-body">
-                  <h3 class="card-title fw-bold">Langkah -1</h3>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <h3 class="card-title fw-bold text-capitalize lh-base">Unduh JRKU</h3>
+                  <h6 class="card-subtitle mb-2 text-capitalize text-muted">langkah pertama</h6>
+                  <p class="card-text">Unduh aplikasi JRKU dari Play Store atau App Store. Lalu, Isi data diri Anda pada aplikasi JRKU dan <strong>screenshoot bukti data diri Anda</strong></p>
                 </div>
               </div>
             </div>
-            <div class="col">
+            <div class="col-sm">
               <div class="card">
                 <div class="card-body">
-                  <h3 class="card-title fw-bold">Langkah -2</h3>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <h3 class="card-title fw-bold text-capitalize lh-base">Aplikasi JRKU</h3>
+                  <h6 class="card-subtitle mb-2 text-capitalize text-muted">langkah kedua</h6>
+                  <p class="card-text">Pilih [link/button] Olympic Jasa Raharja di aplikasi JRKU. Tunggu beberapa saat, Anda akan masuk ke laman : OlimpiadeJR2021. Pada laman OlimpiadeJR2021, Anda dapat memilih kategori lomba yang akan Anda ikuti.</p>
                 </div>
               </div>
             </div>
@@ -213,21 +209,21 @@
         </div>
         <div class="col-lg">
           <div class="row pb-4">
-            <div class="col">
+            <div class="col-sm">
               <div class="card">
                 <div class="card-body">
-                  <h3 class="card-title fw-bold">Langkah -3</h3>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <h3 class="card-title fw-bold text-capitalize lh-base">Registrasi</h3>
+                  <h6 class="card-subtitle mb-2 text-capitalize text-muted">langkah ketiga</h6>
+                  <p class="card-text">Sebelum ke proses selanjutnya diharapkan Anda melakukan registrasi terlebih dahulu untuk mengakses akun dashboard Anda, dan diperlukan screenshot bukti data diri JRKU Anda. Lalu pilih kembali salah satu lomba yang tersedia pada laman dashboard Anda</p>
                 </div>
               </div>
             </div>
-            <div class="col">
+            <div class="col-sm">
               <div class="card">
                 <div class="card-body">
-                  <h3 class="card-title fw-bold">Langkah -4</h3>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <h3 class="card-title fw-bold text-capitalize lh-base">Dihubungi oleh tim kami.</h3>
+                  <h6 class="card-subtitle mb-2 text-capitalize text-muted">langkah keempat</h6>
+                  <p class="card-text">Anda akan dihubungi lebih lanjut oleh tim kami untuk mengkonfirmasi keikutsertaan Anda.</p>
                 </div>
               </div>
             </div>

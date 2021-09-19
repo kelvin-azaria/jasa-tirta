@@ -39,23 +39,6 @@
                         <i class="fs-5 bi-house-door-fill"></i><span class="ms-2 d-none d-sm-inline text-capitalize">home</span> 
                       </a>
                     </li>
-                      {{-- <li class="dropdown">
-                          <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-sm-0 px-2 text-white">
-                              <i class="fs-5 bi-bicycle"></i><span class="ms-2 d-none d-sm-inline">Bike & Run</span> 
-                          </a>
-                          <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                            <li>
-                              <a class="dropdown-item text-white" href="{{ route('run.index') }}">
-                                Index
-                              </a>
-                            </li>
-                            <li>
-                              <a class="dropdown-item text-white" href="{{ route('run.create') }}">
-                                Add Data
-                              </a>
-                            </li>
-                          </ul>
-                      </li> --}}
                     <li class="dropdown">
                       <a href="#" class="nav-link dropdown-toggle px-sm-0 px-2 text-white" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fs-5 bi-bicycle"></i><span class="ms-2 d-none d-sm-inline text-capitalize">bike & run</span>
@@ -121,7 +104,7 @@
                     </div>
                   </div>
                   <div class="w-100 bg-primary text-white pt-1 pb-2">
-                    <small>&copy; Copyright <script>document.write(new Date().getFullYear())</script>Jasa Raharja Virtual Olympic</small>
+                    <small>&copy; Copyright <script>document.write(new Date().getFullYear())</script> Jasa Raharja Virtual Olympic</small>
                   </div>
               </footer>
           </div>

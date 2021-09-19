@@ -4,6 +4,40 @@
 @section('content')
   <section id="rule">
     <div class="container">
+      <section id="pubgRule">
+        <h1 class="fw-bold text-capitalize text-center">PUBG mobile tournament</h1>
+        <ul>
+          <li class="my-2">
+            Setiap team (peserta) terdiri dari 4 orang pemain dan 1 orang cadangan.
+          </li>
+          <li class="my-2">
+            Custom lobby akan dibuat oleh pihak panitia, dan peserta wajib untuk standby 10 menit di dalam lobby sebelum pertandingan dimulai.   
+          </li>
+          <li class="my-2">
+            Setiap perwakilan team (kapten team) wajib untuk melakukan Screenshoot pada akhir permainan (hasil akhir untuk rank dan total kill). Dan upload hasil screenshoot ke grup Whatsapp yang sudah di siapkan oleh pihak panitia.
+          </li>
+          <li class="my-2">
+            Apabila team yang terdaftar lebih dari 16 team, maka pada babak penyisihan akan dibagi menjadi 2 grup, yaitu Grup A dan B
+            <div class="row justify-content-md-center my-3">
+              <div class="col-6">
+                <img src="{{ asset('img/pubg-team-table.png') }}" class="rounded w-100" alt="...">
+              </div>
+            </div>
+          </li>
+          <li class="my-2">
+            Setiap grup akan bermain sebanyak 2x (2 map) untuk babak penyisihan dan 3x untuk babak semifinal dan final.
+          </li>
+          <li class="my-2">
+            10 team dengan total nilai point terendah dari masing-masing grup akan di eliminasi dan tidak dapat meneruskan pertandingan ke babak selanjutnya.
+          </li>
+          <li class="my-2">
+            Team yang tersisa akan menjadi 1 grup pada babak semifinal dan final. Dan akan bermain sebanyak 3x (3map).
+          </li>
+          <li class="my-2">
+            3 team dengan total nilai point tertinggi akan menjadi pemenang dari pertandingan.
+          </li>
+        </ul>
+      </section>
       <hr>
       <section id="chessRule">
         <h1 class="fw-bold text-capitalize text-center">turnamen catur online HUT jasa raharja</h1>
