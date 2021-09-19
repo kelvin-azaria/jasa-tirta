@@ -21,7 +21,7 @@ class CreateActivitiesTables extends Migration
             $table->string('activity_date');
             $table->string('activity_length');
             $table->string('activity_duration');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

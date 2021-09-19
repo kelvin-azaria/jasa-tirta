@@ -44,8 +44,8 @@
                             <i class="fs-5 bi-bicycle"></i><span class="ms-2 d-none d-sm-inline text-capitalize">bike & run</span>
                         </a>
                         <ul class="dropdown-menu text-small shadow dropdown-menu-dark" aria-labelledby="dropdown">
-                            <li><a class="dropdown-item text-capitalize" href="{{ route('run.index') }}">data bike & run</a></li>
-                            <li><a class="dropdown-item text-capitalize" href="{{ route('run.create') }}">input data</a></li>
+                            <li><a class="dropdown-item text-capitalize" href="{{ route('activity.index') }}">Data Anda</a></li>
+                            <li><a class="dropdown-item text-capitalize" href="{{ route('activity.create') }}">Submit Data</a></li>
                         </ul>
                     </li>
                   </ul>

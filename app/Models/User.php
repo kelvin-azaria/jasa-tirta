@@ -20,6 +20,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'phone',
+        'gender',
         'birth_date',
         'work_unit',
         'npp',
@@ -52,8 +53,8 @@ class User extends Authenticatable
         return Storage::url($this->jrku_image_path);
     }
 
-    public function activities()
+    public function activity()
     {
-        return $this->hasMany(Activity::class);
+        return $this->hasOne(Activity::class);
     }
 }
