@@ -56,7 +56,7 @@ class ActivityController extends Controller
         
     }
 
-    public function store(Request $request, $activity_id)
+    public function store(Request $request)
     {
         if ($request->type === null) {
             return redirect()->back()
@@ -71,6 +71,7 @@ class ActivityController extends Controller
             $user->refresh_token = $refresh->refresh_token;
             $user->save();
         }
+        $activity_id = $request->activity_id;
 
         $activity = Strava::activity($user->access_token, $activity_id);
 

@@ -33,7 +33,6 @@
             <th>Jarak Ditempuh</th>
             <th>Durasi Aktifitas</th>
             <th>Link Strava</th>
-            <th></th>
           </tr>
           @foreach ($activities as $a)
             <tr>
@@ -45,16 +44,6 @@
               <td>
                 <a href="https://www.strava.com/activities/{{ $a->strava_activity_id }}">
                   https://www.strava.com/activities/{{ $a->strava_activity_id }}
-                </a>
-              </td>
-              <td>
-                <a>
-                  <form method="POST" class="d-inline" class="btn"
-                        action="{{ route('activity.destroy',['activity' => $a->id]) }}">
-                    @csrf
-                    @method('DELETE')
-                    <input type="submit" class="btn btn-danger" value="Hapus Data">
-                  </form>
                 </a>
               </td>
             </tr>

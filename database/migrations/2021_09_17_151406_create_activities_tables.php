@@ -33,6 +33,6 @@ class CreateActivitiesTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('activities_tables');
+        Schema::dropIfExists('activities');
     }
 }

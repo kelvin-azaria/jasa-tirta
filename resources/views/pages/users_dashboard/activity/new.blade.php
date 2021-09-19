@@ -85,18 +85,21 @@
                   <td>{{ ($a->distance)/1000 }} km</td>
                   <td>{{ ($a->elapsed_time)/3600 }} jam</td>
                   <td>
-                    <a>
-                      <form method="POST" class="d-inline" class="btn" id="activityForm"
-                            action="{{ route('activity.store',['activity' => $a->id]) }}">
-                        @csrf
-                        <input type="submit" class="btn btn-success" value="Upload Data">
-                      </form>
-                    </a>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="activity_id" id="radioActivity{{ $a->id }}" value="{{ $a->id }}" form="activityForm">
+                    </div>
                   </td>
                 </tr>
               @endforeach
             @endif
           </table>
+          <a>
+            <form method="POST" class="d-inline" class="btn" id="activityForm"
+                  action="{{ route('activity.store') }}">
+              @csrf
+              <input type="submit" class="btn btn-success" value="Upload Data">
+            </form>
+          </a>
         </div>
       </div>
     </div>

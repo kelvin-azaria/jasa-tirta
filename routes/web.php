@@ -20,8 +20,7 @@ Route::resource('leaderboard', LeaderboardController::class)->only(['index']);
 Route::resource('dashboard', UserDashboardController::class)->only(['index','show']);
 Route::get('/strava_authorize', [UserDashboardController::class, 'stravaAuth'])->name('user.strava_auth');
 
-Route::resource('activity', ActivityController::class)->only(['index','create','destroy']);
-Route::post('/activity/{activity}', [ActivityController::class, 'store'])->name('activity.store');
+Route::resource('activity', ActivityController::class)->only(['index','create','store','destroy']);
 
 Route::get('/strava_get_token', [ActivityController::class, 'getToken'])->name('strava.getToken');
 
