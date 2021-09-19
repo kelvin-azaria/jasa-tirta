@@ -32,18 +32,11 @@
     </div>
     <div class="col-lg-6 align-self-center text-white p-3">
       <h1 class="text-capitalize text-white fw-bold">{{ __('Register') }}</h1>
-      @error('image')
+      		@error('image')
 						<span class="invalid-feedback" role="alert">
 							<strong>{{ $message }}</strong>
 						</span>
 					@enderror
-					@if (\Session::has('success'))
-						<div class="alert alert-success">
-							<ul>
-								<li>{!! \Session::get('success') !!}</li>
-							</ul>
-						</div>
-					@endif
           <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
             @csrf
 						{{-- NAME FIELD --}}
@@ -111,6 +104,39 @@
 										<strong>{{ $message }}</strong>
 									</span>
                 @enderror
+              </div>
+            </div>
+            <div class="form-group row my-3">
+              <label for="phone" class="col-md-4 col-form-label text-md-right">
+								Jenis Kelamin
+							</label>
+              <div class="col-md-6">
+                {{-- <input 
+									id="phone" 
+									type="number" 
+									class="form-control @error('phone') is-invalid @enderror" 
+									name="phone" 
+									value="{{ old('phone') }}" 
+									required 
+									autocomplete="phone"
+								>
+                @error('phone')
+									<span class="invalid-feedback" role="alert">
+										<strong>{{ $message }}</strong>
+									</span>
+                @enderror --}}
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="gender" id="radioMale" value="L">
+									<label class="form-check-label" for="radioMale">
+										Laki-laki
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="gender" id="radioFemale" value="P">
+									<label class="form-check-label" for="radioFemale">
+										Perempuan
+									</label>
+								</div>
               </div>
             </div>
 						{{-- BIRTH DATE FIELD --}}

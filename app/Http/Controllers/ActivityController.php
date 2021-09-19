@@ -9,7 +9,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class RunController extends Controller
+class ActivityController extends Controller
 {
     public function __construct()
     {
@@ -21,7 +21,7 @@ class RunController extends Controller
         $user = Auth::user();
         $activities = Activity::all();
         $total_distance = $activities->sum('activity_length');
-        return view('pages.users_dashboard.runs.index',[
+        return view('pages.users_dashboard.activity.index',[
             'user' => $user, 
             'activities' => $activities,
             'total_distance' => $total_distance
@@ -31,18 +31,38 @@ class RunController extends Controller
     public function create()
     {
         $user = User::find(Auth::id());
-        if ($user->access_token !== null) {
-            $activities = Strava::activities($user->access_token);
-            return view('pages.users_dashboard.runs.new',['user' => $user, 'activities' => $activities]);
-        }
+        if ($user->activity()->exists()) {
+            return redirect()->back()
+                ->with('warning','Anda sudah pernah menambahkan data');
+        } else {
+            if ($user->access_token !== null) {
+                if(strtotime(Carbon::now()) > $user->token_expires_at) {
+                    $refresh = Strava::refreshToken($user->refresh_token);
+                    $user->access_token = $refresh->access_token;
+                    $user->refresh_token = $refresh->refresh_token;
+                    $user->save();
+                }
+            
+                //get last 3 items from strava
+                $a = Strava::activities($user->access_token);
+                $activities = array_slice($a, -3, 3, true);
 
-        $user = Auth::user();
-        return view('pages.users_dashboard.runs.new',['user' => $user]);
+                return view('pages.users_dashboard.activity.new',['user' => $user, 'activities' => $activities]);
+            }
+    
+            $user = Auth::user();
+            return view('pages.users_dashboard.activity.new',['user' => $user]);
+        }
         
     }
 
-    public function store($activity_id)
+    public function store(Request $request, $activity_id)
     {
+        if ($request->type === null) {
+            return redirect()->back()
+                ->with('warning','Harap pilih kategori lomba yang ingin diikuti');
+        }
+
         $user = User::find(Auth::id());
 
         if(strtotime(Carbon::now()) > $user->token_expires_at) {
@@ -55,19 +75,19 @@ class RunController extends Controller
         $activity = Strava::activity($user->access_token, $activity_id);
 
         if (Activity::where('strava_activity_id', $activity_id)->exists()) {
-            return redirect()->route('run.create')
-            ->with('duplicate','Data sudah pernah diunggah');
+            return redirect()->route('activity.create')
+            ->with('warning','Data sudah pernah diunggah');
         } else {
             Activity::create([
                 'user_id' => $user->id,
                 'strava_activity_id' => $activity_id,
                 'activity_name' => $activity->name,
-                'activity_type' => $activity->type,
+                'activity_type' => $request->type,
                 'activity_date' => $activity->start_date_local,
                 'activity_length' => $activity->distance,
                 'activity_duration' => $activity->elapsed_time,
             ]);
-            return redirect()->route('run.index')
+            return redirect()->route('activity.index')
                 ->with('success','Berhasil mengunggah data');
         }
     }
@@ -98,9 +118,9 @@ class RunController extends Controller
             $user->token_expires_at = $token->expires_at;
             $user->save();
 
-            return redirect()->route('run.create');
+            return redirect()->route('activity.create');
         } else {
-            return redirect()->route('run.create')
+            return redirect()->route('activity.create')
                 ->withErrors(['auth' => ['Gagal melakukan otorisasi dengan Strava']]);
         }
     }
