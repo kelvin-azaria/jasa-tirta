@@ -26,6 +26,7 @@
       @endif
       <div class="card bg-light my-3">
         <div class="card-body">
+          <div class="table-responsive">
           <table class="table table-hover">
             <thead>
               <tr>
@@ -64,6 +65,7 @@
               @endforeach
             </tbody>
           </table>
+        </div>
         {{ $bridges->links('pagination::bootstrap-4') }}
         </div>
       </div>
