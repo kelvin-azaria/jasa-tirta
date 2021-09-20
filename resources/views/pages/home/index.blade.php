@@ -165,7 +165,8 @@
             <li class="py-2"><a href="{{ url('/rule/#pubgRule') }}">Aturan Lengkap Turnamen PUBG</a></li>
             <li class="py-2"><a href="{{ url('/rule/#chessRule') }}">Aturan Lengkap Turnamen Catur</a></li>
             <li class="py-2"><a href="{{ url('/rule/#bridgeRule') }}">Aturan Lengkap Turnamen Bridge</a></li>
-            <li class="py-2"><a href="{{ url('/rule/#bikeRunRule') }}">Aturan Lengkap Turnamen Run</a></li>
+            <li class="py-2"><a href="{{ url('/rule/#bikeRule') }}">Aturan Lengkap Turnamen Sepeda</a></li>
+            <li class="py-2"><a href="{{ url('/rule/#runRule') }}">Aturan Lengkap Turnamen Lari</a></li>
           </ul>
         </div>
       </div>
@@ -241,14 +242,14 @@
               <img src="{{ asset('img/hadiah-lomba-pubg.jpg') }}" class="rounded w-100" alt="...">
             </div>
             <div class="col">
-              <img src="{{ asset('img/square-img-placeholder.jpg') }}" class="rounded w-100" alt="...">
+              <img src="{{ asset('img/hadiah-lomba-chess.jpg') }}" class="rounded w-100" alt="...">
             </div>
           </div>
         </div>
         <div class="col-lg">
           <div class="row pb-4">
             <div class="col">
-              <img src="{{ asset('img/square-img-placeholder.jpg') }}" class="rounded w-100" alt="...">
+              <img src="{{ asset('img/hadiah-lomba-bridge.jpg') }}" class="rounded w-100" alt="...">
             </div>
             <div class="col">
               <img src="{{ asset('img/hadiah-lomba-run-dan-bike.jpg') }}" class="rounded w-100" alt="...">

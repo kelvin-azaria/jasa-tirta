@@ -377,7 +377,70 @@
         </ul>
       </section>
       <hr>
-      <section id="bikeRunRule">
+      <section id="bikeRule">
+        <h1 class="fw-bold text-capitalize text-center">turnamen Sepeda</h1>
+        <div class="row">
+          <div class="col">
+            <img src="{{ asset('img/bike-rule.jpg') }}" alt="">
+          </div>
+        </div>
+        <h2 class="fw-bold text-capitalize">Peraturan Best Performance Ride 100 KM :</h2>
+        <ul>
+          <li class="my-2">
+            Penilaian Best Performance adalah waktu tercepat menyelesaikan jarak yang telah ditentukan yaitu 100 KM terhitung saat lomba dimulai tanggal…pukul 00.00 WIB dan berakhir pada …pukul 23.59 WIB (2 hari)
+          </li>
+          <li class="my-2">
+            Peserta kategori Best Performance Ride 100 KM hanya diperbolehkan menyelesaikan 100 KM maksimal 2 hari workout di tanggal … pukul 00.00 WIB dan berakhir pada …pukul 23.59 WIB. Jika lebih dari 2 (dua) workout maka peserta tidak termasuk nominasi Best Performance.   
+          </li>
+          <li class="my-2">
+            Peserta yang ingin mengikuti kategori Best Performance Ride 100 KM hanya diperbolehkan 2 X upload workout di website paling lambat tanggal …pukul 23.59 WIB, dan jika peserta ingin mencoba mengikuti kategori KM terbanyak bisa memulai workout dan pelaporannya di tanggal … setelah kategori Best Performance ditutup.
+          </li>
+          <li class="my-2">
+            Peserta yang sudah memenuhi syarat selanjutnya akan dinilai waktu yang paling cepat berdasarkan elapsed time hasil workout yang dilaporkan peserta di STRAVA.
+          </li>
+          <li class="my-2">
+            Pemenang ditentukan berdasarkan waktu bersepeda tercepat (elapsed time) bukan berdasarkan upload tercepat.
+          </li>
+          <li class="my-2">
+            Yang menjadi acuan panitia adalah hasil workout yang sudah di upload dan dilaporkan di web resmi terhitung tanggal … pukul 00.00 WIB dan berakhir pada …pukul 23.59 WIB.
+          </li class="my-2">
+          <li class="my-2">
+            Peserta diharapkan segera melaporkan hasil workoutnya ke website yang telah ditentukan. Segala kesalahan selama proses pelaporan seperti tidak stabilnya jaringan internet sehingga peserta tidak dapat melaporkan di waktu yang telah ditentukan menjadi tanggung jawab masing-masing  peserta.
+          </li>
+          <li class="my-2">
+            Peserta wajib menyelesaikan ride 100 KM batas maksimal kelebihan jarak adalah 1 KM dari 100 KM, jika ada kelebihan jarak lebih dari 101 KM maka peserta tidak termasuk nominasi Best Performance kategori ride.
+          </li>
+          <li class="my-2">
+            Kelebihan jarak jika mempengaruhi waktu tercepat peserta maka menjadi tanggung jawab masing-masing peserta.
+          </li>
+          <li class="my-2">
+            Setiap peserta wajib mengisi seluruh form pelaporan yang disediakan seperti jarak tempuh, waktu dan link STRAVA sesuai hasil yang diperoleh.
+          </li>
+          <li class="my-2">
+            Waktu yang menjadi acuan perhitungan panitia adalah elapsed time (durasi dari saat peserta menekan tombol start di perangkat atau ponsel hingga saat peserta menyelesaikan aktifitas termasuk saat berhenti di lampu lalu lintas, istirahat, ke kamar mandi, berfoto mempause workout dll)
+          </li>
+          <li class="my-2">
+            Nama peserta yang didaftarkan harus sesuai dengan nama peserta pada NIK
+          </li>
+          <li class="my-2">
+            Peserta hanya bisa memenangkan 1 kategori lomba Best Performance 100 KM atau kilometer terbanyak, dan jika ada peserta yang masuk nominasi juara di 2 kategori maka salah satu kategori akan gugur dan diambil nominasi hadiah tertinggi diantara 2 kategori ini.
+          </li>
+          <li class="my-2">
+            Penilaian calon Pemenang/ Potential Winner hanya dilakukan kepada peserta sepeda yang dilakukan di outdoor dst. Bagi peserta lain yang menggunakan sepeda indoor, sepeda elektrik hanya akan dinilai sebagai finisher dan tidak masuk dalam penilaian calon juara.
+          </li>
+          <li class="my-2">
+            Calon pemenang akan diverifikasi terlebih dahulu oleh panitia melalui wawancara untuk menghindari kecurangan.
+          </li>
+          <li class="my-2">
+            Setiap peserta wajib untuk memenuhi protokol kesehatan dan peraturan PPKM yang berlaku didaerah masing-masing peserta. Jika terjadi pelanggaran peraturan PPKM oleh peserta maka menjadi tanggung jawab masing-masing.
+          </li>
+          <li class="my-2">
+            Keputusan panitia tidak dapat diganggu gugat dan bersifat mutlak.
+          </li>
+        </ul>
+      </section>
+      <hr>
+      <section id="runRule">
         <h1 class="fw-bold text-capitalize text-center">turnamen lari</h1>
         <h2 class="fw-bold text-capitalize">Syarat Umum Lomba Lari</h2>
         <ul>
