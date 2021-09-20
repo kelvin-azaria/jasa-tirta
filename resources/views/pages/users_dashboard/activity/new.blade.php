@@ -60,13 +60,21 @@
     <div class="col-md">
       <div class="card bg-lightdarkblue my-3">
         <div class="card-body text-white">
-          <h5 class="card-title">
-            Pilih data yang akan di submit
-            <a href="{{ route('user.strava_auth') }}" class="btn btn-sm btn-warning float-end">
-              Ambil Data Strava
-            </a>
-          </h5>
+          <div class="row">
+            <div class="col-sm">
+              <h5 class="card-title">
+                Pilih data yang akan di submit
+                
+              </h5>
+            </div>
+            <div class="col-sm">
+              <a href="{{ route('user.strava_auth') }}" class="btn btn-sm btn-warning float-end w-100">
+                Ambil Data Strava
+              </a>
+            </div>
+          </div>
           <hr>
+          <div class="table-responsive">
           <table class="table text-white-50 table-borderless">
             <tr>
               <th>Nama Aktifitas</th>
@@ -93,6 +101,7 @@
               @endforeach
             @endif
           </table>
+        </div>
           <a>
             <form method="POST" class="d-inline" class="btn" id="activityForm"
                   action="{{ route('activity.store') }}">

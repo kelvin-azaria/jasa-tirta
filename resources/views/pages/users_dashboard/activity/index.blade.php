@@ -25,6 +25,7 @@
           <h4>Total Jarak Aktifitas</h3>
           <h4>{{ $total_distance/1000 }} km</h3>
         </div>
+        <div class="table-responsive">
         <table  class="table text-white-50 table-borderless table-responsive">
           <tr>
             <th>Nama Aktifitas</th>
@@ -49,6 +50,7 @@
             </tr>
           @endforeach
         </table>
+        </div>
       </div>
     </div>
   </div>

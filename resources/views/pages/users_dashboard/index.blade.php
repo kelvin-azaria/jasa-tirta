@@ -57,7 +57,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md pb-3">
+        <div class="col-lg pb-3">
           <div class="card bg-transparent my-2 mx-2">
             <img src="{{ asset('img/pendukung-lomba-PUBG.jpg') }}" class="card-img" alt="...">
             <div class="card-img-overlay">
@@ -67,7 +67,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md pb-3">
+        <div class="col-lg pb-3">
           <div class="card bg-transparent my-2 mx-2">
             <img src="{{ asset('img/pendukung-lomba-chess.jpg') }}" class="card-img" alt="...">
             <div class="card-img-overlay">
@@ -77,7 +77,9 @@
             </div>
           </div>
         </div>
-        <div class="col-md pb-3">
+      </div>
+      <div class="row">
+        <div class="col-lg pb-3">
           <div class="card bg-transparent my-2 mx-2">
             <img src="{{ asset('img/pendukung-lomba-bridge.jpg') }}" class="card-img" alt="...">
             <div class="card-img-overlay">
@@ -89,7 +91,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md pb-3">
+        <div class="col-lg pb-3">
           <div class="card bg-transparent my-2 mx-2">
             <img src="{{ asset('img/pendukung-lomba-bike.jpg') }}" class="card-img" alt="...">
             <div class="card-img-overlay">
@@ -99,7 +101,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md pb-3">
+        <div class="col-lg pb-3">
           <div class="card bg-transparent my-2 mx-2">
             <img src="{{ asset('img/pendukung-lomba-run.jpg') }}" class="card-img" alt="...">
             <div class="card-img-overlay">
