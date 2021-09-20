@@ -379,9 +379,9 @@
       <hr>
       <section id="bikeRule">
         <h1 class="fw-bold text-capitalize text-center">turnamen Sepeda</h1>
-        <div class="row">
-          <div class="col">
-            <img src="{{ asset('img/bike-rule.jpg') }}" alt="">
+        <div class="row justify-content-md-center">
+          <div class="col-8">
+            <img class="w-100 rounded" src="{{ asset('img/bike-rule.png') }}" alt="">
           </div>
         </div>
         <h2 class="fw-bold text-capitalize">Peraturan Best Performance Ride 100 KM :</h2>
