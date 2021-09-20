@@ -49,13 +49,13 @@
             Free Pendaftaran   
           </li>
           <li class="my-2">
-            Tanggal pelaksanaan
+            Tanggal pelaksanaan: 25 September 2021
             <ul>
               <li class="my-2">
                 Acara Pembukaan:
               </li>
               <li class="my-2">
-                Technical Meeting:
+                Technical Meeting: 23 September 2021 
               </li>
               <li class="my-2">
                 Trial 1:
@@ -311,7 +311,7 @@
             Pertandingan Bridge Online akan menggunakan patform Bridge Base Online (www.bridgebase.com) sebagai media pertandingan.
           </li>
           <li class="my-2">
-            Setiap peserta wajib memiliki Nama Pengguna (username) BBO dan hanya berhak mendaftarkan 1 (satu) Nama Pengguna BBO.
+            Setiap peserta wajib memiliki Nama Pengguna (username) BBO dan hanya berhak mendaftarkan 1 (satu) Nama Pengguna BBO. Cara membuat akun BBO dapat dilihat di : <a href="https://www.ebu.co.uk/ebuscore-wiki/bboregistering">https://www.ebu.co.uk/ebuscore-wiki/bboregistering </a> 
           </li>
           <li class="my-2">
             Pendaftaran Peserta dilakukan melalui GoogleForm dan akan diverifikasi oleh Panitia Pelaksana untuk keabsahan peserta.
@@ -366,7 +366,7 @@
         <h2 class="fw-bold text-capitalize">Jadwal</h2>
         <ul>
           <li class="my-2">
-            PERTANDINGAN (tgl 25 ATAU 26 September 2021).
+            PERTANDINGAN (tgl 26 September 2021).
           </li>
           <li class="my-2">
             09:30-12:30 Babak Penyisihan berupa Pertandingan Pasangan.
@@ -375,8 +375,6 @@
             15:00-18:00 Babak Final berupa Pertandingan Perorangan.
           </li>
         </ul>
-        <p class="text-muted text-end">Jakarta, 13 September 2021,<br>
-          Pelaksana Pertandingan: John Tumewu</p>
       </section>
       <hr>
       <section id="bikeRunRule">
