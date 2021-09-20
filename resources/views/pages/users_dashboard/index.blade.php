@@ -77,11 +77,21 @@
             </div>
           </div>
         </div>
+        <div class="col-md pb-3">
+          <div class="card bg-transparent my-2 mx-2">
+            <img src="{{ asset('img/pendukung-lomba-bridge.jpg') }}" class="card-img" alt="...">
+            <div class="card-img-overlay">
+              <div class="text-center h-100 align-content-end d-grid">
+                <a href="#" class="btn btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="row">
         <div class="col-md pb-3">
           <div class="card bg-transparent my-2 mx-2">
-            <img src="{{ asset('img/pendukung-lomba-bridge.jpg') }}" class="card-img" alt="...">
+            <img src="{{ asset('img/pendukung-lomba-bike.jpg') }}" class="card-img" alt="...">
             <div class="card-img-overlay">
               <div class="text-center h-100 align-content-end d-grid">
                 <a href="#" class="btn btn-warning mx-auto fw-bold text-white">Daftar Disini</a>

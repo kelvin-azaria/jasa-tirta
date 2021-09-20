@@ -6,8 +6,29 @@ use Illuminate\Http\Request;
 
 class LeaderboardController extends Controller
 {
-    public function index()
+    public function indexPubg()
     {
-        return view('pages.leaderboards.index');
+      $status=0;
+      return view('pages.leaderboards.index',compact('status'));
+    }
+    public function indexChess()
+    {
+      $status=1;
+      return view('pages.leaderboards.index',compact('status'));
+    }
+    public function indexBridge()
+    {
+      $status=2;
+      return view('pages.leaderboards.index',compact('status'));
+    }
+    public function indexBike()
+    {
+      $status=3;
+      return view('pages.leaderboards.index',compact('status'));
+    }
+    public function indexRun()
+    {
+      $status=4;
+      return view('pages.leaderboards.index',compact('status'));
     }
 }

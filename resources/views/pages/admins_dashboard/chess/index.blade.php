@@ -4,7 +4,7 @@
   
   <div class="row">
     <div class="col-sm">
-      <h1 class="fw-bold">Turnamen Catir</h1>
+      <h1 class="fw-bold">Turnamen Catur</h1>
     </div>
     <div class="col-sm-auto align-self-center">
       <a href="{{ route('admin.create.bridge') }}" role="button" class="btn btn-primary fw-bold text-white"><i class="bi bi-plus"></i> Tambah Peserta</a>

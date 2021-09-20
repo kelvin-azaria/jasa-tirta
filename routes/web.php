@@ -27,7 +27,13 @@ Route::get('/strava_get_token', [ActivityController::class, 'getToken'])->name('
 Auth::routes([
   'verify' => false,
 ]);
-
+Route::prefix('leaderboards')-> name('leaderboards.')->group(function(){
+  Route::get('/pubg', [LeaderboardController::class, 'indexPubg'])-> name('pubg');
+  Route::get('/chess', [LeaderboardController::class, 'indexChess'])-> name('chess');
+  Route::get('/bridge', [LeaderboardController::class, 'indexBridge'])-> name('bridge');
+  Route::get('/run', [LeaderboardController::class, 'indexRun'])-> name('run');
+  Route::get('/bike', [LeaderboardController::class, 'indexBike'])-> name('bike');
+});
 //ADMIN AUTH ROUTES
 Route::prefix('/admin')->name('admin.')->group(function(){
   Route::namespace('Auth')->group(function(){

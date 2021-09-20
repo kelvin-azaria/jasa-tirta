@@ -9,12 +9,6 @@
       <div class="carousel-item">
         <img src="{{ asset('img/banner-kegiatan-2.jpg') }}" class="d-block w-100" alt="...">
       </div>
-      <div class="carousel-item">
-        <img src="{{ asset('img/banner-placeholder.jpg') }}" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="{{ asset('img/banner-placeholder.jpg') }}" class="d-block w-100" alt="...">
-      </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -40,19 +34,15 @@
           <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              {{-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button> --}}
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="{{ asset('img/opening@1200x-8.jpg') }}" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
                 <img src="{{ asset('img/poster@1200x-8.jpg') }}" class="d-block w-100" alt="...">
               </div>
-              <div class="carousel-item">
+              {{-- <div class="carousel-item">
                 <img src="{{ asset('img/closing@1200x-8.jpg') }}" class="d-block w-100" alt="...">
-              </div>
+              </div> --}}
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -96,13 +86,25 @@
                 </div>
               </div>
             </div>
+            <div class="col-sm">
+              <div class="card bg-transparent my-2 mx-2">
+                <img src="{{ asset('img/pendukung-lomba-bridge.jpg') }}" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                  <div class="text-center h-100 align-content-end d-grid">
+                    <a href="{{ route('dashboard.index') }}" class="btn btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+      <div class="row">
         <div class="col-lg">
           <div class="row">
             <div class="col-sm">
               <div class="card bg-transparent my-2 mx-2">
-                <img src="{{ asset('img/pendukung-lomba-bridge.jpg') }}" class="card-img" alt="...">
+                <img src="{{ asset('img/pendukung-lomba-bike.jpg') }}" class="card-img" alt="...">
                 <div class="card-img-overlay">
                   <div class="text-center h-100 align-content-end d-grid">
                     <a href="{{ route('dashboard.index') }}" class="btn btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
@@ -134,18 +136,14 @@
           <div id="carouselExampleIndicators2" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1" aria-label="Slide 2"></button>\
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="{{ asset('img/bridge@1200x-8.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('img/informasi-lomba-opening-ceremony.jpg') }}" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="{{ asset('img/square-img-placeholder.jpg') }}" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="{{ asset('img/square-img-placeholder.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('img/informasi-lomba-closing-ceremony.jpg') }}" class="d-block w-100" alt="...">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
@@ -240,7 +238,7 @@
         <div class="col-lg">
           <div class="row pb-4">
             <div class="col">
-              <img src="{{ asset('img/square-img-placeholder.jpg') }}" class="rounded w-100" alt="...">
+              <img src="{{ asset('img/hadiah-lomba-pubg.jpg') }}" class="rounded w-100" alt="...">
             </div>
             <div class="col">
               <img src="{{ asset('img/square-img-placeholder.jpg') }}" class="rounded w-100" alt="...">
@@ -253,7 +251,7 @@
               <img src="{{ asset('img/square-img-placeholder.jpg') }}" class="rounded w-100" alt="...">
             </div>
             <div class="col">
-              <img src="{{ asset('img/square-img-placeholder.jpg') }}" class="rounded w-100" alt="...">
+              <img src="{{ asset('img/hadiah-lomba-run-dan-bike.jpg') }}" class="rounded w-100" alt="...">
             </div>
           </div>
         </div>

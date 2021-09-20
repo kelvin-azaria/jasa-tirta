@@ -12,7 +12,7 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Styles -->
-    <link rel="icon" href="{{ asset('img/logo-jasa-raharja.png') }}">
+    <link rel="icon" href="{{ asset('img/logo.png') }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
   </head>
@@ -22,7 +22,7 @@
         <a class="navbar-brand text-capitalize fw-bold" href="{{ url('/') }}">
           <div class="row">
             <div class="col">
-              <img src="{{ asset('img/logo-jasa-raharja.png') }}" alt="" width="64" height="64" class="d-inline-block align-middle">
+              <img src="{{ asset('img/logo.png') }}" alt="" width="64" height="64" class="d-inline-block align-middle">
             </div>
             <div class="col align-self-center">
               jasa raharja<br>
@@ -49,10 +49,11 @@
                 leaderboard
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item text-uppercase" href="{{ route('leaderboard.index') }}">pubg</a></li>
-                <li><a class="dropdown-item text-capitalize" href="{{ route('leaderboard.index') }}">chess</a></li>
-                <li><a class="dropdown-item text-capitalize" href="{{ route('leaderboard.index') }}">bridge</a></li>
-                <li><a class="dropdown-item text-capitalize" href="{{ route('leaderboard.index') }}">bike & run</a></li>
+                <li><a class="dropdown-item text-uppercase" href="{{ route('leaderboards.pubg') }}">pubg</a></li>
+                <li><a class="dropdown-item text-capitalize" href="{{ route('leaderboards.chess') }}">chess</a></li>
+                <li><a class="dropdown-item text-capitalize" href="{{ route('leaderboards.bridge') }}">bridge</a></li>
+                <li><a class="dropdown-item text-capitalize" href="{{ route('leaderboards.run') }}">run</a></li>
+                <li><a class="dropdown-item text-capitalize" href="{{ route('leaderboards.bike') }}">bike</a></li>
               </ul>
             </li>
             <li class="nav-item">
@@ -90,7 +91,7 @@
       <div class="container py-4">
         <div class="row">
           <div class="col-auto align-self-center">
-            <img src="{{ asset('img/logo-jasa-raharja.png') }}" width="80" height="80" class="d-inline-block align-middle" alt="...">
+            <img src="{{ asset('img/logo.png') }}" width="80" height="80" class="d-inline-block align-middle" alt="...">
           </div>
           <div class="col align-self-center fw-bold text-capitalize">
             <span class=" f-montserrat fs-3 ">jasa raharja</span><br>

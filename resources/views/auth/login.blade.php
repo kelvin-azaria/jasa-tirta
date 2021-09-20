@@ -10,13 +10,13 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="{{ asset('img/opening@1200x-8.jpg') }}" class="d-block w-100" alt="...">
+            <img src="{{ asset('img/informasi-lomba-opening-ceremony.jpg') }}" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
             <img src="{{ asset('img/poster@1200x-8.jpg') }}" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="{{ asset('img/closing@1200x-8.jpg') }}" class="d-block w-100" alt="...">
+            <img src="{{ asset('img/informasi-lomba-closing-ceremony.jpg') }}" class="d-block w-100" alt="...">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
