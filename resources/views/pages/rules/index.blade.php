@@ -58,13 +58,7 @@
                 Technical Meeting: 23 September 2021 
               </li>
               <li class="my-2">
-                Trial 1:
-              </li>
-              <li class="my-2">
-                Trial 2:
-              </li>
-              <li class="my-2">
-                Trial 3:
+                Trial 1: 24 September
               </li>
               <li class="my-2">
                 Pelaksanaan:
@@ -81,19 +75,6 @@
               </li>
               <li class="my-2">
                 Kontrol waktu : 10+3 (10 Menit Increment 3 Detik) 
-              </li>
-            </ul>
-          </li>
-          <li class="my-2">
-            Rincian Hadiah  
-          </li>
-          <li class="my-2">
-            Pendaftaran
-            <ul>
-              <li class="my-2">
-                Batas Akhir Pendaftaran: 
-                <br>
-                <span class="fw-bold"> Contact person: 08xxxxxxxxxx (Luvisa)</span>
               </li>
             </ul>
           </li>

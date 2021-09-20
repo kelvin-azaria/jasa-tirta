@@ -104,9 +104,10 @@
             Kontak Kami
           </div>
           <div class="col-auto">
-            <a class="px-3 py-2" href=""><i class="fab fa-facebook"></i></a>
-            <a class="px-3 py-2" href=""><i class="fab fa-twitter"></i></a>
-            <a class="px-3 py-2" href=""><i class="fab fa-instagram"></i></a>
+            <a class="px-3 py-2" href="{{ url('https://www.jasaraharja.co.id/') }}"><i class="bi bi-globe"></i></a>
+            <a class="px-3 py-2" href="{{ url('https://web.facebook.com/ptjasaraharja') }}"><i class="fab fa-facebook"></i></a>
+            <a class="px-3 py-2" href="{{ url('https://twitter.com/pt_jasaraharja') }}"><i class="fab fa-twitter"></i></a>
+            <a class="px-3 py-2" href="{{ url('https://www.instagram.com/pt_jasaraharja/') }}"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
         <hr>
