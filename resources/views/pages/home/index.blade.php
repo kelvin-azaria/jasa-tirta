@@ -158,7 +158,7 @@
         </div>
         <div class="col-lg">
           <h2  class="fw-bold text-capitalize">penjelasan umum</h2>
-          <p>72 holes of individual stroke play for both men and women (four rounds scheduled over four consecutive days). Scores are cumulative from round to round. The athlete with the lowest aggregate score wins. In the event of a tie for first, second or third place, a play-off or multiple play-offs shall be conducted for the purpose of determining the gold, silver and bronze medal winners.</p>
+          <p>Dengan konsep lomba virtual Peserta dapat melakukan kegiatan perlombaan PUBG, catur, bridge, lari dan sepeda dimana saja selama periode lomba berlangsung, tanpa harus berkumpul pada lokasi dan waktu yang sama</p>
           <h2 class="fw-bold text-capitalize">informasi tambahan</h2>
           <p>Untuk informasi lebih lanjut, peserta dapat mengklik link yang tertera dibawah ini:</p>
           <ul>

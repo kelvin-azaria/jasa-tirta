@@ -52,8 +52,8 @@
                 <li><a class="dropdown-item text-uppercase" href="{{ route('leaderboards.pubg') }}">pubg</a></li>
                 <li><a class="dropdown-item text-capitalize" href="{{ route('leaderboards.chess') }}">chess</a></li>
                 <li><a class="dropdown-item text-capitalize" href="{{ route('leaderboards.bridge') }}">bridge</a></li>
-                <li><a class="dropdown-item text-capitalize" href="{{ route('leaderboards.run') }}">run</a></li>
                 <li><a class="dropdown-item text-capitalize" href="{{ route('leaderboards.bike') }}">bike</a></li>
+                <li><a class="dropdown-item text-capitalize" href="{{ route('leaderboards.run') }}">run</a></li>
               </ul>
             </li>
             <li class="nav-item">
