@@ -27,7 +27,7 @@
       <h1 class="fw-bold text-capitalize text-center">frequently asked question</h1>
       <div class="accordion" id="accordionPanelsStayOpenExample">
         <div class="accordion-item">
-          <h3 class="accordion-header" id="panelsStayOpen-headingOne">
+          <h3 class="accordion-header lh-base" id="panelsStayOpen-headingOne">
             <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
               Apa itu Konsep Lomba Virtual? 
             </button>
@@ -39,7 +39,7 @@
           </div>
         </div>
         <div class="accordion-item">
-          <h3 class="accordion-header" id="panelsStayOpen-headingTwo">
+          <h3 class="accordion-header lh-base" id="panelsStayOpen-headingTwo">
             <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
               Apa saja kategori virtual race yang diselenggarakan?
             </button>
@@ -56,7 +56,7 @@
           </div>
         </div>
         <div class="accordion-item">
-          <h3 class="accordion-header" id="panelsStayOpen-headingThree">
+          <h3 class="accordion-header lh-base" id="panelsStayOpen-headingThree">
             <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
               Apakah terdapat aplikasi Activity Tracker tertentu yang digunakan?
             </button>

@@ -2,7 +2,7 @@
 @section('title','Peraturan per Lomba')
 
 @section('content')
-  <section id="rule">
+  <section id="rule" class="pb-5">
     <div class="container">
       <section id="pubgRule">
         <h1 class="fw-bold text-capitalize text-center">PUBG mobile tournament</h1>
@@ -19,7 +19,7 @@
           <li class="my-2">
             Apabila team yang terdaftar lebih dari 16 team, maka pada babak penyisihan akan dibagi menjadi 2 grup, yaitu Grup A dan B
             <div class="row justify-content-md-center my-3">
-              <div class="col-6">
+              <div class="col-md-6">
                 <img src="{{ asset('img/pubg-team-table.png') }}" class="rounded w-100" alt="...">
               </div>
             </div>
@@ -179,7 +179,7 @@
             jika akun yang digunakan bisa dipulihkan kembali setelah banding ke Lichess. 
           </li>
         </ul>
-        <h2 class="fw-bold text-capitalize">regulasi terkait live camera ZOOM saat bertanding catur</h2>
+        <h2 class="fw-bold text-capitalize  lh-base">regulasi terkait live camera ZOOM saat bertanding catur</h2>
         <ul style="list-style-type: disc;">
           <li>
             <h3 class="fw-bold">Komputer</h3>
@@ -197,7 +197,7 @@
             <p>Konektivitas internet adalah tanggung jawab pemain.  Pastikan anda memiliki koneksi yang cepat, andal yang anda percayai.</p>
           </li>
           <li>
-            <h3 class="fw-bold">Kamera Web (Device Ke-2 untuk ZOOM)</h3>
+            <h3 class="fw-bold  lh-base">Kamera Web (Device Ke-2 untuk ZOOM)</h3>
             <ul style="list-style-type: lower-alpha;">
               <li class="my-2">
                 Webcam yang berfungsi sebagai device ke-2 adalah wajib sehingga arbiter dapat dengan nyaman melihat anda dan lingkungan anda. Fungsi webcam bisa digantikan dengan camera di smartphone.  
@@ -252,7 +252,7 @@
             </ul>
           </li>
         </ul>
-        <h2 class="fw-bold text-capitalize">foto posisi ZOOM saat bertanding </h2>
+        <h2 class="fw-bold text-capitalize  lh-base">foto posisi ZOOM saat bertanding </h2>
         <div class="row">
           <div class="col-lg">
             <div class="row pb-4">
@@ -361,7 +361,7 @@
       <section id="bikeRule">
         <h1 class="fw-bold text-capitalize text-center">turnamen Sepeda</h1>
         <div class="row justify-content-md-center">
-          <div class="col-8">
+          <div class="col-md-8">
             <img class="w-100 rounded" src="{{ asset('img/bike-rule.png') }}" alt="">
           </div>
         </div>
