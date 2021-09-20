@@ -72,7 +72,7 @@
             <img src="{{ asset('img/pendukung-lomba-chess.jpg') }}" class="card-img" alt="...">
             <div class="card-img-overlay">
               <div class="text-center h-100 align-content-end d-grid">
-                <a href="#" class="btn btn-sm btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
+                <a href="{{ route('chess.index') }}" class="btn btn-sm btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
               </div>
             </div>
           </div>

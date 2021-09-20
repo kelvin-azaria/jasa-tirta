@@ -177,10 +177,7 @@
     <div class="container">
       <div class="row py-4">
         <div class="col align-self-center">
-          <h1 class="text-white text-capitalize fw-bold">pahami mekanisme perlombaan</h1>
-        </div>
-        <div class="col">
-          <iframe class="video-embed" src="https://www.youtube.com/embed/NpEaa2P7qZI"></iframe>
+          <h1 class="text-white text-capitalize fw-bold text-center">pahami mekanisme perlombaan</h1>
         </div>
       </div>
       <div class="row">

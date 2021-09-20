@@ -8,6 +8,7 @@ use App\Http\Controllers\RuleController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\Admin\BridgeController as AdminBridgeController;
 use App\Http\Controllers\User\BridgeController;
+use App\Http\Controllers\User\ChessController;
 use App\Http\Controllers\User\PubgController;
 use App\Http\Controllers\UserDashboardController;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +37,8 @@ Route::get('/strava_get_token', [ActivityController::class, 'getToken'])->name('
 Route::resource('bridge', BridgeController::class)->only(['index']);
 
 Route::resource('pubg', PubgController::class)->only(['index']);
+
+Route::resource('chess', ChessController::class)->only(['index']);
 
 Auth::routes([
   'verify' => false,
