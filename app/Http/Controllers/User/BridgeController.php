@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Auth;
 
 class BridgeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $user = User::find(Auth::id());

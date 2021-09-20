@@ -14,4 +14,9 @@ class PubgTeam extends Model
         'team_captain_phone',
         'group',
     ];
+
+    public function pubgPlayers()
+    {
+        return $this->hasMany(PubgPlayer::class);
+    }
 }

@@ -12,4 +12,14 @@ class PubgPlayer extends Model
         'player_nickname',
         'player_npp',
     ];
+
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
+
+    public function pubgTeam()
+    {
+        return $this->belongsTo(PubgTeam::class);
+    }
 }

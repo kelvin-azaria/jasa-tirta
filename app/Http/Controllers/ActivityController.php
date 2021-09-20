@@ -61,6 +61,9 @@ class ActivityController extends Controller
         if ($request->type === null) {
             return redirect()->back()
                 ->with('warning','Harap pilih kategori lomba yang ingin diikuti');
+        } elseif ($request->activity_id === null) {
+            return redirect()->back()
+                ->with('warning','Harap pilih data yang akan di submit');
         }
 
         $user = User::find(Auth::id());

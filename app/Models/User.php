@@ -61,4 +61,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Bridge::class);
     }
+
+    public function pubgPlayer()
+    {
+        return $this->belongsTo(PubgPlayer::class);
+    }
 }

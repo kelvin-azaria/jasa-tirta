@@ -91,7 +91,7 @@
                 <img src="{{ asset('img/pendukung-lomba-bridge.jpg') }}" class="card-img" alt="...">
                 <div class="card-img-overlay">
                   <div class="text-center h-100 align-content-end d-grid">
-                    <a href="{{ route('dashboard.index') }}" class="btn btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
+                    <a href="{{ route('bridge.index') }}" class="btn btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
                   </div>
                 </div>
               </div>
