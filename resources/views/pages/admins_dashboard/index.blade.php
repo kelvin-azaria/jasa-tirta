@@ -9,7 +9,7 @@
         <div class="col-sm pt-4">
           <a href="">
             <div class="card">
-              <img src="{{ asset('img/pendukung-lomba-pubg.jpg') }}" class="card-img-top" alt="...">
+              <img src="{{ asset('img/pendukung-lomba-PUBG.jpg') }}" class="card-img-top" alt="...">
               <div class="card-body">
                 <h3 class="card-title fw-bold">PUBG</h3>
               </div>

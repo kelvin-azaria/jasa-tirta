@@ -19,12 +19,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $password = Hash::make('admin123');
-        // DB::table('admins')->insert([
-        //     'name' => 'admin',
-        //     'email' => 'admin@email.com',
-        //     'password' => $password,
-        // ]);
+        $password = Hash::make('olimpiadejr2021');
+        DB::table('admins')->insert([
+            'name' => 'Admin',
+            'email' => 'olimpiadejr2021@admin.com',
+            'password' => $password,
+        ]);
 
         // $i=1;
         // do {
@@ -36,9 +36,9 @@ class DatabaseSeeder extends Seeder
         //     $i++;
         // } while ($i <= 10);
 
-        $user = User::first();
-        $user->pubg_player_id = null;
-        $user->save();
+        // $user = User::first();
+        // $user->pubg_player_id = null;
+        // $user->save();
         // $npp = $user->npp;
 
         // $pubg_team = PubgTeam::create([
