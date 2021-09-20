@@ -103,6 +103,7 @@
   <section id="leaderboard">
     <div class="container py-4">
       <h1 class="fw-bold text-capitalize text-center">leaderboards</h1>
+      <div class="table-responsive">
       <table class="table table-striped ">
         <caption>Terakhir diperbaharui : 14/9/2021</caption>
         <thead>
@@ -134,6 +135,7 @@
           </tr>
         </tbody>
       </table>
+      </div>
     </div>
   </section>
 @endsection
