@@ -36,22 +36,40 @@
                   <ul class="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" id="menu">
                     <li>
                       <a href="{{ route('dashboard.index') }}" class="nav-link px-sm-0 px-2 text-white">
-                        <i class="fs-5 bi-house-door-fill"></i><span class="ms-2 d-none d-sm-inline text-capitalize">home</span> 
+                        <i class="fs-5 bi-house-door-fill"></i><span class="ms-2 d-none d-sm-inline text-capitalize">
+                          home
+                        </span> 
                       </a>
                     </li>
-                    <li class="dropdown">
-                      <a href="#" class="nav-link dropdown-toggle px-sm-0 px-2 text-white" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fs-5 bi-bicycle"></i><span class="ms-2 d-none d-sm-inline text-capitalize">bike & run</span>
-                        </a>
-                        <ul class="dropdown-menu text-small shadow dropdown-menu-dark" aria-labelledby="dropdown">
-                            <li><a class="dropdown-item text-capitalize" href="{{ route('activity.index') }}">Data Anda</a></li>
-                            <li><a class="dropdown-item text-capitalize" href="{{ route('activity.create') }}">Submit Data</a></li>
-                        </ul>
+                    <li>
+                      <a href="{{ route('activity.index') }}" class="nav-link px-sm-0 px-2 text-white">
+                        <i class="fs-5 bi-bicycle"></i><span class="ms-2 d-none d-sm-inline text-capitalize">
+                          bike & run
+                        </span> 
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ route('bridge.index') }}" class="nav-link px-sm-0 px-2 text-white">
+                        <i class="fs-5 bi-suit-club-fill"></i><span class="ms-2 d-none d-sm-inline text-capitalize">
+                          bridge
+                        </span> 
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ route('chess.index') }}" class="nav-link px-sm-0 px-2 text-white">
+                        <i class="fas fa-chess"></i><span class="ms-2 d-none d-sm-inline text-capitalize">
+                          chess
+                        </span> 
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ route('pubg.index') }}" class="nav-link px-sm-0 px-2 text-white">
+                        <i class="fas fa-crosshairs"></i><span class="ms-2 d-none d-sm-inline text-capitalize">
+                          pubg
+                        </span> 
+                      </a>
                     </li>
                   </ul>
-                  
-                  @endauth
-                  @if (Auth::check())
                   <div class="dropdown py-sm-4 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1">
                       <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-person-fill me-1"></i>
@@ -81,7 +99,7 @@
                           </li>
                         </ul>
                   </div>
-                  @endif
+                  @endauth
               </div>
           </div>
           <div class="col d-flex flex-column h-sm-100 bg-darkblue ">

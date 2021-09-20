@@ -18,12 +18,18 @@ class ActivityController extends Controller
 
     public function index()
     {
-        $user = Auth::user();
-        $activities = Activity::all();
-        $total_distance = $activities->sum('activity_length');
+        $user = User::find(Auth::id());
+        $activity = $user->activity;
+        
+        if (is_null($activity)) {
+            $total_distance = null;
+        } else {
+            $total_distance = $activity->sum('activity_length');
+        }
+
         return view('pages.users_dashboard.activity.index',[
             'user' => $user, 
-            'activities' => $activities,
+            'activity' => $activity,
             'total_distance' => $total_distance
         ]);
     }
