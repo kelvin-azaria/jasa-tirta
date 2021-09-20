@@ -16,11 +16,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $password = Hash::make('admin123');
-        DB::table('admins')->insert([
-            'name' => 'admin',
-            'email' => 'admin@email.com',
-            'password' => $password,
-        ]);
+        // $password = Hash::make('admin123');
+        // DB::table('admins')->insert([
+        //     'name' => 'admin',
+        //     'email' => 'admin@email.com',
+        //     'password' => $password,
+        // ]);
+
+        $i=1;
+        do {
+            DB::table('bridges')->insert([
+                'name' => 'test'.$i,
+                'phone' => 62821231212+$i,
+                'bbo_username' => 'test'.$i.'u',
+            ]);
+            $i++;
+        } while ($i <= 10);
     }
 }

@@ -31,7 +31,7 @@
     <div class="col-lg">
       <div class="row pb-4">
         <div class="col-sm pt-4">
-          <a href="{{ route('admin.index.bridge') }}">
+          <a href="{{ route('admin.bridge.index') }}">
             <div class="card">
               <img src="{{ asset('img/pendukung-lomba-bridge.jpg') }}" class="card-img-top" alt="...">
               <div class="card-body">
