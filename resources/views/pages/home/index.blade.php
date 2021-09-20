@@ -182,8 +182,8 @@
       </div>
       <div class="row">
         <div class="col-lg">
-          <div class="row pb-4">
-            <div class="col-sm">
+          <div class="row pb-3">
+            <div class="col-sm pb-4">
               <div class="card">
                 <div class="card-body">
                   <h3 class="card-title fw-bold text-capitalize lh-base">Unduh JRKU</h3>
@@ -192,7 +192,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm">
+            <div class="col-sm pb-4">
               <div class="card">
                 <div class="card-body">
                   <h3 class="card-title fw-bold text-capitalize lh-base">Aplikasi JRKU</h3>
@@ -204,8 +204,8 @@
           </div>
         </div>
         <div class="col-lg">
-          <div class="row pb-4">
-            <div class="col-sm">
+          <div class="row pb-3">
+            <div class="col-sm pb-4">
               <div class="card">
                 <div class="card-body">
                   <h3 class="card-title fw-bold text-capitalize lh-base">Registrasi</h3>
@@ -214,7 +214,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm">
+            <div class="col-sm pb-4">
               <div class="card">
                 <div class="card-body">
                   <h3 class="card-title fw-bold text-capitalize lh-base">Dihubungi oleh tim kami.</h3>
