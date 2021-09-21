@@ -105,7 +105,7 @@
       <h1 class="fw-bold text-capitalize text-center">leaderboards</h1>
       <div class="table-responsive">
       <table class="table table-striped ">
-        <caption>Terakhir diperbaharui : 14/9/2021</caption>
+        {{-- <caption>Terakhir diperbaharui : 14/9/2021</caption> --}}
         <thead>
           <tr class="border-top">
             <th scope="col">#</th>
@@ -115,7 +115,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          {{-- <tr>
             <th scope="row">1</th>
             <td>John</td>
             <td class="text-center">0.6</td>
@@ -132,7 +132,7 @@
             <td>Jacob</td>
             <td class="text-center">0.2</td>
             <td class="text-end pe-3">430</td>
-          </tr>
+          </tr> --}}
         </tbody>
       </table>
       </div>
