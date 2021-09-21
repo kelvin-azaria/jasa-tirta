@@ -31,7 +31,7 @@
             <p>
               Apabila sudah mengetahui peraturan dan mekanisme pertandingan, daftar segera di link berikut
             </p>
-            <a href="https://forms.gle/4ersjPP245bHTqQR6" target="_blank" class="btn btn-sm btn-success">
+            <a href="https://forms.gle/wkwSAq5ZJy9JWJQN7" target="_blank" class="btn btn-sm btn-success">
               Daftar Turnamen Catur Melalui Google Form
             </a>
           </div>
