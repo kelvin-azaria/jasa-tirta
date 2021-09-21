@@ -36,6 +36,7 @@ class ActivityController extends Controller
 
     public function create()
     {
+
         $user = User::find(Auth::id());
         if ($user->activity()->exists()) {
             return redirect()->back()
@@ -48,12 +49,20 @@ class ActivityController extends Controller
                     $user->refresh_token = $refresh->refresh_token;
                     $user->save();
                 }
-            
+                
                 //get last 3 items from strava
-                $a = Strava::activities($user->access_token);
-                $activities = array_slice($a, -3, 3, true);
+                $activities = Strava::activities($user->access_token);
 
-                return view('pages.users_dashboard.activity.new',['user' => $user, 'activities' => $activities]);
+                //date format for strtotime is month/day/year
+                $start_date = strtotime("09/21/2021");
+                $end_date = strtotime("10/01/2021");
+                
+                return view('pages.users_dashboard.activity.new',[
+                    'user' => $user, 
+                    'activities' => $activities,
+                    'start_date' => $start_date,
+                    'end_date' => $end_date
+                ]);
             }
     
             $user = Auth::user();

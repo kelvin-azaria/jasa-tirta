@@ -86,18 +86,25 @@
             </tr>
             @if (isset($activities))
               @foreach ($activities as $a)
-                <tr>
-                  <td>{{ $a->name }}</td>
-                  <td>{{ $a->type }}</td>
-                  <td>{{ $a->start_date_local }}</td>
-                  <td>{{ ($a->distance)/1000 }} km</td>
-                  <td>{{ ($a->elapsed_time)/3600 }} jam</td>
-                  <td>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="activity_id" id="radioActivity{{ $a->id }}" value="{{ $a->id }}" form="activityForm">
-                    </div>
-                  </td>
-                </tr>
+                @php
+                  $current_date = strtotime($a->start_date_local)
+                @endphp
+                @if (($current_date >= $start_date) && ($current_date <= $end_date))
+                  <tr>
+                    <td>{{ $a->name }}</td>
+                    <td>{{ $a->type }}</td>
+                    <td>{{ date('d-m-Y', strtotime($a->start_date_local)) }}</td>
+                    <td>{{ ($a->distance)/1000 }} km</td>
+                    <td>{{ ($a->elapsed_time)/3600 }} jam</td>
+                    <td>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="activity_id" id="radioActivity{{ $a->id }}" value="{{ $a->id }}" form="activityForm">
+                      </div>
+                    </td>
+                  </tr>
+                @else
+                  @continue
+                @endif
               @endforeach
             @endif
           </table>
