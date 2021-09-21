@@ -366,7 +366,7 @@
           </div>
         </div>
         <h2 class="fw-bold text-capitalize">Peraturan Best Performance Ride 100 KM :</h2>
-        <ul>
+        <ul style="list-style: value;">
           <li class="my-2">
             Penilaian Best Performance adalah waktu tercepat menyelesaikan jarak yang telah ditentukan yaitu 100 KM terhitung saat lomba dimulai tanggal…pukul 00.00 WIB dan berakhir pada …pukul 23.59 WIB (2 hari)
           </li>

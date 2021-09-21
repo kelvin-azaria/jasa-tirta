@@ -22,7 +22,7 @@
         <a class="navbar-brand text-capitalize fw-bold" href="{{ url('/') }}">
           <div class="row">
             <div class="col">
-              <img src="{{ asset('img/logo.png') }}" alt="" width="64" height="64" class="d-inline-block align-middle">
+              <img src="{{ asset('img/logo-2.png') }}" alt="" width="64" height="64" class="d-inline-block align-middle">
             </div>
             <div class="col align-self-center">
               jasa raharja<br>
@@ -91,7 +91,7 @@
       <div class="container py-4">
         <div class="row">
           <div class="col-auto align-self-center">
-            <img src="{{ asset('img/logo.png') }}" width="80" height="80" class="d-inline-block align-middle" alt="...">
+            <img src="{{ asset('img/logo-2.png') }}" width="80" height="80" class="d-inline-block align-middle" alt="...">
           </div>
           <div class="col align-self-center fw-bold text-capitalize">
             <span class=" f-montserrat fs-3 ">jasa raharja</span><br>
