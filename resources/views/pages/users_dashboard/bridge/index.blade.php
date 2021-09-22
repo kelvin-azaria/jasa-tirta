@@ -34,7 +34,7 @@
             <p>
               Apabila sudah mengetahui peraturan dan mekanisme pertandingan, daftar segera di link berikut
             </p>
-            <a href="https://forms.gle/VKnD4Qaz39Rtpy747" target="_blank" class="btn btn-sm btn-success">
+            <a href="https://forms.gle/f4p49nNvL6ZpguiQ9" target="_blank" class="btn btn-sm btn-success">
               Daftar Turnamen Bridge Online Melalui Google Form
             </a>
           </div>

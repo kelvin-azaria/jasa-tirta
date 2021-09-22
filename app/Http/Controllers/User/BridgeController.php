@@ -17,11 +17,11 @@ class BridgeController extends Controller
     {
         $user = User::find(Auth::id());
         //check if user already registered on bridge
-        $bridge =$user->bridge();
+        $bridge =$user->bridge;
         if (is_null($bridge)) {
-            $status = 'registered';
-        } else {
             $status = 'unregistered';
+        } else {
+            $status = 'registered';
         }
         
         return view('pages.users_dashboard.bridge.index',[
