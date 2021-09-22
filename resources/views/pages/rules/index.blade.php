@@ -335,7 +335,7 @@
         <h2 class="fw-bold text-capitalize">Jadwal</h2>
         <ul>
           <li class="my-2">
-            PERTANDINGAN (tgl 26 September 2021).
+            PERTANDINGAN (tgl 4 Oktober 2021).
           </li>
           <li class="my-2">
             09:30-12:30 Babak Penyisihan berupa Pertandingan Pasangan.
@@ -447,7 +447,7 @@
             Submit hasil lari di <a href="{{ url('https://olimpiadejr2021.com/') }}">https://olimpiadejr2021.com/</a>
           </li>
           <li class="my-2">
-            Peserta boleh berlari kapan saja mulai tanggal 02 Oktober pukul xx.xx WIB sampai dengan tanggal 07 Oktober pukul xx.xx WIB
+            Peserta boleh berlari kapan saja mulai tanggal 02 Oktober pukul 00.00 WIB sampai dengan tanggal 07 Oktober pukul 23.59 WIB
           </li>
         </ul>
         <h2 class="fw-bold text-capitalize">Tantangan /Kategori</h2>
