@@ -44,7 +44,7 @@
                     <li>
                       <a href="{{ route('activity.index') }}" class="nav-link px-sm-0 px-2 text-white">
                         <i class="fs-5 bi-bicycle"></i><span class="ms-2 d-none d-sm-inline text-capitalize">
-                          bike & run
+                          ride & run
                         </span> 
                       </a>
                     </li>
