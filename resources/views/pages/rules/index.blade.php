@@ -459,7 +459,7 @@
             Submit hasil lari di <a href="{{ url('https://olimpiadejr2021.com/') }}">https://olimpiadejr2021.com/</a>
           </li>
           <li class="my-2">
-            Peserta boleh berlari kapan saja mulai tanggal xx September pukul xx.xx WIB sampai dengan tanggal xx September 2021 pukul xx.xx WIB
+            Peserta boleh berlari kapan saja mulai tanggal 02 Oktober pukul xx.xx WIB sampai dengan tanggal 07 Oktober pukul xx.xx WIB
           </li>
         </ul>
         <h2 class="fw-bold text-capitalize">Tantangan /Kategori</h2>
