@@ -49,19 +49,10 @@
             Free Pendaftaran   
           </li>
           <li class="my-2">
-            Tanggal pelaksanaan: 25 September 2021
+            Tanggal pelaksanaan: 5 Oktober 2021
             <ul>
               <li class="my-2">
-                Acara Pembukaan:
-              </li>
-              <li class="my-2">
-                Technical Meeting: 23 September 2021 
-              </li>
-              <li class="my-2">
-                Trial 1: 24 September
-              </li>
-              <li class="my-2">
-                Pelaksanaan:
+                Technical Meeting: informasi menyusul
                 <br>
                 <span class="fw-bold text-muted">Live kamera zoom (sesuai Protocol FIDE) </span>
               </li>
@@ -318,10 +309,7 @@
                 Setiap peserta wajib membuat Nama Pengguna (user ID) BBO. Tutorial akan diberikan di WAG.
               </li>
               <li class="my-2">
-                Pendaftaran peserta pada GForm akan dibuka pada Senin 20 September 2021, ditutup Rabu 22 September 2021.
-              </li>
-              <li class="my-2">
-                Trial Match dilakukan pada tanggal 23 September 2021 setelah Rapat Teknis.
+                Pendaftaran peserta pada GForm akan dibuka pada Rabu 22 Oktober 2021, ditutup Kamis 30 Oktober 2021.
               </li>
               <li class="my-2">
                 Setiap peserta diwajibkan untuk melakukan re-registrasi di BBO 120 menit sebelum pertandingan dimulai.
