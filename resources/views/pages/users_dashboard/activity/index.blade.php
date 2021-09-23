@@ -105,7 +105,8 @@
             <div class="row text-white text-center my-3">
               <div class="card-body text-white">
                 @if ($is_registered)
-                  <h5 class="card-title fw-bold text-center">Anda sudah terdaftar di lomba {{ $user->competition }} !</h5>
+                  <h3 class="card-title fw-bold text-center text-capitalize">Anda <strong class="text-primary">TELAH TERDAFTAR</strong> di lomba {{ $user->competition }} Online!</h3>
+                  <hr>
                   <p>
                     Segera submit data anda melalui link dibawah ini
                   </p>
@@ -114,23 +115,74 @@
                     Submit Data Turnamen Bike & Run
                   </a>
                 @else
-                  <h5 class="card-title fw-bold text-center">Daftar Sekarang</h5>
+                  <h3 class="card-title fw-bold text-center text-primary">Daftar Sekarang</h3>
                   <p>
                     Sebelum mendaftar harap baca terlebih dahulu peraturan dan mekanisme 
-                    pertandingan Bike & Run ini melalui link berikut
+                    pertandingan Bike & Run Virtual ini melalui link berikut
                   </p>
-                  <a href="{{ route('rule.index') }}" class="btn btn-sm btn-outline-info">Peraturan Bike & Run</a> 
+                  <a href="{{ route('rule.index') }}" class="btn w-100 btn-outline-info">Peraturan Bike & Run</a> 
                   <hr>
-                  <p>
-                    Apabila sudah mengetahui peraturan dan mekanisme pertandingan, segera mendaftar langsung dengan 
-                    cara submit data anda melalui link berikut. <b>*data tidak bisa diubah lagi setelah mendaftar</b>
+                  <p class="text-white-50">
+                    Apabila sudah mengetahui peraturan dan mekanisme pertandingan, daftar segera dengan mengklik tombol dibawah ini.
                   </p>
-                  <a href="{{ route('activity.join',['type' => 'Ride']) }}" class="btn btn-sm btn-success">
-                    Daftar untuk Turnamen Ride
-                  </a>
-                  <a href="{{ route('activity.join',['type' => 'Run']) }}" class="btn btn-sm btn-success">
-                    Daftar untuk Turnamen Run
-                  </a>
+                  <div class="row">
+                    <div class="col-sm my-2">
+                      <button type="button" class="btn btn-success w-100 text-white fw-bold" data-bs-toggle="modal" data-bs-target="#competitionRideConfirmationModal">
+                        Ikuti Turnamen Ride <i class="bi bi-bicycle ms-2"></i>
+                      </button>
+                    </div>
+                    <div class="col-sm my-2">
+                      <button type="button" class="btn btn-warning w-100 text-white fw-bold" data-bs-toggle="modal" data-bs-target="#competitionRunConfirmationModal">
+                        Ikuti Turnamen Run <i class="fas fa-running ms-2"></i></i>
+                      </button>
+                    </div>
+                  </div>
+                  <p class="text-white-50 mt-2"><i class="bi bi-exclamation-diamond-fill me-2"></i>Pastikan jika Anda sudah benar-benar memilih untuk mengikuti lomba lari atau sepeda. <br><strong>Pilihan lomba tidak dapat diubah di kemudian hari.</strong> </p>
+                  <!-- Modal -->
+                  <div class="modal fade" id="competitionRideConfirmationModal" tabindex="-1" aria-labelledby="competitionRideConfirmationModal" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content bg-dark">
+                        <div class="modal-header">
+                          <h5 class="modal-title text-success fw-bold f-montserrat" id="competitionRideConfirmationModal"><i class="bi bi-exclamation-diamond-fill me-1"></i> Konfirmasi Lomba Sepeda</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <span class="text-white-50"> Saya akan mengikuti lomba "Ride" dalam acara Jasa Raharja Virtual Olympic kali ini</span>
+                          <hr>
+                          <strong> Saya Paham bahwa <span class="text-warning">tidak dapat mengubah/mengganti Lomba</span> setelah meng-klik tombol 'Daftar' dibawah ini </strong>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
+                          <a href="{{ route('activity.join',['type' => 'Ride']) }}" class="btn btn-outline-success">
+                            Daftar Lomba Ride <i class="bi bi-arrow-right-circle-fill ms-2"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Modal -->
+                  <div class="modal fade" id="competitionRunConfirmationModal" tabindex="-1" aria-labelledby="competitionRunConfirmationModal" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content bg-dark">
+                        <div class="modal-header">
+                          <h5 class="modal-title text-warning fw-bold f-montserrat" id="competitionRunConfirmationModal"><i class="bi bi-exclamation-diamond-fill me-1"></i> Konfirmasi Lomba Lari</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <span class="text-white-50"> Saya akan mengikuti lomba "Run" dalam acara Jasa Raharja Virtual Olympic kali ini</span>
+                          <hr>
+                          <strong> Saya Paham bahwa <span class="text-warning">tidak dapat mengubah/mengganti Lomba</span> setelah meng-klik tombol 'Daftar' dibawah ini </strong>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
+                          <a href="{{ route('activity.join',['type' => 'Run']) }}" class="btn btn-outline-success">
+                            Daftar Lomba Run <i class="bi bi-arrow-right-circle-fill ms-2"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                 @endif
                 
               </div>
