@@ -197,7 +197,7 @@
                 <div class="card-body">
                   <h3 class="card-title fw-bold text-capitalize lh-base">Aplikasi JRKU</h3>
                   <h6 class="card-subtitle mb-2 text-capitalize text-muted">langkah kedua</h6>
-                  <p class="card-text">Pilih [link/button] Olympic Jasa Raharja di aplikasi JRKU. Tunggu beberapa saat, Anda akan masuk ke laman : OlimpiadeJR2021. Pada laman OlimpiadeJR2021, Anda dapat memilih kategori lomba yang akan Anda ikuti.</p>
+                  <p class="card-text">Pilih [link/button] Olympic Jasa Raharja di aplikasi JRKU. Tunggu beberapa saat, Anda akan masuk ke laman : OlimpiadeJR2021. Pada laman OlimpiadeJR2021, Anda dapat memilih kategori lomba yang akan Anda ikuti. <b>Satu peserta hanya boleh memilih satu cabang olahraga yang dipertandingkan</b></p>
                 </div>
               </div>
             </div>
