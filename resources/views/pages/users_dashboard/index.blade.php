@@ -46,6 +46,10 @@
                   <th>NPP</th>
                   <td>: {{ $user->npp }}</td>
                 </tr>
+                <tr>
+                  <th>Lomba yang terdaftar</th>
+                  <td>: {{ $user->competition }}</td>
+                </tr>
               </table>
             </div>
           </div>
