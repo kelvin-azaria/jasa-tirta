@@ -48,7 +48,13 @@
                 </tr>
                 <tr>
                   <th>Lomba yang terdaftar</th>
-                  <td>: {{ $user->competition }}</td>
+                  <td>: 
+                    @if (is_null($user->competition))
+                      Tidak terdaftar di lomba manapun
+                    @else
+                      {{ $user->competition }}
+                    @endif
+                  </td>
                 </tr>
               </table>
             </div>

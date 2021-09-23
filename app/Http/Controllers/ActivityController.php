@@ -28,6 +28,11 @@ class ActivityController extends Controller
             } else {
                 $total_distance = $activity->sum('activity_length');
             }
+
+            $start_date = strtotime("10/02/2021");
+            $end_date = strtotime("10/07/2021");
+            $current_date = strtotime("now");
+            dd($current_date);
     
             return view('pages.users_dashboard.activity.index',[
                 'user' => $user,
@@ -65,8 +70,8 @@ class ActivityController extends Controller
                     $activities = Strava::activities($user->access_token);
     
                     //date format for strtotime is month/day/year
-                    $start_date = strtotime("09/21/2021");
-                    $end_date = strtotime("10/01/2021");
+                    $start_date = strtotime("10/02/2021");
+                    $end_date = strtotime("10/07/2021");
                     
                     return view('pages.users_dashboard.activity.new',[
                         'user' => $user, 
