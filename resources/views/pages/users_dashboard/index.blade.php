@@ -46,15 +46,9 @@
                   <th>NPP</th>
                   <td>: {{ $user->npp }}</td>
                 </tr>
+      @if (is_null($user->competition))
                 <tr>
-                  <th>Lomba yang terdaftar</th>
-                  <td>: 
-                    @if (is_null($user->competition))
-                      Tidak terdaftar di lomba manapun
-                    @else
-                      {{ $user->competition }}
-                    @endif
-                  </td>
+                  <th colspan="2" class="text-capitalize text-primary"><i class="bi bi-info-circle-fill me-2"></i> Silahkan Daftarkan Diri Anda untuk mengikuti salah satu turnamen dibawah ini</th>
                 </tr>
               </table>
             </div>
@@ -122,6 +116,27 @@
           </div>
         </div>
       </div>
+      @else
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md">
+          <div class="card bg-lightdarkblue my-3">
+            <div class="card-body text-white">
+              <h3 class="lh-base text-white-50">Lomba yang diikuti :</h3>
+              <h1 class="text-primary fw-bold">{{ $user->competition }}</h1>
+              @if ($user->google_form_status == 0)
+              <p class="text-info">
+              <i class="bi bi-info-circle-fill me-2"></i> Silahkan Lengkapi Data Diri pada Google Form untuk Lomba terkait</p>
+              @endif
+            </div>
+          </div>
+        </div>
+      </div>        
+      @endif
     </div>
     <div class="col-md">
       <div class="card bg-lightdarkblue my-3">
