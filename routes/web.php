@@ -33,13 +33,20 @@ Route::resource('dashboard', UserDashboardController::class)->only(['index','sho
 Route::get('/strava_authorize', [UserDashboardController::class, 'stravaAuth'])->name('user.strava_auth');
 
 Route::resource('activity', ActivityController::class)->only(['index','create','store','destroy']);
+Route::get('/activity/join/{type}', [ActivityController::class, 'join'])->name('activity.join');
 Route::get('/strava_get_token', [ActivityController::class, 'getToken'])->name('strava.getToken');
 
 Route::resource('bridge', BridgeController::class)->only(['index']);
+Route::get('/bridge/join', [BridgeController::class, 'join'])->name('bridge.join');
+Route::get('/bridge/google_form_confirmation', [BridgeController::class, 'confirmGoogleForm'])->name('bridge.google_form_confirmation');
 
 Route::resource('pubg', PubgController::class)->only(['index']);
+Route::get('/pubg/join', [PubgController::class, 'join'])->name('pubg.join');
+Route::get('/pubg/google_form_confirmation', [PubgController::class, 'confirmGoogleForm'])->name('pubg.google_form_confirmation');
 
 Route::resource('chess', ChessController::class)->only(['index']);
+Route::get('/chess/join', [ChessController::class, 'join'])->name('chess.join');
+Route::get('/chess/google_form_confirmation', [ChessController::class, 'confirmGoogleForm'])->name('chess.google_form_confirmation');
 
 Auth::routes([
   'verify' => false,

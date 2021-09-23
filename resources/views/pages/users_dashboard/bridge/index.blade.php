@@ -18,12 +18,28 @@
         <img src="{{ asset('img/pendukung-lomba-bridge.jpg') }}" class="card-img-top" alt="Akun JR-ku">
       </div>
     </div>
-    @if ($status === 'registered')
-
-    @else
-      <div class="col-md-7">
-        <div class="card bg-lightdarkblue my-3">
-          <div class="card-body text-white">
+    <div class="col-md-7">
+      <div class="card bg-lightdarkblue my-3">
+        <div class="card-body text-white">
+          @if ($is_registered)
+            @if ($google_form_status)
+            <h5 class="card-title fw-bold text-center">Anda sudah terdaftar di lomba {{ $user->competition }} Online !</h5>
+            <p>
+              Anda dihubungi oleh panitia untuk instruksi lebih lanjut mengenai lomba {{ $user->competition }} Online
+            </p>
+            @else
+              <h5 class="card-title fw-bold text-center">Anda sudah terdaftar di lomba {{ $user->competition }} Online !</h5>
+              <p>
+                Isi formulir google form dibawah ini untuk melengkapi data pendaftaran anda
+              </p>
+              <a href="https://forms.gle/f4p49nNvL6ZpguiQ9" target="_blank" class="btn btn-sm btn-success">
+                Daftar Turnamen Bridge Online Melalui Google Form
+              </a>
+              <a href="{{ route('bridge.google_form_confirmation') }}" class="btn btn-sm btn-outline-warning mt-2">
+                Saya Sudah Mengisi Google Form
+              </a>
+            @endif
+          @else
             <h5 class="card-title fw-bold text-center">Daftar Sekarang</h5>
             <p>
               Sebelum mendaftar harap baca terlebih dahulu peraturan dan mekanisme 
@@ -34,12 +50,12 @@
             <p>
               Apabila sudah mengetahui peraturan dan mekanisme pertandingan, daftar segera di link berikut
             </p>
-            <a href="https://forms.gle/f4p49nNvL6ZpguiQ9" target="_blank" class="btn btn-sm btn-success">
-              Daftar Turnamen Bridge Online Melalui Google Form
+            <a href="{{ route('bridge.join') }}" class="btn btn-sm btn-success">
+              Daftar untuk Turnamen Bridge
             </a>
-          </div>
+          @endif
         </div>
       </div>
-    @endif
+    </div>
   </div>
 @endsection

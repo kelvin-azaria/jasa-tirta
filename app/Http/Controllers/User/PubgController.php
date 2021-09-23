@@ -14,27 +14,41 @@ class PubgController extends Controller
     {
         $this->middleware('auth');
     }
+
     public function index()
     {
         $user = User::find(Auth::id());
-        //check if user already registered on bridge
-        $pubg_team = DB::table('pubg_teams')
-            ->join('pubg_players','pubg_teams.id','=','pubg_players.pubg_team_id')
-            ->join('users','pubg_players.id','=','users.pubg_player_id')
-            ->select('pubg_teams.*','pubg_players.*')
-            ->where('users.id','=',$user->id)
-            ->first();
-            
-        if (is_null($pubg_team)) {
-            $status = 'unregistered';
+
+        $is_registered = $user->competition === 'PUBG';
+        $google_form_status = $user->google_form_status;
+
+        if (is_null($user->competition) || $is_registered) {
+            return view('pages.users_dashboard.pubg.index',[
+                'user' => $user,
+                'is_registered' => $is_registered,
+                'google_form_status' => $google_form_status
+            ]);
         } else {
-            $status = 'registered';
+            return redirect()->route('dashboard.index',['user' => $user])
+                ->with('warning','Anda sudah terdaftar di lomba '.$user->competition);
         }
-        
-        return view('pages.users_dashboard.pubg.index',[
-            'user' => $user, 
-            'status' => $status,
-            'pubg_team' => $pubg_team
-        ]);
+    }
+
+    public function join()
+    {
+        $user = User::find(Auth::id());
+        $user->competition = 'PUBG';
+        $user->save();
+
+        return $this->index();
+    }
+
+    public function confirmGoogleForm()
+    {
+        $user = User::find(Auth::id());
+        $user->google_form_status = true;
+        $user->save();
+
+        return $this->index();
     }
 }

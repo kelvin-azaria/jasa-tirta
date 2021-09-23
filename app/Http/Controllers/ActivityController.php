@@ -20,53 +20,68 @@ class ActivityController extends Controller
     {
         $user = User::find(Auth::id());
         $activity = $user->activity;
+        $is_registered = ($user->competition === 'Ride' || $user->competition === 'Run');
         
-        if (is_null($activity)) {
-            $total_distance = null;
+        if (is_null($user->competition) || $is_registered) {
+            if (is_null($activity)) {
+                $total_distance = null;
+            } else {
+                $total_distance = $activity->sum('activity_length');
+            }
+    
+            return view('pages.users_dashboard.activity.index',[
+                'user' => $user,
+                'activity' => $activity,
+                'is_registered' => $is_registered,
+                'total_distance' => $total_distance
+            ]);
         } else {
-            $total_distance = $activity->sum('activity_length');
+            return redirect()->route('dashboard.index',['user' => $user])
+                ->with('warning','Anda sudah terdaftar di lomba '.$user->competition);
         }
-
-        return view('pages.users_dashboard.activity.index',[
-            'user' => $user, 
-            'activity' => $activity,
-            'total_distance' => $total_distance
-        ]);
+        
     }
 
     public function create()
     {
-
         $user = User::find(Auth::id());
-        if ($user->activity()->exists()) {
-            return redirect()->back()
-                ->with('warning','Anda sudah pernah menambahkan data');
-        } else {
-            if ($user->access_token !== null) {
-                if(strtotime(Carbon::now()) > $user->token_expires_at) {
-                    $refresh = Strava::refreshToken($user->refresh_token);
-                    $user->access_token = $refresh->access_token;
-                    $user->refresh_token = $refresh->refresh_token;
-                    $user->save();
-                }
-                
-                //get last 3 items from strava
-                $activities = Strava::activities($user->access_token);
+        $is_registered = ($user->competition === 'Ride' || $user->competition === 'Run');
 
-                //date format for strtotime is month/day/year
-                $start_date = strtotime("09/21/2021");
-                $end_date = strtotime("10/01/2021");
-                
-                return view('pages.users_dashboard.activity.new',[
-                    'user' => $user, 
-                    'activities' => $activities,
-                    'start_date' => $start_date,
-                    'end_date' => $end_date
-                ]);
-            }
+        if ($is_registered) {
+            # code...
+            if ($user->activity()->exists()) {
+                return redirect()->back()
+                    ->with('warning','Anda sudah pernah menambahkan data');
+            } else {
+                if ($user->access_token !== null) {
+                    if(strtotime(Carbon::now()) > $user->token_expires_at) {
+                        $refresh = Strava::refreshToken($user->refresh_token);
+                        $user->access_token = $refresh->access_token;
+                        $user->refresh_token = $refresh->refresh_token;
+                        $user->save();
+                    }
+                    
+                    //get last 3 items from strava
+                    $activities = Strava::activities($user->access_token);
     
-            $user = Auth::user();
-            return view('pages.users_dashboard.activity.new',['user' => $user]);
+                    //date format for strtotime is month/day/year
+                    $start_date = strtotime("09/21/2021");
+                    $end_date = strtotime("10/01/2021");
+                    
+                    return view('pages.users_dashboard.activity.new',[
+                        'user' => $user, 
+                        'activities' => $activities,
+                        'start_date' => $start_date,
+                        'end_date' => $end_date
+                    ]);
+                }
+        
+                $user = Auth::user();
+                return view('pages.users_dashboard.activity.new',['user' => $user]);
+            }
+        } else {
+            return redirect()->back()
+                ->with('warning','Anda belum terdaftar di lomba Ride & Run');
         }
         
     }
@@ -122,6 +137,15 @@ class ActivityController extends Controller
             return redirect()->back()
                 ->with('success','Data berhasil dihapus');
         }
+    }
+
+    public function join($type)
+    {
+        $user = User::find(Auth::id());
+        $user->competition = $type;
+        $user->save();
+
+        return $this->index();
     }
 
     public function getToken(Request $request)

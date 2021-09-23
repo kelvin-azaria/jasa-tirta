@@ -104,20 +104,35 @@
           @else
             <div class="row text-white text-center my-3">
               <div class="card-body text-white">
-                <h5 class="card-title fw-bold text-center">Daftar Sekarang</h5>
-                <p>
-                  Sebelum mendaftar harap baca terlebih dahulu peraturan dan mekanisme 
-                  pertandingan Bike & Run ini melalui link berikut
-                </p>
-                <a href="{{ route('rule.index') }}" class="btn btn-sm btn-outline-info">Peraturan Bike & Run</a> 
-                <hr>
-                <p>
-                  Apabila sudah mengetahui peraturan dan mekanisme pertandingan, segera mendaftar langsung dengan 
-                  cara submit data anda melalui link berikut
-                </p>
-                <a href="{{ route('activity.create') }}" class="btn btn-sm btn-success">
-                  Submit Data Turnamen Bike & Run
-                </a>
+                @if ($is_registered)
+                  <h5 class="card-title fw-bold text-center">Anda sudah terdaftar di lomba {{ $user->competition }} !</h5>
+                  <p>
+                    Segera submit data anda melalui link dibawah ini
+                  </p>
+                  <hr>
+                  <a href="{{ route('activity.create') }}" class="btn btn-sm btn-success">
+                    Submit Data Turnamen Bike & Run
+                  </a>
+                @else
+                  <h5 class="card-title fw-bold text-center">Daftar Sekarang</h5>
+                  <p>
+                    Sebelum mendaftar harap baca terlebih dahulu peraturan dan mekanisme 
+                    pertandingan Bike & Run ini melalui link berikut
+                  </p>
+                  <a href="{{ route('rule.index') }}" class="btn btn-sm btn-outline-info">Peraturan Bike & Run</a> 
+                  <hr>
+                  <p>
+                    Apabila sudah mengetahui peraturan dan mekanisme pertandingan, segera mendaftar langsung dengan 
+                    cara submit data anda melalui link berikut. <b>*data tidak bisa diubah lagi setelah mendaftar</b>
+                  </p>
+                  <a href="{{ route('activity.join',['type' => 'Ride']) }}" class="btn btn-sm btn-success">
+                    Daftar untuk Turnamen Ride
+                  </a>
+                  <a href="{{ route('activity.join',['type' => 'Run']) }}" class="btn btn-sm btn-success">
+                    Daftar untuk Turnamen Run
+                  </a>
+                @endif
+                
               </div>
             </div>
           @endif
