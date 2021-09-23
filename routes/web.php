@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LeaderboardController;
 use App\Http\Controllers\RuleController;
 use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\Admin\ActivityController as AdminActivityController;
 use App\Http\Controllers\Admin\BridgeController as AdminBridgeController;
 use App\Http\Controllers\User\BridgeController;
 use App\Http\Controllers\User\ChessController;
@@ -56,5 +57,9 @@ Route::prefix('/admin')->name('admin.')->group(function(){
   Route::resource('dashboard', AdminDashboardController::class)->only(['index']);
 
   Route::resource('bridge', AdminBridgeController::class);
+  
+  Route::resource('activity', AdminActivityController::class)->only(['show','destroy']);
+  Route::get('/activity_run', [AdminActivityController::class, 'indexRun'])->name('activity.index.run');
+  Route::get('/activity_ride', [AdminActivityController::class, 'indexRide'])->name('activity.index.ride');
 
 });
