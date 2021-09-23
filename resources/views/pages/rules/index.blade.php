@@ -350,7 +350,7 @@
         <h1 class="fw-bold text-capitalize text-center">turnamen Sepeda</h1>
         <div class="row justify-content-md-center">
           <div class="col-md-8">
-            <img class="w-100 rounded" src="{{ asset('img/bike-rule.png') }}" alt="">
+            {{-- <img class="w-100 rounded" src="{{ asset('img/bike-rule.png') }}" alt=""> --}}
           </div>
         </div>
         <h2 class="fw-bold text-capitalize">Peraturan Best Performance Ride 100 KM :</h2>
