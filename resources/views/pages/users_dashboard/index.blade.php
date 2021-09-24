@@ -100,7 +100,7 @@
             <img src="{{ asset('img/pendukung-lomba-bike.jpg') }}" class="card-img" alt="...">
             <div class="card-img-overlay">
               <div class="text-center h-100 align-content-end d-grid">
-                <a href="{{ route('activity.create') }}" class="btn btn-sm btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
+                <a href="{{ route('activity.index') }}" class="btn btn-sm btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
               </div>
             </div>
           </div>
@@ -110,7 +110,7 @@
             <img src="{{ asset('img/pendukung-lomba-run.jpg') }}" class="card-img" alt="...">
             <div class="card-img-overlay">
               <div class="text-center h-100 align-content-end d-grid">
-                <a href="{{ route('activity.create') }}" class="btn btn-sm btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
+                <a href="{{ route('activity.index') }}" class="btn btn-sm btn-warning mx-auto fw-bold text-white">Daftar Disini</a>
               </div>
             </div>
           </div>
@@ -129,8 +129,13 @@
               <h3 class="lh-base text-white-50">Lomba yang diikuti :</h3>
               <h1 class="text-primary fw-bold">{{ $user->competition }}</h1>
               @if ($user->google_form_status == 0)
-              <p class="text-info">
-              <i class="bi bi-info-circle-fill me-2"></i> Silahkan Lengkapi Data Diri pada Google Form untuk Lomba terkait</p>
+                @if ($user->competition === 'Run' || $user->competition === 'Ride')
+                  <p class="text-info">
+                  <i class="bi bi-info-circle-fill me-2"></i> Pelaksanaan lomba dan submit data akan dibuka pada tanggal 2-7 Oktober</p>
+                @else
+                  <p class="text-info">
+                  <i class="bi bi-info-circle-fill me-2"></i> Silahkan Lengkapi Data Diri pada Google Form untuk Lomba terkait</p>
+                @endif
               @endif
             </div>
           </div>
