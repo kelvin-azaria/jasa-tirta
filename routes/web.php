@@ -8,6 +8,7 @@ use App\Http\Controllers\RuleController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\Admin\ActivityController as AdminActivityController;
 use App\Http\Controllers\Admin\BridgeController as AdminBridgeController;
+use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\User\BridgeController;
 use App\Http\Controllers\User\ChessController;
 use App\Http\Controllers\User\PubgController;
@@ -68,5 +69,6 @@ Route::prefix('/admin')->name('admin.')->group(function(){
   Route::resource('activity', AdminActivityController::class)->only(['show','destroy']);
   Route::get('/activity_run', [AdminActivityController::class, 'indexRun'])->name('activity.index.run');
   Route::get('/activity_ride', [AdminActivityController::class, 'indexRide'])->name('activity.index.ride');
-
+  
+  Route::resource('users', AdminUserController::class)->only(['index','show','destroy']);
 });

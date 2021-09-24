@@ -5,52 +5,54 @@
   <div class="bg-gradient w-100 my-2"></div>
   <div class="row">
     <div class="col-lg">
-      <div class="row pb-4">
-        <div class="col-sm pt-4">
-          <a href="">
-            <div class="card">
-              <img src="{{ asset('img/pendukung-lomba-PUBG.jpg') }}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h3 class="card-title fw-bold">PUBG</h3>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm pt-4">
-          <a href="">
-            <div class="card">
-              <img src="{{ asset('img/pendukung-lomba-chess.jpg') }}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h3 class="card-title fw-bold">Chess</h3>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg">
-      <div class="row pb-4">
-        <div class="col-sm pt-4">
-          <a href="{{ route('admin.bridge.index') }}">
-            <div class="card">
-              <img src="{{ asset('img/pendukung-lomba-bridge.jpg') }}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h3 class="card-title fw-bold">Bridge</h3>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm pt-4">
-          <a href="">
-            <div class="card">
-              <img src="{{ asset('img/pendukung-lomba-run.jpg') }}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h3 class="card-title fw-bold">Run</h3>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
+      <h4>
+        Data Peserta yang Terdaftar Hari ini
+      </h4>
+      <table class="table table-hover mt-5">
+        <thead>
+          <tr>
+            <th scope="col">NAMA</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">JENIS KELAMIN</th>
+            <th scope="col">CABANG</th>
+            <th scope="col">NPP</th>
+            <th scope="col">LOMBA</th>
+            <th scope="col" colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach ($users as $u)
+            <tr>
+              <th scope="row">{{ $u->name }}</th>
+              <td>{{ $u->email }}</td>
+              <td>
+                @if ($u->gender === 'L')
+                  Laki-laki
+                @else
+                  Perempuan
+                @endif
+              </td>
+              <td>{{ $u->work_unit }}</td>
+              <td>{{ $u->npp }}</td>
+              <td>{{ $u->competition }}</td>
+              <td>
+                <a href="{{ route('admin.users.show',['user' => $u->id]) }}" class="btn btn-info text-white fw-bold">
+                  Info
+                </a>
+              </td>
+              <td>
+                <form method="POST" class="d-inline" class="btn"
+                      action="{{ route('admin.users.destroy',['user' => $u->id]) }}">
+                  @csrf
+                  @method('DELETE')
+
+                  <input type="submit" class="btn btn-danger text-white fw-bold" value="Hapus">
+                </form>
+              </td>
+            </tr>
+          @endforeach
+        </tbody>
+      </table>
     </div>
   </div>
 

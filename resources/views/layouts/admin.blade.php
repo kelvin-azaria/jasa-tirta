@@ -44,36 +44,9 @@
                         <i class="bi bi-person-circle"></i><span class="ms-2 d-none d-sm-inline text-capitalize">peserta</span>
                         </a>
                         <ul class="dropdown-menu text-small shadow dropdown-menu-dark" aria-labelledby="dropdown">
-                            <li><a class="dropdown-item text-capitalize" href="#">List Peserta</a></li>
+                            <li><a class="dropdown-item text-capitalize" href="{{ route('admin.users.index') }}">List Peserta</a></li>
                         </ul>
                     </li>
-                    {{-- <li class="dropdown">
-                      <a href="#" class="nav-link dropdown-toggle px-sm-0 px-2 text-white" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-crosshairs"></i><span class="ms-2 d-none d-sm-inline text-capitalize">pubg</span>
-                        </a>
-                        <ul class="dropdown-menu text-small shadow dropdown-menu-dark" aria-labelledby="dropdown">
-                            <li><a class="dropdown-item text-capitalize" href="#">List Data</a></li>
-                            <li><a class="dropdown-item text-capitalize" href="#">Input Data</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="nav-link dropdown-toggle px-sm-0 px-2 text-white" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-chess"></i><span class="ms-2 d-none d-sm-inline text-capitalize">chess</span>
-                        </a>
-                        <ul class="dropdown-menu text-small shadow dropdown-menu-dark" aria-labelledby="dropdown">
-                          <li><a class="dropdown-item text-capitalize" href="#">List Data</a></li>
-                          <li><a class="dropdown-item text-capitalize" href="#">Input Data</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="nav-link dropdown-toggle px-sm-0 px-2 text-white" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-suit-club-fill"></i><span class="ms-2 d-none d-sm-inline text-capitalize">bridge</span>
-                        </a>
-                        <ul class="dropdown-menu text-small shadow dropdown-menu-dark" aria-labelledby="dropdown">
-                          <li><a class="dropdown-item text-capitalize" href="{{ route('admin.bridge.index') }}">List Data</a></li>
-                          <li><a class="dropdown-item text-capitalize" href="{{ route('admin.bridge.create') }}">Input Data</a></li>
-                        </ul>
-                    </li> --}}
                     <li class="dropdown">
                       <a href="#" class="nav-link dropdown-toggle px-sm-0 px-2 text-white" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-running"></i><span class="ms-2 d-none d-sm-inline text-capitalize">Ride & Run</span>
