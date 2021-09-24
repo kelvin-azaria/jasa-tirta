@@ -16,7 +16,6 @@
               <tr>
                 <th scope="col">NAMA</th>
                 <th scope="col">EMAIL</th>
-                <th scope="col">JENIS KELAMIN</th>
                 <th scope="col">CABANG</th>
                 <th scope="col">NPP</th>
                 <th scope="col">LOMBA</th>
@@ -28,19 +27,12 @@
                 <tr>
                   <th scope="row">{{ $u->name }}</th>
                   <td>{{ $u->email }}</td>
-                  <td>
-                    @if ($u->gender === 'L')
-                      Laki-laki
-                    @else
-                      Perempuan
-                    @endif
-                  </td>
                   <td>{{ $u->work_unit }}</td>
                   <td>{{ $u->npp }}</td>
                   <td>{{ $u->competition }}</td>
                   <td>
                     <a href="{{ route('admin.users.show',['user' => $u->id]) }}" class="btn btn-info text-white fw-bold">
-                      Info
+                      Detail
                     </a>
                   </td>
                   <td>
