@@ -63,8 +63,6 @@ Route::prefix('/admin')->name('admin.')->group(function(){
   });
 
   Route::resource('dashboard', AdminDashboardController::class)->only(['index']);
-
-  Route::resource('bridge', AdminBridgeController::class);
   
   Route::resource('activity', AdminActivityController::class)->only(['show','destroy']);
   Route::get('/activity_run', [AdminActivityController::class, 'indexRun'])->name('activity.index.run');
