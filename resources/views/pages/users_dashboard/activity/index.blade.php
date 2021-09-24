@@ -105,6 +105,7 @@
             <div class="row text-white text-center my-3">
               <div class="card-body text-white">
                 @if ($is_registered)
+                @if ($current_date >= $start_date && $current_date <= $end_date)
                   <h3 class="card-title fw-bold text-center text-capitalize">Anda <strong class="text-primary">TELAH TERDAFTAR</strong> di lomba {{ $user->competition }} Online!</h3>
                   <hr>
                   <p>
@@ -114,6 +115,17 @@
                   <a href="{{ route('activity.create') }}" class="btn btn-sm btn-success">
                     Submit Data Turnamen Bike & Run
                   </a>
+                @else
+                  <h3 class="card-title fw-bold text-center text-capitalize">Anda <strong class="text-primary">TELAH TERDAFTAR</strong> di lomba {{ $user->competition }} Online!</h3>
+                  <hr>
+                  <p>
+                    Pelaksanaan lomba dan submit data akan dibuka pada tanggal 2-7 Oktober
+                  </p>
+                  <hr>
+                  <a href="{{ route('activity.create') }}" class="btn btn-sm btn-success disabled">
+                    Submit Data Turnamen Bike & Run
+                  </a>
+                @endif
                 @else
                   <h3 class="card-title fw-bold text-center text-primary">Daftar Sekarang</h3>
                   <p>
