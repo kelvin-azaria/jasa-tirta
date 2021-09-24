@@ -26,9 +26,9 @@
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
       @endif
-      <div class="card bg-light my-3">
+      <div class="card bg-light my-3 table-width">
         <div class="card-body">
-          <div class="table-responsive">
+          <div class="table-responsive-xxl">
           <table class="table table-hover">
             <thead>
               <tr>
