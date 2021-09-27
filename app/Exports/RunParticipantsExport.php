@@ -40,7 +40,7 @@ class RunParticipantsExport implements FromCollection, WithHeadings, WithMapping
             $run_participants->gender,
             Carbon::parse($run_participants->birth_date)->format('d-m-Y'),
             $run_participants->work_unit,
-            $run_participants->npp,
+            (string)$run_participants->npp,
         ];
     }
 }
