@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\RideParticipantsExport;
+use App\Exports\RunParticipantsExport;
 use App\Http\Controllers\Controller;
 use App\Models\Activity;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ActivityController extends Controller
 {
@@ -82,5 +86,17 @@ class ActivityController extends Controller
 
         return redirect()->back()
             ->with('success','Data berhasil dihapus');
+    }
+
+    public function exportRun()
+    {
+        $date = Carbon::parse(strtotime("now"))->format('d-m-Y');
+        return Excel::download(new RunParticipantsExport, 'Daftar peserta run '.$date.'.xlsx');
+    }
+
+    public function exportRide()
+    {
+        $date = Carbon::parse(strtotime("now"))->format('d-m-Y');
+        return Excel::download(new RideParticipantsExport, 'Daftar peserta ride '.$date.'.xlsx');
     }
 }

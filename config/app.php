@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'IEF Youth Camp'),
+    'name' => env('APP_NAME', 'Olimpiade JR 2021'),
 
     /*
     |--------------------------------------------------------------------------
