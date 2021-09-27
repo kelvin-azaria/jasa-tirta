@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Activity;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ActivityController extends Controller
@@ -11,6 +12,28 @@ class ActivityController extends Controller
     public function __construct()
     {
         $this->middleware('auth:admin');
+    }
+
+    public function indexUserRide()
+    {
+        $type = 'Ride';
+        $users = User::where('competition','Ride')->paginate(10);
+
+        return view('pages.admins_dashboard.activity.indexUser',[
+            'users' => $users,
+            'type' => $type
+        ]);
+    }
+
+    public function indexUserRun()
+    {
+        $type = 'Run';
+        $users = User::where('competition','Run')->paginate(10);
+
+        return view('pages.admins_dashboard.activity.indexUser',[
+            'users' => $users,
+            'type' => $type
+        ]);
     }
 
     public function indexRide()

@@ -67,6 +67,8 @@ Route::prefix('/admin')->name('admin.')->group(function(){
   Route::resource('activity', AdminActivityController::class)->only(['show','destroy']);
   Route::get('/activity_run', [AdminActivityController::class, 'indexRun'])->name('activity.index.run');
   Route::get('/activity_ride', [AdminActivityController::class, 'indexRide'])->name('activity.index.ride');
+  Route::get('/activity_run_user', [AdminActivityController::class, 'indexUserRun'])->name('activity.index.run.user');
+  Route::get('/activity_ride_user', [AdminActivityController::class, 'indexUserRide'])->name('activity.index.ride.user');
   
   Route::resource('users', AdminUserController::class)->only(['index','show','destroy']);
 });
