@@ -36,9 +36,11 @@
               </h5>
             </div>
             <div class="col-sm">
-              <a href="{{ route('user.strava_auth') }}" class="btn btn-sm btn-warning float-end">
-                Ambil Data Strava
-              </a>
+              @if (!$user->access_token)
+                <a href="{{ route('user.strava_auth') }}" class="btn btn-sm btn-warning float-end">
+                  Ambil Data Strava
+                </a>
+              @endif
             </div>
           </div>
           <hr>

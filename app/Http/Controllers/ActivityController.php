@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class ActivityController extends Controller
 {
@@ -167,22 +168,33 @@ class ActivityController extends Controller
 
     public function getToken(Request $request)
     {
-        if ($request->code !== null) {
-            $token = Strava::token($request->code);
-            $this->token = $token->access_token;
-            $user_id = Auth::id();
-            
-            $user = User::find($user_id);
-            $user->access_token = $token->access_token;
-            $user->refresh_token = $token->refresh_token;
-            $user->token_expires_at = $token->expires_at;
-            $user->save();
-
-            return redirect()->route('activity.create');
-        } else {
+        if ($request->error) {
             return redirect()->route('activity.create')
                 ->withErrors(['auth' => ['Gagal melakukan otorisasi dengan Strava']]);
         }
+
+        if (Str::contains($request->scope, 'activity')) {
+            if ($request->code !== null) {
+                $token = Strava::token($request->code);
+                $this->token = $token->access_token;
+                $user_id = Auth::id();
+                
+                $user = User::find($user_id);
+                $user->access_token = $token->access_token;
+                $user->refresh_token = $token->refresh_token;
+                $user->token_expires_at = $token->expires_at;
+                $user->save();
+    
+                return redirect()->route('activity.create');
+            } else {
+                return redirect()->route('activity.create')
+                    ->withErrors(['auth' => ['Gagal melakukan otorisasi dengan Strava']]);
+            }
+        } else {
+            return redirect()->route('activity.create')
+                ->withErrors(['auth' => ['Harap memberi akses untuk melihat data aktifitas']]);
+        }
+
     }
 
     private function getStravaActivity($user)
