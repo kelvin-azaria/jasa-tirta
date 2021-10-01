@@ -60,7 +60,15 @@
             <div class="card-body text-white">
               <h3 class="fw-bold text-info">Total Jarak Aktifitas</h3>
               <hr>
-              <h1 class="fw-bold">{{ $total_distance/1000 }} km</h1>
+              @if ($user->competition === 'Ride')
+                @if ($user->gender === 'L')
+                  <h1 class="fw-bold">{{ $total_distance/1000 }} km dari 100 km</h1>
+                @elseif($user->gender === 'P')
+                  <h1 class="fw-bold">{{ $total_distance/1000 }} km dari 50 km</h1>
+                @endif
+              @elseif($user->competition === 'Run')
+                <h1 class="fw-bold">{{ $total_distance/1000 }} km</h1>
+              @endif
             </div>
           </div>
         </div>
