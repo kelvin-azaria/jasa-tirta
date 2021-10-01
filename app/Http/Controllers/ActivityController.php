@@ -58,7 +58,7 @@ class ActivityController extends Controller
         if ($is_registered) {
             // RUN
             if ($user->competition === 'Run') {
-                if ($user->activities !== null) {
+                if (!$user->activities->isEmpty()) {
                     return redirect()->back()
                         ->with('warning','Anda sudah tidak bisa menambahkan lagi data');
                 } else {
@@ -67,7 +67,7 @@ class ActivityController extends Controller
             } 
             // RIDE
             elseif ($user->competition === 'Ride') {
-                if ($user->activities !== null) {
+                if (!$user->activities->isEmpty()) {
                     if ($user->gender === 'L') {
                         $activity_count = count($user->activities);
     
