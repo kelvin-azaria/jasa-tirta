@@ -25,9 +25,23 @@
             <h3 class="card-title fw-bold text-center text-capitalize">Anda <strong class="text-primary">TELAH TERDAFTAR</strong> di lomba {{ $user->competition }} Online!</h3>
             <hr>
             @if ($google_form_status)
-            <p>
-              Anda dihubungi oleh panitia untuk instruksi lebih lanjut mengenai lomba {{ $user->competition }} Online
-            </p>
+              <div class="row text-white text-center my-3">
+                <h4>Jadwal Technical Meeting</h3>
+              </div>
+              <div class="table-responsive">
+                <table  class="table text-white-50 table-borderless table-responsive">
+                  <tr>
+                    <th>Hari</th>
+                    <th>Tanggal</th>
+                    <th>Waktu</th>
+                  </tr>
+                  <tr>
+                    <td>Jumat</td>
+                    <td>1 Oktober 2021</td>
+                    <td>09:00 WIB</td>
+                  </tr>
+                </table>
+              </div>
             @else
               <p class="text-white-50">
                 <strong class="text-primary"> Silahkan isi formulir Google Form Dibawah ini</strong><br>Bersifat Wajib untuk melengkapi data pendaftaran anda

@@ -21,55 +21,6 @@
         </div>
       @endif
 
-      {{-- <div class="card bg-lightdarkblue my-3">
-        @if ($activity !== null)
-          <div class="row text-white text-center my-3">
-            <h4>Total Jarak Aktifitas</h3>
-            <h4>{{ $total_distance/1000 }} km</h3>
-          </div>
-          <div class="table-responsive">
-            <table  class="table text-white-50 table-borderless table-responsive">
-              <tr>
-                <th>Nama Aktifitas</th>
-                <th>Jenis Aktifitas</th>
-                <th>Tanggal Aktifitas</th>
-                <th>Jarak Ditempuh</th>
-                <th>Durasi Aktifitas</th>
-                <th>Link Strava</th>
-              </tr>
-              <tr>
-                <td>{{ $activity->activity_name }}</td>
-                <td>{{ $activity->activity_type }}</td>
-                <td>{{ $activity->activity_date }}</td>
-                <td>{{ ($activity->activity_length)/1000 }} km</td>
-                <td>{{ ($activity->activity_duration)/3600 }} jam</td>
-                <td>
-                  <a href="https://www.strava.com/activities/{{ $activity->strava_activity_id }}">
-                    https://www.strava.com/activities/{{ $activity->strava_activity_id }}
-                  </a>
-                </td>
-              </tr>
-            </table>
-          </div>
-        @else
-          <div class="row text-white text-center my-3">
-            <h5 class="card-title fw-bold text-center">Daftar Sekarang</h5>
-            <p>
-              Sebelum mendaftar harap baca terlebih dahulu peraturan dan mekanisme 
-              pertandingan Bridge Online ini melalui link berikut
-            </p>
-            <a href="{{ route('rule.index') }}" class="btn btn-sm btn-outline-info">Peraturan Bridge Online</a> 
-            <hr>
-            <p>
-              Apabila sudah mengetahui peraturan dan mekanisme pertandingan, daftar segera di link berikut
-            </p>
-            <a href="https://forms.gle/VKnD4Qaz39Rtpy747" target="_blank" class="btn btn-sm btn-success">
-              Daftar Turnamen Bridge Online Melalui Google Form
-            </a>
-          </div>
-        @endif
-      </div> --}}
-
       <div class="col-md">
         <div class="card bg-lightdarkblue my-3">
           @if ($activity !== null)
@@ -105,27 +56,44 @@
             <div class="row text-white text-center my-3">
               <div class="card-body text-white">
                 @if ($is_registered)
-                @if ($current_date >= $start_date && $current_date <= $end_date)
                   <h3 class="card-title fw-bold text-center text-capitalize">Anda <strong class="text-primary">TELAH TERDAFTAR</strong> di lomba {{ $user->competition }} Online!</h3>
-                  <hr>
-                  <p>
-                    Segera submit data anda melalui link dibawah ini
-                  </p>
-                  <hr>
-                  <a href="{{ route('activity.create') }}" class="btn btn-sm btn-success">
-                    Submit Data Turnamen Bike & Run
-                  </a>
-                @else
-                  <h3 class="card-title fw-bold text-center text-capitalize">Anda <strong class="text-primary">TELAH TERDAFTAR</strong> di lomba {{ $user->competition }} Online!</h3>
-                  <hr>
-                  <p>
-                    Pelaksanaan lomba dan submit data akan dibuka pada tanggal 2-7 Oktober
-                  </p>
-                  <hr>
-                  <a href="{{ route('activity.create') }}" class="btn btn-sm btn-success disabled">
-                    Submit Data Turnamen Bike & Run
-                  </a>
-                @endif
+                  <div class="row text-white text-center my-3">
+                    <h4>Jadwal Technical Meeting</h3>
+                  </div>
+                  <div class="table-responsive">
+                    <table  class="table text-white-50 table-borderless table-responsive">
+                      <tr>
+                        <th>Hari</th>
+                        <th>Tanggal</th>
+                        <th>Waktu</th>
+                      </tr>
+                      <tr>
+                        <td>Jumat</td>
+                        <td>1 Oktober 2021</td>
+                        <td>16:00 WIB</td>
+                      </tr>
+                    </table>
+                  </div>
+
+                  @if ($current_date >= $start_date && $current_date <= $end_date)
+                    <hr>
+                    <p>
+                      Segera submit data anda melalui link dibawah ini
+                    </p>
+                    <hr>
+                    <a href="{{ route('activity.create') }}" class="btn btn-sm btn-success">
+                      Submit Data Turnamen Bike & Run
+                    </a>
+                  @else
+                    <hr>
+                    <p>
+                      Pelaksanaan lomba dan submit data akan dibuka pada tanggal 2-7 Oktober
+                    </p>
+                    <hr>
+                    <a href="{{ route('activity.create') }}" class="btn btn-sm btn-success disabled">
+                      Submit Data Turnamen Bike & Run
+                    </a>
+                  @endif
                 @else
                   <h3 class="card-title fw-bold text-center text-primary">Daftar Sekarang</h3>
                   <p>
