@@ -24,40 +24,8 @@
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
           @endif
-          <div class="card bg-lightdarkblue my-3">
-            <div class="card-body text-white">
-              <h5 class="card-title">Submit data Bike & Run</h5>
-              <hr>
-              <table class="table text-white text-center table-borderless">
-                <tr>
-                  <th colspan="2">Pilih kategori lomba yang akan diikuti</th>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="type" id="radioRide" value="Bike" form="activityForm">
-                      <label class="form-check-label" for="radioRide">
-                        Bike
-                      </label>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="type" id="radioRun" value="Run" form="activityForm">
-                      <label class="form-check-label" for="radioRun">
-                        Run
-                      </label>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
         </div>
       </div>
-      
-    </div>
-    <div class="col-md">
       <div class="card bg-lightdarkblue my-3">
         <div class="card-body text-white">
           <div class="row">
@@ -68,7 +36,7 @@
               </h5>
             </div>
             <div class="col-sm">
-              <a href="{{ route('user.strava_auth') }}" class="btn btn-sm btn-warning float-end w-100">
+              <a href="{{ route('user.strava_auth') }}" class="btn btn-sm btn-warning float-end">
                 Ambil Data Strava
               </a>
             </div>
@@ -78,7 +46,7 @@
           <table class="table text-white-50 table-borderless">
             <tr>
               <th>Nama Aktifitas</th>
-              <th>Laju/Pace Aktifitas</th>
+              <th>Tipe Aktifitas</th>
               <th>Tanggal Aktifitas</th>
               <th>Jarak Ditempuh</th>
               <th>Durasi Aktifitas</th>
@@ -98,7 +66,14 @@
                     <td>{{ ($a->elapsed_time)/3600 }} jam</td>
                     <td>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="activity_id" id="radioActivity{{ $a->id }}" value="{{ $a->id }}" form="activityForm">
+                        <input 
+                          class="form-check-input" 
+                          type="radio" 
+                          name="activity_data" 
+                          id="radioActivity{{ $a->id }}" 
+                          value="{{ $a->id }},{{ $a->start_date_local }}" 
+                          form="activityForm"
+                        >
                       </div>
                     </td>
                   </tr>

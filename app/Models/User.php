@@ -52,9 +52,9 @@ class User extends Authenticatable
         return Storage::url($this->jrku_image_path);
     }
 
-    public function activity()
+    public function activities()
     {
-        return $this->hasOne(Activity::class);
+        return $this->hasMany(Activity::class);
     }
 
     public function bridge()
