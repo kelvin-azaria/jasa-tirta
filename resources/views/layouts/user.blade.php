@@ -64,8 +64,8 @@
                     </li>
                     <li>
                       <a href="{{ route('pubg.index') }}" class="nav-link px-sm-0 px-2 text-white">
-                        <i class="fas fa-crosshairs"></i><span class="ms-2 d-none d-sm-inline text-capitalize">
-                          pubg
+                        <i class="fas fa-crosshairs"></i><span class="ms-2 d-none d-sm-inline">
+                          PUBG
                         </span> 
                       </a>
                     </li>

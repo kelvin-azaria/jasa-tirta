@@ -140,6 +140,14 @@
                   <i class="bi bi-info-circle-fill me-2"></i> Silahkan Lengkapi Data Diri pada Google Form untuk Lomba terkait</p>
                 @endif
               @endif
+
+              @if ($user->competition === 'PUBG')
+                <p class="text-info">
+                  <i class="bi bi-info-circle-fill me-2"></i> Match PUBG akan dimulai pada : 
+                  <br>
+                  Minggu, 3 Oktober 2021 09:00 WIB
+                </p>
+              @endif
             </div>
           </div>
         </div>
