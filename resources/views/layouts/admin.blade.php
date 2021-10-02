@@ -52,8 +52,8 @@
                         <i class="fas fa-running"></i><span class="ms-2 d-none d-sm-inline text-capitalize">Ride & Run</span>
                         </a>
                         <ul class="dropdown-menu text-small shadow dropdown-menu-dark" aria-labelledby="dropdown">
-                          {{-- <li><a class="dropdown-item text-capitalize" href="{{ route('admin.activity.index.ride') }}">Data Ride</a></li>
-                          <li><a class="dropdown-item text-capitalize" href="{{ route('admin.activity.index.run') }}">Data Run</a></li> --}}
+                          <li><a class="dropdown-item text-capitalize" href="{{ route('admin.activity.index.ride') }}">Data Ride</a></li>
+                          <li><a class="dropdown-item text-capitalize" href="{{ route('admin.activity.index.run') }}">Data Run</a></li>
                           <li><a class="dropdown-item text-capitalize" href="{{ route('admin.activity.index.ride.user') }}">Data Peserta Ride</a></li>
                           <li><a class="dropdown-item text-capitalize" href="{{ route('admin.activity.index.run.user') }}">Data Peserta Run</a></li>
                         </ul>

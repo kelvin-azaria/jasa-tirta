@@ -65,10 +65,16 @@ Route::prefix('/admin')->name('admin.')->group(function(){
   Route::resource('dashboard', AdminDashboardController::class)->only(['index']);
   
   Route::resource('activity', AdminActivityController::class)->only(['show','destroy']);
+
   Route::get('/activity_run', [AdminActivityController::class, 'indexRun'])->name('activity.index.run');
+  Route::get('/activity_run/export', [AdminActivityController::class, 'exportRunData'])->name('activity.index.run.export');
+  
   Route::get('/activity_ride', [AdminActivityController::class, 'indexRide'])->name('activity.index.ride');
+  Route::get('/activity_ride/export', [AdminActivityController::class, 'exportRideData'])->name('activity.index.ride.export');
+
   Route::get('/activity_run_user', [AdminActivityController::class, 'indexUserRun'])->name('activity.index.run.user');
   Route::get('/activity_run_user/export', [AdminActivityController::class, 'exportRun'])->name('activity.index.run.user.export');
+  
   Route::get('/activity_ride_user', [AdminActivityController::class, 'indexUserRide'])->name('activity.index.ride.user');
   Route::get('/activity_ride_user/export', [AdminActivityController::class, 'exportRide'])->name('activity.index.ride.user.export');
   

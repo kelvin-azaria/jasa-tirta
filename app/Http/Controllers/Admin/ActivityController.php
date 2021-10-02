@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Exports\RideParticipantsExport;
+use App\Exports\RideDataExport;
+use App\Exports\RunDataExport;
 use App\Exports\RunParticipantsExport;
 use App\Http\Controllers\Controller;
 use App\Models\Activity;
@@ -43,7 +45,7 @@ class ActivityController extends Controller
     public function indexRide()
     {
         $type = 'Ride';
-        $activities = Activity::where('activity_type','Bike')->paginate(10);
+        $activities = Activity::where('activity_type','Ride')->paginate(10);
 
         return view('pages.admins_dashboard.activity.index',[
             'activities' => $activities,
@@ -94,9 +96,22 @@ class ActivityController extends Controller
         return Excel::download(new RunParticipantsExport, 'Daftar peserta run '.$date.'.xlsx');
     }
 
+    
     public function exportRide()
     {
         $date = Carbon::parse(strtotime("now"))->format('d-m-Y');
         return Excel::download(new RideParticipantsExport, 'Daftar peserta ride '.$date.'.xlsx');
+    }
+
+    public function exportRideData()
+    {
+        $date = Carbon::parse(strtotime("now"))->format('d-m-Y');
+        return Excel::download(new RideDataExport, 'Daftar ride '.$date.'.xlsx');
+    }
+    
+    public function exportRunData()
+    {
+        $date = Carbon::parse(strtotime("now"))->format('d-m-Y');
+        return Excel::download(new RunDataExport, 'Daftar run '.$date.'.xlsx');
     }
 }

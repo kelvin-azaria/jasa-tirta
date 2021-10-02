@@ -6,11 +6,20 @@
     <div class="col-sm">
       <h1 class="fw-bold">Data Turnamen {{ $type }}</h1>
     </div>
-    {{-- <div class="col-sm-auto align-self-center">
-      <a href="{{ route('admin.bridge.create') }}" role="button" class="btn btn-primary fw-bold text-white">
+    <div class="col-sm-auto align-self-center">
+      {{-- <a href="{{ route('admin.bridge.create') }}" role="button" class="btn btn-primary fw-bold text-white">
         <i class="bi bi-plus"></i> Tambah Data
-      </a>
-    </div> --}}
+      </a> --}}
+        @if ($type === 'Run')
+          <a href="{{ route('admin.activity.index.run.export') }}" role="button" class="btn btn-success fw-bold text-white">
+            <i class="fas fa-file-export"></i> Export Data
+          </a>
+        @elseif($type === 'Ride')
+          <a href="{{ route('admin.activity.index.ride.export') }}" role="button" class="btn btn-success fw-bold text-white">
+            <i class="fas fa-file-export"></i> Export Data
+          </a>
+        @endif
+    </div>
   </div>
   <div class="row">
     <div class="col">
