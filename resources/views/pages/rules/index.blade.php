@@ -353,19 +353,19 @@
             {{-- <img class="w-100 rounded" src="{{ asset('img/bike-rule.png') }}" alt=""> --}}
           </div>
         </div>
-        <h2 class="fw-bold text-capitalize">Peraturan Best Performance Ride 100 KM :</h2>
+        <h2 class="fw-bold text-capitalize">Peraturan Best Performance Ride 100 KM Putra dan 50 KM Putri:</h2>
         <ul style="list-style: value;">
           <li class="my-2">
             Peserta Adalah Pegawai aktif PT. Jasa Raharja dan peserta Langkah Bakti Jasa Raharja (LBJR)
           </li>
           <li class="my-2">
-            Penilaian Best Performance adalah waktu tercepat menyelesaikan jarak yang telah ditentukan yaitu 100 KM terhitung saat lomba dimulai tanggal 2 Oktober 2021 pukul 00.00 WIB dan berakhir pada 7 Oktober pukul 23.59 WIB.  
+            Penilaian Best Performance adalah waktu tercepat menyelesaikan jarak yang telah ditentukan yaitu 100 KM putra dan 50 KM putri, terhitung saat lomba dimulai tanggal 2 Oktober 2021 pukul 00.00 WIB dan berakhir pada 7 Oktober pukul 23.59 WIB.  
           </li>
           <li class="my-2">
-            Peserta kategori Best Performance Ride 100 KM hanya diperbolehkan menyelesaikan 100 KM maksimal 2 hari workout secara beturut-turut di tanggal 2 Oktober 2021 00.00 WIB dan berakhir 7 Oktober pukul 23.59 WIB. Jika lebih dari 2 (dua) hari workout beturut-turut  dan terdapat jeda 1 (Satu) harimaka peserta tidak termasuk nominasi Best Performance.
+            Peserta kategori Best Performance Ride 100 KM dan 50 KM hanya diperbolehkan menyelesaikan 100 KM dan 50 KM maksimal 2 hari workout secara beturut-turut di tanggal 2 Oktober 2021 00.00 WIB dan berakhir 7 Oktober pukul 23.59 WIB. Jika lebih dari 2 (dua) hari workout beturut-turut  dan terdapat jeda 1 (Satu) hari maka peserta tidak termasuk nominasi Best Performance.
           </li>
           <li class="my-2">
-            Peserta yang ingin mengikuti kategori Best Performance Ride 100 KM hanya diperbolehkan 2 X upload workout di website paling lambat tanggal 7 Oktober pukul 23.59 WIB.
+            Peserta yang ingin mengikuti kategori Best Performance Ride 100 KM Putra hanya diperbolehkan 2 X upload workout di website paling lambat tanggal 7 Oktober pukul 23.59 WIB. Sedangkan untuk kategori Best Performance Ride 50 KM Putri tidak ada batasan jumlah upload.
           </li>
           <li class="my-2">
             Peserta yang sudah memenuhi syarat selanjutnya akan dinilai waktu yang paling cepat berdasarkan elapsed time hasil workout yang dilaporkan peserta di STRAVA.
@@ -380,7 +380,8 @@
             Peserta diharapkan segera melaporkan hasil workoutnya ke website yang telah ditentukan. Segala kesalahan selama proses pelaporan seperti tidak stabilnya jaringan internet sehingga peserta tidak dapat melaporkan di waktu yang telah ditentukan menjadi tanggung jawab masing-masing  peserta.
           </li>
           <li class="my-2">
-            Peserta wajib menyelesaikan ride 100 KM batas maksimal kelebihan jarak adalah 1 KM dari 100 KM, jika ada kelebihan jarak lebih dari 101 KM maka peserta tidak termasuk nominasi Best Performance kategori ride.
+            Peserta wajib menyelesaikan ride 100 KM putra, batas maksimal kelebihan jarak adalah 1 KM dari 100 KM, jika ada kelebihan jarak lebih dari 101 KM maka peserta tidak termasuk nominasi Best Performance kategori ride.
+            Sama halnya dengan ride 50 KM putri, batas maksimal kelebihan jarak adalah 1 KM dari 50 KM, jika ada kelebihan jarak lebih dari 51 KM maka peserta tidak termasuk nominasi Best Performance kategori ride.
           </li>
           <li class="my-2">
             Kelebihan jarak jika mempengaruhi waktu tercepat peserta maka menjadi tanggung jawab masing-masing peserta.
@@ -395,7 +396,7 @@
             Nama peserta yang didaftarkan harus sesuai dengan nama peserta pada NPP
           </li>
           <li class="my-2">
-            Peserta dibagi menjadi 2 kategori yaitu  Best Performance 100 KM Putra dan Best Performance 100 KM Putri. Jika Peserta mendaftar pada cabang olahraga lain maka kemenangan dianggap gugur.
+            Peserta dibagi menjadi 2 kategori yaitu  Best Performance 100 KM Putra dan Best Performance 50 KM Putri. Jika Peserta mendaftar pada cabang olahraga lain maka kemenangan dianggap gugur.
           </li>
           <li class="my-2">
             Penilaian calon Pemenang/ Potential Winner hanya dilakukan kepada peserta sepeda yang dilakukan di outdoor dst. Bagi peserta lain yang menggunakan sepeda indoor, sepeda elektrik hanya akan dinilai sebagai finisher dan tidak masuk dalam penilaian calon juara.
