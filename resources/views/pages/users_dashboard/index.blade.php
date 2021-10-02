@@ -131,7 +131,10 @@
               @if ($user->google_form_status == 0)
                 @if ($user->competition === 'Run' || $user->competition === 'Ride')
                   <p class="text-info">
-                  <i class="bi bi-info-circle-fill me-2"></i> Pelaksanaan lomba dan submit data akan dibuka pada tanggal 2-7 Oktober</p>
+                  <i class="bi bi-info-circle-fill me-2"></i> Segera submit data anda melalui link berikut</p>
+                  <a href="{{ route('activity.index') }}" class="btn fw-bold text-white btn-success">
+                    Submit Data Turnamen Ride & Run
+                  </a>
                 @else
                   <p class="text-info">
                   <i class="bi bi-info-circle-fill me-2"></i> Silahkan Lengkapi Data Diri pada Google Form untuk Lomba terkait</p>

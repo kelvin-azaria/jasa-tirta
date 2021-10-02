@@ -36,7 +36,7 @@
                   Segera submit data anda melalui link dibawah ini
                 </p>
                 <a href="{{ route('activity.create') }}" class="btn fw-bold text-white btn-success">
-                  Submit Data Turnamen Bike & Run
+                  Submit Data Turnamen Ride & Run
                 </a>
               @else
                 <p>
