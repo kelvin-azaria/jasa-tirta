@@ -185,7 +185,8 @@ class ActivityController extends Controller
                 $user->token_expires_at = $token->expires_at;
                 $user->save();
     
-                return redirect()->route('activity.create');
+                return redirect()->route('activity.create')
+                    ->with('success','Berhasil melakukan otorisasi dengan Strava ! Data yang ditampilkan hanya data dari tanggal 2 - 7 Oktober');
             } else {
                 return redirect()->route('activity.create')
                     ->withErrors(['auth' => ['Gagal melakukan otorisasi dengan Strava']]);
