@@ -16,10 +16,9 @@ class LeaderboardController extends Controller
       $status=2;
       return view('pages.leaderboards.index',compact('status'));
     }
-    public function indexBike()
+    public function indexRide()
     {
-      $status=3;
-      return view('pages.leaderboards.index',compact('status'));
+      return view('pages.leaderboards.ride.index');
     }
     public function indexRun()
     {

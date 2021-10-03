@@ -115,32 +115,6 @@ class ActivityController extends Controller
         {
             return $this->storeStravaActivity($activity_id, $user);
         }
-
-        // RIDE
-        // elseif ($user->competition === 'Ride') {
-        //     $last_user_activity = $user->activities->last();
-
-        //     if ($last_user_activity === null) {
-        //         return $this->storeStravaActivity($activity_id, $user);
-        //     } else {
-        //         //convert date format
-        //         $date1 = date('d-m-Y', strtotime($last_user_activity->activity_date));
-        //         $date2 = date('d-m-Y', strtotime($activity_date));
-
-        //         //create datetime from converted data
-        //         $last_activity_date = new DateTime($date1);
-        //         $submitted_activity_date = new DateTime($date2);
-
-        //         $interval = $last_activity_date->diff($submitted_activity_date);
-
-        //         if ((integer)$interval->format('%a') === 1) {
-        //             return $this->storeStravaActivity($activity_id, $user);
-        //         } else {
-        //             return redirect()->back()
-        //                 ->with('warning','Jeda terlalu panjang dari data yang terakhir di submit');
-        //         }
-        //     }
-        // }
         
     }
 

@@ -27,7 +27,7 @@ Route::prefix('leaderboards')-> name('leaderboards.')->group(function(){
   Route::get('/chess', [LeaderboardController::class, 'indexChess'])-> name('chess');
   Route::get('/bridge', [LeaderboardController::class, 'indexBridge'])-> name('bridge');
   Route::get('/run', [LeaderboardController::class, 'indexRun'])-> name('run');
-  Route::get('/bike', [LeaderboardController::class, 'indexBike'])-> name('bike');
+  Route::get('/ride', [LeaderboardController::class, 'indexRide'])-> name('ride');
 });
 
 Route::resource('dashboard', UserDashboardController::class)->only(['index','show']);

@@ -42,11 +42,11 @@
               </h5>
             </div>
             <div class="col-sm">
-              @if (!$user->access_token)
+              {{-- @if (!$user->access_token) --}}
                 <a href="{{ route('user.strava_auth') }}" class="btn btn-sm btn-warning float-end">
                   Ambil Data Strava
                 </a>
-              @endif
+              {{-- @endif --}}
             </div>
           </div>
           <hr>
