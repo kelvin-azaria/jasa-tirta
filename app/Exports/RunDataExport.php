@@ -22,6 +22,7 @@ class RunDataExport implements FromCollection, WithHeadings, WithMapping
             'Tanggal Aktifitas',
             'Jarak Ditempuh (km)',
             'Durasi Aktifitas (menit)',
+            'Pace (menit/km)',
             'Link Strava',
         ];
     }
@@ -49,6 +50,7 @@ class RunDataExport implements FromCollection, WithHeadings, WithMapping
             Carbon::parse($activities->activity_date)->format('d-m-Y'),
             $activities->activity_length/1000,
             $activities->activity_duration/60,
+            (($activities->activity_duration)/($activities->activity_length/1000))/60,
             'https://www.strava.com/activities/'.$activities->strava_activity_id
         ];
     }
