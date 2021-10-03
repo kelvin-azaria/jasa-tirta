@@ -44,7 +44,7 @@
             </tr>
             <tr>
               <th scope="row">2</th>
-              <td>KEPRI•BROTHER</td>
+              <td>KEPRI•BROTHERS</td>
               <td class="text-center">42</td>
             </tr>
             <tr>
