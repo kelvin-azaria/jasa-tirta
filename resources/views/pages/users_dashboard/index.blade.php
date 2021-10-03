@@ -147,6 +147,18 @@
                   <br>
                   Minggu, 3 Oktober 2021 09:00 WIB
                 </p>
+              @elseif($user->competition === 'Bridge')
+                <p class="text-info">
+                  <i class="bi bi-info-circle-fill me-2"></i> Pertandingan Bridge akan dimulai pada : 
+                  <br>
+                  Senin, 4 Oktober 2021 08:00 WIB
+                </p>
+              @elseif($user->competition === 'Chess')
+                <p class="text-info">
+                  <i class="bi bi-info-circle-fill me-2"></i> Pertandingan Chess akan dimulai pada : 
+                  <br>
+                  Selasa, 5 Oktober 2021 10:00 WIB
+                </p>
               @endif
             </div>
           </div>

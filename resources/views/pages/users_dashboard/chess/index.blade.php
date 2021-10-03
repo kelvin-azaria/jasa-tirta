@@ -26,6 +26,26 @@
               <hr>
               @if ($google_form_status)
               <div class="row text-white text-center my-3">
+                <h4>Jadwal Pertandingan</h3>
+              </div>
+              <div class="table-responsive">
+                <table  class="table text-white-50 table-borderless table-responsive">
+                  <tr>
+                    <th>Hari</th>
+                    <th>Tanggal</th>
+                    <th>Waktu</th>
+                  </tr>
+                  <tr>
+                    <td>Selasa</td>
+                    <td>5 Oktober 2021</td>
+                    <td>10:00 WIB</td>
+                  </tr>
+                </table>
+              </div>
+              
+              <hr>
+
+              <div class="row text-white text-center my-3">
                 <h4>Jadwal Technical Meeting</h3>
               </div>
               <div class="table-responsive">
