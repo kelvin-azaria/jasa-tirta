@@ -44,7 +44,7 @@
             </tr>
             <tr>
               <th scope="row">2</th>
-              <td>(Sedang mengubah nama squad)</td>
+              <td>KEPRI•BROTHER</td>
               <td class="text-center">42</td>
             </tr>
             <tr>
