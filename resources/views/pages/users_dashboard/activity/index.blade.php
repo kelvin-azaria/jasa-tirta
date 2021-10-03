@@ -62,12 +62,12 @@
               <hr>
               @if ($user->competition === 'Ride')
                 @if ($user->gender === 'L')
-                  <h1 class="fw-bold">{{ $total_distance/1000 }} km dari 100 km</h1>
+                  <h1 class="fw-bold">{{ round($total_distance/1000, 2) }} km dari 100 km</h1>
                 @elseif($user->gender === 'P')
-                  <h1 class="fw-bold">{{ $total_distance/1000 }} km dari 50 km</h1>
+                  <h1 class="fw-bold">{{ round($total_distance/1000, 2) }} km dari 50 km</h1>
                 @endif
               @elseif($user->competition === 'Run')
-                <h1 class="fw-bold">{{ $total_distance/1000 }} km</h1>
+                <h1 class="fw-bold">{{ round($total_distance/1000, 2) }} km</h1>
               @endif
             </div>
           </div>
@@ -113,7 +113,7 @@
                   <th>Jenis Aktifitas</th>
                   <th>Tanggal Aktifitas</th>
                   <th>Jarak Ditempuh</th>
-                  <th>Durasi Aktifitas</th>
+                  <th>Durasi Aktifitas (Elapsed Time)</th>
                   <th>Link Strava</th>
                 </tr>
                 @foreach ($activities as $activity)
@@ -121,8 +121,8 @@
                     <td>{{ $activity->activity_name }}</td>
                     <td>{{ $activity->activity_type }}</td>
                     <td>{{ date('d-m-Y', strtotime($activity->activity_date)) }}</td>
-                    <td>{{ ($activity->activity_length)/1000 }} km</td>
-                    <td>{{ ($activity->activity_duration)/3600 }} jam</td>
+                    <td>{{ round(($activity->activity_length)/1000, 2) }} km</td>
+                    <td>{{ gmdate("H:i:s", $activity->activity_duration) }} jam</td>
                     <td>
                       <a href="https://www.strava.com/activities/{{ $activity->strava_activity_id }}">
                         https://www.strava.com/activities/{{ $activity->strava_activity_id }}

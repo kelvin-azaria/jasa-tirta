@@ -57,7 +57,7 @@
               <th>Tipe Aktifitas</th>
               <th>Tanggal Aktifitas</th>
               <th>Jarak Ditempuh</th>
-              <th>Durasi Aktifitas</th>
+              <th>Durasi Aktifitas (Elapsed Time)</th>
               <th></th>
             </tr>
             @if (isset($activities))
@@ -70,8 +70,8 @@
                     <td>{{ $a->name }}</td>
                     <td>{{ $a->type }}</td>
                     <td>{{ date('d-m-Y', strtotime($a->start_date_local)) }}</td>
-                    <td>{{ ($a->distance)/1000 }} km</td>
-                    <td>{{ ($a->elapsed_time)/3600 }} jam</td>
+                    <td>{{ round($a->distance/1000, 2) }} km</td>
+                    <td>{{ gmdate("H:i:s", $a->elapsed_time) }}</td>
                     <td>
                       <div class="form-check">
                         <input 
