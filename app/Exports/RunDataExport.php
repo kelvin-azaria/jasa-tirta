@@ -46,7 +46,7 @@ class RunDataExport implements FromCollection, WithHeadings, WithMapping
             $activities->user->name,
             $activities->activity_name,
             $activities->activity_type,
-            Carbon::parse($activities->date)->format('d-m-Y'),
+            Carbon::parse($activities->activity_date)->format('d-m-Y'),
             $activities->activity_length/1000,
             $activities->activity_duration/3600,
             'https://www.strava.com/activities/'.$activities->strava_activity_id
