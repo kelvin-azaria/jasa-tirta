@@ -44,7 +44,7 @@
             </tr>
             <tr>
               <th scope="row">2</th>
-              <td>Satanic Squad</td>
+              <td>(Sedang mengubah nama squad)</td>
               <td class="text-center">42</td>
             </tr>
             <tr>
