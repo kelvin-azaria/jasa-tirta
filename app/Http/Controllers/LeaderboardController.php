@@ -28,7 +28,6 @@ class LeaderboardController extends Controller
     }
     public function indexRun()
     {
-      $status=4;
-      return view('pages.leaderboards.index',compact('status'));
+      return view('pages.leaderboards.run.index');
     }
 }

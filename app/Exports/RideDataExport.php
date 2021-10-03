@@ -43,7 +43,7 @@ class RideDataExport implements FromCollection, WithHeadings, WithMapping
             $activities->activity_type,
             Carbon::parse($activities->activity_date)->format('d-m-Y'),
             round(($activities->activity_length/1000), 2),
-            gmdate("H:i:s", $activities->activity_duration),
+            round(($activities->activity_duration/60), 2),
             round(((($activities->activity_duration)/($activities->activity_length/1000))/60), 2),
             'https://www.strava.com/activities/'.$activities->strava_activity_id
         ];
