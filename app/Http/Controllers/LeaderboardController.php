@@ -6,11 +6,6 @@ use Illuminate\Http\Request;
 
 class LeaderboardController extends Controller
 {
-    public function indexPubg()
-    {
-      $status=0;
-      return view('pages.leaderboards.index',compact('status'));
-    }
     public function indexChess()
     {
       $status=1;
@@ -29,5 +24,9 @@ class LeaderboardController extends Controller
     public function indexRun()
     {
       return view('pages.leaderboards.run.index');
+    }
+    public function indexPubg()
+    {
+      return view('pages.leaderboards.pubg.index');
     }
 }
