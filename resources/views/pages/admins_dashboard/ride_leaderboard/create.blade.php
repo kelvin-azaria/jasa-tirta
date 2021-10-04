@@ -6,7 +6,7 @@
     <h1 class="fw-bold pb-1">Menambahkan Data Leaderboard <strong class="text-primary">Ride</strong></h1><br>
   </div>
   <div class="col-sm-auto align-self-center">
-    <a href="{{ route('admin.leaderboard.ride.index') }}" role="button" class="btn btn-danger fw-bold text-white"><i class="bi bi-x"></i> Batal</a>
+    <a href="{{ url()->previous() }}" role="button" class="btn btn-danger fw-bold text-white"><i class="bi bi-x"></i> Batal</a>
   </div>
 </div>
 <div class="row">
