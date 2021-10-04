@@ -31,7 +31,7 @@
         </div>
       @else
         <div class="table-responsive">
-          <table class="table table-striped ">
+          <table class="table table-striped text-capitalize">
             <thead>
               <tr class="border-top">
                 <th scope="col">#</th>
@@ -70,13 +70,13 @@
 
       <h1 class="fw-bold text-capitalize text-center">leaderboards lomba ride putri</h1>
       <p class="text-muted text-capitalize text-center mb-4">Terakhir diperbaharui {{ date('d M Y', strtotime($last_edited_male)) }}</p>
-      @if (count($leaderboards_female) < 10)
+      @if (count($leaderboards_female) < 3)
         <div class="alert alert-primary text-center fw-bold" role="alert">
           Leaderboard sedang diproses oleh panitia
         </div>
       @else
         <div class="table-responsive">
-          <table class="table table-striped ">
+          <table class="table table-striped text-capitalize">
             <thead>
               <tr class="border-top">
                 <th scope="col">#</th>

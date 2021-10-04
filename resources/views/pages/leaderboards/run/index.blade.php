@@ -31,7 +31,7 @@
         </div>
       @else
         <div class="table-responsive">
-          <table class="table table-striped ">
+          <table class="table table-striped text-capitalize">
             <thead>
               <tr class="border-top">
                 <th scope="col">#</th>
