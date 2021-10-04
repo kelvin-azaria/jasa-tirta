@@ -122,7 +122,7 @@
                     <td>{{ $activity->activity_type }}</td>
                     <td>{{ date('d-m-Y', strtotime($activity->activity_date)) }}</td>
                     <td>{{ round(($activity->activity_length)/1000, 2) }} km</td>
-                    <td>{{ gmdate("H:i:s", $activity->activity_duration) }} jam</td>
+                    <td>{{ gmdate("H:i:s", $activity->activity_duration) }}</td>
                     <td>
                       <a href="https://www.strava.com/activities/{{ $activity->strava_activity_id }}">
                         https://www.strava.com/activities/{{ $activity->strava_activity_id }}

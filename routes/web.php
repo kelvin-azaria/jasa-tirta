@@ -8,6 +8,8 @@ use App\Http\Controllers\RuleController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\Admin\ActivityController as AdminActivityController;
 use App\Http\Controllers\Admin\BridgeController as AdminBridgeController;
+use App\Http\Controllers\Admin\RideLeaderboardController;
+use App\Http\Controllers\Admin\RunLeaderboardController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\User\BridgeController;
 use App\Http\Controllers\User\ChessController;
@@ -55,11 +57,17 @@ Auth::routes([
 //ADMIN AUTH ROUTES
 Route::prefix('/admin')->name('admin.')->group(function(){
   Route::namespace('Auth')->group(function(){
-
     //Login Routes
     Route::get('/login','\App\Http\Controllers\Admin\Auth\LoginController@showLoginForm')->name('login');
     Route::post('/login','\App\Http\Controllers\Admin\Auth\LoginController@login');
     Route::post('/logout','\App\Http\Controllers\Admin\Auth\LoginController@logout')->name('logout');
+  });
+
+  Route::prefix('leaderboard')->name('leaderboard.')->group(function(){
+    Route::resource('run', RunLeaderboardController::class);
+    
+    Route::resource('ride', RideLeaderboardController::class)->except(['index']);
+    Route::get('ride/{gender}/list', [RideLeaderboardController::class, 'index'])->name('ride.index');
   });
 
   Route::resource('dashboard', AdminDashboardController::class)->only(['index']);

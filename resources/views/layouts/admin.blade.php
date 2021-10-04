@@ -58,6 +58,25 @@
                           <li><a class="dropdown-item text-capitalize" href="{{ route('admin.activity.index.run.user') }}">Data Peserta Run</a></li>
                         </ul>
                     </li>
+                    <li>
+                      <a href="{{ route('admin.leaderboard.run.index') }}" class="nav-link px-sm-0 px-2 text-white">
+                        <i class="fas fa-running"></i><span class="ms-2 d-none d-sm-inline text-capitalize">Leaderboard Run</span> 
+                      </a>
+                    </li>
+                    {{-- <li>
+                      <a href="{{ route('admin.leaderboard.ride.index') }}" class="nav-link px-sm-0 px-2 text-white">
+                        <i class="fas fa-bicycle"></i><span class="ms-2 d-none d-sm-inline text-capitalize">Leaderboard Ride</span> 
+                      </a>
+                    </li> --}}
+                    <li class="dropdown">
+                      <a href="#" class="nav-link dropdown-toggle px-sm-0 px-2 text-white" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-bicycle"></i><span class="ms-2 d-none d-sm-inline text-capitalize">Leaderboard Ride</span>
+                        </a>
+                        <ul class="dropdown-menu text-small shadow dropdown-menu-dark" aria-labelledby="dropdown">
+                          <li><a class="dropdown-item text-capitalize" href="{{ route('admin.leaderboard.ride.index',['gender' => 'L']) }}">Kategori Putra</a></li>
+                          <li><a class="dropdown-item text-capitalize" href="{{ route('admin.leaderboard.ride.index',['gender' => 'P']) }}">Kategori Putri</a></li>
+                        </ul>
+                    </li>
                   </ul>
                   <div class="dropdown py-sm-4 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1">
                       <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">

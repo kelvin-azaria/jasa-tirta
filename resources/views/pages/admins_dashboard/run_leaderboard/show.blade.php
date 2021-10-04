@@ -3,11 +3,11 @@
 @section('content')
   <div class="row">
     <div class="col-sm">
-      <h1 class="fw-bold pb-1">{{ $bridge->name }}</h1><br>
+      <h1 class="fw-bold pb-1">Data Leaderboard Run {{ $leaderboard->participant_name }}</h1><br>
     </div>
     <div class="col-sm-auto align-self-center">
-      <a href="{{ route('admin.bridge.edit',['bridge' => $bridge->id]) }}" role="button" class="btn btn-warning fw-bold text-white">
-        <i class="bi bi-pencil-fill"></i> Edit Data Turnamen
+      <a href="{{ route('admin.leaderboard.run.edit',['run' => $leaderboard->id]) }}" role="button" class="btn btn-warning fw-bold text-white">
+        <i class="bi bi-pencil-fill"></i> Edit Data Leaderboard
       </a>
     </div>
   </div>
@@ -36,19 +36,31 @@
     <div class="col-lg">
       <div class="card bg-light my-3">
         <div class="card-body">
-          <h5 class="card-title">Data peserta</h5>
+          <h5 class="card-title">Data Leaderboard</h5>
           <table  class="table table-borderless">
             <tr>
-              <th>Nama</th>
-              <td>: {{ $bridge->name }} </td>
+              <th>Posisi</th>
+              <td>: {{ $leaderboard->position }}</td>
             </tr>
             <tr>
-              <th>No HP</th>
-              <td>: {{ $bridge->phone }} </td>
+              <th>Nama Peserta</th>
+              <td>: {{ $leaderboard->participant_name }}</td>
             </tr>
             <tr>
-              <th>Username BBO</th>
-              <td>: {{ $bridge->bbo_username }} </td>
+              <th>Tanggal Aktifitas</th>
+              <td>: {{ $leaderboard->activity_date }}</td>
+            </tr>
+            <tr>
+              <th>Jarak yang Ditempuh</th>
+              <td>: {{ $leaderboard->activity_length }}</td>
+            </tr>
+            <tr>
+              <th>Durasi Aktifitas</th>
+              <td>: {{ gmdate("H:i:s", $leaderboard->activity_duration) }}</td>
+            </tr>
+            <tr>
+              <th>Link Strava</th>
+              <td>: {{ $leaderboard->strava_activity_url }}</td>
             </tr>
           </table>
         </div>
