@@ -51,7 +51,7 @@ class RideLeaderboardController extends Controller
             'strava_activity_url_2' => $validated['strava_activity_url_2'],
         ]);
 
-        return redirect()->route('admin.leaderboard.ride.index')
+        return redirect()->route('admin.leaderboard.ride.index', ['gender' => $validated['participant_gender']])
             ->with('success', 'Berhasil menambahkan data');
     }
 
@@ -78,7 +78,7 @@ class RideLeaderboardController extends Controller
         $leaderboard->strava_activity_url_2 = $validated['strava_activity_url_2'];
         $leaderboard->save();
 
-        return redirect()->route('admin.leaderboard.ride.index')
+        return redirect()->route('admin.leaderboard.ride.index', ['gender' => $validated['participant_gender']])
             ->with('success', 'Berhasil menambahkan data');
     }
 
@@ -87,7 +87,7 @@ class RideLeaderboardController extends Controller
         $leaderboard = RideLeaderboard::find($id);
         $leaderboard->delete();
 
-        return redirect()->route('admin.leaderboard.ride.index')
+        return redirect()->route('admin.leaderboard.ride.index', ['gender' => $leaderboard->participant_gender])
             ->with('success', 'Berhasil menghapus data');
     }
 }
