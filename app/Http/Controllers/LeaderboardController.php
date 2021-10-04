@@ -13,8 +13,7 @@ class LeaderboardController extends Controller
     }
     public function indexBridge()
     {
-      $status=2;
-      return view('pages.leaderboards.index',compact('status'));
+      return view('pages.leaderboards.bridge.index');
     }
     public function indexRide()
     {
