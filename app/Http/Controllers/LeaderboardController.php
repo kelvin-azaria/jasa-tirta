@@ -34,7 +34,7 @@ class LeaderboardController extends Controller
     public function indexRun()
     {
       $leaderboards = RunLeaderboard::orderby('position', 'ASC')->get();
-      $last_edited = RunLeaderboard::orderby('updated_at', 'DESC')->first()->value('updated_at')->updated_at;;
+      $last_edited = RunLeaderboard::orderby('updated_at', 'DESC')->first()->updated_at;
 
       return view('pages.leaderboards.run.index', [
         'leaderboards' => $leaderboards,
