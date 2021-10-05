@@ -6,6 +6,11 @@
     <div class="col-sm">
       <h1 class="fw-bold">Data Semua Peserta</h1>
     </div>
+    <div class="col-sm-auto align-self-center">
+      <a href="{{ route('admin.users.export') }}" role="button" class="btn btn-success fw-bold text-white">
+        <i class="fas fa-file-export"></i> Export Data
+      </a>
+    </div>
   </div>
   <div class="row">
     <div class="col-3">

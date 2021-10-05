@@ -86,5 +86,6 @@ Route::prefix('/admin')->name('admin.')->group(function(){
   Route::get('/activity_ride_user', [AdminActivityController::class, 'indexUserRide'])->name('activity.index.ride.user');
   Route::get('/activity_ride_user/export', [AdminActivityController::class, 'exportRide'])->name('activity.index.ride.user.export');
   
+  Route::get('/users/export', [AdminUserController::class, 'exportUsersData'])->name('users.export');
   Route::resource('users', AdminUserController::class)->only(['index','show','destroy']);
 });

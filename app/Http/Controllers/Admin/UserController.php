@@ -2,13 +2,20 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\UsersExport;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class UserController extends Controller
 {
-
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+    
     public function index()
     {
         $users = User::paginate(10);
@@ -36,5 +43,11 @@ class UserController extends Controller
 
         return redirect()->route('admin.users.index')
             ->with('success','Data berhasil dihapus');
+    }
+
+    public function exportUsersData()
+    {
+        $date = Carbon::parse(strtotime("now"))->format('d-m-Y');
+        return Excel::download(new UsersExport, 'Daftar peserta '.$date.'.xlsx');
     }
 }
