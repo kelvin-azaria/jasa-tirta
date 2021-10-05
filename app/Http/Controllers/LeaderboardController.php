@@ -21,8 +21,8 @@ class LeaderboardController extends Controller
     {
       $leaderboards_male = RideLeaderboard::where('participant_gender','L')->orderBy('position', 'ASC')->get();
       $leaderboards_female = RideLeaderboard::where('participant_gender','P')->orderBy('position', 'ASC')->get();
-      $last_edited_male = RideLeaderboard::where('participant_gender','L')->orderby('created_at', 'DESC')->first()->value('created_at');
-      $last_edited_female = RideLeaderboard::where('participant_gender','L')->orderby('created_at', 'DESC')->first()->value('created_at');
+      $last_edited_male = RideLeaderboard::where('participant_gender','L')->orderby('updated_at', 'DESC')->first()->updated_at;
+      $last_edited_female = RideLeaderboard::where('participant_gender','P')->orderby('updated_at', 'DESC')->first()->updated_at;
       
       return view('pages.leaderboards.ride.index',[
         'leaderboards_male' => $leaderboards_male,
@@ -34,7 +34,7 @@ class LeaderboardController extends Controller
     public function indexRun()
     {
       $leaderboards = RunLeaderboard::orderby('position', 'ASC')->get();
-      $last_edited = RunLeaderboard::orderby('created_at', 'DESC')->first()->value('created_at');
+      $last_edited = RunLeaderboard::orderby('updated_at', 'DESC')->first()->value('updated_at')->updated_at;;
 
       return view('pages.leaderboards.run.index', [
         'leaderboards' => $leaderboards,
