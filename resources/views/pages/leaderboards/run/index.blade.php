@@ -43,7 +43,7 @@
               </tr>
             </thead>
             <tbody>
-              @foreach ($leaderboards_female as $l)
+              @foreach ($leaderboards_male as $l)
                 <tr>
                   <th scope="row">{{ $l->position }}</th>
                   <td>{{ $l->participant_name }}</td>
