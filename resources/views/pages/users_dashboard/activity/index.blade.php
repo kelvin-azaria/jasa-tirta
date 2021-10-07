@@ -38,6 +38,10 @@
                 <a href="{{ route('activity.create') }}" class="btn fw-bold text-white btn-success">
                   Submit Data Turnamen Ride & Run
                 </a>
+              @elseif($current_date > $end_date)
+                <p class="text-warning">
+                  Pelaksanaan lomba dan submit data telah berakhir pada tanggal 7 Oktober 2021
+                </p>
               @else
                 <p>
                   Pelaksanaan lomba dan submit data akan dibuka pada tanggal 2-7 Oktober
