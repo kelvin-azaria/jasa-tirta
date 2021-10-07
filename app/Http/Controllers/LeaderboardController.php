@@ -43,13 +43,13 @@ class LeaderboardController extends Controller
       $leaderboards_male = RunLeaderboard::where('participant_gender','L')->orderBy('position', 'ASC')->get();
       $leaderboards_female = RunLeaderboard::where('participant_gender','P')->orderBy('position', 'ASC')->get();
       $last_edited_male = RunLeaderboard::where('participant_gender','L')->orderby('updated_at', 'DESC')->first()->updated_at;
-      // $last_edited_female = RunLeaderboard::where('participant_gender','P')->orderby('updated_at', 'DESC')->first()->updated_at;
+      $last_edited_female = RunLeaderboard::where('participant_gender','P')->orderby('updated_at', 'DESC')->first()->updated_at;
 
       return view('pages.leaderboards.run.index',[
         'leaderboards_male' => $leaderboards_male,
         'leaderboards_female' => $leaderboards_female,
         'last_edited_male' => (string)$last_edited_male,
-        'last_edited_female' => (string)$last_edited_male
+        'last_edited_female' => (string)$last_edited_female
       ]);
     }
 }
