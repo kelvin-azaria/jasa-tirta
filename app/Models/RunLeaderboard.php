@@ -9,6 +9,7 @@ class RunLeaderboard extends Model
     protected $fillable = [
         'position',
         'participant_name',
+        'participant_gender',
         'activity_date',
         'activity_length',
         'activity_duration',
