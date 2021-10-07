@@ -10,13 +10,19 @@ class LeaderboardController extends Controller
 {
     public function indexChess()
     {
-      $status=1;
-      return view('pages.leaderboards.index',compact('status'));
+      return view('pages.leaderboards.chess.index');
     }
+
     public function indexBridge()
     {
       return view('pages.leaderboards.bridge.index');
     }
+
+    public function indexPubg()
+    {
+      return view('pages.leaderboards.pubg.index');
+    }
+
     public function indexRide()
     {
       $leaderboards_male = RideLeaderboard::where('participant_gender','L')->orderBy('position', 'ASC')->get();
@@ -31,6 +37,7 @@ class LeaderboardController extends Controller
         'last_edited_female' => (string)$last_edited_female
       ]);
     }
+
     public function indexRun()
     {
       $leaderboards = RunLeaderboard::orderby('position', 'ASC')->get();
@@ -40,9 +47,5 @@ class LeaderboardController extends Controller
         'leaderboards' => $leaderboards,
         'last_edited' => (string)$last_edited
       ]);
-    }
-    public function indexPubg()
-    {
-      return view('pages.leaderboards.pubg.index');
     }
 }

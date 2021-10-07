@@ -23,54 +23,143 @@
 @section('content')
   <section id="leaderboard">
     <div class="container py-4">
-      <h1 class="fw-bold text-capitalize text-center">leaderboards lomba PUBG</h1>
-      <p class="text-muted text-capitalize text-center mb-4">Terakhir diperbaharui 2 Oktober 2021</p>
+      <h1 class="fw-bold text-capitalize text-center text-primary">PUBG Tournament Winners</h1>
+      <p class="text-muted text-capitalize text-center mb-4">Terakhir diperbaharui 7 Oktober 2021</p>
       
-      {{-- SQUAD TABLE --}}
+      <h3 class="fw-bold text-capitalize text-center">1st Winner Team JSP</h3>
       <div class="table-responsive">
         <table class="table table-striped ">
           <thead>
             <tr class="border-top">
-              <th scope="col">#</th>
-              <th scope="col">Nama Squad</th>
-              <th class="text-center" scope="col">Total Point</th>
+              <th scope="col">Nama Anggota</th>
+              <th scope="col">Nickname</th>
+              <th class="text-center" scope="col">Asal Cabang</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th scope="row">1</th>
-              <td>JSP</td>
-              <td class="text-center">53</td>
+              <th scope="row">Rizky Fadhilah</th>
+              <td>JSP•DMSRF</td>
+              <td class="text-center align-middle" rowspan="4">Kalimantan Timur</td>
             </tr>
             <tr>
-              <th scope="row">2</th>
-              <td>KEPRI•BROTHERS</td>
-              <td class="text-center">42</td>
+              <th scope="row">Budi Purnama</th>
+              <td>JSP•Budhie</td>
             </tr>
             <tr>
-              <th scope="row">3</th>
-              <td>WONG EDAN</td>
-              <td class="text-center">38</td>
+              <th scope="row">Famylia</th>
+              <td>BTR•MeyyraKTR</td>
             </tr>
+            <tr>
+              <th scope="row">Amri</th>
+              <td>ALPHAwolves</td>
+            </tr>
+            <tfoot>
+              <tr>
+                <td class="fw-bold text-center" colspan="2">Total Point</td>
+                <td class="fw-bold text-center">53</td>
+              </tr>
+            </tfoot>
+          </tbody>
+        </table>
+      </div>
+
+      <hr>
+
+      <h3 class="fw-bold text-capitalize text-center">2nd Winner Team KEPRI•BROTHERS</h3>
+      <div class="table-responsive">
+        <table class="table table-striped ">
+          <thead>
+            <tr class="border-top">
+              <th scope="col">Nama Anggota</th>
+              <th scope="col">Nickname</th>
+              <th class="text-center" scope="col">Asal Cabang</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Lambang Priantono Putra</th>
+              <td>MakAmpiun</td>
+              <td class="text-center align-middle" rowspan="4">Kepulauan Riau</td>
+            </tr>
+            <tr>
+              <th scope="row">Doli zontia</th>
+              <td>R E T R O •</td>
+            </tr>
+            <tr>
+              <th scope="row">M. Halim</th>
+              <td>BlekZhaoldyeck</td>
+            </tr>
+            <tr>
+              <th scope="row">Rama Pramu Wicaksono</th>
+              <td>orangmales</td>
+            </tr>
+            <tfoot>
+              <tr>
+                <td class="fw-bold text-center" colspan="2">Total Point</td>
+                <td class="fw-bold text-center">42</td>
+              </tr>
+            </tfoot>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="fw-bold text-capitalize text-center">3rd Winner Team WONG EDAN</h3>
+      <div class="table-responsive">
+        <table class="table table-striped ">
+          <thead>
+            <tr class="border-top">
+              <th scope="col">Nama Anggota</th>
+              <th scope="col">Nickname</th>
+              <th class="text-center" scope="col">Asal Cabang</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Rudi Tris Tiyanto</th>
+              <td>BoweZt ' Edan</td>
+              <td class="text-center align-middle" rowspan="3">Jawa Timur</td>
+            </tr>
+            <tr>
+              <th scope="row">Perdana N. Badroes</th>
+              <td>BREWOK ' Edan</td>
+            </tr>
+            <tr>
+              <th scope="row">Defri Endra S.</th>
+              <td>Suka Di Emut</td>
+            </tr>
+            <tr>
+              <th scope="row">Seto Hariaji</th>
+              <td>PPC . Talijiwo</td>
+              <td class="text-center align-middle">Jawa Barat</td>
+            </tr>
+            <tfoot>
+              <tr>
+                <td class="fw-bold text-center" colspan="2">Total Point</td>
+                <td class="fw-bold text-center">38</td>
+              </tr>
+            </tfoot>
           </tbody>
         </table>
       </div>
 
       {{-- MVP TABLE  --}}
-      <h1 class="fw-bold text-capitalize text-center">MVP</h1>
+      <h3 class="fw-bold text-capitalize text-center text-info">MVP</h3>
       <div class="table-responsive">
         <table class="table table-striped ">
           <thead>
             <tr class="border-top">
-              <th scope="col">#</th>
+              <th scope="col">Nama Anggota</th>
               <th scope="col">Username</th>
+              <th scope="col">Asal Cabang</th>
               <th class="text-center" scope="col">Total Kill</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th scope="row">1</th>
+              <th scope="row">Doli Zontia</th>
               <td>R E T R O •</td>
+              <td>Kepulauan Riau</td>
               <td class="text-center">12</td>
             </tr>
           </tbody>
