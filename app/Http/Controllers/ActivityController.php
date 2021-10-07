@@ -32,7 +32,7 @@ class ActivityController extends Controller
             }
 
             $start_date = strtotime("10/02/2021");
-            $end_date = strtotime("10/08/2021");
+            $end_date = strtotime("10/10/2021");
             $current_date = strtotime("now");
     
             return view('pages.users_dashboard.activity.index',[
@@ -160,7 +160,7 @@ class ActivityController extends Controller
                 $user->save();
     
                 return redirect()->route('activity.create')
-                    ->with('success','Berhasil melakukan otorisasi dengan Strava ! Data yang ditampilkan hanya data dari tanggal 2 - 7 Oktober');
+                    ->with('success','Berhasil melakukan otorisasi dengan Strava ! Data yang ditampilkan hanya data dari tanggal 2 - 9 Oktober');
             } else {
                 return redirect()->route('activity.create')
                     ->withErrors(['auth' => ['Gagal melakukan otorisasi dengan Strava']]);
@@ -186,7 +186,7 @@ class ActivityController extends Controller
 
             //date format for strtotime is month/day/year
             $start_date = strtotime("10/02/2021");
-            $end_date = strtotime("10/08/2021");
+            $end_date = strtotime("10/10/2021");
             
             return view('pages.users_dashboard.activity.create',[
                 'user' => $user, 
