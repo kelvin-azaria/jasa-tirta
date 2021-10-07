@@ -27,7 +27,7 @@ class StoreRideLeaderboardRequest extends FormRequest
         return [
             'position'                => 'required|numeric|max:10',
             'participant_name'        => 'required|string|max:255',
-            'participant_gender'        => 'required|string',
+            'participant_gender'      => 'required|string',
             'activity_date'           => 'required|date',
             'activity_length'         => 'required',
             'activity_duration'       => 'required|numeric',

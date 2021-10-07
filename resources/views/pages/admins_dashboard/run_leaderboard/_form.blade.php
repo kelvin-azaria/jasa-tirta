@@ -20,6 +20,25 @@
     value="{{ old('participant_name',$leaderboard->participant_name ?? null) }}"
   >
 </div>
+<div class="form-group row my-3">
+  <label for="participant_gender" class="col-md-4 col-form-label text-md-right">
+    Jenis Kelamin
+  </label>
+  <div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="participant_gender" id="radioMale" value="L">
+      <label class="form-check-label" for="radioMale">
+        Laki-laki
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="participant_gender" id="radioFemale" value="P">
+      <label class="form-check-label" for="radioFemale">
+        Perempuan
+      </label>
+    </div>
+  </div>
+</div>
 <div class="my-3">
   <label for="activity_date" class="form-label">Tanggal Aktifitas</label>
   <input 

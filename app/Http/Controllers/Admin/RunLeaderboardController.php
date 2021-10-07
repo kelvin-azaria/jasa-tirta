@@ -14,11 +14,12 @@ class RunLeaderboardController extends Controller
         $this->middleware('auth:admin');
     }
 
-    public function index()
+    public function index($gender)
     {
-        $leaderboards = RunLeaderboard::orderBy('position', 'ASC')->get();
+        $leaderboards = RunLeaderboard::where('participant_gender',$gender)->orderBy('position', 'ASC')->get();
         return view('pages.admins_dashboard.run_leaderboard.index',[
-            'leaderboards' => $leaderboards
+            'leaderboards' => $leaderboards,
+            'gender' => $gender
         ]);
     }
 
@@ -42,19 +43,21 @@ class RunLeaderboardController extends Controller
         RunLeaderboard::create([
             'position' => $validated['position'],
             'participant_name' => $validated['participant_name'],
+            'participant_gender' => $validated['participant_gender'],
             'activity_date' => $validated['activity_date'],
             'activity_length' => $validated['activity_length'],
             'activity_duration' => $validated['activity_duration'],
             'strava_activity_url' => $validated['strava_activity_url'],
         ]);
 
-        return redirect()->route('admin.leaderboard.run.index')
+        return redirect()->route('admin.leaderboard.run.index', ['gender' => $validated['participant_gender']])
             ->with('success', 'Berhasil menambahkan data');
     }
 
     public function edit($id)
     {
         $leaderboard = RunLeaderboard::find($id);
+        dd($leaderboard);
         return view('pages.admins_dashboard.run_leaderboard.edit',[
             'leaderboard' => $leaderboard
         ]);
@@ -67,13 +70,14 @@ class RunLeaderboardController extends Controller
 
         $leaderboard->position = $validated['position'];
         $leaderboard->participant_name = $validated['participant_name'];
+        $leaderboard->participant_gender = $validated['participant_gender'];
         $leaderboard->activity_date = $validated['activity_date'];
         $leaderboard->activity_length = $validated['activity_length'];
         $leaderboard->activity_duration = $validated['activity_duration'];
         $leaderboard->strava_activity_url = $validated['strava_activity_url'];
         $leaderboard->save();
 
-        return redirect()->route('admin.leaderboard.run.index')
+        return redirect()->route('admin.leaderboard.run.index', ['gender' => $validated['participant_gender']])
             ->with('success', 'Berhasil menambahkan data');
     }
 
@@ -82,7 +86,7 @@ class RunLeaderboardController extends Controller
         $leaderboard = RunLeaderboard::find($id);
         $leaderboard->delete();
 
-        return redirect()->route('admin.leaderboard.run.index')
+        return redirect()->route('admin.leaderboard.run.index', ['gender' => $leaderboard->participant_gender])
             ->with('success', 'Berhasil menghapus data');
     }
 }

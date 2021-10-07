@@ -58,16 +58,20 @@
                           <li><a class="dropdown-item text-capitalize" href="{{ route('admin.activity.index.run.user') }}">Data Peserta Run</a></li>
                         </ul>
                     </li>
-                    <li>
+                    {{-- <li>
                       <a href="{{ route('admin.leaderboard.run.index') }}" class="nav-link px-sm-0 px-2 text-white">
                         <i class="fas fa-running"></i><span class="ms-2 d-none d-sm-inline text-capitalize">Leaderboard Run</span> 
                       </a>
-                    </li>
-                    {{-- <li>
-                      <a href="{{ route('admin.leaderboard.ride.index') }}" class="nav-link px-sm-0 px-2 text-white">
-                        <i class="fas fa-bicycle"></i><span class="ms-2 d-none d-sm-inline text-capitalize">Leaderboard Ride</span> 
-                      </a>
                     </li> --}}
+                    <li class="dropdown">
+                      <a href="#" class="nav-link dropdown-toggle px-sm-0 px-2 text-white" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-running"></i><span class="ms-2 d-none d-sm-inline text-capitalize">Leaderboard Run</span>
+                        </a>
+                        <ul class="dropdown-menu text-small shadow dropdown-menu-dark" aria-labelledby="dropdown">
+                          <li><a class="dropdown-item text-capitalize" href="{{ route('admin.leaderboard.run.index',['gender' => 'L']) }}">Kategori Putra</a></li>
+                          <li><a class="dropdown-item text-capitalize" href="{{ route('admin.leaderboard.run.index',['gender' => 'P']) }}">Kategori Putri</a></li>
+                        </ul>
+                    </li>
                     <li class="dropdown">
                       <a href="#" class="nav-link dropdown-toggle px-sm-0 px-2 text-white" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-bicycle"></i><span class="ms-2 d-none d-sm-inline text-capitalize">Leaderboard Ride</span>

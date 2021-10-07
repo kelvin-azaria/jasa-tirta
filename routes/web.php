@@ -65,6 +65,7 @@ Route::prefix('/admin')->name('admin.')->group(function(){
 
   Route::prefix('leaderboard')->name('leaderboard.')->group(function(){
     Route::resource('run', RunLeaderboardController::class);
+    Route::get('run/{gender}/list', [RunLeaderboardController::class, 'index'])->name('run.index');
     
     Route::resource('ride', RideLeaderboardController::class)->except(['index']);
     Route::get('ride/{gender}/list', [RideLeaderboardController::class, 'index'])->name('ride.index');
