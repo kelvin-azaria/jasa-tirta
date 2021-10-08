@@ -40,7 +40,7 @@
   </div>
 </div>
 <div class="my-3">
-  <label for="participant_work_unit" class="form-label">Nama Peserta</label>
+  <label for="participant_work_unit" class="form-label">Cabang Peserta</label>
   <input 
     type="text" 
     class="form-control @error('participant_work_unit') is-invalid @enderror" 
