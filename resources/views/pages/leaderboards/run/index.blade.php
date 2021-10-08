@@ -35,7 +35,8 @@
             <thead>
               <tr class="border-top">
                 <th scope="col">#</th>
-                <th scope="col">Nama</th>
+                <th scope="col">Nama Peserta</th>
+                <th scope="col">Cabang Peserta</th>
                 <th class="text-center" scope="col">Tanggal Aktifitas</th>
                 <th class="text-center" scope="col">Durasi Aktifitas (Elapsed Time)</th>
                 <th class="text-center" scope="col">Jarak yang Ditempuh</th>
@@ -47,6 +48,7 @@
                 <tr>
                   <th scope="row">{{ $l->position }}</th>
                   <td>{{ $l->participant_name }}</td>
+                  <td>{{ $l->participant_work_unit }}</td>
                   <td class="text-center">{{ date('d-m-Y', strtotime($l->activity_date)) }}</td>
                   <td class="text-center">{{ gmdate("H:i:s", $l->activity_duration) }}</td>
                   <td class="text-center">{{ $l->activity_length }} km</td>
@@ -75,7 +77,8 @@
             <thead>
               <tr class="border-top">
                 <th scope="col">#</th>
-                <th scope="col">Nama</th>
+                <th scope="col">Nama Peserta</th>
+                <th scope="col">Cabang Peserta</th>
                 <th class="text-center" scope="col">Tanggal Aktifitas</th>
                 <th class="text-center" scope="col">Durasi Aktifitas (Elapsed Time)</th>
                 <th class="text-center" scope="col">Jarak yang Ditempuh</th>
@@ -87,6 +90,7 @@
                 <tr>
                   <th scope="row">{{ $l->position }}</th>
                   <td>{{ $l->participant_name }}</td>
+                  <td>{{ $l->participant_work_unit }}</td>
                   <td class="text-center">{{ date('d-m-Y', strtotime($l->activity_date)) }}</td>
                   <td class="text-center">{{ gmdate("H:i:s", $l->activity_duration) }}</td>
                   <td class="text-center">{{ $l->activity_length }} km</td>
