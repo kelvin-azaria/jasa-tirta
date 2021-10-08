@@ -18,6 +18,7 @@ class RunDataExport implements FromCollection, WithHeadings, WithMapping
         return [
             'Nama Peserta',
             'Jenis Kelamin Peserta',
+            'Cabang Peserta',
             'Nama Aktifitas',
             'Jenis Aktifitas',
             'Tanggal Aktifitas',
@@ -42,6 +43,7 @@ class RunDataExport implements FromCollection, WithHeadings, WithMapping
         return [
             $activities->user->name,
             $activities->user->gender,
+            $activities->user->work_unit,
             $activities->activity_name,
             $activities->activity_type,
             Carbon::parse($activities->activity_date)->format('d-m-Y'),
