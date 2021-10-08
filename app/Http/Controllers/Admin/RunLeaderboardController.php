@@ -58,7 +58,6 @@ class RunLeaderboardController extends Controller
     public function edit($id)
     {
         $leaderboard = RunLeaderboard::find($id);
-        dd($leaderboard);
         return view('pages.admins_dashboard.run_leaderboard.edit',[
             'leaderboard' => $leaderboard
         ]);
