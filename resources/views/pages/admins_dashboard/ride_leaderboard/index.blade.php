@@ -32,6 +32,7 @@
                 <tr>
                   <th scope="col">POSISI</th>
                   <th scope="col">NAMA</th>
+                  <th scope="col">CABANG</th>
                   <th scope="col">TANGGAL AKTIFITAS</th>
                   <th scope="col">JARAK YANG DITEMPUH</th>
                   <th scope="col">DURASI AKTIFITAS</th>
@@ -44,6 +45,7 @@
                   <tr>
                     <th scope="row">{{ $l->position }}</th>
                     <td>{{ $l->participant_name }}</td>
+                    <td>{{ $l->participant_work_unit }}</td>
                     <td>{{ $l->activity_date }}</td>
                     <td>{{ $l->activity_length }} km</td>
                     <td>{{ gmdate("H:i:s", $l->activity_duration) }}</td>

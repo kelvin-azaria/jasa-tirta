@@ -40,6 +40,17 @@
   </div>
 </div>
 <div class="my-3">
+  <label for="participant_work_unit" class="form-label">Nama Peserta</label>
+  <input 
+    type="text" 
+    class="form-control @error('participant_work_unit') is-invalid @enderror" 
+    id="participant_work_unit" 
+    name="participant_work_unit"
+    placeholder="Masukan cabang peserta"
+    value="{{ old('participant_work_unit',$leaderboard->participant_work_unit ?? null) }}"
+  >
+</div>
+<div class="my-3">
   <label for="activity_date" class="form-label">Tanggal Aktifitas</label>
   <input 
     type="date" 

@@ -10,6 +10,7 @@ class RideLeaderboard extends Model
         'position',
         'participant_name',
         'participant_gender',
+        'participant_work_unit',
         'activity_date',
         'activity_length',
         'activity_duration',

@@ -44,6 +44,7 @@ class RideLeaderboardController extends Controller
             'position' => $validated['position'],
             'participant_name' => $validated['participant_name'],
             'participant_gender' => $validated['participant_gender'],
+            'participant_work_unit' => $validated['participant_work_unit'],
             'activity_date' => $validated['activity_date'],
             'activity_length' => $validated['activity_length'],
             'activity_duration' => $validated['activity_duration'],
@@ -71,6 +72,7 @@ class RideLeaderboardController extends Controller
         $leaderboard->position = $validated['position'];
         $leaderboard->participant_name = $validated['participant_name'];
         $leaderboard->participant_gender = $validated['participant_gender'];
+        $leaderboard->participant_work_unit = $validated['participant_work_unit'];
         $leaderboard->activity_date = $validated['activity_date'];
         $leaderboard->activity_length = $validated['activity_length'];
         $leaderboard->activity_duration = $validated['activity_duration'];
