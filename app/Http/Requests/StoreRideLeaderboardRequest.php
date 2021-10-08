@@ -25,14 +25,15 @@ class StoreRideLeaderboardRequest extends FormRequest
     public function rules()
     {
         return [
-            'position'                => 'required|numeric|max:10',
-            'participant_name'        => 'required|string|max:255',
-            'participant_gender'      => 'required|string',
-            'activity_date'           => 'required|date',
-            'activity_length'         => 'required',
-            'activity_duration'       => 'required|numeric',
-            'strava_activity_url_1'   => 'required|string|max:255',
-            'strava_activity_url_2'   => 'nullable|string|max:255',
+            'position'                   => 'required|numeric|max:10',
+            'participant_name'           => 'required|string|max:255',
+            'participant_gender'         => 'required|string',
+            'participant_work_unit'      => 'required|string|max:255',
+            'activity_date'              => 'required|date',
+            'activity_length'            => 'required',
+            'activity_duration'          => 'required|numeric',
+            'strava_activity_url_1'      => 'required|string|max:255',
+            'strava_activity_url_2'      => 'nullable|string|max:255',
         ];
     }
 }
