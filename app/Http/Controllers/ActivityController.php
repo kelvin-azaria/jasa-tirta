@@ -32,7 +32,7 @@ class ActivityController extends Controller
             }
 
             $start_date = strtotime("10/02/2021");
-            $end_date = strtotime("10/08/2021");
+            $end_date = strtotime("10/15/2021");
             $current_date = strtotime("now");
     
             return view('pages.users_dashboard.activity.index',[
