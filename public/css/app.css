@@ -2189,10 +2189,6 @@ progress {
   color: #6c757d;
   opacity: 1;
 }
-.form-control:-ms-input-placeholder {
-  color: #6c757d;
-  opacity: 1;
-}
 .form-control::placeholder {
   color: #6c757d;
   opacity: 1;
@@ -2603,17 +2599,10 @@ textarea.form-control-lg {
 .form-floating > .form-control::-moz-placeholder {
   color: transparent;
 }
-.form-floating > .form-control:-ms-input-placeholder {
-  color: transparent;
-}
 .form-floating > .form-control::placeholder {
   color: transparent;
 }
 .form-floating > .form-control:not(:-moz-placeholder-shown) {
-  padding-top: 1.625rem;
-  padding-bottom: 0.625rem;
-}
-.form-floating > .form-control:not(:-ms-input-placeholder) {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
@@ -2630,10 +2619,6 @@ textarea.form-control-lg {
   padding-bottom: 0.625rem;
 }
 .form-floating > .form-control:not(:-moz-placeholder-shown) ~ label {
-  opacity: 0.65;
-  transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
-}
-.form-floating > .form-control:not(:-ms-input-placeholder) ~ label {
   opacity: 0.65;
   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
@@ -2903,7 +2888,6 @@ textarea.form-control-lg {
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   background-color: transparent;
   border: 1px solid transparent;
@@ -4738,12 +4722,6 @@ textarea.form-control-lg {
   color: #101214;
 }
 
-@-webkit-keyframes progress-bar-stripes {
-  0% {
-    background-position-x: 1rem;
-  }
-}
-
 @keyframes progress-bar-stripes {
   0% {
     background-position-x: 1rem;
@@ -4781,13 +4759,11 @@ textarea.form-control-lg {
 }
 
 .progress-bar-animated {
-  -webkit-animation: 1s linear infinite progress-bar-stripes;
-          animation: 1s linear infinite progress-bar-stripes;
+  animation: 1s linear infinite progress-bar-stripes;
 }
 @media (prefers-reduced-motion: reduce) {
   .progress-bar-animated {
-    -webkit-animation: none;
-            animation: none;
+    animation: none;
   }
 }
 
@@ -5150,7 +5126,6 @@ textarea.form-control-lg {
   pointer-events: none;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   opacity: 0.25;
 }
@@ -5178,7 +5153,6 @@ textarea.form-control-lg {
 }
 
 .toast-container {
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   max-width: 100%;
@@ -5943,12 +5917,6 @@ textarea.form-control-lg {
   color: #494949;
 }
 
-@-webkit-keyframes spinner-border {
-  to {
-    transform: rotate(360deg) /* rtl:ignore */;
-  }
-}
-
 @keyframes spinner-border {
   to {
     transform: rotate(360deg) /* rtl:ignore */;
@@ -5962,24 +5930,13 @@ textarea.form-control-lg {
   border: 0.25em solid currentColor;
   border-right-color: transparent;
   border-radius: 50%;
-  -webkit-animation: 0.75s linear infinite spinner-border;
-          animation: 0.75s linear infinite spinner-border;
+  animation: 0.75s linear infinite spinner-border;
 }
 
 .spinner-border-sm {
   width: 1rem;
   height: 1rem;
   border-width: 0.2em;
-}
-
-@-webkit-keyframes spinner-grow {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    opacity: 1;
-    transform: none;
-  }
 }
 
 @keyframes spinner-grow {
@@ -5999,8 +5956,7 @@ textarea.form-control-lg {
   background-color: currentColor;
   border-radius: 50%;
   opacity: 0;
-  -webkit-animation: 0.75s linear infinite spinner-grow;
-          animation: 0.75s linear infinite spinner-grow;
+  animation: 0.75s linear infinite spinner-grow;
 }
 
 .spinner-grow-sm {
@@ -6011,8 +5967,7 @@ textarea.form-control-lg {
 @media (prefers-reduced-motion: reduce) {
   .spinner-border,
 .spinner-grow {
-    -webkit-animation-duration: 1.5s;
-            animation-duration: 1.5s;
+    animation-duration: 1.5s;
   }
 }
 .offcanvas {
@@ -7446,14 +7401,12 @@ textarea.form-control-lg {
 .user-select-auto {
   -webkit-user-select: auto !important;
      -moz-user-select: auto !important;
-      -ms-user-select: auto !important;
           user-select: auto !important;
 }
 
 .user-select-none {
   -webkit-user-select: none !important;
      -moz-user-select: none !important;
-      -ms-user-select: none !important;
           user-select: none !important;
 }
 
@@ -10834,6 +10787,19 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.dropdown-header {
+  color: #909090;
+  font-size: 0.8rem;
+}
+
+.dropdown-link {
+  border: 0.1rem solid #F6F8FA;
+}
+.dropdown-link:hover {
+  background-color: #F6F8FA;
+  color: #01ABE8;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -10848,10 +10814,6 @@ body {
 
 footer {
   box-shadow: 0px -0.25rem 1.5rem rgba(0, 0, 0, 0.08);
-}
-
-nav {
-  background-color: white;
 }
 
 h1, .h1 {
@@ -10893,15 +10855,6 @@ h3, .h3 {
 
 .bg-darkblue {
   background-color: #0E0F2E !important;
-}
-
-.navbar-brand {
-  font-family: "Montserrat", sans-serif;
-}
-
-.top-navbar {
-  padding: 0.5rem 1rem;
-  box-shadow: 0px 0.25rem 1.5rem rgba(0, 0, 0, 0.08);
 }
 
 .video-embed {
@@ -10953,4 +10906,102 @@ h3, .h3 {
   .table-width {
     max-width: 950px;
   }
+}
+#landing-navbar {
+  background-color: white;
+  padding: 0.5rem 1rem;
+  border-bottom: 0.2rem solid #F6F8FA;
+}
+
+#nav-sub-heading {
+  font-size: 1rem;
+}
+
+#mobile-navbar {
+  background-color: white;
+  padding: 0.5rem 1rem;
+  border-top: 0.2rem solid #F6F8FA;
+}
+
+.start-90 {
+  left: 90% !important;
+}
+
+.navbar-brand {
+  font-family: "Montserrat", sans-serif;
+}
+
+.nav-link {
+  color: #909090;
+  border-radius: 1rem;
+}
+.nav-link:hover {
+  background-color: #F6F8FA;
+}
+
+.text-accent {
+  color: #909090;
+}
+
+.nav-link-text {
+  display: none;
+  transition: width 2s;
+}
+.nav-link-text:hover {
+  display: inline !important;
+}
+
+.small-text {
+  font-size: 0.6rem;
+}
+
+.sidebar-dropdown-link {
+  list-style: "┋";
+  color: #909090;
+}
+
+@media (max-width: 991.98px) {
+  #nav-heading {
+    font-size: 0.9rem;
+  }
+  #nav-heading #nav-sub-heading {
+    font-size: 0.7rem;
+  }
+}
+@media (max-width: 991.98px) {
+  .nav-link:hover .nav-link-text {
+    display: inline !important;
+    animation-name: fade_in_show;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in;
+  }
+}
+@keyframes fade_in_show {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f100;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #F6F8FA;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: lightgray;
 }

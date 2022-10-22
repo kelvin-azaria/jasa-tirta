@@ -1,0 +1,11 @@
+.dropdown-header{
+    color: $secondary;
+    font-size: 0.8rem;
+}
+.dropdown-link{
+    border: 0.1rem solid $accent;
+    &:hover {
+        background-color:$accent;
+        color: $primary;
+    }
+}
