@@ -10807,6 +10807,18 @@ textarea.form-control-lg {
   background-color: #F1F5F7;
 }
 
+.bg-dark-accent-1 {
+  background-color: #2D2D2D;
+}
+
+.bg-dark-accent-2 {
+  background-color: #1F1F1F;
+}
+
+.bg-dark-accent-3 {
+  background-color: #252626;
+}
+
 .link-light {
   color: #9EA9B4;
 }
@@ -10946,9 +10958,7 @@ h3, .h3 {
   }
 }
 #landing-navbar {
-  background-color: white;
   padding: 0.5rem 1rem;
-  border-bottom: 0.2rem solid #F6F8FA;
 }
 
 #nav-sub-heading {
@@ -10956,9 +10966,7 @@ h3, .h3 {
 }
 
 #mobile-navbar {
-  background-color: white;
   padding: 0.5rem 1rem;
-  border-top: 0.2rem solid #F6F8FA;
 }
 
 .start-90 {

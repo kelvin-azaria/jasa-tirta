@@ -19,7 +19,7 @@
   <body>
 
     {{-- Tablet to PC Navbar --}}
-    <nav id="landing-navbar" class="navbar navbar-expand-md d-none d-md-block sticky-top">
+    <nav id="landing-navbar" class="navbar navbar-expand-md bg-white border-bottom d-none d-md-block sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand text-capitalize fw-bold" href="{{ url('/') }}">
           <div class="row">
@@ -131,7 +131,7 @@
     </nav>
 
     {{-- Mobile Navbar --}}
-    <nav id="landing-navbar" class="navbar d-md-none sticky-top">
+    <nav id="landing-navbar" class="navbar bg-white d-md-none sticky-top">
       <div class="container p-0">
         <div class="row justify-content-between">
           <div class="col-auto">
