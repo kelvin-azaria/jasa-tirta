@@ -3,9 +3,27 @@
   color: $light-accent-2;
 }
 
+//background color
+.bg-light-accent-1{
+  background-color: $light-accent-1;
+ }
+ .bg-light-accent-2{
+  background-color: $light-accent-2;
+ }
+ .bg-light-accent-3{
+  background-color: $light-accent-3;
+ }
+ .bg-light-accent-4{
+  background-color: $light-accent-4;
+ }
+ 
+
 //link color
 .link-light {
   color: $light-accent-2;
+  svg{
+    fill: $light-accent-2;
+  }
   &:hover {
     color: $primary;
     background-color:  rgba( $primary, .1 );
@@ -14,19 +32,6 @@
     color: $primary;
   }
 }
-// .dropdown-light{
-//   color: $light-accent-2;
-//   svg{
-//     fill: $light-accent-2;
-//   }
-//   :hover{
-//     svg{
-//       fill: $primary;
-//     }
-//     color: $primary;
-//     background-color: rgba( $primary, .1 );
-//   }
-// }
 .dropdown-light{
   color: $light-accent-2;
   svg{
@@ -34,7 +39,5 @@
   }
 }
 
-.bg-light-accent-1{
- background-color: $light-accent-1;
-}
+
 

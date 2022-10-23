@@ -10791,8 +10791,27 @@ textarea.form-control-lg {
   color: #9EA9B4;
 }
 
+.bg-light-accent-1 {
+  background-color: #F6F8FA;
+}
+
+.bg-light-accent-2 {
+  background-color: #9EA9B4;
+}
+
+.bg-light-accent-3 {
+  background-color: #F8FAFB;
+}
+
+.bg-light-accent-4 {
+  background-color: #F1F5F7;
+}
+
 .link-light {
   color: #9EA9B4;
+}
+.link-light svg {
+  fill: #9EA9B4;
 }
 .link-light:hover {
   color: #01abe8;
@@ -10807,10 +10826,6 @@ textarea.form-control-lg {
 }
 .dropdown-light svg {
   fill: #9EA9B4;
-}
-
-.bg-light-accent-1 {
-  background-color: #F6F8FA;
 }
 
 .dropdown-grid-link {
