@@ -1,2 +1,40 @@
-$accent: #F6F8FA;
-$secondary: #909090;
+//text color
+.text-accent-2{
+  color: $light-accent-2;
+}
+
+//link color
+.link-light {
+  color: $light-accent-2;
+  &:hover {
+    color: $primary;
+    background-color:  rgba( $primary, .1 );
+  }
+  &:focus{
+    color: $primary;
+  }
+}
+// .dropdown-light{
+//   color: $light-accent-2;
+//   svg{
+//     fill: $light-accent-2;
+//   }
+//   :hover{
+//     svg{
+//       fill: $primary;
+//     }
+//     color: $primary;
+//     background-color: rgba( $primary, .1 );
+//   }
+// }
+.dropdown-light{
+  color: $light-accent-2;
+  svg{
+    fill: $light-accent-2;
+  }
+}
+
+.bg-light-accent-1{
+ background-color: $light-accent-1;
+}
+

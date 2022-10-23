@@ -22,8 +22,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
   </head>
-  <body>
-    <div class="container-fluid overflow-hidden">
+  <body class="bg-lightdarkblue">
+    {{-- <div class="container-fluid overflow-hidden">
       <div class="row vh-100 overflow-auto">
           <div class="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 bg-lightdarkblue d-flex sticky-top">
               <div class="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start p-3">
@@ -128,7 +128,147 @@
               </footer>
           </div>
       </div>
-  </div>
+    </div> --}}
+    
+    <div class="container-fluid overflow-hidden ">
+      <div class="row vh-100 overflow-auto">
+
+          @auth
+          {{-- Tablet to PC Navbar --}}
+          <nav style="width: 280px;" class="col-auto bg-lightdarkblue d-none d-md-block border-primary border-end pb-3 vh-100 overflow-auto">
+            <div class="pt-3 bg-lightdarkblue sticky-top">
+              <div class="card bg-lightdarkblue">
+                <div class="card-body p-2">
+                  <a class="d-flex align-items-center text-decoration-none text-capitalize fw-bold" href="{{ url('/') }}">
+                    <img src="{{ asset('img/logo.png') }}" alt="" width="48" height="48" class="d-inline-block align-middle rounded">
+
+                    <span class="d-none fs-6 f-montserrat d-sm-inline ms-3">jasa raharja <br> <small class="text-muted"> virtual olympic</small></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <ul class="navbar-nav">
+              <small class="text-muted mt-3 mb-1 fw-bold text-capitalize">general</small>
+              <li class="nav-item">
+                <a role="button" href="{{ route('dashboard.index') }}" class="nav-link my-1 px-3 text-capitalize"><i class="fas fa-home fa-fw"></i><span class="ps-2 nav-link-text d-inline">Dashboard</span></a>
+              </li>
+              <li class="nav-item">
+                <a role="button" href="{{ url('/') }}" class="nav-link my-1 px-3 text-capitalize"><i class="fas fa-bullhorn fa-fw"></i><span class="ps-2 nav-link-text d-inline">announcements</span></a>
+              </li>
+              
+              <small class="text-muted mt-3 mb-1 fw-bold text-capitalize">competition</small>
+              <li class="nav-item">
+                  <a role="button" href="{{ url('/') }}" class="nav-link my-1 px-3 text-capitalize"><i class="fas fa-user-friends fa-fw"></i><span class="ps-2 nav-link-text d-inline">registration</span></a>
+                </li>
+                <li class="nav-item">
+                  <a role="button" href="{{ url('/') }}" class="nav-link my-1 px-3 text-capitalize"><i class="fas fa-users fa-fw"></i><span class="ps-2 nav-link-text d-inline">my competition</span></a>
+                </li>
+                <li class="nav-item">
+                  <a role="button" href="{{ url('/') }}" class="nav-link my-1 px-3 text-capitalize"><i class="fas fa-medal fa-fw"></i><span class="ps-2 nav-link-text d-inline">activity</span></a>
+                </li>
+                <li class="nav-item">
+                  <a role="button" href="{{ url('/') }}" class="nav-link my-1 px-3 text-capitalize"><i class="fas fa-medal fa-fw"></i><span class="ps-2 nav-link-text d-inline">leaderboard</span></a>
+                </li>
+            </ul>
+          </nav>
+
+
+          <div class="col align-self-stretch bg-darkblue h-100 overflow-auto">
+            <!-- As a heading -->
+            <div class="row border-dark border-bottom bg-lightdarkblue justify-content-between">
+              <div class="col-auto py-3 align-self-center">
+                <div class="card d-md-none">
+                  <div class="card-body p-2">
+                    <a class="d-flex align-items-center text-decoration-none text-capitalize fw-bold" href="{{ url('/') }}">
+                      <img src="{{ asset('img/logo.png') }}" alt="" width="48" height="48" class="d-inline-block align-middle rounded">
+  
+                      <span class=" fs-6 f-montserrat d-inline ms-3">jasa raharja <br> <small class="text-muted"> virtual olympic</small></span>
+                    </a>
+                    <span class="position-absolute top-0 start-90 translate-middle badge rounded-pill bg-danger">
+                      <small><i class="fa fas fa-key pe-1"></i>ADMIN</small>
+                    </span>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="col-auto py-3 align-self-center">
+                <a name="" id="" class="btn btn-light-outline text-capitalize d-none d-md-block text-end" href="{{ route('logout') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();" role="button">
+                  <span class="fw-bold"><i class="fas fa-sign-out-alt pe-2"></i>{{ __('Logout') }}</span>
+                </a>
+
+                <a name="" id="" class="btn btn-light rounded-pill text-capitalize d-block d-md-none" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" role="button">
+                     <div class="d-flex justify-content-center fs-2"><i class="fas fa-sign-out-alt fa-fw"></i></div>
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none"> @csrf </form>
+
+              </div>
+            </div>
+            @endauth
+            
+            <main class="row overflow-auto">
+              <div class="col">
+                @yield('content')
+              </div>
+            </main>
+            @if (Auth::guard('admin')->check())
+            <nav  id="mobile-navbar" class="navbar fixed-bottom border border-top navbar-light bg-light d-md-none">
+              <div class="container-fluid">
+                <div class="container p-0">
+                  <div style="max-height: 500px" class="collapse overflow-auto" id="leaderboardOptions">
+                    <ul class="navbar-nav">
+                      <small class="text-muted mt-3 mb-1 fw-bold text-capitalize">general</small>
+                      <li class="nav-item">
+                        <a role="button" href="{{ route('dashboard.index') }}" class="nav-link my-1 px-3 text-capitalize"><i class="fas fa-home fa-fw"></i><span class="ps-2 nav-link-text d-inline">Dashboard</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a role="button" href="{{ url('/') }}" class="nav-link my-1 px-3 text-capitalize"><i class="fas fa-bullhorn fa-fw"></i><span class="ps-2 nav-link-text d-inline">announcements</span></a>
+                      </li>
+                      
+                      <small class="text-muted mt-3 mb-1 fw-bold text-capitalize">competition</small>
+                      <li class="nav-item">
+                          <a role="button" href="{{ url('/') }}" class="nav-link my-1 px-3 text-capitalize"><i class="fas fa-user-friends fa-fw"></i><span class="ps-2 nav-link-text d-inline">registration</span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a role="button" href="{{ url('/') }}" class="nav-link my-1 px-3 text-capitalize"><i class="fas fa-users fa-fw"></i><span class="ps-2 nav-link-text d-inline">my competition</span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a role="button" href="{{ url('/') }}" class="nav-link my-1 px-3 text-capitalize"><i class="fas fa-medal fa-fw"></i><span class="ps-2 nav-link-text d-inline">activity</span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a role="button" href="{{ url('/') }}" class="nav-link my-1 px-3 text-capitalize"><i class="fas fa-medal fa-fw"></i><span class="ps-2 nav-link-text d-inline">leaderboard</span></a>
+                        </li>
+                    </ul>
+                  </div>
+                  <div class="row justify-content-between">
+                    <div class="col my-2">
+                      <a role="button" href="{{ route('admin.dashboard.index') }}" class="nav-link p-0 fw-bold text-capitalize">
+                        <div class="d-flex justify-content-center"><i class="fas fa-home"></i></div>
+                        <p class="mx-0 mb-0 small-text text-center"><small>dashboard</small></p>
+                      </a>
+                    </div>
+                    <div class="col my-2">
+                      <a role="button" href="{{ route('admin.users.index') }}" class="nav-link p-0 fw-bold text-capitalize">
+                        <div class="d-flex justify-content-center"><i class="fa fa-address-card"></i></div>
+                        <p class="mx-0 mb-0 small-text text-center"><small>Users</small></p>
+                      </a>
+                    </div>
+                    <div class="col my-2">
+                      <a class="nav-link p-0 fw-bold text-capitalize " data-bs-toggle="collapse" href="#leaderboardOptions" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <div class="d-flex justify-content-center"><i class="fas fa-bars"></i></div>
+                        <p class="mx-0 mb-0 small-text text-center"><small>More</small></p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </nav>
+            @endif
+            
+          </div>
+      </div>
+    </div>
     @yield('script')
   </body>
 </html>
