@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com" />
@@ -141,7 +142,7 @@
                   <a role="button" href="{{ url('/') }}" class="nav-link link-light my-1 px-3 text-capitalize"><i class="fas fa-image fa-fw"></i><span class="ps-2 nav-link-text d-inline">banners</span></a>
                 </li>
                 <li class="nav-item">
-                  <a role="button" href="{{ url('/') }}" class="nav-link link-light my-1 px-3 text-capitalize"><i class="fas fa-bullhorn fa-fw"></i><span class="ps-2 nav-link-text d-inline">announcements</span></a>
+                  <a role="button" href="{{ route('admin.announcements.index') }}" class="nav-link link-light my-1 px-3 text-capitalize"><i class="fas fa-bullhorn fa-fw"></i><span class="ps-2 nav-link-text d-inline">announcements</span></a>
                 </li>
                 <li class="nav-item">
                   <a role="button" href="{{ url('/') }}" class="nav-link link-light my-1 px-3 text-capitalize"><i class="fas fa-calendar-alt fa-fw"></i><span class="ps-2 nav-link-text d-inline">calendar</span></a>
@@ -216,7 +217,7 @@
           </nav>
 
 
-          <div class="col align-self-stretch bg-light">
+          <div class="col align-self-stretch bg-light overflow-auto h-100">
             <!-- As a heading -->
             <div class="row border-bottom bg-light-accent-3 justify-content-between">
               <div class="col-auto py-3 align-self-center">
@@ -248,8 +249,8 @@
               </div>
             </div>
             @endif
-            <main class="row overflow-auto bg-light-accent-4">
-              <div class="col">
+            <main class="row bg-light-accent-4 overflow-auto">
+              <div class="col mb-5">
                 @yield('content')
               </div>
             </main>
@@ -366,7 +367,20 @@
           </div>
       </div>
     </div>
+
     
+
+ 
+
+
+    <script
+    src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+    crossorigin="anonymous"></script>
+    <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" 
+    crossorigin="anonymous"></script>
     
     @yield('script')
   </body>
