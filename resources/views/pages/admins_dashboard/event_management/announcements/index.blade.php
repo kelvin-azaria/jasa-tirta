@@ -84,36 +84,25 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-12 col-lg-8">
+    <div class="col-12">
       <div class="card">
-        <div class="card-body">
+        <div class="card-body ">
           <h6 class="text-capitalize fw-bold my-3 pb-2">announcement list</h6>
-          <table id="table_id" class="display">
-              <thead>
-                  <tr>
-                      <th>Column 1</th>
-                      <th>Column 2</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td>Row 1 Data 1</td>
-                      <td>Row 1 Data 2</td>
-                  </tr>
-                  <tr>
-                      <td>Row 2 Data 1</td>
-                      <td>Row 2 Data 2</td>
-                  </tr>
-              </tbody>
-          </table>
-        </div>
-      </div> 
-    </div>
-
-    <div class="col-12 col-lg-4">
-      <div class="card bg-transparent">
-        <div class="card-body">
-          <h6 class="text-capitalize fw-bold my-3 pb-2">activity</h6>
+          <table id="table_id" class="table table-bordered table-sm">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Message</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody class="">
+                
+            </tbody>
+        </table>
         </div>
       </div> 
     </div>
@@ -153,7 +142,7 @@
         let url = "{{ route('admin.announcements.store') }}";
         axios.post(url, formData)
         .then(function (response) {
-          console.log(response.status);
+          $('#table_id').DataTable().ajax.reload();
           let announcement = response.data.announcement;
           toastTitle.innerHTML= 'Announcement' ;
           toastBody.innerHTML='Announcement created Successfully'
@@ -166,19 +155,34 @@
         });
       }
     </script>
+    
     <script>
       $( document ).ready(function() {
-        let url= "{{ route('admin.announcements.indexAnnouncement') }}"
-        axios.post(url, {
-          _method:'GET'
-        })
-        .then(function (response) {
-          console.log(response.data.announcements);
-        })
-        .catch(function (error) {
-          console.log(error);
+        var table =$('#table_id').DataTable({
+          processing: true,
+          serverSide: true,
+          ajax: '{{ route('admin.announcements.indexAnnouncement') }}',
+          columns: [
+            { data: 'id', name: 'id' },
+            { data: 'title', name: 'title' },
+            { data: 'message', name: 'message' },
+            { data: 'type', name: 'type' },
+            // render a button inside row
+            { data: "active" , render : function ( data, type, row, meta ) {
+              return type === 'display'  ? 
+                (data !== null?'<div class="form-check form-switch"><input value="'+ data +'" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">'+ data +'</div>': 'Sent')
+                :data;
+            }},
+            // render a button inside row
+            { data: "id" , render : function ( data, type, row, meta ) {
+
+              return type === 'display'  ?
+                '<a class="btn btn-outline-light text-warning" href="#'+ data +'" ><i class="fas fa-pencil-alt"></i></a>' :
+                data;
+            }},
+          ],
         });
-        $('#table_id').DataTable();
+        
       });
     </script>
 @endsection

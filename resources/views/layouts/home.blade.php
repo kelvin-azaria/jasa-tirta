@@ -38,16 +38,16 @@
         <div class="collapse navbar-collapse justify-content-end">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a role="button" href="{{ url('/') }}" class="nav-link link-light fw-bold px-3 text-capitalize"><small><i class="fas fa-home pe-2"></i><span class="nav-link-text d-xl-inline">home</span></small></a>
+              <a role="button" href="{{ url('/') }}" class="nav-link link-light-theme fw-bold px-3 text-capitalize"><small><i class="fas fa-home pe-2"></i><span class="nav-link-text d-xl-inline">home</span></small></a>
             </li>
             <li class="nav-item">
-              <a role="button" href="{{ url('/#announcement') }}" class="nav-link link-light fw-bold px-3 text-capitalize"><small><i class="fas fa-bullhorn pe-2"></i><span class="nav-link-text d-xl-inline">pengumuman</span></small></a>
+              <a role="button" href="{{ url('/#announcement') }}" class="nav-link link-light-theme fw-bold px-3 text-capitalize"><small><i class="fas fa-bullhorn pe-2"></i><span class="nav-link-text d-xl-inline">pengumuman</span></small></a>
             </li>
             <li class="nav-item">
-              <a role="button" href="{{ route('rule.index') }}" class="nav-link link-light fw-bold px-3 text-capitalize"><small><i class="fas fa-dice pe-2"></i><span class="nav-link-text d-xl-inline">peraturan</span></small></a>
+              <a role="button" href="{{ route('rule.index') }}" class="nav-link link-light-theme fw-bold px-3 text-capitalize"><small><i class="fas fa-dice pe-2"></i><span class="nav-link-text d-xl-inline">peraturan</span></small></a>
             </li>
             <li class="nav-item dropdown">
-              <a role="button" href="#" class="nav-link link-light fw-bold px-3 text-capitalize dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" ><small><i class="fas fa-trophy pe-2"></i><span class="nav-link-text d-xl-inline">leaderboards</span></small></a>
+              <a role="button" href="#" class="nav-link link-light-theme fw-bold px-3 text-capitalize dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" ><small><i class="fas fa-trophy pe-2"></i><span class="nav-link-text d-xl-inline">leaderboards</span></small></a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><small class="ps-3 text-capitalize text-accent-2 fw-bold">perlombaan</small></li>
                 <li>
@@ -97,7 +97,7 @@
               </ul>
             </li>
             <li class="nav-item pe-2">
-              <a role="button" href="{{ route('faq.index') }}" class="nav-link link-light fw-bold px-3 text-capitalize"><small><i class="fas fa-question-circle pe-2"></i><span class="nav-link-text d-xl-inline">FAQ</span></small></a>
+              <a role="button" href="{{ route('faq.index') }}" class="nav-link link-light-theme fw-bold px-3 text-capitalize"><small><i class="fas fa-question-circle pe-2"></i><span class="nav-link-text d-xl-inline">FAQ</span></small></a>
             </li>
             @auth
               <li class="nav-item dropdown">
@@ -106,10 +106,10 @@
                   </a> --}}
                   <a role="button" href="#" class="btn-primary btn fw-bold px-3 text-capitalize text-light rounded-pill dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"  ><small><i class="fas fa-user-circle pe-2"></i><span class="nav-link-text d-xl-inline">{{ auth()->user()->name}}</span></small></a>
                   <ul class="dropdown-menu dropdown-menu-end p-2 mt-2" aria-labelledby="navbarDropdown">
-                    <a name="" id="" class="btn w-100  link-light text-capitalize text-start" href="{{ route('login') }}" role="button">
+                    <a name="" id="" class="btn w-100  link-light-theme text-capitalize text-start" href="{{ route('login') }}" role="button">
                       <small class="fw-bold"><i class="fas fa-th-large pe-2"></i>dashboard</small>
                     </a>
-                    <a name="" id="" class="btn w-100  link-light text-capitalize mt-2 text-start" href="{{ route('logout') }}" onclick="event.preventDefault();
+                    <a name="" id="" class="btn w-100  link-light-theme text-capitalize mt-2 text-start" href="{{ route('logout') }}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();" role="button">
                       <small class="fw-bold"><i class="fas fa-sign-out-alt pe-2"></i>logout</small>
                     </a>
@@ -164,7 +164,7 @@
           <div class="row mt-3">
               <div class="col">
                 <div class="card card-body p-0">
-                  <a name="" id="" class="btn w-100  link-light fw-bold fs-6" href="{{ route('logout') }}" onclick="event.preventDefault();
+                  <a name="" id="" class="btn w-100  link-light-theme fw-bold fs-6" href="{{ route('logout') }}" onclick="event.preventDefault();
                   document.getElementById('logout-form').submit();" role="button">
                     <i class="fas fa-sign-out-alt pe-2"></i>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none"> @csrf </form>
@@ -174,7 +174,7 @@
               </div>
               <div class="col">
                 <div class="card card-body p-0">
-                  <a name="" id="" class="btn w-100  link-light fw-bold fs-6" href="{{ route('login') }}" role="button">
+                  <a name="" id="" class="btn w-100  link-light-theme fw-bold fs-6" href="{{ route('login') }}" role="button">
                     <i class="fas fa-th-large pe-2"></i>
                     <span class="text-capitalize">dashboard</span>
                   </a>
@@ -226,25 +226,25 @@
           </div>
           <div class="row justify-content-between">
             <div class="col">
-              <a role="button" href="{{ url('/') }}" class="nav-link link-light fw-bold text-capitalize">
+              <a role="button" href="{{ url('/') }}" class="nav-link link-light-theme fw-bold text-capitalize">
                 <div class="d-flex justify-content-center"><i class="fas fa-home"></i></div>
                 <p class="mx-0 mb-0 small-text text-center"><small>home</small></p>
               </a>
             </div>
             <div class="col">
-              <a role="button" href="{{ url('/#announcement') }}" class="nav-link link-light fw-bold text-capitalize">
+              <a role="button" href="{{ url('/#announcement') }}" class="nav-link link-light-theme fw-bold text-capitalize">
                 <div class="d-flex justify-content-center"><i class="fas fa-bullhorn"></i></div>
                 <p class="mx-0 mb-0 small-text text-center"><small>pengumuman</small></p>
               </a>
             </div>
             <div class="col">
-              <a role="button" href="{{ route('rule.index') }}" class="nav-link link-light fw-bold text-capitalize">
+              <a role="button" href="{{ route('rule.index') }}" class="nav-link link-light-theme fw-bold text-capitalize">
                 <div class="d-flex justify-content-center"><i class="fas fa-dice"></i></div>
                 <p class="mx-0 mb-0 small-text text-center"><small>peraturan</small></p>
               </a>
             </div>
             <div class="col">
-              <a class="nav-link link-light fw-bold text-capitalize " data-bs-toggle="collapse" href="#leaderboardOptions" role="button" aria-expanded="false" aria-controls="collapseExample">
+              <a class="nav-link link-light-theme fw-bold text-capitalize " data-bs-toggle="collapse" href="#leaderboardOptions" role="button" aria-expanded="false" aria-controls="collapseExample">
                 <div class="d-flex justify-content-center"><i class="fas fa-trophy"></i></div>
                 <p class="mx-0 mb-0 small-text text-center"><small>leaderboards</small></p>
               </a>

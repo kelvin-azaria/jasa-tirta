@@ -150,24 +150,24 @@
             <ul class="navbar-nav">
               <small class="text-muted mt-3 mb-1 fw-bold text-capitalize">general</small>
               <li class="nav-item">
-                <a role="button" href="{{ route('dashboard.index') }}" class="nav-link link-light my-1 px-3 text-capitalize"><i class="fas fa-home fa-fw"></i><span class="ps-2 nav-link-text d-inline">Dashboard</span></a>
+                <a role="button" href="{{ route('dashboard.index') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-home fa-fw"></i><span class="ps-2 nav-link-text d-inline">Dashboard</span></a>
               </li>
               <li class="nav-item">
-                <a role="button" href="{{ url('/') }}" class="nav-link link-light my-1 px-3 text-capitalize"><i class="fas fa-bullhorn fa-fw"></i><span class="ps-2 nav-link-text d-inline">announcements</span></a>
+                <a role="button" href="{{ url('/') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-bullhorn fa-fw"></i><span class="ps-2 nav-link-text d-inline">announcements</span></a>
               </li>
               
               <small class="text-muted mt-3 mb-1 fw-bold text-capitalize">competition</small>
               <li class="nav-item">
-                  <a role="button" href="{{ url('/') }}" class="nav-link link-light my-1 px-3 text-capitalize"><i class="fas fa-address-card fa-fw"></i><span class="ps-2 nav-link-text d-inline">registration</span></a>
+                  <a role="button" href="{{ url('/') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-address-card fa-fw"></i><span class="ps-2 nav-link-text d-inline">registration</span></a>
                 </li>
                 <li class="nav-item">
-                  <a role="button" href="{{ url('/') }}" class="nav-link link-light my-1 px-3 text-capitalize"><i class="fas fa-trophy fa-fw"></i><span class="ps-2 nav-link-text d-inline">my competition</span></a>
+                  <a role="button" href="{{ url('/') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-trophy fa-fw"></i><span class="ps-2 nav-link-text d-inline">my competition</span></a>
                 </li>
                 <li class="nav-item">
-                  <a role="button" href="{{ url('/') }}" class="nav-link link-light my-1 px-3 text-capitalize"><i class="fas fa-chart-line fa-fw"></i><span class="ps-2 nav-link-text d-inline">activity</span></a>
+                  <a role="button" href="{{ url('/') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-chart-line fa-fw"></i><span class="ps-2 nav-link-text d-inline">activity</span></a>
                 </li>
                 <li class="nav-item">
-                  <a role="button" href="{{ url('/') }}" class="nav-link link-light my-1 px-3 text-capitalize"><i class="fas fa-medal fa-fw"></i><span class="ps-2 nav-link-text d-inline">leaderboard</span></a>
+                  <a role="button" href="{{ url('/') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-medal fa-fw"></i><span class="ps-2 nav-link-text d-inline">leaderboard</span></a>
                 </li>
             </ul>
           </nav>
@@ -189,12 +189,12 @@
                 </div>
               </div>
               <div class="col-auto py-3 align-self-center">
-                <a name="" id="" class="nav-link link-light text-capitalize d-none d-md-block text-end" href="{{ route('logout') }}" onclick="event.preventDefault();
+                <a name="" id="" class="nav-link link-light-theme text-capitalize d-none d-md-block text-end" href="{{ route('logout') }}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();" role="button">
                   <span class="fw-bold"><i class="fas fa-sign-out-alt pe-2"></i>{{ __('Logout') }}</span>
                 </a>
 
-                <a name="" id="" class="nav-link link-light px-4 py-3 rounded-pill text-capitalize d-block d-md-none" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" role="button">
+                <a name="" id="" class="nav-link link-light-theme px-4 py-3 rounded-pill text-capitalize d-block d-md-none" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" role="button">
                      <div class="d-flex justify-content-center fs-2"><i class="fas fa-sign-out-alt fa-fw"></i></div>
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none"> @csrf </form>
@@ -216,36 +216,36 @@
                     <ul class="navbar-nav">
                       <small class="text-muted mt-3 mb-1 fw-bold text-capitalize">general</small>
                       <li class="nav-item">
-                        <a role="button" href="{{ url('/') }}" class="nav-link link-light my-1 px-3 text-capitalize"><i class="fas fa-bullhorn fa-fw"></i><span class="ps-2 nav-link-text d-inline">announcements</span></a>
+                        <a role="button" href="{{ url('/') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-bullhorn fa-fw"></i><span class="ps-2 nav-link-text d-inline">announcements</span></a>
                       </li>
                       
                       <small class="text-muted mt-3 mb-1 fw-bold text-capitalize">competition</small>
                       <li class="nav-item">
-                          <a role="button" href="{{ url('/') }}" class="nav-link link-light my-1 px-3 text-capitalize"><i class="fas fa-address-card fa-fw"></i><span class="ps-2 nav-link-text d-inline">registration</span></a>
+                          <a role="button" href="{{ url('/') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-address-card fa-fw"></i><span class="ps-2 nav-link-text d-inline">registration</span></a>
                         </li>
                         <li class="nav-item">
-                          <a role="button" href="{{ url('/') }}" class="nav-link link-light my-1 px-3 text-capitalize"><i class="fas fa-chart-line fa-fw"></i><span class="ps-2 nav-link-text d-inline">activity</span></a>
+                          <a role="button" href="{{ url('/') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-chart-line fa-fw"></i><span class="ps-2 nav-link-text d-inline">activity</span></a>
                         </li>
                         <li class="nav-item">
-                          <a role="button" href="{{ url('/') }}" class="nav-link link-light my-1 px-3 text-capitalize"><i class="fas fa-medal fa-fw"></i><span class="ps-2 nav-link-text d-inline">leaderboard</span></a>
+                          <a role="button" href="{{ url('/') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-medal fa-fw"></i><span class="ps-2 nav-link-text d-inline">leaderboard</span></a>
                         </li>
                     </ul>
                   </div>
                   <div class="row justify-content-between">
                     <div class="col">
-                      <a role="button" href="{{ route('dashboard.index') }}" class="nav-link link-light py-2 fw-bold text-capitalize">
+                      <a role="button" href="{{ route('dashboard.index') }}" class="nav-link link-light-theme py-2 fw-bold text-capitalize">
                         <div class="d-flex justify-content-center"><i class="fas fa-home"></i></div>
                         <p class="mx-0 mb-0 small-text text-center"><small>dashboard</small></p>
                       </a>
                     </div>
                     <div class="col">
-                      <a role="button" href="{{ url('/') }}" class="nav-link link-light py-2 fw-bold text-capitalize">
+                      <a role="button" href="{{ url('/') }}" class="nav-link link-light-theme py-2 fw-bold text-capitalize">
                         <div class="d-flex justify-content-center"><i class="fa fa-trophy"></i></div>
                         <p class="mx-0 mb-0 small-text text-center"><small>Competition</small></p>
                       </a>
                     </div>
                     <div class="col">
-                      <a class="nav-link link-light py-2 fw-bold text-capitalize " data-bs-toggle="collapse" href="#leaderboardOptions" role="button" aria-expanded="false" aria-controls="collapseExample">
+                      <a class="nav-link link-light-theme py-2 fw-bold text-capitalize " data-bs-toggle="collapse" href="#leaderboardOptions" role="button" aria-expanded="false" aria-controls="collapseExample">
                         <div class="d-flex justify-content-center"><i class="fas fa-bars"></i></div>
                         <p class="mx-0 mb-0 small-text text-center"><small>More</small></p>
                       </a>

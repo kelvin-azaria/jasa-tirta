@@ -10819,17 +10819,17 @@ textarea.form-control-lg {
   background-color: #252626;
 }
 
-.link-light {
-  color: #9EA9B4;
+.link-light-theme {
+  color: #9EA9B4 !important;
 }
-.link-light svg {
+.link-light-theme svg {
   fill: #9EA9B4;
 }
-.link-light:hover {
+.link-light-theme:hover {
   color: #01abe8;
   background-color: rgba(1, 171, 232, 0.1);
 }
-.link-light:focus {
+.link-light-theme:focus {
   color: #01abe8;
 }
 
@@ -10850,6 +10850,35 @@ textarea.form-control-lg {
   cursor: pointer;
 }
 
+table.dataTable td:nth-child(3) {
+  max-width: 200px;
+}
+
+#table_id_wrapper.dataTables_wrapper .row:nth-child(2) {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.8rem 0;
+}
+
+table.dataTable td:nth-child(3) {
+  max-width: 200px;
+}
+
+table.dataTable td {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+div.dataTables_wrapper div.dataTables_filter label {
+  white-space: normal !important;
+}
+
+@media (max-width: 767.98px) {
+  #table_id_length, #table_id_info {
+    margin-bottom: 1rem;
+  }
+}
 html {
   scroll-behavior: smooth;
 }

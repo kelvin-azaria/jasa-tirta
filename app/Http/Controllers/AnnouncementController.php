@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AnnouncementRequest;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
-
+use Yajra\DataTables\Facades\DataTables;
 class AnnouncementController extends Controller
 {
     /**
@@ -15,12 +15,8 @@ class AnnouncementController extends Controller
      */
     public function index()
     {
-      $announcements = Announcement::all();
-
-      return response()->json([
-        'response' => 'success',
-        'announcements' => $announcements
-      ]);
+      return DataTables::of(Announcement::query())->toJson();
+      
     }
 
     /**
@@ -44,6 +40,7 @@ class AnnouncementController extends Controller
       $announcement = Announcement::create([
         'title'=>$announcementRequest->title,
         'message'=>$announcementRequest->message,
+        'type'=>$announcementRequest->type,
         'bg_color'=>$announcementRequest->bgColor,
         'text_color'=>$announcementRequest->textColor,
         'active'=>$announcementRequest->active
