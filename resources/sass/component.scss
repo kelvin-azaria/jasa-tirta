@@ -18,6 +18,15 @@ table.dataTable td:nth-child(3) {
 table.dataTable td:nth-child(3) {
   max-width: 200px;
 }
+table.dataTable td:nth-child(4) {
+  text-transform: capitalize;
+  text-align: center;
+  width: 8rem;
+}
+table.dataTable td:nth-child(5) {
+  text-align: center;
+  width: 2rem;
+}
 table.dataTable td  {
   white-space: nowrap;
   text-overflow: ellipsis;

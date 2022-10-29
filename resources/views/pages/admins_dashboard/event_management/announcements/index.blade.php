@@ -37,52 +37,56 @@
         </div>
       </div>
     </div>
+
     <div class="col-12 col-lg-6 my-3 align-self-stretch " >
       <div class="card h-100">
-        <div class="card-body">
-          <div class="row">
-            <div class="col my-3">
-              <h6 class="text-capitalize fw-bold pb-2">create running text</h6>
-            </div>
-            <div class="col-auto my-3">
-              <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                <label class="form-check-label text-accent-2" for="flexSwitchCheckDefault">Display status</label>
-              </div>
-            </div>
-          </div>
-          <form action="">
+        <form onsubmit="postRunningText(event)">
+          <div class="card-body">
             <div class="row">
-              <div class="col-4">
-                <label for="inputEmail4" class="form-label">Title</label>
-                <input type="text" class="form-control" id="inputEmail4">
+              <div class="col my-3">
+                <h6 class="text-capitalize fw-bold pb-2">create running text</h6>
               </div>
-              
-              <div class="col-8">
-                <label for="inputPassword4" class="form-label">Message</label>
-                <input type="text" class="form-control" id="inputPassword4">
+              <div class="col-auto my-3">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" id="inputActive">
+                  <label class="form-check-label text-accent-2" for="inputActive">Active status</label>
+                </div>
               </div>
             </div>
-            <div class="row mt-3">
-              <div class=" col-auto col-md-12 col-xl-auto align-self-center pb-md-2"> 
-                <small><p class="m-0 p-0"> Set Color :</p></small>
+            
+              <div class="row">
+                <input type="hidden" id="inputType" name="inputType" value="running text"> 
+                <div class="col-4">
+                  <label for="inputRunningTitle" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="inputRunningTitle">
+                </div>
+                
+                <div class="col-8">
+                  <label for="inputRunningMessage" class="form-label">Message</label>
+                  <input type="text" class="form-control" id="inputRunningMessage">
+                </div>
               </div>
-              <div class="col align-self-center">
-                <input type="color" class="form-control form-control-color d-inline-block mx-2" id="exampleColorInput" value="#563d7c" title="Text Color">
-                <input type="color" class="form-control form-control-color d-inline-block mx-2" id="exampleColorInput" value="#563d7c" title="Background color">
+              <div class="row mt-3">
+                <div class=" col-auto col-md-12 col-xl-auto align-self-center pb-md-2"> 
+                  <small><p class="m-0 p-0"> Set Color :</p></small>
+                </div>
+                <div class="col align-self-center">
+                  <input type="color" class="form-control form-control-color d-inline-block mx-2" id="inputRunningTextColor" value="#563d7c" title="Text Color">
+                  <input type="color" class="form-control form-control-color d-inline-block mx-2" id="inputRunningBackgroundColor" value="#563d7c" title="Background color">
+                </div>
+                <div class="col-auto align-self-center ">
+                  <button type="submit" class="btn btn-primary text-light"><i class="fas fa-plus"></i><span class="text-capitalize  ps-2">add</span></button>
+                </div>
+                <marquee id="runningTextPreview" direction="left" class="fw-bold py-2 mt-4">
+                  running text preview
+                </marquee>
               </div>
-              <div class="col-auto align-self-center ">
-                <button type="button" name="" id="" class="btn btn-primary text-light"><i class="fas fa-plus"></i><span class="text-capitalize  ps-2">add</span></button>
-              </div>
-              <marquee direction="left" class="bg-warning text-light fw-bold py-2 mt-4">
-                Pemilihan lomba akan ditutup dalam 1x24 jam, Harap segera memilih perlombaan yang tersedia
-              </marquee>
-            </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
+
   <div class="row">
     <div class="col-12">
       <div class="card">
@@ -147,8 +151,34 @@
           toastTitle.innerHTML= 'Announcement' ;
           toastBody.innerHTML='Announcement created Successfully'
           ;
-          const toast = new bootstrap.Toast(toastLiveExample);
-          toast.show();
+          // const toast = new bootstrap.Toast(toastLiveExample);
+          $('#liveToast').toast('show');
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      }
+      function postRunningText(event){
+        event.preventDefault();
+        const formData = new FormData();
+        formData.append('title', $('#inputRunningTitle').val());
+        formData.append('message', $('#inputRunningMessage').val());
+        formData.append('type',  $('#inputType').val());
+        formData.append('textColor',  $('#inputRunningTextColor').val());
+        formData.append('bgColor',  $('#inputRunningBackgroundColor').val());
+        formData.append('active',  ($('#inputActive:checked').val() == 'on'? 1 : 0));
+
+        let url = "{{ route('admin.announcements.store') }}";
+
+        axios.post(url, formData)
+        .then(function (response) {
+          $('#table_id').DataTable().ajax.reload();
+          let announcement = response.data.announcement;
+          toastTitle.innerHTML= 'Announcement' ;
+          toastBody.innerHTML='Announcement created Successfully'
+          ;
+          // const toast = new bootstrap.Toast(toastLiveExample);
+          $('#liveToast').show();
         })
         .catch(function (error) {
           console.log(error);
@@ -170,7 +200,7 @@
             // render a button inside row
             { data: "active" , render : function ( data, type, row, meta ) {
               return type === 'display'  ? 
-                (data !== null?'<div class="form-check form-switch"><input value="'+ data +'" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">'+ data +'</div>': 'Sent')
+                (data !== null?'<div class="form-check form-switch justify-content-center d-flex"><input '+ (data == 1? 'checked=true ': '') +'class="form-check-input text-center" type="checkbox" role="switch" id="flexSwitchCheckDefault" ></div>': 'Sent')
                 :data;
             }},
             // render a button inside row
@@ -181,6 +211,15 @@
                 data;
             }},
           ],
+        });
+        $("#inputRunningMessage").on('change', function(){ 
+          $('#runningTextPreview').text($("#inputRunningMessage").val());
+        });
+        $("#inputRunningTextColor").on('change', function(){ 
+          $('#runningTextPreview').css("color",$("#inputRunningTextColor").val());
+        });
+        $("#inputRunningBackgroundColor").on('change', function(){ 
+          $('#runningTextPreview').css("background-color",$("#inputRunningBackgroundColor").val());
         });
         
       });

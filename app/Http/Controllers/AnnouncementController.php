@@ -37,6 +37,10 @@ class AnnouncementController extends Controller
      */
     public function store(AnnouncementRequest $announcementRequest)
     {
+      $activeRunningText = Announcement::where('active',1)->first();
+      if($activeRunningText && $announcementRequest->active =1){
+        $activeRunningText->update(['active' => 0]);
+      }
       $announcement = Announcement::create([
         'title'=>$announcementRequest->title,
         'message'=>$announcementRequest->message,

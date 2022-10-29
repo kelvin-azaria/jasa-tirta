@@ -8,7 +8,7 @@
     <!-- Web & Page Title -->
     <title>{{ config('app.name', 'Laravel') }} @yield('title')</title>
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Styles -->
@@ -125,9 +125,10 @@
           </ul>
         </div>
       </div>
-      <marquee direction="left" class="bg-warning text-light fw-bold py-2">
-        Pemilihan lomba akan ditutup dalam 1x24 jam, Harap segera memilih perlombaan yang tersedia
-      </marquee>
+      <div class="runningTextContainer" class="d-none">
+        <marquee direction="left" class="fw-bold py-2">
+        </marquee>
+      </div>
     </nav>
 
     {{-- Mobile Navbar --}}
@@ -183,9 +184,10 @@
           </div>
         </div>
       </div>
-      <marquee direction="left" class="bg-warning text-light fw-bold py-2 mt-3">
-        Pemilihan lomba akan ditutup dalam 1x24 jam, Harap segera memilih perlombaan yang tersedia
-      </marquee>
+      <div class="runningTextContainer" class="d-none">
+        <marquee direction="left" class="fw-bold py-2">
+        </marquee>
+      </div>
     </nav>
     <nav  id="mobile-navbar" class="navbar fixed-bottom border border-top navbar-light bg-light d-md-none">
       <div class="container-fluid">
@@ -299,6 +301,32 @@
       </div>
     </footer>
 
+    <script>
+      $( document ).ready(function() {
+        const formData = new FormData();
+        formData.append('_method', 'GET');
+        let url = "{{ route('getRunningText') }}";
+        axios.post(url, formData)
+        .then(function (response) {
+          let dataText = response.data.runningText;
+          if(dataText !== "null"){
+            $('.runningTextContainer').addClass("d-block") ;
+            $('.runningTextContainer').removeClass("d-none") ;
+            $('marquee').text(dataText.message) ;
+            $('marquee').css("background-color",dataText.bg_color);
+            $('marquee').css("color",dataText.text_color);
+            $('marquee').start();
+          }else{
+            $('.runningTextContainer').addClass("d-none") ;
+            $('.runningTextContainer').removeClass("d-block") ;
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      });
+    </script>
     @yield('script')
+    
   </body>
 </html>
