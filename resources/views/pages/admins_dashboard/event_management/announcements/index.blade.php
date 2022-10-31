@@ -204,10 +204,11 @@
                 :data;
             }},
             // render a button inside row
-            { data: "id" , render : function ( data, type, row, meta ) {
+            { data: function ( data, type, row, meta ) {
 
               return type === 'display'  ?
-                '<a class="btn btn-outline-light text-warning" href="#'+ data +'" ><i class="fas fa-pencil-alt"></i></a>' :
+                // '<a class="btn btn-outline-light text-warning" href="#'+ data +'" ><i class="fas fa-pencil-alt"></i></a>' :
+                '<button type="button" onClick="editAnnouncementModal('+ data.id +')" class="btn btn-light text-warning me-2"><i class="fas fa-pencil-alt"></i></button><button type="button" onClick="deleteAnnouncement('+ data.id +')" class="btn btn-light text-danger"><i class="fas fa-trash-alt"></i></button>':
                 data;
             }},
           ],
@@ -225,6 +226,10 @@
     </script>
 
     <script>
+      function editAnnouncementModal(id){
+
+      }
+
       function changeStatus(id){
         const formData = new FormData();
         formData.append('id', id);
@@ -243,5 +248,7 @@
           console.log(error);
         });
       }
+
+      
     </script>
 @endsection
