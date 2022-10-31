@@ -16,7 +16,6 @@ class AnnouncementController extends Controller
     public function index()
     {
       return DataTables::of(Announcement::query())->toJson();
-      
     }
 
     /**
@@ -87,6 +86,30 @@ class AnnouncementController extends Controller
     public function update(Request $request, Announcement $announcement)
     {
         //
+    }
+
+    public function changeStatus(Request $request)
+    {
+        $oldAnnouncement=Announcement::where('active',1)->first();
+        $announcement = Announcement::findOrFail($request->id);
+        
+        if($oldAnnouncement ? ($oldAnnouncement->id != $announcement->id) : $announcement){
+          if($oldAnnouncement){
+            $oldAnnouncement->active = 0;
+            $oldAnnouncement->save();
+          }
+          $value = !($announcement->active);
+          $announcement->active =  $value;
+          $announcement->save();
+        }else{
+          $value = !($announcement->active);
+          $announcement->active =  $value;
+          $announcement->save();
+        }
+        return response()->json([
+          'response' => 'success',
+          'announcement' => $announcement
+        ]);
     }
 
     /**

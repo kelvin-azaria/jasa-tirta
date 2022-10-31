@@ -271,7 +271,7 @@
                           <a role="button" href="{{ url('/') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-image fa-fw"></i><span class="ps-2 nav-link-text d-inline">banners</span></a>
                         </li>
                         <li class="nav-item">
-                          <a role="button" href="{{ url('/') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-bullhorn fa-fw"></i><span class="ps-2 nav-link-text d-inline">announcements</span></a>
+                          <a role="button" href="{{ route('admin.announcements.index') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-bullhorn fa-fw"></i><span class="ps-2 nav-link-text d-inline">announcements</span></a>
                         </li>
                         <li class="nav-item">
                           <a role="button" href="{{ url('/') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-calendar-alt fa-fw"></i><span class="ps-2 nav-link-text d-inline">calendar</span></a>

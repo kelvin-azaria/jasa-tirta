@@ -71,8 +71,8 @@
                   <small><p class="m-0 p-0"> Set Color :</p></small>
                 </div>
                 <div class="col align-self-center">
-                  <input type="color" class="form-control form-control-color d-inline-block mx-2" id="inputRunningTextColor" value="#563d7c" title="Text Color">
-                  <input type="color" class="form-control form-control-color d-inline-block mx-2" id="inputRunningBackgroundColor" value="#563d7c" title="Background color">
+                  <input type="color" class="form-control form-control-color d-inline-block mx-2" id="inputRunningTextColor" value="#000000" title="Text Color">
+                  <input type="color" class="form-control form-control-color d-inline-block mx-2" id="inputRunningBackgroundColor" value="#ffffff" title="Background color">
                 </div>
                 <div class="col-auto align-self-center ">
                   <button type="submit" class="btn btn-primary text-light"><i class="fas fa-plus"></i><span class="text-capitalize  ps-2">add</span></button>
@@ -117,7 +117,7 @@
   <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
     <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
-        <i class="fas fa-plus-square me-2"></i>
+        <span class="text-warning"><i class="fas fa-bell me-2"></i></span>
         <strong id="toastTitle" class="me-auto">Bootstrap</strong>
         <small>Just Now</small>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -198,9 +198,9 @@
             { data: 'message', name: 'message' },
             { data: 'type', name: 'type' },
             // render a button inside row
-            { data: "active" , render : function ( data, type, row, meta ) {
+            { data: function ( data, type, row, meta ) {
               return type === 'display'  ? 
-                (data !== null?'<div class="form-check form-switch justify-content-center d-flex"><input '+ (data == 1? 'checked=true ': '') +'class="form-check-input text-center" type="checkbox" role="switch" id="flexSwitchCheckDefault" ></div>': 'Sent')
+                (data.active !== null?'<div class="form-check form-switch justify-content-center d-flex"><input onchange="changeStatus('+data.id+')"'+ (data.active == 1? 'checked=true ': '') +'class="form-check-input text-center" type="checkbox" role="switch" id="flexSwitchCheckDefault" ></div>': 'Sent')
                 :data;
             }},
             // render a button inside row
@@ -221,7 +221,27 @@
         $("#inputRunningBackgroundColor").on('change', function(){ 
           $('#runningTextPreview').css("background-color",$("#inputRunningBackgroundColor").val());
         });
-        
       });
+    </script>
+
+    <script>
+      function changeStatus(id){
+        const formData = new FormData();
+        formData.append('id', id);
+        let url = "{{ route('admin.announcements.status')}}";
+        axios.post(url, formData)
+        .then(function (response) {
+          $('#table_id').DataTable().ajax.reload();
+          let announcement = response.data.announcement;
+          toastTitle.innerHTML= 'Announcement' ;
+          toastBody.innerHTML='Status Changed Successfully'
+          ;
+          // const toast = new bootstrap.Toast(toastLiveExample);
+          $('#liveToast').toast('show');
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      }
     </script>
 @endsection

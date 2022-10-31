@@ -96,6 +96,7 @@ Route::prefix('/admin')->name('admin.')->group(function(){
   Route::prefix('announcements')->name('announcements.')->group(function(){
     Route::get('/', [AdminDashboardController::class, 'announcementIndex'])->name('index');
     Route::get('/announcements', [AnnouncementController::class, 'index'])->name('indexAnnouncement');
+    Route::post('/status', [AnnouncementController::class, 'changeStatus'])->name('status');
     Route::post('/', [AnnouncementController::class, 'store'])->name('store');
   });
 
