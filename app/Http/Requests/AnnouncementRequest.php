@@ -24,7 +24,8 @@ class AnnouncementRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+          'title' => 'required|max:255',
+          'message' => 'required',
         ];
     }
 }

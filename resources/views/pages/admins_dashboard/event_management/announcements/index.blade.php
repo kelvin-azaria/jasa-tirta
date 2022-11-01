@@ -14,13 +14,16 @@
       <div class="card h-100">
         <div class="card-body">
           <h6 class="text-capitalize fw-bold my-3 pb-2">compose announcement</h6>
-          <form onsubmit="postAnnouncement(event)" class="form-floating mb-2">
+          <form id="announcementForm" onsubmit="postAnnouncement(event)" class="form-floating mb-2">
             <div class="row">
               <div class="col">
                 <input type="hidden" id="typeInput" name="typeInput" value="note">  
                 <div class="form-floating mb-2">  
                   <input name="titleInput" id="titleInput" type="text" class="form-control" placeholder="Type title here..." >
                   <label for="titleInput">Title</label>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
                 </div>
                 <div class="form-floating">
                   <textarea name="messageInput" id="messageInput" class="form-control" placeholder="Leave a comment here" style="height: 80px"></textarea>
@@ -113,6 +116,48 @@
    
   </div>
 
+  {{-- Edit Modal --}}
+  <div class="modal fade" id="editAnnouncementModal" tabindex="-1" aria-labelledby="editAnnouncementModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title fs-6 text-bold m-0 text-capitalize fw-bold" id="editAnnouncementModalLabel">edit announcement</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form onsubmit="updateAnnouncement(event)">
+          <input type="hidden" id="inputEditId" name="inputEditId"> 
+          <input type="hidden" id="inputEditType" name="inputEditType"> 
+          <div id="noteType" class="modal-body">
+            <div class="form-floating mb-2">  
+              <input name="titleEditInput" id="titleEditInput" type="text" class="form-control" placeholder="Type title here..." >
+              <label for="titleInput">Title</label>
+            </div>
+            <div class="form-floating">
+              <textarea name="messageEditInput" id="messageEditInput" class="form-control" placeholder="Leave a comment here" style="height: 80px"></textarea>
+              <label for="messageInput">Message</label>
+            </div>
+            <div class="row mt-3 d-none" id="runningTextEditSection">
+              <div class=" col-auto col-md-12 col-xl-auto align-self-center pb-md-2"> 
+                <small><p class="m-0 p-0"> Set Color :</p></small>
+              </div>
+              <div class="col align-self-center">
+                <input type="color" class="form-control form-control-color d-inline-block mx-2" id="inputRunningEditTextColor" title="Text Color">
+                <input type="color" class="form-control form-control-color d-inline-block mx-2" id="inputRunningEditBackgroundColor" title="Background color">
+              </div>
+            </div>
+          </div>
+          {{-- <div id="runningTextType" class="modal-body d-none">
+            ...
+          </div> --}}
+          <div class="modal-footer">
+            <button type="button" class="btn btn-light fw-bold text-accent-2" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary fw-bold text-white">Save changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   {{-- Toast --}}
   <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
     <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -130,14 +175,16 @@
   </div>
 
 @endsection
+
 @section('script')
-    
     <script>
       const toastLiveExample = document.getElementById('liveToast')
       const toastTitle = document.getElementById('toastTitle');
       const toastBody = document.getElementById('toastBody');
+
       function postAnnouncement(event){
         event.preventDefault();
+
         const formData = new FormData();
         formData.append('title', $('#titleInput').val());
         formData.append('message', $('#messageInput').val());
@@ -151,15 +198,26 @@
           toastTitle.innerHTML= 'Announcement' ;
           toastBody.innerHTML='Announcement created Successfully'
           ;
-          // const toast = new bootstrap.Toast(toastLiveExample);
           $('#liveToast').toast('show');
         })
         .catch(function (error) {
-          console.log(error);
+          let errors = error.response.data.errors;
+          let errorMessage = "";
+          $.each(errors, function(input, message) {
+            errorMessage += ('<p class="m-0">'+message[0]+'<p>')
+          });
+          console.log(errorMessage);
+          toastTitle.innerHTML= 'Something went wrong' ;
+          
+          toastBody.innerHTML=errorMessage;
+          ;
+          $('#liveToast').toast('show');
         });
       }
+
       function postRunningText(event){
         event.preventDefault();
+
         const formData = new FormData();
         formData.append('title', $('#inputRunningTitle').val());
         formData.append('message', $('#inputRunningMessage').val());
@@ -177,8 +235,127 @@
           toastTitle.innerHTML= 'Announcement' ;
           toastBody.innerHTML='Announcement created Successfully'
           ;
-          // const toast = new bootstrap.Toast(toastLiveExample);
           $('#liveToast').show();
+        })
+        .catch(function (error) {
+          let errors = error.response.data.errors;
+          let errorMessage = "";
+          $.each(errors, function(input, message) {
+            errorMessage += ('<p class="m-0">'+message[0]+'<p>')
+          });
+          console.log(errorMessage);
+          toastTitle.innerHTML= 'Something went wrong' ;
+          
+          toastBody.innerHTML=errorMessage;
+          ;
+          $('#liveToast').toast('show');
+        });
+      }
+
+      function changeStatus(id){
+        const formData = new FormData();
+        formData.append('id', id);
+        let url = "{{ route('admin.announcements.status')}}";
+
+        axios.post(url, formData)
+        .then(function (response) {
+          $('#table_id').DataTable().ajax.reload();
+          let announcement = response.data.announcement;
+          toastTitle.innerHTML= 'Announcement' ;
+          toastBody.innerHTML='Status changed successfully !'
+          ;
+          $('#liveToast').toast('show');
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      }
+
+      function editAnnouncementModal(id){
+        const formData = new FormData();
+        formData.append('_method', 'GET');
+        formData.append('id', id);
+        let url = '{{ route("admin.announcements.show",":id") }}';
+        url = url.replace(':id', id);
+
+        axios.post(url, formData)
+        .then(function (response) {
+
+          let announcement = response.data.announcement;
+          $("#inputEditId").val(announcement.id);
+          $("#inputEditType").val(announcement.type);
+          $("#titleEditInput").val(announcement.title);
+          $("#messageEditInput").val(announcement.message);
+
+          if(announcement.type == 'running text'){
+            $('#runningTextEditSection').removeClass('d-none');
+            $('#inputRunningEditBackgroundColor').val(announcement.bg_color);
+            $('#inputRunningEditTextColor').val(announcement.text_color);
+          } else {
+            $('#runningTextEditSection').addClass('d-none');
+            $('#inputRunningEditBackgroundColor').val('');
+            $('#inputRunningEditTextColor').val('');
+          }
+
+          $('#editAnnouncementModal').modal('show');
+        })
+        .catch(function (error) {
+          let errorMessage = response.data.errors;
+          console.log(errorMessage);
+        });
+      }
+
+      function updateAnnouncement(event){
+        event.preventDefault();
+        let id = $("#inputEditId").val();
+
+        const formData = new FormData();
+        formData.append('_method', 'PUT');
+        
+        let url = '{{ route("admin.announcements.update",":id") }}';
+        url = url.replace(':id', id);
+
+        formData.append('title', $('#titleEditInput').val());
+        formData.append('message', $('#messageEditInput').val());
+        formData.append('textColor',  $('#inputRunningEditTextColor').val());
+        formData.append('bgColor',  $('#inputRunningEditBackgroundColor').val());
+
+        axios.post(url, formData)
+        .then(function (response) {
+          $('#table_id').DataTable().ajax.reload();
+          let announcement = response.data.announcement;
+          toastTitle.innerHTML= 'Announcement' ;
+          toastBody.innerHTML='Announcement updated Successfully'
+          ;
+          $('#editAnnouncementModal').modal('hide');
+          $('#liveToast').show();
+
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      }
+
+      function deleteAnnouncement(id){
+        if (confirm("Are you sure want to delete the announcement") == true) {
+          destroyAnnouncement(id);
+        }
+      }
+
+      function destroyAnnouncement(id){
+        const formData = new FormData();
+        formData.append('id', id);
+        let url = '{{ route("admin.announcements.delete",":id") }}';
+        url = url.replace(':id', id);
+
+        axios.delete(url, formData)
+        .then(function (response) {
+          $('#table_id').DataTable().ajax.reload();
+          let message = response.data.message;
+          toastTitle.innerHTML= 'Announcement' ;
+          toastBody.innerHTML= message ;
+          ;
+          $('#liveToast').toast('show');
         })
         .catch(function (error) {
           console.log(error);
@@ -213,42 +390,18 @@
             }},
           ],
         });
+
         $("#inputRunningMessage").on('change', function(){ 
           $('#runningTextPreview').text($("#inputRunningMessage").val());
         });
+
         $("#inputRunningTextColor").on('change', function(){ 
           $('#runningTextPreview').css("color",$("#inputRunningTextColor").val());
         });
+
         $("#inputRunningBackgroundColor").on('change', function(){ 
           $('#runningTextPreview').css("background-color",$("#inputRunningBackgroundColor").val());
         });
       });
-    </script>
-
-    <script>
-      function editAnnouncementModal(id){
-
-      }
-
-      function changeStatus(id){
-        const formData = new FormData();
-        formData.append('id', id);
-        let url = "{{ route('admin.announcements.status')}}";
-        axios.post(url, formData)
-        .then(function (response) {
-          $('#table_id').DataTable().ajax.reload();
-          let announcement = response.data.announcement;
-          toastTitle.innerHTML= 'Announcement' ;
-          toastBody.innerHTML='Status Changed Successfully'
-          ;
-          // const toast = new bootstrap.Toast(toastLiveExample);
-          $('#liveToast').toast('show');
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-      }
-
-      
     </script>
 @endsection

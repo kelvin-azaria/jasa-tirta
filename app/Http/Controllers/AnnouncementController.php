@@ -64,7 +64,10 @@ class AnnouncementController extends Controller
      */
     public function show(Announcement $announcement)
     {
-        //
+      return response()->json([
+        'response' => 'success',
+        'announcement' => $announcement
+      ]);
     }
 
     /**
@@ -85,9 +88,18 @@ class AnnouncementController extends Controller
      * @param  \App\Models\Announcement  $announcement
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Announcement $announcement)
+    public function update(AnnouncementRequest $announcementRequest, Announcement $announcement)
     {
-        //
+      $announcement->update([
+        'title'=>$announcementRequest->title,
+        'message'=>$announcementRequest->message,
+        'bg_color'=>$announcementRequest->bgColor,
+        'text_color'=>$announcementRequest->textColor,
+      ]);
+      return response()->json([
+        'response' => 'success',
+        'announcement' => $announcement
+      ]);
     }
 
     public function changeStatus(Request $request)
@@ -122,6 +134,11 @@ class AnnouncementController extends Controller
      */
     public function destroy(Announcement $announcement)
     {
-        //
+      $announcement->delete();
+
+      return response()->json([
+        'response' => 'success',
+        'message' => 'Announcement deleted successfully'
+      ]);
     }
 }
