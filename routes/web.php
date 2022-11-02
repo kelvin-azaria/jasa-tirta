@@ -102,5 +102,4 @@ Route::prefix('/admin')->name('admin.')->group(function(){
     Route::put('/{announcement}', [AnnouncementController::class, 'update'])->name('update');
     Route::delete('/{announcement}', [AnnouncementController::class, 'destroy'])->name('delete');
   });
-
 });
