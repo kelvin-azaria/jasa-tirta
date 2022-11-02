@@ -14,6 +14,7 @@ class AdminDashboardController extends Controller
             'users' => $users
         ]);
     }
+
     public function announcementIndex(){
       return view('pages.admins_dashboard.event_management.announcements.index');
     }
