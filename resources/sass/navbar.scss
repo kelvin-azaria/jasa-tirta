@@ -1,0 +1,90 @@
+#landing-navbar {
+  padding: 0.5rem 1rem;
+}
+#nav-sub-heading {
+  font-size: 1rem;
+}
+
+#mobile-navbar {
+  padding: 0.5rem 1rem;
+}
+
+.start-90 {
+  left: 90% !important;
+}
+
+.navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.nav-link {
+  border-radius: 1rem;
+}
+
+.text-accent {
+  color: $secondary;
+}
+
+.nav-link-text {
+  display: none;
+  transition: width 2s;
+
+  &:hover {
+    display: inline !important;
+
+  }
+}
+
+.small-text {
+  font-size: 0.6rem;
+}
+
+.sidebar-dropdown-link {
+  list-style: "\250B";
+  color: $secondary;
+}
+
+@media (max-width: 991.98px) {
+  #nav-heading {
+    font-size: 0.9rem;
+
+    #nav-sub-heading {
+      font-size: 0.7rem;
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+
+  .nav-link {
+    &:hover {
+      .nav-link-text {
+        display: inline !important;
+        animation-name: fade_in_show;
+        animation-duration: 0.3s;
+        animation-timing-function: ease-in;
+      }
+
+    }
+  }
+
+}
+
+@include media-breakpoint-down(md) {
+  .nav-link {
+    border-radius: 0;
+    padding: 0.5rem 0;
+  }
+}
+
+@keyframes fade_in_show {
+  0% {
+    opacity: 0;
+    transform: scale(0)
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1)
+  }
+}

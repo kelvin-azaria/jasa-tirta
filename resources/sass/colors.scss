@@ -1,0 +1,50 @@
+//text color
+.text-accent-2{
+  color: $light-accent-2;
+}
+
+//background color
+.bg-light-accent-1{
+  background-color: $light-accent-1;
+ }
+ .bg-light-accent-2{
+  background-color: $light-accent-2;
+ }
+ .bg-light-accent-3{
+  background-color: $light-accent-3;
+ }
+ .bg-light-accent-4{
+  background-color: $light-accent-4;
+ }
+
+ .bg-dark-accent-1{
+  background-color: $dark-accent-1;
+ }
+ .bg-dark-accent-2{
+  background-color: $dark-accent-2;
+ }
+ .bg-dark-accent-3{
+  background-color: $dark-accent-3;
+ }
+ 
+
+//link color
+.link-light-theme {
+  color: $light-accent-2 !important;
+  svg{
+    fill: $light-accent-2;
+  }
+  &:hover {
+    color: $primary;
+    background-color:  rgba( $primary, .1 );
+  }
+  &:focus{
+    color: $primary;
+  }
+}
+.dropdown-light{
+  color: $light-accent-2;
+  svg{
+    fill: $light-accent-2;
+  }
+}

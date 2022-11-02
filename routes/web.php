@@ -11,13 +11,16 @@ use App\Http\Controllers\Admin\BridgeController as AdminBridgeController;
 use App\Http\Controllers\Admin\RideLeaderboardController;
 use App\Http\Controllers\Admin\RunLeaderboardController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
+use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\User\BridgeController;
 use App\Http\Controllers\User\ChessController;
 use App\Http\Controllers\User\PubgController;
 use App\Http\Controllers\UserDashboardController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/running-text', [HomeController::class, 'getRunningText'])->name('getRunningText');
 
 Route::resource('rule', RuleController::class)->only(['index']);
 
@@ -89,4 +92,14 @@ Route::prefix('/admin')->name('admin.')->group(function(){
   
   Route::get('/users/export', [AdminUserController::class, 'exportUsersData'])->name('users.export');
   Route::resource('users', AdminUserController::class)->only(['index','show','destroy']);
+
+  Route::prefix('announcements')->name('announcements.')->group(function(){
+    Route::get('/', [AdminDashboardController::class, 'announcementIndex'])->name('index');
+    Route::get('/announcements', [AnnouncementController::class, 'index'])->name('indexAnnouncement');
+    Route::get('/{announcement}', [AnnouncementController::class, 'show'])->name('show');
+    Route::post('/status', [AnnouncementController::class, 'changeStatus'])->name('status');
+    Route::post('/', [AnnouncementController::class, 'store'])->name('store');
+    Route::put('/{announcement}', [AnnouncementController::class, 'update'])->name('update');
+    Route::delete('/{announcement}', [AnnouncementController::class, 'destroy'])->name('delete');
+  });
 });
