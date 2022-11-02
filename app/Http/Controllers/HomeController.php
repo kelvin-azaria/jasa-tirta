@@ -12,6 +12,7 @@ class HomeController extends Controller
       $runningText = Announcement::where('active',1)->first();
         return view('pages.home.index',compact(['runningText']));
     }
+
     public function getRunningText(){
       $runningText = Announcement::where('active',1)->first();
 
