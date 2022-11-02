@@ -14,9 +14,11 @@ class HomeController extends Controller
     }
     public function getRunningText(){
       $runningText = Announcement::where('active',1)->first();
+
       if(!$runningText){
         $runningText = 'null';
       }
+
       return response()->json([
         'response' => 'success',
         'runningText' => $runningText
