@@ -9,9 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-      $runningText = Announcement::where('active',1)->first();
-
-      return view('pages.home.index',compact(['runningText']));
+      return view('pages.home.index');
     }
 
     public function getRunningText(){

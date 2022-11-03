@@ -54,6 +54,11 @@ Route::resource('chess', ChessController::class)->only(['index']);
 Route::get('/chess/join', [ChessController::class, 'join'])->name('chess.join');
 Route::get('/chess/google_form_confirmation', [ChessController::class, 'confirmGoogleForm'])->name('chess.google_form_confirmation');
 
+Route::prefix('announcements')->name('announcements.')->group(function(){
+  Route::get('/', [AnnouncementController::class, 'index'])->name('index');
+  Route::get('{announcement}', [AnnouncementController::class, 'show'])->name('show');
+});
+
 Auth::routes([
   'verify' => false,
 ]);
@@ -95,11 +100,11 @@ Route::prefix('/admin')->name('admin.')->group(function(){
 
   Route::prefix('announcements')->name('announcements.')->group(function(){
     Route::get('/', [AdminDashboardController::class, 'announcementIndex'])->name('index');
-    Route::get('/announcements', [AnnouncementController::class, 'index'])->name('indexAnnouncement');
-    Route::get('/{announcement}', [AnnouncementController::class, 'show'])->name('show');
-    Route::post('/status', [AnnouncementController::class, 'changeStatus'])->name('status');
+    Route::get('announcements', [AnnouncementController::class, 'index'])->name('indexAnnouncement');
+    Route::get('{announcement}', [AnnouncementController::class, 'show'])->name('show');
+    Route::post('status', [AnnouncementController::class, 'changeStatus'])->name('status');
     Route::post('/', [AnnouncementController::class, 'store'])->name('store');
-    Route::put('/{announcement}', [AnnouncementController::class, 'update'])->name('update');
-    Route::delete('/{announcement}', [AnnouncementController::class, 'destroy'])->name('delete');
+    Route::put('{announcement}', [AnnouncementController::class, 'update'])->name('update');
+    Route::delete('{announcement}', [AnnouncementController::class, 'destroy'])->name('delete');
   });
 });

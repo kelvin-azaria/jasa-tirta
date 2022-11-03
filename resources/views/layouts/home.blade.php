@@ -7,8 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!-- Web & Page Title -->
     <title>{{ config('app.name', 'Laravel') }} @yield('title')</title>
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Styles -->
@@ -265,6 +264,16 @@
       </section>
       <main>@yield('content')</main>
     </div>
+
+    <div id="errorToast" style="z-index:2000;" class="toast hide m-3 align-items-center text-white bg-danger border-0 position-fixed top-0 start-50 translate-middle-x" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div id="toastBody" class="toast-body text-center">
+          toast message.
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+
     <footer>
       <div class="container py-4">
         <div class="row">
@@ -301,6 +310,8 @@
       </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
     <script>
       $( document ).ready(function() {
         const formData = new FormData();
@@ -315,7 +326,6 @@
             $('marquee').text(dataText.message) ;
             $('marquee').css("background-color",dataText.bg_color);
             $('marquee').css("color",dataText.text_color);
-            $('marquee').start();
           }else{
             $('.runningTextContainer').addClass("d-none") ;
             $('.runningTextContainer').removeClass("d-block") ;
@@ -323,7 +333,19 @@
         })
         .catch(function (error) {
           console.log(error);
+          $('.runningTextContainer').addClass("d-none") ;
+          $('.runningTextContainer').removeClass("d-block") ;
+          let message = error.message;
+          toastBody.innerHTML = message ;
+          ;
+          $('#errorToast').toast('show');
         });
+        $('#errorToast').on('show', function() {
+            $(this).removeClass('d-none');
+        })
+        $('#errorToast').on('hide', function() {
+            $(this).addClass('d-none');
+        })
       });
     </script>
     @yield('script')

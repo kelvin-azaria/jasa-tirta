@@ -95,7 +95,7 @@
       <div class="card">
         <div class="card-body ">
           <h6 class="text-capitalize fw-bold my-3 pb-2">announcement list</h6>
-          <table id="table_id" class="table table-bordered table-sm">
+          <table id="adminAnnouncementTable" class="table table-bordered table-sm">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -160,7 +160,7 @@
 
   {{-- Toast --}}
   <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
-    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
         <span class="text-warning"><i class="fas fa-bell me-2"></i></span>
         <strong id="toastTitle" class="me-auto">Bootstrap</strong>
@@ -193,7 +193,7 @@
         let url = "{{ route('admin.announcements.store') }}";
         axios.post(url, formData)
         .then(function (response) {
-          $('#table_id').DataTable().ajax.reload();
+          $('#adminAnnouncementTable').DataTable().ajax.reload();
           let announcement = response.data.announcement;
           toastTitle.innerHTML= 'Announcement' ;
           toastBody.innerHTML='Announcement created Successfully'
@@ -230,7 +230,7 @@
 
         axios.post(url, formData)
         .then(function (response) {
-          $('#table_id').DataTable().ajax.reload();
+          $('#adminAnnouncementTable').DataTable().ajax.reload();
           let announcement = response.data.announcement;
           toastTitle.innerHTML= 'Announcement' ;
           toastBody.innerHTML='Announcement created Successfully'
@@ -259,7 +259,7 @@
 
         axios.post(url, formData)
         .then(function (response) {
-          $('#table_id').DataTable().ajax.reload();
+          $('#adminAnnouncementTable').DataTable().ajax.reload();
           let announcement = response.data.announcement;
           toastTitle.innerHTML= 'Announcement' ;
           toastBody.innerHTML='Status changed successfully !'
@@ -322,7 +322,7 @@
 
         axios.post(url, formData)
         .then(function (response) {
-          $('#table_id').DataTable().ajax.reload();
+          $('#adminAnnouncementTable').DataTable().ajax.reload();
           let announcement = response.data.announcement;
           toastTitle.innerHTML= 'Announcement' ;
           toastBody.innerHTML='Announcement updated Successfully'
@@ -350,7 +350,7 @@
 
         axios.delete(url, formData)
         .then(function (response) {
-          $('#table_id').DataTable().ajax.reload();
+          $('#adminAnnouncementTable').DataTable().ajax.reload();
           let message = response.data.message;
           toastTitle.innerHTML= 'Announcement' ;
           toastBody.innerHTML= message ;
@@ -361,33 +361,39 @@
           console.log(error);
         });
       }
+      function truncate(str, n){
+        return (str.length > n) ? str.slice(0, n-1) + '&hellip;' : str;
+      };
     </script>
     
     <script>
       $( document ).ready(function() {
-        var table =$('#table_id').DataTable({
+        var table =$('#adminAnnouncementTable').DataTable({
           processing: true,
           serverSide: true,
           ajax: '{{ route('admin.announcements.indexAnnouncement') }}',
           columns: [
             { data: 'id', name: 'id' },
             { data: 'title', name: 'title' },
-            { data: 'message', name: 'message' },
+            { data: 'message',
+              name: 'message',
+              render: function ( data, type, row, meta ) {
+              return type === 'display'  ? truncate(data, 48) : data;
+              }
+            },
             { data: 'type', name: 'type' },
-            // render a button inside row
-            { data: function ( data, type, row, meta ) {
+            { searchable: false,
+              data: function ( data, type, row, meta ) {
               return type === 'display'  ? 
                 (data.active !== null?'<div class="form-check form-switch justify-content-center d-flex"><input onchange="changeStatus('+data.id+')"'+ (data.active == 1? 'checked=true ': '') +'class="form-check-input text-center" type="checkbox" role="switch" id="flexSwitchCheckDefault" ></div>': 'Sent')
                 :data;
-            }},
-            // render a button inside row
-            { data: function ( data, type, row, meta ) {
-
-              return type === 'display'  ?
-                // '<a class="btn btn-outline-light text-warning" href="#'+ data +'" ><i class="fas fa-pencil-alt"></i></a>' :
-                '<button type="button" onClick="editAnnouncementModal('+ data.id +')" class="btn btn-light text-warning me-2"><i class="fas fa-pencil-alt"></i></button><button type="button" onClick="deleteAnnouncement('+ data.id +')" class="btn btn-light text-danger"><i class="fas fa-trash-alt"></i></button>':
-                data;
-            }},
+              }
+            },
+            { searchable: false,
+              data: function ( data, type, row, meta ) {
+              return type === 'display'  ? '<button type="button" onClick="editAnnouncementModal('+ data.id +')" class="btn btn-light text-warning me-2"><i class="fas fa-pencil-alt"></i></button><button type="button" onClick="deleteAnnouncement('+ data.id +')" class="btn btn-light text-danger"><i class="fas fa-trash-alt"></i></button>' : data;
+              }
+            },
           ],
         });
 
