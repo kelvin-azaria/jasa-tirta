@@ -28,7 +28,7 @@
   <body >
 
     <div class="container-fluid overflow-hidden">
-      <div class="row vh-100 overflow-auto mb-5">
+      <div class="row vh-100 overflow-auto">
           @if (Auth::guard('admin')->check())
           {{-- Tablet to PC Navbar --}}
           <nav style="width: 280px;" class="col-auto d-none d-md-block border border-right pb-3 vh-100 overflow-auto">
@@ -133,7 +133,7 @@
             </ul>
           </nav>
 
-          <div class="col align-self-stretch bg-light overflow-auto h-100">
+          <div class="col align-self-stretch bg-light overflow-auto pb-5 h-100">
             <!-- As a heading -->
             <div class="row border-bottom bg-light-accent-3 justify-content-between">
               <div class="col-auto py-3 align-self-center">

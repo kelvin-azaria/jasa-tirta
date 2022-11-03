@@ -130,7 +130,7 @@
     </div> --}}
     
     <div class="container-fluid overflow-hidden bg-dark-accent-2">
-      <div class="row vh-100 overflow-auto mb-5">
+      <div class="row vh-100 overflow-auto">
 
           @auth
           {{-- Tablet to PC Navbar --}}
@@ -172,7 +172,7 @@
           </nav>
 
 
-          <div class="col align-self-stretch bg-dark-accent-3 h-100 overflow-auto">
+          <div class="col align-self-stretch bg-dark-accent-3 pb-5 h-100 overflow-auto">
             <!-- As a heading -->
             <div class="row border-dark border-bottom bg-dark-accent-2 justify-content-between">
               <div class="col-auto py-3 align-self-center">
