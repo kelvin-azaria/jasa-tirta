@@ -29,91 +29,6 @@
 
     <div class="container-fluid overflow-hidden">
       <div class="row vh-100 overflow-auto">
-
-
-          {{-- <div class="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 bg-dark d-flex sticky-top">
-              <div class="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start p-3">
-                  <a class="d-flex align-items-center pb-sm-3 mb-md-0 me-md-auto text-decoration-none text-capitalize fw-bold" href="{{ url('/') }}">
-                    <img src="{{ asset('img/logo.png') }}" alt="" width="48" height="48" class="d-inline-block align-middle rounded">
-                    <span class="d-none fs-5 f-montserrat d-sm-inline ms-3">jasa raharja <br> <span class="text-muted fs-6"> virtual olympic</span></span>
-                  </a>
-                  @if (Auth::guard('admin')->check())
-                  <ul class="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" id="menu">
-                    <li>
-                      <a href="{{ route('admin.dashboard.index') }}" class="nav-link px-sm-0 px-2 text-white">
-                        <i class="fs-5 bi-house-door-fill"></i><span class="ms-2 d-none d-sm-inline text-capitalize">home</span> 
-                      </a>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="nav-link dropdown-toggle px-sm-0 px-2 text-white" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-person-circle"></i><span class="ms-2 d-none d-sm-inline text-capitalize">peserta</span>
-                        </a>
-                        <ul class="dropdown-menu text-small shadow dropdown-menu-dark" aria-labelledby="dropdown">
-                            <li><a class="dropdown-item text-capitalize" href="{{ route('admin.users.index') }}">List Peserta</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="nav-link dropdown-toggle px-sm-0 px-2 text-white" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-running"></i><span class="ms-2 d-none d-sm-inline text-capitalize">Ride & Run</span>
-                        </a>
-                        <ul class="dropdown-menu text-small shadow dropdown-menu-dark" aria-labelledby="dropdown">
-                          <li><a class="dropdown-item text-capitalize" href="{{ route('admin.activity.index.run') }}">Data Run</a></li>
-                          <li><a class="dropdown-item text-capitalize" href="{{ route('admin.activity.index.ride.user') }}">Data Peserta Ride</a></li>
-                          <li><a class="dropdown-item text-capitalize" href="{{ route('admin.activity.index.run.user') }}">Data Peserta Run</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="nav-link dropdown-toggle px-sm-0 px-2 text-white" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-running"></i><span class="ms-2 d-none d-sm-inline text-capitalize">Leaderboard Run</span>
-                        </a>
-                        <ul class="dropdown-menu text-small shadow dropdown-menu-dark" aria-labelledby="dropdown">
-                          <li><a class="dropdown-item text-capitalize" href="{{ route('admin.leaderboard.run.index',['gender' => 'L']) }}">Kategori Putra</a></li>
-                          <li><a class="dropdown-item text-capitalize" href="{{ route('admin.leaderboard.run.index',['gender' => 'P']) }}">Kategori Putri</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="nav-link dropdown-toggle px-sm-0 px-2 text-white" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-biking"></i><span class="ms-2 d-none d-sm-inline text-capitalize">Leaderboard Ride</span>
-                        </a>
-                        <ul class="dropdown-menu text-small shadow dropdown-menu-dark" aria-labelledby="dropdown">
-                          <li><a class="dropdown-item text-capitalize" href="{{ route('admin.leaderboard.ride.index',['gender' => 'L']) }}">Kategori Putra</a></li>
-                          <li><a class="dropdown-item text-capitalize" href="{{ route('admin.leaderboard.ride.index',['gender' => 'P']) }}">Kategori Putri</a></li>
-                        </ul>
-                    </li>
-                  </ul>
-                  <div class="dropdown py-sm-4 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1">
-                      <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-person-fill me-1"></i>
-                        <span class="d-none d-sm-inline mx-1">
-                          {{ Auth::guard('admin')->user()->name }} (Admin)
-                        </span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                          <li>
-                            <a
-                              class="dropdown-item"
-                              href="{{ route('logout') }}"
-                              onclick="event.preventDefault();
-                              document.getElementById('logout-form').submit();"
-                            >
-                              {{ __('Logout') }}
-                            </a>
-          
-                            <form
-                              id="logout-form"
-                              action="{{ route('logout') }}"
-                              method="POST"
-                              class="d-none"
-                            >
-                              @csrf
-                            </form>
-                          </li>
-                        </ul>
-                  </div>
-                  @endif
-              </div>
-          </div> --}}
-
           @if (Auth::guard('admin')->check())
           {{-- Tablet to PC Navbar --}}
           <nav style="width: 280px;" class="col-auto d-none d-md-block border border-right pb-3 vh-100 overflow-auto">
@@ -134,7 +49,7 @@
             <ul class="navbar-nav">
               <small class="text-muted mt-3 mb-1 fw-bold text-capitalize">general</small>
               <li class="nav-item">
-                <a role="button" href="{{ route('admin.dashboard.index') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-home fa-fw"></i><span class="ps-2 nav-link-text d-inline">Dashboard</span></a>
+                <a role="button" href="{{ route('admin.dashboard.index') }}" class="{{ isset($page) && $page == 'dashboard' ? 'active' : '' }} nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-home fa-fw"></i><span class="ps-2 nav-link-text d-inline">Dashboard</span></a>
               </li>
               <li class="nav-item">
                 <a role="button" data-bs-toggle="collapse" href="#collapseEventManagement" data-bs-toggle="collapse" class="nav-link link-light-theme my-2 px-3 text-capitalize"><i class="fas fa-calendar-day fa-fw"></i></i><span class="ps-2 nav-link-text d-inline">event management</span></a>
@@ -144,7 +59,7 @@
                   <a role="button" href="{{ url('/') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-image fa-fw"></i><span class="ps-2 nav-link-text d-inline">banners</span></a>
                 </li>
                 <li class="nav-item">
-                  <a role="button" href="{{ route('admin.announcements.index') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-bullhorn fa-fw"></i><span class="ps-2 nav-link-text d-inline">announcements</span></a>
+                  <a role="button" href="{{ route('admin.announcements.index') }}" class="{{ isset($page) && $page == 'announcements' ? 'active' : '' }} nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-bullhorn fa-fw"></i><span class="ps-2 nav-link-text d-inline">announcements</span></a>
                 </li>
                 <li class="nav-item">
                   <a role="button" href="{{ url('/') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-calendar-alt fa-fw"></i><span class="ps-2 nav-link-text d-inline">calendar</span></a>
@@ -155,7 +70,7 @@
               </li>
               <small class="text-muted mt-3 mb-1 fw-bold text-capitalize">data processing</small>
               <li class="nav-item">
-                <a role="button" href="{{ route('admin.users.index') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fa fa-address-card fa-fw"></i><span class="ps-2 nav-link-text d-inline">Users</span></a>
+                <a role="button" href="{{ route('admin.users.index') }}" class="{{ isset($page) && $page == 'users' ? 'active' : '' }} nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fa fa-address-card fa-fw"></i><span class="ps-2 nav-link-text d-inline">Users</span></a>
               </li>
               <small class="text-muted mt-3 mb-1 fw-bold text-capitalize">competitions</small>
               <li class="nav-item">
@@ -218,8 +133,7 @@
             </ul>
           </nav>
 
-
-          <div class="col align-self-stretch bg-light overflow-auto h-100">
+          <div class="col align-self-stretch bg-light overflow-auto pb-5 h-100">
             <!-- As a heading -->
             <div class="row border-bottom bg-light-accent-3 justify-content-between">
               <div class="col-auto py-3 align-self-center">

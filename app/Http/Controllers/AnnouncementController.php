@@ -8,9 +8,17 @@ use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 class AnnouncementController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-      return DataTables::of(Announcement::query())->toJson();
+      if(! $request->ajax()){
+        return view('pages.users_dashboard.announcements.index', ['page' => 'announcements']);
+      }
+
+      $announcements = Announcement::query()->orderBy('updated_at', 'DESC');
+      if (! $request->type){
+        return DataTables::of($announcements)->toJson();
+      }
+      return DataTables::of($announcements->where('type',$request->type))->toJson();
     }
 
     public function store(AnnouncementRequest $announcementRequest)

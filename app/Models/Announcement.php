@@ -18,4 +18,10 @@ class Announcement extends Model
     'text_color',
     'active',
   ];
+  protected $appends = ['formattedUpdatedAt'];
+
+  public function getFormattedUpdatedAtAttribute()
+  {
+      return $this->updated_at->format('D, d M Y');
+  }
 }
