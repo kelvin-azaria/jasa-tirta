@@ -20,12 +20,7 @@ class UserDashboardController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('pages.users_dashboard.index',['user' => $user]);
-    }
-
-    public function announcementIndex()
-    {
-      return view('pages.users_dashboard.announcements.index');
+        return view('pages.users_dashboard.index',['user' => $user, 'page' => 'dashboard']);
     }
 
     public function stravaAuth()

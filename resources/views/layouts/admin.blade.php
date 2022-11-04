@@ -49,7 +49,7 @@
             <ul class="navbar-nav">
               <small class="text-muted mt-3 mb-1 fw-bold text-capitalize">general</small>
               <li class="nav-item">
-                <a role="button" href="{{ route('admin.dashboard.index') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-home fa-fw"></i><span class="ps-2 nav-link-text d-inline">Dashboard</span></a>
+                <a role="button" href="{{ route('admin.dashboard.index') }}" class="{{ isset($page) && $page == 'dashboard' ? 'active' : '' }} nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-home fa-fw"></i><span class="ps-2 nav-link-text d-inline">Dashboard</span></a>
               </li>
               <li class="nav-item">
                 <a role="button" data-bs-toggle="collapse" href="#collapseEventManagement" data-bs-toggle="collapse" class="nav-link link-light-theme my-2 px-3 text-capitalize"><i class="fas fa-calendar-day fa-fw"></i></i><span class="ps-2 nav-link-text d-inline">event management</span></a>
@@ -59,7 +59,7 @@
                   <a role="button" href="{{ url('/') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-image fa-fw"></i><span class="ps-2 nav-link-text d-inline">banners</span></a>
                 </li>
                 <li class="nav-item">
-                  <a role="button" href="{{ route('admin.announcements.index') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-bullhorn fa-fw"></i><span class="ps-2 nav-link-text d-inline">announcements</span></a>
+                  <a role="button" href="{{ route('admin.announcements.index') }}" class="{{ isset($page) && $page == 'announcements' ? 'active' : '' }} nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-bullhorn fa-fw"></i><span class="ps-2 nav-link-text d-inline">announcements</span></a>
                 </li>
                 <li class="nav-item">
                   <a role="button" href="{{ url('/') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-calendar-alt fa-fw"></i><span class="ps-2 nav-link-text d-inline">calendar</span></a>
@@ -70,7 +70,7 @@
               </li>
               <small class="text-muted mt-3 mb-1 fw-bold text-capitalize">data processing</small>
               <li class="nav-item">
-                <a role="button" href="{{ route('admin.users.index') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fa fa-address-card fa-fw"></i><span class="ps-2 nav-link-text d-inline">Users</span></a>
+                <a role="button" href="{{ route('admin.users.index') }}" class="{{ isset($page) && $page == 'users' ? 'active' : '' }} nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fa fa-address-card fa-fw"></i><span class="ps-2 nav-link-text d-inline">Users</span></a>
               </li>
               <small class="text-muted mt-3 mb-1 fw-bold text-capitalize">competitions</small>
               <li class="nav-item">

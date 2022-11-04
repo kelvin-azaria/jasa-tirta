@@ -10836,6 +10836,9 @@ textarea.form-control-lg {
 .link-light-theme:focus {
   color: #01abe8;
 }
+.link-light-theme.active {
+  color: #01abe8 !important;
+}
 
 .dropdown-light {
   color: #9EA9B4;
@@ -10894,7 +10897,8 @@ div.dataTables_wrapper div.dataTables_filter label {
   padding: 0.8rem 0;
 }
 
-#adminAnnouncementTable td:nth-child(3) {
+#adminAnnouncementTable td:nth-child(2), #adminAnnouncementTable td:nth-child(3) {
+  white-space: break-spaces !important;
   max-width: 80px;
 }
 

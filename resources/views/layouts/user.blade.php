@@ -149,10 +149,10 @@
             <ul class="navbar-nav">
               <small class="text-muted mt-3 mb-1 fw-bold text-capitalize">general</small>
               <li class="nav-item">
-                <a role="button" href="{{ route('dashboard.index') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-home fa-fw"></i><span class="ps-2 nav-link-text d-inline">Dashboard</span></a>
+                <a role="button" href="{{ route('dashboard.index') }}" class="{{ isset($page) && $page == 'dashboard' ? 'active' : '' }} nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-home fa-fw"></i><span class="ps-2 nav-link-text d-inline">Dashboard</span></a>
               </li>
-              <li class="nav-item">
-                <a role="button" href="{{ route('announcements.index') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-bullhorn fa-fw"></i><span class="ps-2 nav-link-text d-inline">announcements</span></a>
+              <li class="nav-item" >
+                <a role="button" href="{{ route('announcements.index') }}" class="{{ isset($page) && $page == 'announcements' ? 'active' : '' }} nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-bullhorn fa-fw"></i><span class="ps-2 nav-link-text d-inline">announcements</span></a>
               </li>
               
               <small class="text-muted mt-3 mb-1 fw-bold text-capitalize">competition</small>

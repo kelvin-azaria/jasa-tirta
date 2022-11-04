@@ -3,8 +3,8 @@
 @section('content')
 
   <nav aria-label="breadcrumb">
-    <ol class="breadcrumb my-3">
-      <li class="breadcrumb-item "><a href="#">Dashboard</a></li>
+    <ol class="breadcrumb mt-3 mb-2">
+      <li class="breadcrumb-item"><a href="{{ route('dashboard.index') }}" class="text-decoration-none fw-bold">Dashboard</a></li>
       <li class="breadcrumb-item active" aria-current="page">Announcement</li>
     </ol>
   </nav>
@@ -30,7 +30,7 @@
           <div class="card bg-dark-accent-2">
             <div class="card-body">
               <h5 id="announcementTitle" class="fw-bold text-center mb-1 text-capitalize"></h5>
-              <small><p id="announcementDate" class="text-accent-2 text-center mb-4"></p></small>
+              <small><p id="announcementDate" class="text-accent-2 text-center mb-4">Please select available announcement to show.</p></small>
               <p id="announcementMessage"></p>
             </div>
           </div>
@@ -87,7 +87,7 @@
             // render a button inside row
             { data: function ( data, type, row, meta ) {
               return type === 'display' ? 
-              '<div onClick="previewAnnouncement(' + data.id + ')" class="card btn-light bg-dark-accent-2 text-accent-2"><div class="card-body"><div class="row"><div class="col text-start">' + truncate(data.title, 32) + '</div><div class="col text-end">' + data.formattedUpdatedAt + '</div></div></div></div>' : data;
+              '<div onClick="previewAnnouncement(' + data.id + ')" class="card btn-primary bg-dark-accent-2 text-accent-2"><div class="card-body"><div class="row"><div class="col text-start">' + truncate(data.title, 32) + '</div><div class="col text-end">' + data.formattedUpdatedAt + '</div></div></div></div>' : data;
               },
               searchable: false,
             },

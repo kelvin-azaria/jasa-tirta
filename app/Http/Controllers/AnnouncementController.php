@@ -11,10 +11,10 @@ class AnnouncementController extends Controller
     public function index(Request $request)
     {
       if(! $request->ajax()){
-        return view('pages.users_dashboard.announcements.index');
+        return view('pages.users_dashboard.announcements.index', ['page' => 'announcements']);
       }
 
-      $announcements = Announcement::query();
+      $announcements = Announcement::query()->orderBy('updated_at', 'DESC');
       if (! $request->type){
         return DataTables::of($announcements)->toJson();
       }

@@ -37,12 +37,15 @@
   svg{
     fill: $light-accent-2;
   }
-  &:hover {
+  &:hover{
     color: $primary;
     background-color:  rgba( $primary, .1 );
   }
   &:focus{
     color: $primary;
+  }
+  &.active{
+    color: $primary !important;
   }
 }
 .dropdown-light{

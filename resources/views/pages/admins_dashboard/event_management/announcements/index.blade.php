@@ -3,8 +3,8 @@
 @section('content')
 
   <nav aria-label="breadcrumb">
-    <ol class="breadcrumb my-3">
-      <li class="breadcrumb-item "><a href="#">Dashboard</a></li>
+    <ol class="breadcrumb mt-3 mb-2">
+      <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}" class="text-decoration-none fw-bold">Dashboard</a></li>
       <li class="breadcrumb-item active" aria-current="page">Announcement</li>
     </ol>
   </nav>
@@ -374,24 +374,27 @@
           ajax: '{{ route('admin.announcements.indexAnnouncement') }}',
           columns: [
             { data: 'id', name: 'id' },
-            { data: 'title', name: 'title' },
+            { data: 'title',
+              name: 'title',
+              render: function ( data, type, row, meta ) {
+                return type === 'display' ? truncate( data, 48 ) : data
+              }
+            },
             { data: 'message',
               name: 'message',
               render: function ( data, type, row, meta ) {
-              return type === 'display'  ? truncate(data, 48) : data;
+                return type === 'display' ? truncate( data, 48 ) : data
               }
             },
             { data: 'type', name: 'type' },
             { searchable: false,
               data: function ( data, type, row, meta ) {
-              return type === 'display'  ? 
-                (data.active !== null?'<div class="form-check form-switch justify-content-center d-flex"><input onchange="changeStatus('+data.id+')"'+ (data.active == 1? 'checked=true ': '') +'class="form-check-input text-center" type="checkbox" role="switch" id="flexSwitchCheckDefault" ></div>': 'Sent')
-                :data;
+                return type === 'display' ? ( data.active !== null ? '<div class="form-check form-switch justify-content-center d-flex"><input onchange="changeStatus(' + data.id + ')"' + ( data.active == 1 ? 'checked=true ' : '' ) + 'class="form-check-input text-center" type="checkbox" role="switch" id="flexSwitchCheckDefault" ></div>' : 'Sent' ) : data
               }
             },
             { searchable: false,
               data: function ( data, type, row, meta ) {
-              return type === 'display'  ? '<button type="button" onClick="editAnnouncementModal('+ data.id +')" class="btn btn-light text-warning me-2"><i class="fas fa-pencil-alt"></i></button><button type="button" onClick="deleteAnnouncement('+ data.id +')" class="btn btn-light text-danger"><i class="fas fa-trash-alt"></i></button>' : data;
+                return type === 'display' ? '<button type="button" onClick="editAnnouncementModal(' + data.id + ')" class="btn btn-light text-warning me-2"><i class="fas fa-pencil-alt"></i></button><button type="button" onClick="deleteAnnouncement(' + data.id + ')" class="btn btn-light text-danger"><i class="fas fa-trash-alt"></i></button>' : data
               }
             },
           ],
