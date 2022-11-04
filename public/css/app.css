@@ -10787,13 +10787,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-<<<<<<< HEAD
-=======
 .text-accent-1 {
   color: #F6F8FA;
 }
 
->>>>>>> announcement-module
 .text-accent-2 {
   color: #9EA9B4;
 }
@@ -10839,12 +10836,9 @@ textarea.form-control-lg {
 .link-light-theme:focus {
   color: #01abe8;
 }
-<<<<<<< HEAD
-=======
 .link-light-theme.active {
   color: #01abe8 !important;
 }
->>>>>>> announcement-module
 
 .dropdown-light {
   color: #9EA9B4;
@@ -10853,8 +10847,6 @@ textarea.form-control-lg {
   fill: #9EA9B4;
 }
 
-<<<<<<< HEAD
-=======
 #userAnnouncementTable_length select {
   background-color: #2D2D2D;
   color: #9EA9B4;
@@ -10881,7 +10873,6 @@ textarea.form-control-lg {
   background-color: #01abe8;
 }
 
->>>>>>> announcement-module
 .dropdown-grid-link {
   display: inline-block;
   font-weight: 400;
@@ -10892,50 +10883,14 @@ textarea.form-control-lg {
   cursor: pointer;
 }
 
-<<<<<<< HEAD
-table.dataTable td:nth-child(3) {
-  max-width: 200px;
-}
-
-#table_id_wrapper.dataTables_wrapper .row:nth-child(2) {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  padding: 0.8rem 0;
-}
-
-table.dataTable td:nth-child(3) {
-  max-width: 200px;
-}
-
-table.dataTable td:nth-child(4) {
-  text-transform: capitalize;
-  text-align: center;
-  width: 8rem;
-}
-
-table.dataTable td:nth-child(5) {
-  text-align: center;
-  width: 2rem;
-}
-
 table.dataTable td {
   white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-=======
-table.dataTable td {
-  white-space: nowrap;
->>>>>>> announcement-module
 }
 
 div.dataTables_wrapper div.dataTables_filter label {
   white-space: normal !important;
 }
 
-<<<<<<< HEAD
-@media (max-width: 767.98px) {
-  #table_id_length, #table_id_info {
-=======
 #adminAnnouncementTable_wrapper.dataTables_wrapper .row:nth-child(2), #userAnnouncementTable_wrapper.dataTables_wrapper .row:nth-child(2) {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -10960,7 +10915,6 @@ div.dataTables_wrapper div.dataTables_filter label {
 
 @media (max-width: 767.98px) {
   #adminAnnouncementTable_length, #adminAnnouncementTable_info, #userAnnouncementTable_length, #userAnnouncementTable_info {
->>>>>>> announcement-module
     margin-bottom: 1rem;
   }
 }
