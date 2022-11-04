@@ -1,11 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
-
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb mt-3 mb-2">
       <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}" class="text-decoration-none fw-bold">Dashboard</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Announcement</li>
+      <li class="breadcrumb-item active" aria-current="page">Announcements</li>
     </ol>
   </nav>
 
@@ -40,9 +39,9 @@
         </div>
       </div>
     </div>
-
     <div class="col-12 col-lg-6 my-3 align-self-stretch " >
       <div class="card h-100">
+
         <form onsubmit="postRunningText(event)">
           <div class="card-body">
             <div class="row">
@@ -56,34 +55,32 @@
                 </div>
               </div>
             </div>
-            
-              <div class="row">
-                <input type="hidden" id="inputType" name="inputType" value="running text"> 
-                <div class="col-4">
-                  <label for="inputRunningTitle" class="form-label">Title</label>
-                  <input type="text" class="form-control" id="inputRunningTitle">
-                </div>
-                
-                <div class="col-8">
-                  <label for="inputRunningMessage" class="form-label">Message</label>
-                  <input type="text" class="form-control" id="inputRunningMessage">
-                </div>
+            <div class="row">
+              <input type="hidden" id="inputType" name="inputType" value="running text"> 
+              <div class="col-4">
+                <label for="inputRunningTitle" class="form-label">Title</label>
+                <input type="text" class="form-control" id="inputRunningTitle">
               </div>
-              <div class="row mt-3">
-                <div class=" col-auto col-md-12 col-xl-auto align-self-center pb-md-2"> 
-                  <small><p class="m-0 p-0"> Set Color :</p></small>
-                </div>
-                <div class="col align-self-center">
-                  <input type="color" class="form-control form-control-color d-inline-block mx-2" id="inputRunningTextColor" value="#000000" title="Text Color">
-                  <input type="color" class="form-control form-control-color d-inline-block mx-2" id="inputRunningBackgroundColor" value="#ffffff" title="Background color">
-                </div>
-                <div class="col-auto align-self-center ">
-                  <button type="submit" class="btn btn-primary text-light"><i class="fas fa-plus"></i><span class="text-capitalize  ps-2">add</span></button>
-                </div>
-                <marquee id="runningTextPreview" direction="left" class="fw-bold py-2 mt-4">
-                  running text preview
-                </marquee>
+              <div class="col-8">
+                <label for="inputRunningMessage" class="form-label">Message</label>
+                <input type="text" class="form-control" id="inputRunningMessage">
               </div>
+            </div>
+            <div class="row mt-3">
+              <div class=" col-auto col-md-12 col-xl-auto align-self-center pb-md-2"> 
+                <small><p class="m-0 p-0"> Set Color :</p></small>
+              </div>
+              <div class="col align-self-center">
+                <input type="color" class="form-control form-control-color d-inline-block mx-2" id="inputRunningTextColor" value="#000000" title="Text Color">
+                <input type="color" class="form-control form-control-color d-inline-block mx-2" id="inputRunningBackgroundColor" value="#ffffff" title="Background color">
+              </div>
+              <div class="col-auto align-self-center ">
+                <button type="submit" class="btn btn-primary text-light"><i class="fas fa-plus"></i><span class="text-capitalize  ps-2">add</span></button>
+              </div>
+              <marquee id="runningTextPreview" direction="left" class="fw-bold py-2 mt-4">
+                running text preview
+              </marquee>
+            </div>
           </div>
         </form>
       </div>
@@ -109,11 +106,10 @@
             <tbody class="">
                 
             </tbody>
-        </table>
+          </table>
         </div>
       </div> 
     </div>
-   
   </div>
 
   {{-- Edit Modal --}}
@@ -124,6 +120,7 @@
           <h6 class="modal-title fs-6 text-bold m-0 text-capitalize fw-bold" id="editAnnouncementModalLabel">edit announcement</h6>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+
         <form onsubmit="updateAnnouncement(event)">
           <input type="hidden" id="inputEditId" name="inputEditId"> 
           <input type="hidden" id="inputEditType" name="inputEditType"> 
@@ -146,9 +143,6 @@
               </div>
             </div>
           </div>
-          {{-- <div id="runningTextType" class="modal-body d-none">
-            ...
-          </div> --}}
           <div class="modal-footer">
             <button type="button" class="btn btn-light fw-bold text-accent-2" data-bs-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary fw-bold text-white">Save changes</button>
@@ -173,7 +167,6 @@
       </div>
     </div>
   </div>
-
 @endsection
 
 @section('script')
@@ -227,7 +220,6 @@
         formData.append('active',  ($('#inputActive:checked').val() == 'on'? 1 : 0));
 
         let url = "{{ route('admin.announcements.store') }}";
-
         axios.post(url, formData)
         .then(function (response) {
           $('#adminAnnouncementTable').DataTable().ajax.reload();
@@ -245,9 +237,7 @@
           });
           console.log(errorMessage);
           toastTitle.innerHTML= 'Something went wrong' ;
-          
           toastBody.innerHTML=errorMessage;
-          ;
           $('#liveToast').toast('show');
         });
       }
@@ -255,8 +245,8 @@
       function changeStatus(id){
         const formData = new FormData();
         formData.append('id', id);
-        let url = "{{ route('admin.announcements.status')}}";
 
+        let url = "{{ route('admin.announcements.status')}}";
         axios.post(url, formData)
         .then(function (response) {
           $('#adminAnnouncementTable').DataTable().ajax.reload();
@@ -275,12 +265,11 @@
         const formData = new FormData();
         formData.append('_method', 'GET');
         formData.append('id', id);
+        
         let url = '{{ route("admin.announcements.show",":id") }}';
         url = url.replace(':id', id);
-
         axios.post(url, formData)
         .then(function (response) {
-
           let announcement = response.data.announcement;
           $("#inputEditId").val(announcement.id);
           $("#inputEditType").val(announcement.type);
@@ -296,7 +285,6 @@
             $('#inputRunningEditBackgroundColor').val('');
             $('#inputRunningEditTextColor').val('');
           }
-
           $('#editAnnouncementModal').modal('show');
         })
         .catch(function (error) {
@@ -311,22 +299,19 @@
 
         const formData = new FormData();
         formData.append('_method', 'PUT');
-        
-        let url = '{{ route("admin.announcements.update",":id") }}';
-        url = url.replace(':id', id);
-
         formData.append('title', $('#titleEditInput').val());
         formData.append('message', $('#messageEditInput').val());
         formData.append('textColor',  $('#inputRunningEditTextColor').val());
         formData.append('bgColor',  $('#inputRunningEditBackgroundColor').val());
-
+        
+        let url = '{{ route("admin.announcements.update",":id") }}';
+        url = url.replace(':id', id);
         axios.post(url, formData)
         .then(function (response) {
           $('#adminAnnouncementTable').DataTable().ajax.reload();
           let announcement = response.data.announcement;
           toastTitle.innerHTML= 'Announcement' ;
-          toastBody.innerHTML='Announcement updated Successfully'
-          ;
+          toastBody.innerHTML='Announcement updated Successfully';
           $('#editAnnouncementModal').modal('hide');
           $('#liveToast').show();
 
@@ -345,16 +330,15 @@
       function destroyAnnouncement(id){
         const formData = new FormData();
         formData.append('id', id);
+
         let url = '{{ route("admin.announcements.delete",":id") }}';
         url = url.replace(':id', id);
-
         axios.delete(url, formData)
         .then(function (response) {
           $('#adminAnnouncementTable').DataTable().ajax.reload();
           let message = response.data.message;
           toastTitle.innerHTML= 'Announcement' ;
           toastBody.innerHTML= message ;
-          ;
           $('#liveToast').toast('show');
         })
         .catch(function (error) {
@@ -374,14 +358,12 @@
           ajax: '{{ route('admin.announcements.indexAnnouncement') }}',
           columns: [
             { data: 'id', name: 'id' },
-            { data: 'title',
-              name: 'title',
+            { data: 'title', name: 'title',
               render: function ( data, type, row, meta ) {
                 return type === 'display' ? truncate( data, 48 ) : data
               }
             },
-            { data: 'message',
-              name: 'message',
+            { data: 'message', name: 'message',
               render: function ( data, type, row, meta ) {
                 return type === 'display' ? truncate( data, 48 ) : data
               }

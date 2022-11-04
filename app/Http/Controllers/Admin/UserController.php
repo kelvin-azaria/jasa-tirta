@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 use Maatwebsite\Excel\Facades\Excel;
 
 class UserController extends Controller
@@ -16,12 +17,12 @@ class UserController extends Controller
         $this->middleware('auth:admin');
     }
     
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::paginate(10);
-        return view('pages.admins_dashboard.users.index',[
-            'users' => $users
-        ]);
+      if(! $request->ajax()){
+        return view('pages.admins_dashboard.users.index', ['page' => 'users']);
+      }
+      return DataTables::of(User::query()->orderBy('updated_at', 'DESC'))->toJson();
     }
 
     public function show($id)

@@ -33,7 +33,7 @@ div.dataTables_wrapper div.dataTables_filter label {
   width: 2rem;
 }
 @include media-breakpoint-down(md) {
-  #adminAnnouncementTable_length,#adminAnnouncementTable_info,#userAnnouncementTable_length,#userAnnouncementTable_info
+  #adminAnnouncementTable_length,#adminAnnouncementTable_info,#adminUserTable_length,#adminUserTable_info,#userAnnouncementTable_length,#userAnnouncementTable_info
   {
     margin-bottom: 1rem;
   }
