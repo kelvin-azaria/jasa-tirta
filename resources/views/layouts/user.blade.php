@@ -9,9 +9,6 @@
 
     <title>User Dashboard</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" />
@@ -19,6 +16,8 @@
 
     <!-- Styles -->
     <link rel="icon" href="{{ asset('img/logo.png') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
   </head>
@@ -130,7 +129,7 @@
       </div>
     </div> --}}
     
-    <div class="container-fluid overflow-hidden ">
+    <div class="container-fluid overflow-hidden bg-dark-accent-2">
       <div class="row vh-100 overflow-auto">
 
           @auth
@@ -150,10 +149,10 @@
             <ul class="navbar-nav">
               <small class="text-muted mt-3 mb-1 fw-bold text-capitalize">general</small>
               <li class="nav-item">
-                <a role="button" href="{{ route('dashboard.index') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-home fa-fw"></i><span class="ps-2 nav-link-text d-inline">Dashboard</span></a>
+                <a role="button" href="{{ route('dashboard.index') }}" class="{{ isset($page) && $page == 'dashboard' ? 'active' : '' }} nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-home fa-fw"></i><span class="ps-2 nav-link-text d-inline">Dashboard</span></a>
               </li>
-              <li class="nav-item">
-                <a role="button" href="{{ url('/') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-bullhorn fa-fw"></i><span class="ps-2 nav-link-text d-inline">announcements</span></a>
+              <li class="nav-item" >
+                <a role="button" href="{{ route('announcements.index') }}" class="{{ isset($page) && $page == 'announcements' ? 'active' : '' }} nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-bullhorn fa-fw"></i><span class="ps-2 nav-link-text d-inline">announcements</span></a>
               </li>
               
               <small class="text-muted mt-3 mb-1 fw-bold text-capitalize">competition</small>
@@ -173,7 +172,7 @@
           </nav>
 
 
-          <div class="col align-self-stretch bg-dark-accent-3 h-100 overflow-auto">
+          <div class="col align-self-stretch bg-dark-accent-3 pb-5 h-100 overflow-auto">
             <!-- As a heading -->
             <div class="row border-dark border-bottom bg-dark-accent-2 justify-content-between">
               <div class="col-auto py-3 align-self-center">
@@ -216,7 +215,7 @@
                     <ul class="navbar-nav">
                       <small class="text-muted mt-3 mb-1 fw-bold text-capitalize">general</small>
                       <li class="nav-item">
-                        <a role="button" href="{{ url('/') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-bullhorn fa-fw"></i><span class="ps-2 nav-link-text d-inline">announcements</span></a>
+                        <a role="button" href="{{ route('announcements.index') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-bullhorn fa-fw"></i><span class="ps-2 nav-link-text d-inline">announcements</span></a>
                       </li>
                       
                       <small class="text-muted mt-3 mb-1 fw-bold text-capitalize">competition</small>
@@ -260,6 +259,16 @@
           </div>
       </div>
     </div>
+    <script src="{{ asset('js/app.js') }}"></script>
+    
+    <script 
+    src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js" ></script>
+    <script 
+    src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    <script 
+    src="https://cdn.datatables.net/fixedheader/3.2.4/js/dataTables.fixedHeader.min.js"></script>
+    <script 
+    src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
     @yield('script')
   </body>
 </html>

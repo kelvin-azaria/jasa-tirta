@@ -1,4 +1,7 @@
 //text color
+.text-accent-1{
+  color: $light-accent-1;
+}
 .text-accent-2{
   color: $light-accent-2;
 }
@@ -34,12 +37,15 @@
   svg{
     fill: $light-accent-2;
   }
-  &:hover {
+  &:hover{
     color: $primary;
     background-color:  rgba( $primary, .1 );
   }
   &:focus{
     color: $primary;
+  }
+  &.active{
+    color: $primary !important;
   }
 }
 .dropdown-light{
@@ -47,4 +53,26 @@
   svg{
     fill: $light-accent-2;
   }
+}
+#userAnnouncementTable_length select {
+  background-color: $dark-accent-1;
+  color: $light-accent-2;
+  border: 1px solid $light-accent-2;
+}
+#userAnnouncementTable_filter input {
+  background-color: $dark-accent-1;
+  color: $light-accent-2;
+  border: 1px solid $light-accent-2;
+}
+#userAnnouncementTable_paginate .pagination li.paginate_button a{
+  background-color: $dark-accent-2;
+  color:  $light-accent-2;
+  &:hover {
+    color: $primary;
+    background-color:  rgba( $primary, .1 );
+  }
+}
+#userAnnouncementTable_paginate .pagination li.paginate_button.active a{
+  color:  $light-accent-1;
+  background-color: $primary;
 }
