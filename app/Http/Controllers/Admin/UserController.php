@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Exports\UsersExport;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -25,25 +26,44 @@ class UserController extends Controller
       return DataTables::of(User::query()->orderBy('updated_at', 'DESC'))->toJson();
     }
 
-    public function show($id)
+    public function show(User $user)
     {
-        $user = User::find($id);
-        return view('pages.admins_dashboard.users.show', ['user' => $user]);
+      return view('pages.admins_dashboard.users.show', [
+        'user' => $user,
+        'page' => 'users'
+      ]);
     }
 
-    public function destroy($id)
+    public function update(Request $request, $user)
     {
-        $users = User::find($id);
+      $user = User::where('id',$user)->first();
+      $user->update([
+        'name'=>$request->name,
+        'gender'=>$request->gender,
+        'birth_date'=>$request->birth_date,
+        'work_unit'=>$request->work_unit,
+        'npp'=>$request->npp,
+      ]);
+      return response()->json([
+        'response' => 'success',
+        'message' => 'User updated successfully',
+        'user' =>  $user,
+      ]);
+    }
 
-        if (is_null($users)) {
-            return redirect()->back()
-                ->with('warning','Terjadi kesalahan saat menghapus data');
-        }
-
-        $users->delete();
-
-        return redirect()->route('admin.users.index')
-            ->with('success','Data berhasil dihapus');
+    public function destroy(User $user)
+    {
+      if (is_null($user)) {
+        return response()->json([
+          'response' => 'error',
+          'message' => 'Failed to delete user, please try again later'
+        ]);
+      }
+      $user->delete();
+      return response()->json([
+        'response' => 'success',
+        'message' => 'User deleted successfully'
+      ]);
     }
 
     public function exportUsersData()

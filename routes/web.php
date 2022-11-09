@@ -95,8 +95,16 @@ Route::prefix('/admin')->name('admin.')->group(function(){
   Route::get('/activity_ride_user', [AdminActivityController::class, 'indexUserRide'])->name('activity.index.ride.user');
   Route::get('/activity_ride_user/export', [AdminActivityController::class, 'exportRide'])->name('activity.index.ride.user.export');
   
-  Route::get('/users/export', [AdminUserController::class, 'exportUsersData'])->name('users.export');
-  Route::resource('users', AdminUserController::class)->only(['index','show','destroy']);
+  
+
+  Route::prefix('users')->name('users.')->group(function(){
+    Route::get('/', [AdminUserController::class, 'index'])->name('index');
+    Route::get('{user}', [AdminUserController::class, 'show'])->name('show');
+    Route::get('export', [AdminUserController::class, 'exportUsersData'])->name('export');
+    // Route::post('/', [AdminUserController::class, 'store'])->name('store');
+    Route::put('{user}', [AdminUserController::class, 'update'])->name('update');
+    Route::delete('{user}', [AdminUserController::class, 'destroy'])->name('destroy');
+  });
 
   Route::prefix('announcements')->name('announcements.')->group(function(){
     Route::get('/', [AdminDashboardController::class, 'announcementIndex'])->name('index');

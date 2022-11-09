@@ -151,22 +151,6 @@
       </div>
     </div>
   </div>
-
-  {{-- Toast --}}
-  <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
-    <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="toast-header">
-        <span class="text-warning"><i class="fas fa-bell me-2"></i></span>
-        <strong id="toastTitle" class="me-auto">Bootstrap</strong>
-        <small>Just Now</small>
-        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
-      <div id="toastBody" class="toast-body">
-        <strong class="text-capitalize">title</strong><br>
-        <small>content</small>
-      </div>
-    </div>
-  </div>
 @endsection
 
 @section('script')
@@ -227,7 +211,7 @@
           toastTitle.innerHTML= 'Announcement' ;
           toastBody.innerHTML='Announcement created Successfully'
           ;
-          $('#liveToast').show();
+          $('#liveSuccessToast').show();
         })
         .catch(function (error) {
           let errors = error.response.data.errors;
@@ -238,7 +222,7 @@
           console.log(errorMessage);
           toastTitle.innerHTML= 'Something went wrong' ;
           toastBody.innerHTML=errorMessage;
-          $('#liveToast').toast('show');
+          $('#liveErrorToast').toast('show');
         });
       }
 
@@ -254,7 +238,7 @@
           toastTitle.innerHTML= 'Announcement' ;
           toastBody.innerHTML='Status changed successfully !'
           ;
-          $('#liveToast').toast('show');
+          $('#liveSuccessToast').toast('show');
         })
         .catch(function (error) {
           console.log(error);
@@ -313,7 +297,7 @@
           toastTitle.innerHTML= 'Announcement' ;
           toastBody.innerHTML='Announcement updated Successfully';
           $('#editAnnouncementModal').modal('hide');
-          $('#liveToast').show();
+          $('#liveSuccessToast').show();
 
         })
         .catch(function (error) {
@@ -339,7 +323,7 @@
           let message = response.data.message;
           toastTitle.innerHTML= 'Announcement' ;
           toastBody.innerHTML= message ;
-          $('#liveToast').toast('show');
+          $('#liveSuccessToast').toast('show');
         })
         .catch(function (error) {
           console.log(error);
@@ -370,11 +354,13 @@
             },
             { data: 'type', name: 'type' },
             { searchable: false,
+              sortable: false,
               data: function ( data, type, row, meta ) {
                 return type === 'display' ? ( data.active !== null ? '<div class="form-check form-switch justify-content-center d-flex"><input onchange="changeStatus(' + data.id + ')"' + ( data.active == 1 ? 'checked=true ' : '' ) + 'class="form-check-input text-center" type="checkbox" role="switch" id="flexSwitchCheckDefault" ></div>' : 'Sent' ) : data
               }
             },
             { searchable: false,
+              sortable: false,
               data: function ( data, type, row, meta ) {
                 return type === 'display' ? '<button type="button" onClick="editAnnouncementModal(' + data.id + ')" class="btn btn-light text-warning me-2"><i class="fas fa-pencil-alt"></i></button><button type="button" onClick="deleteAnnouncement(' + data.id + ')" class="btn btn-light text-danger"><i class="fas fa-trash-alt"></i></button>' : data
               }

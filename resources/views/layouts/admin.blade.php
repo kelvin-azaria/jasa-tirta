@@ -168,6 +168,35 @@
             <main class="row bg-light-accent-4 overflow-auto">
               <div class="col mb-5">
                 @yield('content')
+                {{-- Toast --}}
+                <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+                  <div id="liveSuccessToast" class="toast text-bg-primary hide" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                      <span id="toastIcon"><i class="fas fa-bell me-2"></i></span>
+                      <strong id="toastTitle" class="me-auto">Bootstrap</strong>
+                      <small>Just Now</small>
+                      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div id="toastBody" class="toast-body">
+                      <strong class="text-capitalize">title</strong><br>
+                      <small>content</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+                  <div id="liveErrorToast" class="toast text-bg-danger hide" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                      <span id="toastErrorIcon"><i class="fas fa-bell me-2"></i></span>
+                      <strong id="toastErrorTitle" class="me-auto">Bootstrap</strong>
+                      <small>Just Now</small>
+                      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div id="toastErrorBody" class="toast-body">
+                      <strong class="text-capitalize">title</strong><br>
+                      <small>content</small>
+                    </div>
+                  </div>
+                </div>
               </div>
             </main>
             @if (Auth::guard('admin')->check())
@@ -284,13 +313,8 @@
       </div>
     </div>
 
-    
-
- 
-
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    
     <script 
     src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js" ></script>
     <script 

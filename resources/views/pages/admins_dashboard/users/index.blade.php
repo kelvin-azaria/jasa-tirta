@@ -21,7 +21,7 @@
               </a>
             </div>
           </div>
-          
+          <hr>
           <table id="adminUserTable" class="table table-bordered table-sm">
             <thead>
                 <tr>
@@ -130,16 +130,73 @@
           { data: 'id', name: 'id' },
           { data: 'name', name: 'name', },
           { data: 'email', name: 'email' },
-          { data: 'work_unit', name: 'work_unit' },
-          { data: 'npp', name: 'npp' },
-          { data: 'competition', name: 'competition' },
+          { data: 'work_unit',
+            name: 'work_unit'
+          },
+          { data: 'npp',
+            name: 'npp',
+            render: function ( data, type, row, meta ) {
+              return type === 'display' ? segementedNumberFormat(data,4,"-") : data
+            }
+          },
+          { data: 'competition',
+            name: 'competition',
+            render: function ( data, type, row, meta ) {
+              return type === 'display' ? (data === null ? '<span class="badge text-bg-danger">Not Registered</span>' : '<span class="badge text-bg-light">' + data + '</span>' ) : data
+            }
+          },
           { searchable: false,
+            sortable: false,
             data: function ( data, type, row, meta ) {
-              return type === 'display' ? '<button type="button" onClick="editAnnouncementModal(' + data.id + ')" class="btn btn-light text-warning me-2"><i class="fas fa-pencil-alt"></i></button><button type="button" onClick="deleteAnnouncement(' + data.id + ')" class="btn btn-light text-danger"><i class="fas fa-trash-alt"></i></button>' : data
+              var url = '{{ route("admin.users.show", ":id") }}';
+              url = url.replace(':id', data.id);
+              return type === 'display' ? '<a role="button" href="' + url + '" class="btn btn-light text-info me-2"><i class="fas fa-user-cog"></i></a><button type="button" onClick="deleteUser(' + data.id + ')" class="btn btn-light text-danger"><i class="fas fa-trash-alt"></i></button>' : data
             }
           },
         ],
       });
     });
+  </script>
+  <script>
+    function segementedNumberFormat(number,digit,seperator){
+      formattedNumber = "";
+      for (let i = 1; i <= number.length; i++) {
+        formattedNumber = formattedNumber.concat(number[i-1]);
+        if(i % digit == 0){
+          formattedNumber = formattedNumber.concat(seperator);
+        }
+      }
+      return formattedNumber
+    }
+
+    function deleteUser(id){
+      if (confirm("Are you sure want to delete this User") == true) {
+        destroyUser(id);
+      }
+    }
+
+    function destroyUser(id){
+      const formData = new FormData();
+      formData.append('id', id);
+      let url = '{{ route("admin.users.destroy",":id") }}';
+      url = url.replace(':id', id);
+      axios.delete(url, formData)
+      .then(function (response) {
+        $('#adminUserTable').DataTable().ajax.reload();
+        let message = response.data.message;
+        toastIcon.innerHTML = '<i class="fas fa-user-minus me-2"></i>';
+        toastTitle.innerHTML= 'User Deleted' ;
+        toastBody.innerHTML= message ;
+        $('#liveSuccessToast').toast('show');
+      })
+      .catch(function (error) {
+        console.log(error);
+        errorMessage = error.message;
+        toastErrorIcon.innerHTML = '<i class="fas fa-user-edit me-2"></i>';
+        toastErrorTitle.innerHTML= 'Something went wrong' ;
+        toastErrorBody.innerHTML=errorMessage;
+        $('#liveErrorToast').toast('show');
+      });
+    }
   </script>
 @endsection
