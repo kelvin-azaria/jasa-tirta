@@ -10986,6 +10986,19 @@ h3, .h3 {
   min-width: 100%;
 }
 
+button.buttons-columnVisibility {
+  background-color: white;
+  color: lightgrey;
+  padding: 10px;
+  border-radius: 0.2rem;
+  border: 1px solid #F1F5F7;
+  cursor: pointer;
+  font-weight: 700;
+}
+button.buttons-columnVisibility.active {
+  color: #0E0F2E;
+}
+
 @media (max-width: 575.98px) {
   body {
     font-size: 0.833em !important;

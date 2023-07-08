@@ -75,13 +75,16 @@
                 className: 'btn btn-outline-info',
                 title: "Participant Data",
                 exportOptions: {
-                    columns: [ 0, 2, 3, 4, 5 ]
+                    columns: ':visible'
                 }
             },
             {
                 extend: 'excel',
                 className: 'btn btn-outline-success',
                 title: "Participant Data",
+                exportOptions: {
+                    columns: ':visible'
+                }
             },
             {
                 extend: 'pdf',
@@ -90,10 +93,26 @@
                 pageSize: 'LEGAL',
                 title: "Participant Data",
                 exportOptions: {
-                    columns: [ 0, 2, 3, 4, 5 ]
+                    columns: ':visible'
                 }
             },
+            {
+                extend: 'spacer',
+                style: 'd-block mt-2',
+            },
+            {
+                extend: 'spacer',
+                style: 'bar',
+                text: 'Column Display: '
+            },
+            {
+                extend: 'columnsToggle',
+            },
           ],
+          columnDefs: [ {
+            targets: -1,
+            visible: false
+          } ],
           processing: true,
           select:true,
           scrollX: true,
