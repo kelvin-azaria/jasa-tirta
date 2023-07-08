@@ -27,7 +27,7 @@
       <div class="row m-0">
           @if (Auth::guard('admin')->check())
           <!-- Tablet to PC Navbar -->
-          <nav style="width: 280px; color:rgb(158, 169, 180);" class="vh-100 col-auto d-none d-md-block border border-right p-3 overflow-auto">
+          <nav style="width: 280px; color:rgb(158, 169, 180);" class="vh-100 col-auto d-none d-md-block border border-right px-3 pb-3 overflow-auto">
             <div class="pt-3 bg-white sticky-top">
               <div class="card ">
                 <div class="card-body p-2">
