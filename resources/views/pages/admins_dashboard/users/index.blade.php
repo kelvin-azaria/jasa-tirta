@@ -22,7 +22,7 @@
         </div>
         <div class="col-auto">
           <a href="{{ route('admin.users.export') }}" role="button" class="btn btn-success text-white">
-            <i class="fas fa-file-export"></i> Export to Excel (.xlsx)
+            <i class="fas fa-file-export"></i> Export all data to Excel (.xlsx)
           </a>
         </div>
       </div>
@@ -63,8 +63,39 @@
     <script>
       $( document ).ready(function() {
         var table =$('#adminParticipantTable').DataTable({
+          dom: "<'row'<'col-12 mb-2'B>>" +"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" + "<'row'<'col-sm-12'tr>>" + "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+          buttons: [
+            {
+                extend: 'spacer',
+                style: 'bar',
+                text: 'Export based on filter:'
+            },
+            {
+                extend: 'print',
+                className: 'btn btn-outline-info',
+                title: "Participant Data",
+                exportOptions: {
+                    columns: [ 0, 2, 3, 4, 5 ]
+                }
+            },
+            {
+                extend: 'excel',
+                className: 'btn btn-outline-success',
+                title: "Participant Data",
+            },
+            {
+                extend: 'pdf',
+                className: 'btn btn-outline-danger',
+                orientation: 'landscape',
+                pageSize: 'LEGAL',
+                title: "Participant Data",
+                exportOptions: {
+                    columns: [ 0, 2, 3, 4, 5 ]
+                }
+            },
+          ],
           processing: true,
-          serverSide: true,
+          select:true,
           scrollX: true,
           footer: true,
           ajax: '{{ route('admin.users.index') }}',
