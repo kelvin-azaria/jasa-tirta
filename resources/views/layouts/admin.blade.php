@@ -27,7 +27,7 @@
       <div class="row m-0">
           @if (Auth::guard('admin')->check())
           <!-- Tablet to PC Navbar -->
-          <nav style="width: 280px; color:rgb(158, 169, 180);" class="vh-100 col-auto d-none d-md-block border border-right pb-3 overflow-auto">
+          <nav style="width: 280px; color:rgb(158, 169, 180);" class="vh-100 col-auto d-none d-md-block border border-right p-3 overflow-auto">
             <div class="pt-3 bg-white sticky-top">
               <div class="card ">
                 <div class="card-body p-2">
@@ -128,9 +128,11 @@
               </ul>
             </ul>
           </nav>
+          @endif
 
-          <div id="contentContainer" class="vh-100 col align-self-stretch bg-light overflow-auto h-100 overflow-y-scroll">
+          <div id="contentContainer" class="vh-100 col align-self-stretch bg-light overflow-auto h-100 overflow-y-scroll bg-light-accent-4">
             <!-- As a heading -->
+            @if (Auth::guard('admin')->check())
             <div class="row border-bottom bg-light-accent-3 justify-content-between sticky-top">
               <div class="col-auto py-3 align-self-center">
                 <div class="card d-md-none">
@@ -161,9 +163,11 @@
               </div>
             </div>
             @endif
-            <main class="bg-light-accent-4">
+
+            <main>
                 @yield('content')
             </main>
+
             @if (Auth::guard('admin')->check())
             <nav  id="mobile-navbar" class="navbar fixed-bottom border border-top navbar-light bg-light d-md-none">
               <div class="container-fluid">
@@ -273,7 +277,6 @@
 
             </nav>
             @endif
-
           </div>
       </div>
     </div>
