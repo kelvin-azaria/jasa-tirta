@@ -58,7 +58,7 @@ class User extends Authenticatable
             return 'n/a';
         }
 
-        return $this->updated_at->format('D, d M Y');
+        return $this->updated_at->format('d-m-Y H:i');
     }
 
     public function getFormattedCreatedAtAttribute()
@@ -67,7 +67,7 @@ class User extends Authenticatable
             return 'n/a';
         }
 
-        return $this->created_at->format('D, d M Y');
+        return $this->created_at->format('d-m-Y H:i');
     }
 
     public function image()

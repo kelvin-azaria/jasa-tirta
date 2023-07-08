@@ -26,19 +26,19 @@ class Announcement extends Model
 
   public function getFormattedUpdatedAtAttribute()
   {
-    if (empty($this->updated_at)) {
-      return 'n/a';
-    }
+      if (empty($this->updated_at)) {
+          return 'n/a';
+      }
 
-    return $this->updated_at->format('D, d M Y');
+      return $this->updated_at->format('d-m-Y H:i');
   }
 
   public function getFormattedCreatedAtAttribute()
   {
-    if (empty($this->created_at)) {
-      return 'n/a';
-    }
+      if (empty($this->created_at)) {
+          return 'n/a';
+      }
 
-    return $this->created_at->format('D, d M Y');
+      return $this->created_at->format('d-m-Y H:i');
   }
 }
