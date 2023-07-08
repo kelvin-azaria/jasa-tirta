@@ -54,6 +54,10 @@ h3{
   min-height: 406px;
 }
 
+.min-w-100{
+  min-width: 100%;
+}
+
 
 @media (max-width: 575.98px) {
   body{
@@ -88,14 +92,14 @@ h3{
   }
 }
 @media (max-width: 991.98px) {
- 
+
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .table-width{
     max-width: 692px;
   }
 }
-@media (min-width: 1200px) and (max-width: 1283.98px) { 
+@media (min-width: 1200px) and (max-width: 1283.98px) {
   .table-width{
     max-width:  950px;
   }

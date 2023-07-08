@@ -18,6 +18,7 @@ class Announcement extends Model
     'text_color',
     'active',
   ];
+
   protected $appends = [
     'formattedUpdatedAt',
     'formattedCreatedAt'

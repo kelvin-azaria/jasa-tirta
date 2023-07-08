@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 use Maatwebsite\Excel\Facades\Excel;
 
 class UserController extends Controller
@@ -15,13 +16,15 @@ class UserController extends Controller
     {
         $this->middleware('auth:admin');
     }
-    
-    public function index()
+
+    public function index(Request $request)
     {
-        $users = User::paginate(10);
-        return view('pages.admins_dashboard.users.index',[
-            'users' => $users
-        ]);
+        if (!$request->ajax()) {
+            return view('pages.admins_dashboard.users.index', ['page' => 'users']);
+        }
+
+        $users = User::query();
+        return DataTables::of($users)->toJson();
     }
 
     public function show($id)
@@ -36,18 +39,18 @@ class UserController extends Controller
 
         if (is_null($users)) {
             return redirect()->back()
-                ->with('warning','Terjadi kesalahan saat menghapus data');
+                ->with('warning', 'Terjadi kesalahan saat menghapus data');
         }
 
         $users->delete();
 
         return redirect()->route('admin.users.index')
-            ->with('success','Data berhasil dihapus');
+            ->with('success', 'Data berhasil dihapus');
     }
 
     public function exportUsersData()
     {
         $date = Carbon::parse(strtotime("now"))->format('d-m-Y');
-        return Excel::download(new UsersExport, 'Daftar peserta '.$date.'.xlsx');
+        return Excel::download(new UsersExport, 'Daftar peserta ' . $date . '.xlsx');
     }
 }

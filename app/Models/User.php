@@ -47,6 +47,29 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected $appends = [
+        'formattedUpdatedAt',
+        'formattedCreatedAt'
+    ];
+
+    public function getFormattedUpdatedAtAttribute()
+    {
+        if (empty($this->updated_at)) {
+            return 'n/a';
+        }
+
+        return $this->updated_at->format('D, d M Y');
+    }
+
+    public function getFormattedCreatedAtAttribute()
+    {
+        if (empty($this->created_at)) {
+            return 'n/a';
+        }
+
+        return $this->created_at->format('D, d M Y');
+    }
+
     public function image()
     {
         return Storage::url($this->jrku_image_path);

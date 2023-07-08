@@ -95,7 +95,7 @@
       <div class="card">
         <div class="card-body ">
           <h6 class="text-capitalize fw-bold my-3 pb-2">announcement list</h6>
-          <table id="adminAnnouncementTable" class="table table-bordered table-sm">
+          <table id="adminAnnouncementTable" class="table table-bordered table-sm min-w-100">
             <thead>
                 <tr>
                     <th>Title</th>
@@ -378,6 +378,7 @@
         var table =$('#adminAnnouncementTable').DataTable({
           processing: true,
           serverSide: true,
+          scrollX: true,
           footer: true,
           ajax: '{{ route('admin.announcements.indexAnnouncement') }}',
           columns: [
