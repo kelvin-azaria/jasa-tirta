@@ -17,8 +17,8 @@
           <form id="announcementForm" onsubmit="postAnnouncement(event)" class="form-floating mb-2">
             <div class="row">
               <div class="col">
-                <input type="hidden" id="typeInput" name="typeInput" value="note">  
-                <div class="form-floating mb-2">  
+                <input type="hidden" id="typeInput" name="typeInput" value="note">
+                <div class="form-floating mb-2">
                   <input name="titleInput" id="titleInput" type="text" class="form-control" placeholder="Type title here..." >
                   <label for="titleInput">Title</label>
                   <div class="valid-feedback">
@@ -56,21 +56,21 @@
                 </div>
               </div>
             </div>
-            
+
               <div class="row">
-                <input type="hidden" id="inputType" name="inputType" value="running text"> 
+                <input type="hidden" id="inputType" name="inputType" value="running text">
                 <div class="col-4">
                   <label for="inputRunningTitle" class="form-label">Title</label>
                   <input type="text" class="form-control" id="inputRunningTitle">
                 </div>
-                
+
                 <div class="col-8">
                   <label for="inputRunningMessage" class="form-label">Message</label>
                   <input type="text" class="form-control" id="inputRunningMessage">
                 </div>
               </div>
               <div class="row mt-3">
-                <div class=" col-auto col-md-12 col-xl-auto align-self-center pb-md-2"> 
+                <div class=" col-auto col-md-12 col-xl-auto align-self-center pb-md-2">
                   <small><p class="m-0 p-0"> Set Color :</p></small>
                 </div>
                 <div class="col align-self-center">
@@ -98,22 +98,29 @@
           <table id="adminAnnouncementTable" class="table table-bordered table-sm">
             <thead>
                 <tr>
-                    <th>Id</th>
                     <th>Title</th>
                     <th>Message</th>
                     <th>Type</th>
-                    <th>Status</th>
-                    <th>Action</th>
+                    <th class="text-center">Created at</th>
+                    <th class="text-center">Status</th>
+                    <th class="text-center">Action</th>
                 </tr>
             </thead>
-            <tbody class="">
-                
+            <tbody>
             </tbody>
+            <tfoot>
+              <tr>
+                <td>Search by Title</td>
+                <td>Search by Message</td>
+                <td>Search by Type</td>
+                <td colspan=3></td>
+              </tr>
+            </tfoot>
         </table>
         </div>
-      </div> 
+      </div>
     </div>
-   
+
   </div>
 
   {{-- Edit Modal --}}
@@ -125,10 +132,10 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form onsubmit="updateAnnouncement(event)">
-          <input type="hidden" id="inputEditId" name="inputEditId"> 
-          <input type="hidden" id="inputEditType" name="inputEditType"> 
+          <input type="hidden" id="inputEditId" name="inputEditId">
+          <input type="hidden" id="inputEditType" name="inputEditType">
           <div id="noteType" class="modal-body">
-            <div class="form-floating mb-2">  
+            <div class="form-floating mb-2">
               <input name="titleEditInput" id="titleEditInput" type="text" class="form-control" placeholder="Type title here..." >
               <label for="titleInput">Title</label>
             </div>
@@ -137,7 +144,7 @@
               <label for="messageInput">Message</label>
             </div>
             <div class="row mt-3 d-none" id="runningTextEditSection">
-              <div class=" col-auto col-md-12 col-xl-auto align-self-center pb-md-2"> 
+              <div class=" col-auto col-md-12 col-xl-auto align-self-center pb-md-2">
                 <small><p class="m-0 p-0"> Set Color :</p></small>
               </div>
               <div class="col align-self-center">
@@ -208,7 +215,7 @@
           });
           console.log(errorMessage);
           toastTitle.innerHTML= 'Something went wrong' ;
-          
+
           toastBody.innerHTML=errorMessage;
           ;
           $('#liveToast').toast('show');
@@ -245,7 +252,7 @@
           });
           console.log(errorMessage);
           toastTitle.innerHTML= 'Something went wrong' ;
-          
+
           toastBody.innerHTML=errorMessage;
           ;
           $('#liveToast').toast('show');
@@ -311,7 +318,7 @@
 
         const formData = new FormData();
         formData.append('_method', 'PUT');
-        
+
         let url = '{{ route("admin.announcements.update",":id") }}';
         url = url.replace(':id', id);
 
@@ -365,15 +372,15 @@
         return (str.length > n) ? str.slice(0, n-1) + '&hellip;' : str;
       };
     </script>
-    
+
     <script>
       $( document ).ready(function() {
         var table =$('#adminAnnouncementTable').DataTable({
           processing: true,
           serverSide: true,
+          footer: true,
           ajax: '{{ route('admin.announcements.indexAnnouncement') }}',
           columns: [
-            { data: 'id', name: 'id' },
             { data: 'title',
               name: 'title',
               render: function ( data, type, row, meta ) {
@@ -388,27 +395,89 @@
             },
             { data: 'type', name: 'type' },
             { searchable: false,
+              data: 'formattedCreatedAt', name: 'created_at'
+            },
+            { searchable: false,
+              sortable:false,
               data: function ( data, type, row, meta ) {
                 return type === 'display' ? ( data.active !== null ? '<div class="form-check form-switch justify-content-center d-flex"><input onchange="changeStatus(' + data.id + ')"' + ( data.active == 1 ? 'checked=true ' : '' ) + 'class="form-check-input text-center" type="checkbox" role="switch" id="flexSwitchCheckDefault" ></div>' : 'Sent' ) : data
               }
             },
             { searchable: false,
+              sortable:false,
               data: function ( data, type, row, meta ) {
                 return type === 'display' ? '<button type="button" onClick="editAnnouncementModal(' + data.id + ')" class="btn btn-light text-warning me-2"><i class="fas fa-pencil-alt"></i></button><button type="button" onClick="deleteAnnouncement(' + data.id + ')" class="btn btn-light text-danger"><i class="fas fa-trash-alt"></i></button>' : data
               }
             },
           ],
+          initComplete: function () {
+            // Add search inputs for each column
+            this.api().columns().every(function () {
+              var column = this;
+              var footer = $(column.footer());
+              if(footer == null || footer == undefined){
+                return;
+              }
+
+              let title = column.footer().textContent;
+              if(title == ''){
+                return;
+              }
+
+              if(title.includes("Type")){
+                // Create select element
+                let select = document.createElement('select');
+                select.add(new Option(''));
+                select.classList.add("w-100");
+                select.classList.add("form-select");
+                column.footer().replaceChildren(select);
+
+                // Apply listener for user change in value
+                select.addEventListener('change', function () {
+                    var val = DataTable.util.escapeRegex(select.value);
+                    column
+                        .search(val ? '^' + val + '$' : '', true, false)
+                        .draw();
+                });
+
+                // Add list of options
+                column
+                    .data()
+                    .unique()
+                    .sort()
+                    .each(function (d, j) {
+                        select.add(new Option(d));
+                    });
+
+              }else{
+                // Create input element
+                let input = document.createElement('input');
+                  input.placeholder = title;
+                  input.classList.add("w-100");
+                  input.classList.add("form-control");
+                  column.footer().replaceChildren(input);
+
+                // Event listener for user input
+                input.addEventListener('keyup', () => {
+                    if (column.search() !== this.value) {
+                        column.search(input.value).draw();
+                    }
+                });
+              }
+
+            });
+          }
         });
 
-        $("#inputRunningMessage").on('change', function(){ 
+        $("#inputRunningMessage").on('change', function(){
           $('#runningTextPreview').text($("#inputRunningMessage").val());
         });
 
-        $("#inputRunningTextColor").on('change', function(){ 
+        $("#inputRunningTextColor").on('change', function(){
           $('#runningTextPreview').css("color",$("#inputRunningTextColor").val());
         });
 
-        $("#inputRunningBackgroundColor").on('change', function(){ 
+        $("#inputRunningBackgroundColor").on('change', function(){
           $('#runningTextPreview').css("background-color",$("#inputRunningBackgroundColor").val());
         });
       });

@@ -14,7 +14,7 @@ class AnnouncementController extends Controller
         return view('pages.users_dashboard.announcements.index', ['page' => 'announcements']);
       }
 
-      $announcements = Announcement::query()->orderBy('updated_at', 'DESC');
+      $announcements = Announcement::query();
       if (! $request->type){
         return DataTables::of($announcements)->toJson();
       }
@@ -69,7 +69,7 @@ class AnnouncementController extends Controller
     {
         $oldAnnouncement=Announcement::where('active',1)->first();
         $announcement = Announcement::findOrFail($request->id);
-        
+
         if($oldAnnouncement ? ($oldAnnouncement->id != $announcement->id) : $announcement){
           if($oldAnnouncement){
             $oldAnnouncement->active = 0;
