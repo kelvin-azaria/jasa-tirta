@@ -26,32 +26,37 @@
           </a>
         </div>
       </div>
-      <table id="adminParticipantTable" class="table table-bordered min-w-100">
-        <thead>
+
+      <div class="relative">
+        <table id="adminParticipantTable" class="table table-bordered min-w-100">
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Work Unit</th>
+                  <th class="text-center">NPP</th>
+                  <th class="text-center">Registered at</th>
+                  <th class="text-center">Competition</th>
+                  <th class="text-center">Action</th>
+              </tr>
+          </thead>
+
+          <tbody>
+          </tbody>
+
+          <tfoot>
             <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Work Unit</th>
-                <th class="text-center">NPP</th>
-                <th class="text-center">Registered at</th>
-                <th class="text-center">Competition</th>
-                <th class="text-center">Action</th>
+              <td>Search by name</td>
+              <td>Search by email</td>
+              <td>Search by work unit</td>
+              <td>Search by NPP</td>
+              <td></td>
+              <td>Search by Competition</td>
+              <td></td>
             </tr>
-        </thead>
-        <tbody>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td>Search by name</td>
-            <td>Search by email</td>
-            <td>Search by work unit</td>
-            <td>Search by NPP</td>
-            <td></td>
-            <td>Search by Competition</td>
-            <td></td>
-          </tr>
-        </tfoot>
-    </table>
+          </tfoot>
+        </table>
+      </div>
     </div>
   </div>
 @endsection

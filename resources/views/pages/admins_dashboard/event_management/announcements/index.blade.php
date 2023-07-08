@@ -378,6 +378,7 @@
         var table =$('#adminAnnouncementTable').DataTable({
           processing: true,
           serverSide: true,
+          responsive: true,
           scrollX: true,
           footer: true,
           ajax: '{{ route('admin.announcements.indexAnnouncement') }}',

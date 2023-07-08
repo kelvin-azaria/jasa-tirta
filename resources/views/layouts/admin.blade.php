@@ -6,11 +6,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-
     <title>Admin Dashboard</title>
-
-    
-    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com" />
@@ -27,11 +23,11 @@
   </head>
   <body >
 
-    <div class="container-fluid overflow-hidden">
-      <div class="row vh-100 overflow-auto">
+    <div>
+      <div class="row m-0">
           @if (Auth::guard('admin')->check())
-          {{-- Tablet to PC Navbar --}}
-          <nav style="width: 280px;" class="col-auto d-none d-md-block border border-right pb-3 vh-100 overflow-auto">
+          <!-- Tablet to PC Navbar -->
+          <nav style="width: 280px;" class="vh-100 col-auto d-none d-md-block border border-right pb-3 overflow-auto">
             <div class="pt-3 bg-white sticky-top">
               <div class="card ">
                 <div class="card-body p-2">
@@ -128,27 +124,27 @@
                     <a role="button" href="{{ route('admin.leaderboard.ride.index',['gender' => 'L']) }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fa fa-mars fa-fw"></i><span class="ps-2 nav-link-text d-inline">male</span></a>
                   </li>
                 </ul>
-                
+
               </ul>
             </ul>
           </nav>
 
-          <div class="col align-self-stretch bg-light overflow-auto pb-5 h-100">
+          <div id="contentContainer" class="vh-100 col align-self-stretch bg-light overflow-auto h-100 overflow-y-scroll">
             <!-- As a heading -->
-            <div class="row border-bottom bg-light-accent-3 justify-content-between">
+            <div class="row border-bottom bg-light-accent-3 justify-content-between sticky-top">
               <div class="col-auto py-3 align-self-center">
                 <div class="card d-md-none">
                   <div class="card-body p-2">
                     <a class="d-flex align-items-center text-decoration-none text-capitalize fw-bold" href="{{ url('/') }}">
                       <img src="{{ asset('img/logo.png') }}" alt="" width="48" height="48" class="d-inline-block align-middle rounded">
-  
+
                       <span class=" fs-6 f-montserrat d-inline ms-3">jasa raharja <br> <small class="text-muted"> virtual olympic</small></span>
                     </a>
                     <span class="position-absolute top-0 start-90 translate-middle badge rounded-pill bg-danger">
                       <small><i class="fa fas fa-key pe-1"></i>ADMIN</small>
                     </span>
                   </div>
-                  
+
                 </div>
               </div>
               <div class="col-auto py-3 align-self-center">
@@ -165,10 +161,8 @@
               </div>
             </div>
             @endif
-            <main class="row bg-light-accent-4 overflow-auto">
-              <div class="col mb-5">
+            <main class="bg-light-accent-4">
                 @yield('content')
-              </div>
             </main>
             @if (Auth::guard('admin')->check())
             <nav  id="mobile-navbar" class="navbar fixed-bottom border border-top navbar-light bg-light d-md-none">
@@ -250,7 +244,7 @@
                             <a role="button" href="{{ route('admin.leaderboard.ride.index',['gender' => 'L']) }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fa fa-mars fa-fw"></i><span class="ps-2 nav-link-text d-inline">male</span></a>
                           </li>
                         </ul>
-                        
+
                       </ul>
                     </ul>
                   </div>
@@ -276,30 +270,30 @@
                   </div>
                 </div>
               </div>
-              
+
             </nav>
             @endif
-            
+
           </div>
       </div>
     </div>
 
-    
 
- 
+
+
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    
-    <script 
+
+    <script
     src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js" ></script>
-    <script 
+    <script
     src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
-    <script 
+    <script
     src="https://cdn.datatables.net/fixedheader/3.2.4/js/dataTables.fixedHeader.min.js"></script>
-    <script 
+    <script
     src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
-    
+
     @yield('script')
   </body>
 </html>
