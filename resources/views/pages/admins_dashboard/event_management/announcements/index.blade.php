@@ -11,7 +11,7 @@
 
   <div class="row">
     <div class="col-12 col-lg-6 my-3 align-self-stretch ">
-      <div class="card h-100">
+      <div class="card h-100 bg-white">
         <div class="card-body">
           <h6 class="text-capitalize fw-bold my-3 pb-2">compose announcement</h6>
           <form id="announcementForm" onsubmit="postAnnouncement(event)" class="form-floating mb-2">
@@ -42,7 +42,7 @@
     </div>
 
     <div class="col-12 col-lg-6 my-3 align-self-stretch " >
-      <div class="card h-100">
+      <div class="card h-100 bg-white">
         <form onsubmit="postRunningText(event)">
           <div class="card-body">
             <div class="row">
@@ -92,8 +92,8 @@
 
   <div class="row mb-4">
     <div class="col-12">
-      <div class="card">
-        <div class="card-body ">
+      <div class="card bg-white">
+        <div class="card-body">
           <h6 class="text-capitalize fw-bold my-3 pb-2">announcement list</h6>
           <table id="adminAnnouncementTable" class="table table-bordered table-sm min-w-100">
             <thead>
@@ -411,6 +411,10 @@
               }
             },
           ],
+          columnDefs : [{
+            targets: '_all',
+            className: 'bg-white'
+          }],
           initComplete: function () {
             // Add search inputs for each column
             this.api().columns().every(function () {

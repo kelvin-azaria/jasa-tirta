@@ -14,7 +14,7 @@
     </div>
   @endif
 
-  <div class="card mt-3 mb-2">
+  <div class="card mt-3 mb-2 bg-white">
     <div class="card-body">
       <div class="row justify-content-between">
         <div class="col">
@@ -25,7 +25,7 @@
       </div>
 
       <hr>
-      <table id="adminParticipantTable" class="table table-bordered min-w-100">
+      <table id="adminParticipantTable" class="table table-bordered min-w-100 bg-white">
         <thead>
             <tr>
                 <th>Name</th>
@@ -118,8 +118,10 @@
           ajax: '{{ route('admin.competitions.participants.index') }}?comp={{$comp}}',
           columns: [
             {
-              data: 'name',
               name: 'name',
+              data: function ( data, type, row, meta ) {
+                return `<a href="/admin/users/${data.user_id}" class="link-dark link-underline-info fw-bold link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover text-capitalize">${data.name}</a>`
+              }
             },
             {
               data: 'gender',
@@ -157,6 +159,10 @@
               }
             },
           ],
+          columnDefs : [{
+            targets: '_all',
+            className: 'bg-white'
+          }],
           initComplete: function () {
             // Add search inputs for each column
             this.api().columns().every(function () {

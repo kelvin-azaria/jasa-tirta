@@ -27,7 +27,7 @@
       <div class="row m-0">
           @if (Auth::guard('admin')->check())
           <!-- Tablet to PC Navbar -->
-          <nav style="width: 280px; color:rgb(158, 169, 180);" class="vh-100 col-auto d-none d-md-block border border-right px-3 pb-3 overflow-auto">
+          <nav style="width: 280px; color:rgb(158, 169, 180);" class="vh-100 col-auto d-none d-md-block border border-right px-3 pb-3 overflow-auto bg-white">
             <div class="pt-3 bg-white sticky-top">
               <div class="card ">
                 <div class="card-body p-2">
@@ -133,7 +133,7 @@
           <div id="contentContainer" class="vh-100 col align-self-stretch bg-light overflow-auto h-100 overflow-y-scroll bg-light-accent-4">
             <!-- As a heading -->
             @if (Auth::guard('admin')->check())
-            <div class="row border-bottom bg-light-accent-3 justify-content-between sticky-top">
+            <div class="row border-bottom bg-light-accent-3 justify-content-between sticky-top bg-white">
               <div class="col-auto py-3 align-self-center">
                 <div class="card d-md-none">
                   <div class="card-body p-2">
@@ -150,7 +150,7 @@
                 </div>
               </div>
               <div class="col-auto py-3 align-self-center">
-                <a name="" id="" class="nav-link link-light-theme text-capitalize d-none d-md-block text-end" href="{{ route('logout') }}" onclick="event.preventDefault();
+                <a name="" id="" class="nav-link link-light-theme text-capitalize d-none px-4 py-2 d-md-block text-end" href="{{ route('logout') }}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();" role="button">
                   <span class="fw-bold"><i class="fas fa-sign-out-alt pe-2"></i>{{ __('Logout') }}</span>
                 </a>

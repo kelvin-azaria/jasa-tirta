@@ -14,7 +14,7 @@
     </div>
   @endif
 
-  <div class="card mt-3 mb-4">
+  <div class="card mt-3 mb-4 bg-white">
     <div class="card-body">
       <div class="row justify-content-between mb-2">
         <div class="col">
@@ -159,6 +159,10 @@
               }
             },
           ],
+          columnDefs : [{
+            targets: '_all',
+            className: 'bg-white'
+          }],
           initComplete: function () {
             // Add search inputs for each column
             this.api().columns().every(function () {
