@@ -92,7 +92,7 @@
               </li>
               <ul  id="collapseCompetition2" class="collapse show sidebar-dropdown-link">
                 <li class="nav-item">
-                  <a role="button" href="{{ route('admin.competitions.participants.index') }}?comp=Run" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-user-friends fa-fw"></i><span class="ps-2 nav-link-text d-inline">participants</span></a>
+                  <a role="button" href="{{ route('admin.competitions.participants.index') }}?comp=Run" class="{{ isset($page) && isset($comp) && $page == 'participants' && $comp == 'Run' ? 'active' : '' }} nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-user-friends fa-fw"></i><span class="ps-2 nav-link-text d-inline">participants</span></a>
                 </li>
                 <li class="nav-item">
                   <a role="button" data-bs-toggle="collapse" href="#collapseRunLeaderboard" data-bs-toggle="collapse" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-medal fa-fw"></i><span class="ps-2 nav-link-text d-inline">leaderboard</span></a>
@@ -111,7 +111,7 @@
               </li>
               <ul  id="collapseCompetition3" class="collapse show sidebar-dropdown-link">
                 <li class="nav-item">
-                  <a role="button" href="{{ route('admin.competitions.participants.index') }}?comp=Ride" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-user-friends fa-fw"></i><span class="ps-2 nav-link-text d-inline">participants</span></a>
+                  <a role="button" href="{{ route('admin.competitions.participants.index') }}?comp=Ride" class="{{ isset($page) && isset($comp) && $page == 'participants' && $comp == 'Ride' ? 'active' : '' }} nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-user-friends fa-fw"></i><span class="ps-2 nav-link-text d-inline">participants</span></a>
                 </li>
                 <li class="nav-item">
                   <a role="button" data-bs-toggle="collapse" href="#collapseRideLeaderboard" data-bs-toggle="collapse" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fas fa-medal fa-fw"></i><span class="ps-2 nav-link-text d-inline">leaderboard</span></a>
@@ -310,6 +310,25 @@
     src="https://cdn.datatables.net/select/1.7.0/js/dataTables.select.min.js"></script>
     <script
     src="https://cdn.datatables.net/buttons/2.4.0/js/buttons.colVis.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        let elements = document.getElementsByClassName('active');
+        if (elements.length === 0) {
+          return 0;
+        }
+
+        let activeNavItem = elements[0];
+        let rect = activeNavItem.getBoundingClientRect();
+
+        if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+          return;
+        }
+        setTimeout(function() {
+          activeNavItem.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      });
+    </script>
 
     @yield('script')
   </body>
