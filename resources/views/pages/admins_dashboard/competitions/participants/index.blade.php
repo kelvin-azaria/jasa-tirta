@@ -14,28 +14,26 @@
     </div>
   @endif
 
-  <div class="card mt-3 mb-4">
+  <div class="card mt-3 mb-2">
     <div class="card-body">
-      <div class="row justify-content-between mb-2">
+      <div class="row justify-content-between">
         <div class="col">
-          <h5 class="text-capitalize fw-bold my-3">Participants</h5>
+          <h5 class="text-capitalize fw-bold my-3">{{$comp}} Competition Participants</h5>
         </div>
-        <div class="col-auto align-self-center">
-          <a href="{{ route('admin.users.export') }}" role="button" class="btn btn-success text-white">
-            <i class="fas fa-file-export"></i> Export all data to Excel (.xlsx)
-          </a>
+        <div class="col-auto">
         </div>
       </div>
+
       <hr>
       <table id="adminParticipantTable" class="table table-bordered min-w-100">
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Email</th>
-                <th>Work Unit</th>
-                <th class="text-center">NPP</th>
-                <th class="text-center">Registered at</th>
-                <th class="text-center">Competition</th>
+                <th>Gender</th>
+                <th>Distance (Km)</th>
+                <th>Total Duration</th>
+                <th>Average Speed (Km/h)</th>
+                <th>Activity Name</th>
                 <th class="text-center">Action</th>
             </tr>
         </thead>
@@ -46,11 +44,11 @@
         <tfoot>
           <tr>
             <td>Search by name</td>
-            <td>Search by email</td>
-            <td>Search by work unit</td>
-            <td>Search by NPP</td>
+            <td>Search by Gender</td>
+            <td>Search by Distance</td>
             <td></td>
-            <td>Search by Competition</td>
+            <td></td>
+            <td>Search by activity name</td>
             <td></td>
           </tr>
         </tfoot>
@@ -73,7 +71,7 @@
             {
                 extend: 'print',
                 className: 'btn btn-outline-info',
-                title: "Participant Data",
+                title: "{{$comp}} Competition Data",
                 exportOptions: {
                     columns: ':visible'
                 }
@@ -81,7 +79,7 @@
             {
                 extend: 'excel',
                 className: 'btn btn-outline-success',
-                title: "Participant Data",
+                title: "{{$comp}} Competition Data",
                 exportOptions: {
                     columns: ':visible'
                 }
@@ -91,7 +89,7 @@
                 className: 'btn btn-outline-danger',
                 orientation: 'landscape',
                 pageSize: 'LEGAL',
-                title: "Participant Data",
+                title: "{{$comp}} Competition Data",
                 exportOptions: {
                     columns: ':visible'
                 }
@@ -117,40 +115,40 @@
           select:true,
           scrollX: true,
           footer: true,
-          ajax: '{{ route('admin.users.index') }}',
+          ajax: '{{ route('admin.competitions.participants.index') }}?comp={{$comp}}',
           columns: [
             {
               data: 'name',
               name: 'name',
             },
             {
-              data: 'email',
-              name: 'email',
+              data: 'gender',
+              name: 'gender',
             },
             {
-              data: 'work_unit',
-              name: 'work_unit'
+              data: 'formattedActivityLength',
+              name: 'activity_length',
             },
             {
-              data: 'npp',
-              name: 'npp'
+              data: 'formattedActivityDuration',
+              name: 'activity_duration',
             },
             {
-              data: 'formattedCreatedAt',
-              name: 'created_at'
+              data: 'formattedActivityAverageSpeed',
+              searchable: false
             },
             {
-              data: 'competition',
-              name: 'competition'
+              data: 'activity_name',
+              name: 'activity_name',
             },
             { searchable: false,
               sortable:false,
               data: function ( data, type, row, meta ) {
                 return `
-                <a href="users/${data.id}" type="button" class="btn btn-light text-warning me-2"><i class="fas fa-pencil-alt"></i></a>
+                <a href="participants/${data.id}" type="button" class="btn btn-light text-warning me-2"><i class="fas fa-pencil-alt"></i></a>
                 <form method="POST" class="d-inline" class="btn"
                     onsubmit="return confirm('Do you really want to delete the participant?');"
-                    action="users/${data.id}">
+                    action="participants/${data.id}">
                   @csrf
                   @method('DELETE')
 
@@ -173,7 +171,7 @@
                 return;
               }
 
-              if(title.includes("Competition")){
+              if(title.includes("Gender")){
                 // Create select element
                 let select = document.createElement('select');
                 select.add(new Option(''));

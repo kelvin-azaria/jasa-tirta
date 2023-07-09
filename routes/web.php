@@ -8,6 +8,7 @@ use App\Http\Controllers\RuleController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\Admin\ActivityController as AdminActivityController;
 use App\Http\Controllers\Admin\BridgeController as AdminBridgeController;
+use App\Http\Controllers\Admin\Competition\ParticipantController;
 use App\Http\Controllers\Admin\RideLeaderboardController;
 use App\Http\Controllers\Admin\RunLeaderboardController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
@@ -74,29 +75,33 @@ Route::prefix('/admin')->name('admin.')->group(function(){
   Route::prefix('leaderboard')->name('leaderboard.')->group(function(){
     Route::resource('run', RunLeaderboardController::class);
     Route::get('run/{gender}/list', [RunLeaderboardController::class, 'index'])->name('run.index');
-    
+
     Route::resource('ride', RideLeaderboardController::class)->except(['index']);
     Route::get('ride/{gender}/list', [RideLeaderboardController::class, 'index'])->name('ride.index');
   });
 
   Route::resource('dashboard', AdminDashboardController::class)->only(['index']);
-  
+
   Route::resource('activity', AdminActivityController::class)->only(['show','destroy']);
 
   Route::get('/activity_run', [AdminActivityController::class, 'indexRun'])->name('activity.index.run');
   Route::get('/activity_run/export', [AdminActivityController::class, 'exportRunData'])->name('activity.index.run.export');
-  
+
   Route::get('/activity_ride', [AdminActivityController::class, 'indexRide'])->name('activity.index.ride');
   Route::get('/activity_ride/export', [AdminActivityController::class, 'exportRideData'])->name('activity.index.ride.export');
 
   Route::get('/activity_run_user', [AdminActivityController::class, 'indexUserRun'])->name('activity.index.run.user');
   Route::get('/activity_run_user/export', [AdminActivityController::class, 'exportRun'])->name('activity.index.run.user.export');
-  
+
   Route::get('/activity_ride_user', [AdminActivityController::class, 'indexUserRide'])->name('activity.index.ride.user');
   Route::get('/activity_ride_user/export', [AdminActivityController::class, 'exportRide'])->name('activity.index.ride.user.export');
-  
+
   Route::get('/users/export', [AdminUserController::class, 'exportUsersData'])->name('users.export');
   Route::resource('users', AdminUserController::class)->only(['index','show','destroy']);
+
+  Route::prefix('competitions')->name('competitions.')->group(function(){
+    Route::resource('participants', ParticipantController::class)->only(['index','show','destroy']);
+  });
 
   Route::prefix('announcements')->name('announcements.')->group(function(){
     Route::get('/', [AdminDashboardController::class, 'announcementIndex'])->name('index');

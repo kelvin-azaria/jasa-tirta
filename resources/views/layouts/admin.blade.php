@@ -92,7 +92,7 @@
               </li>
               <ul  id="collapseCompetition2" class="collapse show sidebar-dropdown-link">
                 <li class="nav-item">
-                  <a role="button" href="{{ route('admin.activity.index.run.user') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-user-friends fa-fw"></i><span class="ps-2 nav-link-text d-inline">participants</span></a>
+                  <a role="button" href="{{ route('admin.competitions.participants.index') }}?comp=Run" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-user-friends fa-fw"></i><span class="ps-2 nav-link-text d-inline">participants</span></a>
                 </li>
                 <li class="nav-item">
                   <a role="button" data-bs-toggle="collapse" href="#collapseRunLeaderboard" data-bs-toggle="collapse" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-medal fa-fw"></i><span class="ps-2 nav-link-text d-inline">leaderboard</span></a>
@@ -111,7 +111,7 @@
               </li>
               <ul  id="collapseCompetition3" class="collapse show sidebar-dropdown-link">
                 <li class="nav-item">
-                  <a role="button" href="{{ route('admin.activity.index.ride.user') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-user-friends fa-fw"></i><span class="ps-2 nav-link-text d-inline">participants</span></a>
+                  <a role="button" href="{{ route('admin.competitions.participants.index') }}?comp=Ride" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-user-friends fa-fw"></i><span class="ps-2 nav-link-text d-inline">participants</span></a>
                 </li>
                 <li class="nav-item">
                   <a role="button" data-bs-toggle="collapse" href="#collapseRideLeaderboard" data-bs-toggle="collapse" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fas fa-medal fa-fw"></i><span class="ps-2 nav-link-text d-inline">leaderboard</span></a>
@@ -216,7 +216,7 @@
                       </li>
                       <ul  id="collapseCompetition2" class="collapse show sidebar-dropdown-link">
                         <li class="nav-item">
-                          <a role="button" href="{{ route('admin.activity.index.run.user') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-user-friends fa-fw"></i><span class="ps-2 nav-link-text d-inline">participants</span></a>
+                          <a role="button" href="{{ route('admin.competitions.participants.index') }}?comp=Run" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-user-friends fa-fw"></i><span class="ps-2 nav-link-text d-inline">participants</span></a>
                         </li>
                         <li class="nav-item">
                           <a role="button" data-bs-toggle="collapse" href="#collapseRunLeaderboard" data-bs-toggle="collapse" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-medal fa-fw"></i><span class="ps-2 nav-link-text d-inline">leaderboard</span></a>
@@ -235,7 +235,7 @@
                       </li>
                       <ul  id="collapseCompetition3" class="collapse show sidebar-dropdown-link">
                         <li class="nav-item">
-                          <a role="button" href="{{ route('admin.activity.index.ride.user') }}" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-user-friends fa-fw"></i><span class="ps-2 nav-link-text d-inline">participants</span></a>
+                          <a role="button" href="{{ route('admin.competitions.participants.index') }}?comp=Ride" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fa-user-friends fa-fw"></i><span class="ps-2 nav-link-text d-inline">participants</span></a>
                         </li>
                         <li class="nav-item">
                           <a role="button" data-bs-toggle="collapse" href="#collapseRideLeaderboard" data-bs-toggle="collapse" class="nav-link link-light-theme my-1 px-3 text-capitalize"><i class="fas fas fa-medal fa-fw"></i><span class="ps-2 nav-link-text d-inline">leaderboard</span></a>

@@ -6,9 +6,9 @@
       <h1 class="fw-bold pb-1">{{ $activity->user->name }}</h1><br>
     </div>
     <div class="col-sm-auto align-self-center">
-      <a href="{{ route('admin.activity.edit',['activity' => $activity->id]) }}" role="button" class="btn btn-warning fw-bold text-white">
+      {{-- <a href="{{ route('admin.activity.edit',['activity' => $activity->id]) }}" role="button" class="btn btn-warning fw-bold text-white">
         <i class="bi bi-pencil-fill"></i> Edit Data Aktifitas
-      </a>
+      </a> --}}
     </div>
   </div>
   <div class="row">
@@ -39,10 +39,10 @@
             </tr>
             <tr>
               <th>Link Strava</th>
-              <td>: 
+              <td>:
                 <a href="https://www.strava.com/activities/{{ $activity->strava_activity_id }}">
                   https://www.strava.com/activities/{{ $activity->strava_activity_id }}
-                </a> 
+                </a>
             </td>
             </tr>
           </table>
