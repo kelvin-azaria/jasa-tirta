@@ -16,7 +16,7 @@
           <h6 class="text-capitalize fw-bold my-3 pb-2">announcement</h6>
           <table id="userAnnouncementTable" class="table bg-dark-accent-1 text-accent-2 table-borderless table-sm">
             <tbody class="">
-          
+
             </tbody>
           </table>
         </div>
@@ -38,18 +38,18 @@
       </div>
     </div>
   </div>
-  
+
 
 
 @endsection
 
-@section('script')    
+@section('script')
     <script>
       function previewAnnouncement(id){
         const formData = new FormData();
         formData.append('_method', 'GET');
         formData.append('id', id);
-        let url = '{{ route("admin.announcements.show",":id") }}';
+        let url = '{{ route("admin.event_managements.announcements.show",":id") }}';
         url = url.replace(':id', id);
 
         axios.post(url, formData)
@@ -80,13 +80,13 @@
               name: 'title',
               width: '50px',
               render: function ( data, type, row, meta ) {
-              return type === 'display'  ? 
+              return type === 'display'  ?
               '<div class="card bg-dark-accent-1"><div class="card-body">' + (meta.row + 1) + '</div></div>'
               :data;
             }},
             // render a button inside row
             { data: function ( data, type, row, meta ) {
-              return type === 'display' ? 
+              return type === 'display' ?
               '<div onClick="previewAnnouncement(' + data.id + ')" class="card btn-primary bg-dark-accent-2 text-accent-2"><div class="card-body"><div class="row"><div class="col text-start">' + truncate(data.title, 32) + '</div><div class="col text-end">' + data.formattedUpdatedAt + '</div></div></div></div>' : data;
               },
               searchable: false,

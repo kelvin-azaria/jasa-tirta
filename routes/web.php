@@ -103,13 +103,17 @@ Route::prefix('/admin')->name('admin.')->group(function(){
     Route::resource('participants', ParticipantController::class)->only(['index','show','destroy']);
   });
 
-  Route::prefix('announcements')->name('announcements.')->group(function(){
-    Route::get('/', [AdminDashboardController::class, 'announcementIndex'])->name('index');
-    Route::get('announcements', [AnnouncementController::class, 'index'])->name('indexAnnouncement');
-    Route::get('{announcement}', [AnnouncementController::class, 'show'])->name('show');
-    Route::post('status', [AnnouncementController::class, 'changeStatus'])->name('status');
-    Route::post('/', [AnnouncementController::class, 'store'])->name('store');
-    Route::put('{announcement}', [AnnouncementController::class, 'update'])->name('update');
-    Route::delete('{announcement}', [AnnouncementController::class, 'destroy'])->name('delete');
+  Route::prefix('event-managements')->name('event_managements.')->group(function(){
+    Route::prefix('announcements')->name('announcements.')->group(function(){
+      Route::get('/', [AdminDashboardController::class, 'announcementIndex'])->name('index');
+      Route::get('announcements', [AnnouncementController::class, 'index'])->name('indexAnnouncement');
+      Route::get('{announcement}', [AnnouncementController::class, 'show'])->name('show');
+      Route::post('status', [AnnouncementController::class, 'changeStatus'])->name('status');
+      Route::post('/', [AnnouncementController::class, 'store'])->name('store');
+      Route::put('{announcement}', [AnnouncementController::class, 'update'])->name('update');
+      Route::delete('{announcement}', [AnnouncementController::class, 'destroy'])->name('delete');
+    });
   });
+
+
 });

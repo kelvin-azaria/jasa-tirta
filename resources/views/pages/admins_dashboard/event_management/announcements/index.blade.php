@@ -196,7 +196,7 @@
         formData.append('message', $('#messageInput').val());
         formData.append('type',  $('#typeInput').val());
 
-        let url = "{{ route('admin.announcements.store') }}";
+        let url = "{{ route('admin.event_managements.announcements.store') }}";
         axios.post(url, formData)
         .then(function (response) {
           $('#adminAnnouncementTable').DataTable().ajax.reload();
@@ -232,7 +232,7 @@
         formData.append('bgColor',  $('#inputRunningBackgroundColor').val());
         formData.append('active',  ($('#inputActive:checked').val() == 'on'? 1 : 0));
 
-        let url = "{{ route('admin.announcements.store') }}";
+        let url = "{{ route('admin.event_managements.announcements.store') }}";
 
         axios.post(url, formData)
         .then(function (response) {
@@ -261,7 +261,7 @@
       function changeStatus(id){
         const formData = new FormData();
         formData.append('id', id);
-        let url = "{{ route('admin.announcements.status')}}";
+        let url = "{{ route('admin.event_managements.announcements.status')}}";
 
         axios.post(url, formData)
         .then(function (response) {
@@ -281,7 +281,7 @@
         const formData = new FormData();
         formData.append('_method', 'GET');
         formData.append('id', id);
-        let url = '{{ route("admin.announcements.show",":id") }}';
+        let url = '{{ route("admin.event_managements.announcements.show",":id") }}';
         url = url.replace(':id', id);
 
         axios.post(url, formData)
@@ -318,7 +318,7 @@
         const formData = new FormData();
         formData.append('_method', 'PUT');
 
-        let url = '{{ route("admin.announcements.update",":id") }}';
+        let url = '{{ route("admin.event_managements.announcements.update",":id") }}';
         url = url.replace(':id', id);
 
         formData.append('title', $('#titleEditInput').val());
@@ -351,7 +351,7 @@
       function destroyAnnouncement(id){
         const formData = new FormData();
         formData.append('id', id);
-        let url = '{{ route("admin.announcements.delete",":id") }}';
+        let url = '{{ route("admin.event_managements.announcements.delete",":id") }}';
         url = url.replace(':id', id);
 
         axios.delete(url, formData)
@@ -380,7 +380,7 @@
           responsive: true,
           scrollX: true,
           footer: true,
-          ajax: '{{ route('admin.announcements.indexAnnouncement') }}',
+          ajax: '{{ route('admin.event_managements.announcements.indexAnnouncement') }}',
           columns: [
             { data: 'title',
               name: 'title',
