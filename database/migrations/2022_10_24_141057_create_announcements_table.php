@@ -15,9 +15,9 @@ class CreateAnnouncementsTable extends Migration
   {
     Schema::create('announcements', function (Blueprint $table) {
       $table->id();
-      $table->string('title')->nullable();
-      $table->longText('message')->nullable();
-      $table->string('type')->nullable();
+      $table->string('title')->index();
+      $table->longText('message')->index()->nullable();
+      $table->string('type')->index();
       $table->string('bg_color')->nullable();
       $table->string('text_color')->nullable();
       $table->boolean('active')->nullable();
