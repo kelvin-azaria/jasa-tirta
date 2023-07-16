@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\Competition\ParticipantController;
 use App\Http\Controllers\Admin\RideLeaderboardController;
 use App\Http\Controllers\Admin\RunLeaderboardController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
+use App\Http\Controllers\Admin\EventManagement\AnnouncementController as AdminAnnouncementController;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\User\BridgeController;
 use App\Http\Controllers\User\ChessController;
@@ -104,15 +105,21 @@ Route::prefix('/admin')->name('admin.')->group(function(){
   });
 
   Route::prefix('event-managements')->name('event_managements.')->group(function(){
-    Route::prefix('announcements')->name('announcements.')->group(function(){
-      Route::get('/', [AdminDashboardController::class, 'announcementIndex'])->name('index');
-      Route::get('announcements', [AnnouncementController::class, 'index'])->name('indexAnnouncement');
-      Route::get('{announcement}', [AnnouncementController::class, 'show'])->name('show');
-      Route::post('status', [AnnouncementController::class, 'changeStatus'])->name('status');
-      Route::post('/', [AnnouncementController::class, 'store'])->name('store');
-      Route::put('{announcement}', [AnnouncementController::class, 'update'])->name('update');
-      Route::delete('{announcement}', [AnnouncementController::class, 'destroy'])->name('delete');
-    });
+    Route::resource('announcements', AdminAnnouncementController::class)->except([
+      'edit'
+    ]);
+
+    Route::post('announcements/status', [AdminAnnouncementController::class, 'changeStatus'])->name('announcements.status');
+  });
+
+  Route::prefix('contact-persons')->name('contact_persons.')->group(function(){
+    // Route::get('/', [AdminDashboardController::class, 'announcementIndex'])->name('index');
+    // Route::get('announcements', [AnnouncementController::class, 'index'])->name('indexAnnouncement');
+    // Route::get('{announcement}', [AnnouncementController::class, 'show'])->name('show');
+    // Route::post('status', [AnnouncementController::class, 'changeStatus'])->name('status');
+    // Route::post('/', [AnnouncementController::class, 'store'])->name('store');
+    // Route::put('{announcement}', [AnnouncementController::class, 'update'])->name('update');
+    // Route::delete('{announcement}', [AnnouncementController::class, 'destroy'])->name('delete');
   });
 
 

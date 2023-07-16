@@ -19,4 +19,8 @@ class AdminDashboardController extends Controller
     public function announcementIndex(){
       return view('pages.admins_dashboard.event_management.announcements.index', ['page' => 'announcements']);
     }
+
+    public function contactPersonsIndex(){
+      return view('pages.admins_dashboard.event_management.announcements.index', ['page' => 'announcements']);
+    }
 }
